@@ -1,0 +1,556 @@
+fileFormatVersion: 2
+guid: 0895ebc072360da4e9ca3dde0eb4d666
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: _MapPrfab/sandbox2
+    100002: _MapPrfab/sandbox2/above
+    100004: _MapPrfab/sandbox2/above/Object_379 (TRS)
+    100006: _MapPrfab/sandbox2/above/Object_380 (TRS)
+    100008: _MapPrfab/sandbox2/above/Object_381 (TRS)
+    100010: _MapPrfab/sandbox2/above/Object_382 (TRS)
+    100012: _MapPrfab/sandbox2/background
+    100014: _MapPrfab/sandbox2/background/Object_193 (TRS)
+    100016: _MapPrfab/sandbox2/background/Object_284 (TRS)
+    100018: _MapPrfab/sandbox2/background/Object_287 (TRS)
+    100020: _MapPrfab/sandbox2/background/Object_288 (TRS)
+    100022: _MapPrfab/sandbox2/background/Object_291 (TRS)
+    100024: _MapPrfab/sandbox2/background/Object_292 (TRS)
+    100026: _MapPrfab/sandbox2/background/Object_293 (TRS)
+    100028: _MapPrfab/sandbox2/background/Object_294 (TRS)
+    100030: _MapPrfab/sandbox2/background/Object_295 (TRS)
+    100032: _MapPrfab/sandbox2/background/Object_296 (TRS)
+    100034: _MapPrfab/sandbox2/background/Object_297 (TRS)
+    100036: _MapPrfab/sandbox2/background/Object_298 (TRS)
+    100038: _MapPrfab/sandbox2/background/Object_299 (TRS)
+    100040: _MapPrfab/sandbox2/background/Object_300 (TRS)
+    100042: _MapPrfab/sandbox2/background/Object_301 (TRS)
+    100044: _MapPrfab/sandbox2/background/Object_341 (TRS)
+    100046: _MapPrfab/sandbox2/background/Object_342 (TRS)
+    100048: _MapPrfab/sandbox2/background/Object_353 (TRS)
+    100050: _MapPrfab/sandbox2/background/Object_361 (TRS)
+    100052: _MapPrfab/sandbox2/background/Object_373 (TRS)
+    100054: _MapPrfab/sandbox2/background/Object_374 (TRS)
+    100056: _MapPrfab/sandbox2/castledeco
+    100058: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)
+    100060: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)
+    100062: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)
+    100064: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)
+    100066: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)
+    100068: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)
+    100070: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)
+    100072: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)
+    100074: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)
+    100076: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)
+    100078: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)
+    100080: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)
+    100082: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)
+    100084: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)
+    100086: _MapPrfab/sandbox2/game
+    100088: _MapPrfab/sandbox2/game/block (TRS)
+    100090: _MapPrfab/sandbox2/game/block (TRS) (1)
+    100092: _MapPrfab/sandbox2/game/hero (TRS)
+    100094: _MapPrfab/sandbox2/game/hey (TRS)
+    100096: _MapPrfab/sandbox2/game/Object_160 (TRS)
+    100098: _MapPrfab/sandbox2/game/Object_189 (TRS)
+    100100: _MapPrfab/sandbox2/game/Object_190 (TRS)
+    100102: _MapPrfab/sandbox2/game/Object_192 (TRS)
+    100104: _MapPrfab/sandbox2/game/Object_285 (TRS)
+    100106: _MapPrfab/sandbox2/ground
+    100108: _MapPrfab/sandbox2/ground/Object_196 (TRS)
+    100110: _MapPrfab/sandbox2/ground/Object_197 (TRS)
+    100112: _MapPrfab/sandbox2/ground/Object_232 (TRS)
+    100114: _MapPrfab/sandbox2/ground/Object_233 (TRS)
+    100116: _MapPrfab/sandbox2/ground/Object_237 (TRS)
+    100118: _MapPrfab/sandbox2/ground/Object_238 (TRS)
+    100120: _MapPrfab/sandbox2/ground/Object_258 (TRS)
+    100122: _MapPrfab/sandbox2/ground/Object_259 (TRS)
+    100124: _MapPrfab/sandbox2/ground/Object_260 (TRS)
+    100126: _MapPrfab/sandbox2/ground/Object_261 (TRS)
+    100128: _MapPrfab/sandbox2/ground/Object_262 (TRS)
+    100130: _MapPrfab/sandbox2/ground/Object_263 (TRS)
+    100132: _MapPrfab/sandbox2/ground/Object_264 (TRS)
+    100134: _MapPrfab/sandbox2/ground/Object_265 (TRS)
+    100136: _MapPrfab/sandbox2/ground/Object_266 (TRS)
+    100138: _MapPrfab/sandbox2/ground/Object_267 (TRS)
+    100140: _MapPrfab/sandbox2/ground/Object_270 (TRS)
+    100142: _MapPrfab/sandbox2/ground/Object_271 (TRS)
+    100144: _MapPrfab/sandbox2/ground/Object_272 (TRS)
+    100146: _MapPrfab/sandbox2/ground/Object_273 (TRS)
+    100148: _MapPrfab/sandbox2/ground/Object_274 (TRS)
+    100150: _MapPrfab/sandbox2/ground/Object_275 (TRS)
+    100152: _MapPrfab/sandbox2/ground/Object_276 (TRS)
+    100154: _MapPrfab/sandbox2/ground/Object_277 (TRS)
+    100156: _MapPrfab/sandbox2/ground/Object_278 (TRS)
+    100158: _MapPrfab/sandbox2/ground/Object_279 (TRS)
+    100160: _MapPrfab/sandbox2/ground/Object_280 (TRS)
+    100162: _MapPrfab/sandbox2/ground/Object_281 (TRS)
+    100164: _MapPrfab/sandbox2/ground/Object_282 (TRS)
+    100166: _MapPrfab/sandbox2/ground/Object_283 (TRS)
+    100168: _MapPrfab/sandbox2/ground/Object_286 (TRS)
+    100170: _MapPrfab/sandbox2/ground/Object_343 (TRS)
+    100172: _MapPrfab/sandbox2/ground/Object_344 (TRS)
+    100174: _MapPrfab/sandbox2/ground/Object_345 (TRS)
+    100176: _MapPrfab/sandbox2/ground/Object_346 (TRS)
+    100178: _MapPrfab/sandbox2/ground/Object_347 (TRS)
+    100180: _MapPrfab/sandbox2/ground/Object_348 (TRS)
+    100182: _MapPrfab/sandbox2/ground/Object_349 (TRS)
+    100184: _MapPrfab/sandbox2/ground/Object_350 (TRS)
+    100186: _MapPrfab/sandbox2/ground/Object_351 (TRS)
+    100188: _MapPrfab/sandbox2/ground/Object_352 (TRS)
+    100190: _MapPrfab/sandbox2/ground/Object_383 (TRS)
+    100192: _MapPrfab/sandbox2/ground/Object_384 (TRS)
+    100194: _MapPrfab/sandbox2/light
+    100196: _MapPrfab/sandbox2/light/Object_335 (TRS)
+    100198: _MapPrfab/sandbox2/light/Object_336 (TRS)
+    100200: _MapPrfab/sandbox2/light/Object_337 (TRS)
+    100202: _MapPrfab/sandbox2/light/Object_338 (TRS)
+    100204: _MapPrfab/sandbox2/light/Object_339 (TRS)
+    100206: _MapPrfab/sandbox2/light/Object_340 (TRS)
+    100208: _MapPrfab/sandbox2/shading
+    100210: _MapPrfab/sandbox2/shading/Object_112 (TRS)
+    100212: _MapPrfab/sandbox2/shading/Object_334 (TRS)
+    400000: _MapPrfab/sandbox2/Transform
+    400002: _MapPrfab/sandbox2/above/Transform
+    400004: _MapPrfab/sandbox2/above/Object_379 (TRS)/Transform
+    400006: _MapPrfab/sandbox2/above/Object_380 (TRS)/Transform
+    400008: _MapPrfab/sandbox2/above/Object_381 (TRS)/Transform
+    400010: _MapPrfab/sandbox2/above/Object_382 (TRS)/Transform
+    400012: _MapPrfab/sandbox2/background/Transform
+    400014: _MapPrfab/sandbox2/background/Object_193 (TRS)/Transform
+    400016: _MapPrfab/sandbox2/background/Object_284 (TRS)/Transform
+    400018: _MapPrfab/sandbox2/background/Object_287 (TRS)/Transform
+    400020: _MapPrfab/sandbox2/background/Object_288 (TRS)/Transform
+    400022: _MapPrfab/sandbox2/background/Object_291 (TRS)/Transform
+    400024: _MapPrfab/sandbox2/background/Object_292 (TRS)/Transform
+    400026: _MapPrfab/sandbox2/background/Object_293 (TRS)/Transform
+    400028: _MapPrfab/sandbox2/background/Object_294 (TRS)/Transform
+    400030: _MapPrfab/sandbox2/background/Object_295 (TRS)/Transform
+    400032: _MapPrfab/sandbox2/background/Object_296 (TRS)/Transform
+    400034: _MapPrfab/sandbox2/background/Object_297 (TRS)/Transform
+    400036: _MapPrfab/sandbox2/background/Object_298 (TRS)/Transform
+    400038: _MapPrfab/sandbox2/background/Object_299 (TRS)/Transform
+    400040: _MapPrfab/sandbox2/background/Object_300 (TRS)/Transform
+    400042: _MapPrfab/sandbox2/background/Object_301 (TRS)/Transform
+    400044: _MapPrfab/sandbox2/background/Object_341 (TRS)/Transform
+    400046: _MapPrfab/sandbox2/background/Object_342 (TRS)/Transform
+    400048: _MapPrfab/sandbox2/background/Object_353 (TRS)/Transform
+    400050: _MapPrfab/sandbox2/background/Object_361 (TRS)/Transform
+    400052: _MapPrfab/sandbox2/background/Object_373 (TRS)/Transform
+    400054: _MapPrfab/sandbox2/background/Object_374 (TRS)/Transform
+    400056: _MapPrfab/sandbox2/castledeco/Transform
+    400058: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)/Transform
+    400060: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)/Transform
+    400062: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)/Transform
+    400064: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)/Transform
+    400066: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)/Transform
+    400068: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)/Transform
+    400070: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)/Transform
+    400072: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)/Transform
+    400074: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)/Transform
+    400076: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)/Transform
+    400078: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)/Transform
+    400080: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)/Transform
+    400082: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)/Transform
+    400084: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)/Transform
+    400086: _MapPrfab/sandbox2/game/Transform
+    400088: _MapPrfab/sandbox2/game/block (TRS)/Transform
+    400090: _MapPrfab/sandbox2/game/block (TRS) (1)/Transform
+    400092: _MapPrfab/sandbox2/game/hero (TRS)/Transform
+    400094: _MapPrfab/sandbox2/game/hey (TRS)/Transform
+    400096: _MapPrfab/sandbox2/game/Object_160 (TRS)/Transform
+    400098: _MapPrfab/sandbox2/game/Object_189 (TRS)/Transform
+    400100: _MapPrfab/sandbox2/game/Object_190 (TRS)/Transform
+    400102: _MapPrfab/sandbox2/game/Object_192 (TRS)/Transform
+    400104: _MapPrfab/sandbox2/game/Object_285 (TRS)/Transform
+    400106: _MapPrfab/sandbox2/ground/Transform
+    400108: _MapPrfab/sandbox2/ground/Object_196 (TRS)/Transform
+    400110: _MapPrfab/sandbox2/ground/Object_197 (TRS)/Transform
+    400112: _MapPrfab/sandbox2/ground/Object_232 (TRS)/Transform
+    400114: _MapPrfab/sandbox2/ground/Object_233 (TRS)/Transform
+    400116: _MapPrfab/sandbox2/ground/Object_237 (TRS)/Transform
+    400118: _MapPrfab/sandbox2/ground/Object_238 (TRS)/Transform
+    400120: _MapPrfab/sandbox2/ground/Object_258 (TRS)/Transform
+    400122: _MapPrfab/sandbox2/ground/Object_259 (TRS)/Transform
+    400124: _MapPrfab/sandbox2/ground/Object_260 (TRS)/Transform
+    400126: _MapPrfab/sandbox2/ground/Object_261 (TRS)/Transform
+    400128: _MapPrfab/sandbox2/ground/Object_262 (TRS)/Transform
+    400130: _MapPrfab/sandbox2/ground/Object_263 (TRS)/Transform
+    400132: _MapPrfab/sandbox2/ground/Object_264 (TRS)/Transform
+    400134: _MapPrfab/sandbox2/ground/Object_265 (TRS)/Transform
+    400136: _MapPrfab/sandbox2/ground/Object_266 (TRS)/Transform
+    400138: _MapPrfab/sandbox2/ground/Object_267 (TRS)/Transform
+    400140: _MapPrfab/sandbox2/ground/Object_270 (TRS)/Transform
+    400142: _MapPrfab/sandbox2/ground/Object_271 (TRS)/Transform
+    400144: _MapPrfab/sandbox2/ground/Object_272 (TRS)/Transform
+    400146: _MapPrfab/sandbox2/ground/Object_273 (TRS)/Transform
+    400148: _MapPrfab/sandbox2/ground/Object_274 (TRS)/Transform
+    400150: _MapPrfab/sandbox2/ground/Object_275 (TRS)/Transform
+    400152: _MapPrfab/sandbox2/ground/Object_276 (TRS)/Transform
+    400154: _MapPrfab/sandbox2/ground/Object_277 (TRS)/Transform
+    400156: _MapPrfab/sandbox2/ground/Object_278 (TRS)/Transform
+    400158: _MapPrfab/sandbox2/ground/Object_279 (TRS)/Transform
+    400160: _MapPrfab/sandbox2/ground/Object_280 (TRS)/Transform
+    400162: _MapPrfab/sandbox2/ground/Object_281 (TRS)/Transform
+    400164: _MapPrfab/sandbox2/ground/Object_282 (TRS)/Transform
+    400166: _MapPrfab/sandbox2/ground/Object_283 (TRS)/Transform
+    400168: _MapPrfab/sandbox2/ground/Object_286 (TRS)/Transform
+    400170: _MapPrfab/sandbox2/ground/Object_343 (TRS)/Transform
+    400172: _MapPrfab/sandbox2/ground/Object_344 (TRS)/Transform
+    400174: _MapPrfab/sandbox2/ground/Object_345 (TRS)/Transform
+    400176: _MapPrfab/sandbox2/ground/Object_346 (TRS)/Transform
+    400178: _MapPrfab/sandbox2/ground/Object_347 (TRS)/Transform
+    400180: _MapPrfab/sandbox2/ground/Object_348 (TRS)/Transform
+    400182: _MapPrfab/sandbox2/ground/Object_349 (TRS)/Transform
+    400184: _MapPrfab/sandbox2/ground/Object_350 (TRS)/Transform
+    400186: _MapPrfab/sandbox2/ground/Object_351 (TRS)/Transform
+    400188: _MapPrfab/sandbox2/ground/Object_352 (TRS)/Transform
+    400190: _MapPrfab/sandbox2/ground/Object_383 (TRS)/Transform
+    400192: _MapPrfab/sandbox2/ground/Object_384 (TRS)/Transform
+    400194: _MapPrfab/sandbox2/light/Transform
+    400196: _MapPrfab/sandbox2/light/Object_335 (TRS)/Transform
+    400198: _MapPrfab/sandbox2/light/Object_336 (TRS)/Transform
+    400200: _MapPrfab/sandbox2/light/Object_337 (TRS)/Transform
+    400202: _MapPrfab/sandbox2/light/Object_338 (TRS)/Transform
+    400204: _MapPrfab/sandbox2/light/Object_339 (TRS)/Transform
+    400206: _MapPrfab/sandbox2/light/Object_340 (TRS)/Transform
+    400208: _MapPrfab/sandbox2/shading/Transform
+    400210: _MapPrfab/sandbox2/shading/Object_112 (TRS)/Transform
+    400212: _MapPrfab/sandbox2/shading/Object_334 (TRS)/Transform
+    11400000: _MapPrfab/sandbox2/MonoBehaviour-SuperTiled2Unity.SuperMap
+    11400002: _MapPrfab/sandbox2/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400004: _MapPrfab/sandbox2/above/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
+    11400006: _MapPrfab/sandbox2/above/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400008: _MapPrfab/sandbox2/above/Object_379 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400010: _MapPrfab/sandbox2/above/Object_379 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400012: _MapPrfab/sandbox2/above/Object_380 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400014: _MapPrfab/sandbox2/above/Object_380 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400016: _MapPrfab/sandbox2/above/Object_381 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400018: _MapPrfab/sandbox2/above/Object_381 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400020: _MapPrfab/sandbox2/above/Object_382 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400022: _MapPrfab/sandbox2/above/Object_382 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400024: _MapPrfab/sandbox2/background/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
+    11400026: _MapPrfab/sandbox2/background/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400028: _MapPrfab/sandbox2/background/Object_193 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400030: _MapPrfab/sandbox2/background/Object_193 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400032: _MapPrfab/sandbox2/background/Object_284 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400034: _MapPrfab/sandbox2/background/Object_284 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400036: _MapPrfab/sandbox2/background/Object_287 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400038: _MapPrfab/sandbox2/background/Object_287 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400040: _MapPrfab/sandbox2/background/Object_288 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400042: _MapPrfab/sandbox2/background/Object_288 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400044: _MapPrfab/sandbox2/background/Object_291 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400046: _MapPrfab/sandbox2/background/Object_291 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400048: _MapPrfab/sandbox2/background/Object_292 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400050: _MapPrfab/sandbox2/background/Object_292 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400052: _MapPrfab/sandbox2/background/Object_293 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400054: _MapPrfab/sandbox2/background/Object_293 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400056: _MapPrfab/sandbox2/background/Object_294 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400058: _MapPrfab/sandbox2/background/Object_294 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400060: _MapPrfab/sandbox2/background/Object_295 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400062: _MapPrfab/sandbox2/background/Object_295 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400064: _MapPrfab/sandbox2/background/Object_296 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400066: _MapPrfab/sandbox2/background/Object_296 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400068: _MapPrfab/sandbox2/background/Object_297 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400070: _MapPrfab/sandbox2/background/Object_297 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400072: _MapPrfab/sandbox2/background/Object_298 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400074: _MapPrfab/sandbox2/background/Object_298 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400076: _MapPrfab/sandbox2/background/Object_299 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400078: _MapPrfab/sandbox2/background/Object_299 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400080: _MapPrfab/sandbox2/background/Object_300 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400082: _MapPrfab/sandbox2/background/Object_300 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400084: _MapPrfab/sandbox2/background/Object_301 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400086: _MapPrfab/sandbox2/background/Object_301 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400088: _MapPrfab/sandbox2/background/Object_341 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400090: _MapPrfab/sandbox2/background/Object_341 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400092: _MapPrfab/sandbox2/background/Object_342 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400094: _MapPrfab/sandbox2/background/Object_342 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400096: _MapPrfab/sandbox2/background/Object_353 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400098: _MapPrfab/sandbox2/background/Object_353 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400100: _MapPrfab/sandbox2/background/Object_361 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400102: _MapPrfab/sandbox2/background/Object_361 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400104: _MapPrfab/sandbox2/background/Object_373 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400106: _MapPrfab/sandbox2/background/Object_373 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400108: _MapPrfab/sandbox2/background/Object_374 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400110: _MapPrfab/sandbox2/background/Object_374 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400112: _MapPrfab/sandbox2/castledeco/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
+    11400114: _MapPrfab/sandbox2/castledeco/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400116: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400118: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400120: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400122: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400124: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400126: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400128: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400130: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400132: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400134: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400136: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400138: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400140: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400142: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400144: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400146: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400148: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400150: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400152: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400154: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400156: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400158: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400160: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400162: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400164: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400166: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400168: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400170: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400172: _MapPrfab/sandbox2/game/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
+    11400174: _MapPrfab/sandbox2/game/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400176: _MapPrfab/sandbox2/game/block (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400178: _MapPrfab/sandbox2/game/block (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400180: _MapPrfab/sandbox2/game/block (TRS) (1)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400182: _MapPrfab/sandbox2/game/block (TRS) (1)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400184: _MapPrfab/sandbox2/game/hero (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400186: _MapPrfab/sandbox2/game/hero (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400188: _MapPrfab/sandbox2/game/hey (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400190: _MapPrfab/sandbox2/game/hey (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400192: _MapPrfab/sandbox2/game/Object_160 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400194: _MapPrfab/sandbox2/game/Object_160 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400196: _MapPrfab/sandbox2/game/Object_189 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400198: _MapPrfab/sandbox2/game/Object_189 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400200: _MapPrfab/sandbox2/game/Object_190 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400202: _MapPrfab/sandbox2/game/Object_190 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400204: _MapPrfab/sandbox2/game/Object_192 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400206: _MapPrfab/sandbox2/game/Object_192 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400208: _MapPrfab/sandbox2/game/Object_285 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400210: _MapPrfab/sandbox2/game/Object_285 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400212: _MapPrfab/sandbox2/ground/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
+    11400214: _MapPrfab/sandbox2/ground/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400216: _MapPrfab/sandbox2/ground/Object_196 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400218: _MapPrfab/sandbox2/ground/Object_196 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400220: _MapPrfab/sandbox2/ground/Object_197 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400222: _MapPrfab/sandbox2/ground/Object_197 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400224: _MapPrfab/sandbox2/ground/Object_232 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400226: _MapPrfab/sandbox2/ground/Object_232 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400228: _MapPrfab/sandbox2/ground/Object_233 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400230: _MapPrfab/sandbox2/ground/Object_233 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400232: _MapPrfab/sandbox2/ground/Object_237 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400234: _MapPrfab/sandbox2/ground/Object_237 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400236: _MapPrfab/sandbox2/ground/Object_238 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400238: _MapPrfab/sandbox2/ground/Object_238 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400240: _MapPrfab/sandbox2/ground/Object_258 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400242: _MapPrfab/sandbox2/ground/Object_258 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400244: _MapPrfab/sandbox2/ground/Object_259 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400246: _MapPrfab/sandbox2/ground/Object_259 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400248: _MapPrfab/sandbox2/ground/Object_260 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400250: _MapPrfab/sandbox2/ground/Object_260 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400252: _MapPrfab/sandbox2/ground/Object_261 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400254: _MapPrfab/sandbox2/ground/Object_261 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400256: _MapPrfab/sandbox2/ground/Object_262 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400258: _MapPrfab/sandbox2/ground/Object_262 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400260: _MapPrfab/sandbox2/ground/Object_263 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400262: _MapPrfab/sandbox2/ground/Object_263 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400264: _MapPrfab/sandbox2/ground/Object_264 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400266: _MapPrfab/sandbox2/ground/Object_264 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400268: _MapPrfab/sandbox2/ground/Object_265 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400270: _MapPrfab/sandbox2/ground/Object_265 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400272: _MapPrfab/sandbox2/ground/Object_266 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400274: _MapPrfab/sandbox2/ground/Object_266 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400276: _MapPrfab/sandbox2/ground/Object_267 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400278: _MapPrfab/sandbox2/ground/Object_267 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400280: _MapPrfab/sandbox2/ground/Object_270 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400282: _MapPrfab/sandbox2/ground/Object_270 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400284: _MapPrfab/sandbox2/ground/Object_271 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400286: _MapPrfab/sandbox2/ground/Object_271 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400288: _MapPrfab/sandbox2/ground/Object_272 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400290: _MapPrfab/sandbox2/ground/Object_272 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400292: _MapPrfab/sandbox2/ground/Object_273 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400294: _MapPrfab/sandbox2/ground/Object_273 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400296: _MapPrfab/sandbox2/ground/Object_274 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400298: _MapPrfab/sandbox2/ground/Object_274 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400300: _MapPrfab/sandbox2/ground/Object_275 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400302: _MapPrfab/sandbox2/ground/Object_275 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400304: _MapPrfab/sandbox2/ground/Object_276 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400306: _MapPrfab/sandbox2/ground/Object_276 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400308: _MapPrfab/sandbox2/ground/Object_277 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400310: _MapPrfab/sandbox2/ground/Object_277 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400312: _MapPrfab/sandbox2/ground/Object_278 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400314: _MapPrfab/sandbox2/ground/Object_278 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400316: _MapPrfab/sandbox2/ground/Object_279 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400318: _MapPrfab/sandbox2/ground/Object_279 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400320: _MapPrfab/sandbox2/ground/Object_280 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400322: _MapPrfab/sandbox2/ground/Object_280 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400324: _MapPrfab/sandbox2/ground/Object_281 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400326: _MapPrfab/sandbox2/ground/Object_281 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400328: _MapPrfab/sandbox2/ground/Object_282 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400330: _MapPrfab/sandbox2/ground/Object_282 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400332: _MapPrfab/sandbox2/ground/Object_283 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400334: _MapPrfab/sandbox2/ground/Object_283 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400336: _MapPrfab/sandbox2/ground/Object_286 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400338: _MapPrfab/sandbox2/ground/Object_286 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400340: _MapPrfab/sandbox2/ground/Object_343 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400342: _MapPrfab/sandbox2/ground/Object_343 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400344: _MapPrfab/sandbox2/ground/Object_344 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400346: _MapPrfab/sandbox2/ground/Object_344 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400348: _MapPrfab/sandbox2/ground/Object_345 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400350: _MapPrfab/sandbox2/ground/Object_345 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400352: _MapPrfab/sandbox2/ground/Object_346 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400354: _MapPrfab/sandbox2/ground/Object_346 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400356: _MapPrfab/sandbox2/ground/Object_347 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400358: _MapPrfab/sandbox2/ground/Object_347 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400360: _MapPrfab/sandbox2/ground/Object_348 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400362: _MapPrfab/sandbox2/ground/Object_348 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400364: _MapPrfab/sandbox2/ground/Object_349 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400366: _MapPrfab/sandbox2/ground/Object_349 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400368: _MapPrfab/sandbox2/ground/Object_350 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400370: _MapPrfab/sandbox2/ground/Object_350 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400372: _MapPrfab/sandbox2/ground/Object_351 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400374: _MapPrfab/sandbox2/ground/Object_351 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400376: _MapPrfab/sandbox2/ground/Object_352 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400378: _MapPrfab/sandbox2/ground/Object_352 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400380: _MapPrfab/sandbox2/ground/Object_383 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400382: _MapPrfab/sandbox2/ground/Object_383 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400384: _MapPrfab/sandbox2/ground/Object_384 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400386: _MapPrfab/sandbox2/ground/Object_384 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400388: _MapPrfab/sandbox2/light/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
+    11400390: _MapPrfab/sandbox2/light/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400392: _MapPrfab/sandbox2/light/Object_335 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400394: _MapPrfab/sandbox2/light/Object_335 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400396: _MapPrfab/sandbox2/light/Object_336 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400398: _MapPrfab/sandbox2/light/Object_336 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400400: _MapPrfab/sandbox2/light/Object_337 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400402: _MapPrfab/sandbox2/light/Object_337 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400404: _MapPrfab/sandbox2/light/Object_338 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400406: _MapPrfab/sandbox2/light/Object_338 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400408: _MapPrfab/sandbox2/light/Object_339 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400410: _MapPrfab/sandbox2/light/Object_339 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400412: _MapPrfab/sandbox2/light/Object_340 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400414: _MapPrfab/sandbox2/light/Object_340 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400416: _MapPrfab/sandbox2/shading/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
+    11400418: _MapPrfab/sandbox2/shading/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400420: _MapPrfab/sandbox2/shading/Object_112 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400422: _MapPrfab/sandbox2/shading/Object_112 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400424: _MapPrfab/sandbox2/shading/Object_334 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400426: _MapPrfab/sandbox2/shading/Object_334 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400428: _superAsset
+    11400430: _TilesetScriptObjectInternal_1
+    100100000: _MapPrfab
+    2569400265252428796: _MapPrfab/sandbox2/Grid
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
+  errors:
+  - Texture was imported at a smaller size. Make sure 'Max Size' on 'alter.png' is
+    at least '192'
+  - Missing tile '6' from on tile object ''
+  - Missing tile '15' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '50' from on tile object ''
+  - Missing tile '50' from on tile object ''
+  - Missing tile '50' from on tile object ''
+  - Missing tile '50' from on tile object ''
+  - Missing tile '50' from on tile object ''
+  - Missing tile '50' from on tile object ''
+  - Missing tile '6' from on tile object ''
+  - Missing tile '6' from on tile object ''
+  - Missing tile '6' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '6' from on tile object ''
+  - Missing tile '6' from on tile object ''
+  - Missing tile '28' from on tile object ''
+  - Missing tile '29' from on tile object ''
+  - Missing tile '28' from on tile object ''
+  - Missing tile '29' from on tile object ''
+  - Missing tile '18' from on tile object ''
+  - Missing tile '18' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '32' from on tile object ''
+  - Missing tile '32' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '32' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '32' from on tile object ''
+  - Missing tile '10' from on tile object ''
+  - Missing tile '37' from on tile object ''
+  - Missing tile '8' from on tile object ''
+  - Missing tile '9' from on tile object ''
+  - Missing tile '36' from on tile object ''
+  - Missing tile '28' from on tile object ''
+  - Missing tile '29' from on tile object ''
+  - Missing tile '29' from on tile object ''
+  - Missing tile '8' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '32' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '32' from on tile object ''
+  - Missing tile '32' from on tile object ''
+  - Missing tile '33' from on tile object ''
+  - Missing tile '36' from on tile object ''
+  - Missing tile '9' from on tile object ''
+  - Missing tile '8' from on tile object ''
+  - Missing tile '37' from on tile object ''
+  - Missing tile '36' from on tile object ''
+  - Missing tile '37' from on tile object ''
+  - Missing tile '29' from on tile object ''
+  - Missing tile '18' from on tile object ''
+  - Missing tile '37' from on tile object ''
+  - Missing tile '36' from on tile object ''
+  - Missing tile '55' from on tile object ''
+  - Missing tile '55' from on tile object ''
+  - Missing tile '55' from on tile object ''
+  - Missing tile '36' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '54' from on tile object ''
+  - Missing tile '56' from on tile object ''
+  - Missing tile '56' from on tile object ''
+  - Missing tile '56' from on tile object ''
+  - Missing tile '56' from on tile object ''
+  - Missing tile '45' from on tile object ''
+  - Missing tile '45' from on tile object ''
+  - Missing tile '16' from on tile object ''
+  - Missing tile '16' from on tile object ''
+  - Missing tile '16' from on tile object ''
+  - Missing tile '16' from on tile object ''
+  - Missing tile '16' from on tile object ''
+  - Missing tile '16' from on tile object ''
+  - Missing tile '22' from on tile object ''
+  - Missing tile '44' from on tile object ''
+  - Missing tile '3' from on tile object ''
+  - Missing tile '2' from on tile object ''
+  - Missing tile '63' from on tile object ''
+  - Missing tile '17' from on tile object ''
+  - Missing tile '17' from on tile object ''
+  - Missing tile '44' from on tile object ''
+  - Missing tile '17' from on tile object ''
+  - Missing tile '51' from on tile object ''
+  - Missing tile '51' from on tile object ''
+  - Missing tile '51' from on tile object ''
+  - Missing tile '51' from on tile object ''
+  warnings:
+  - Tileset 'objs' is an embedded tileset. Exported tilesets are preferred.
+  missingSortingLayers: []
+  missingLayers: []
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 3
+  tilesAsObjects: 0
+  importSorting: 0
+  isIsometric: 0
+  customImporterClassName: 
+  internalTilesets:
+  - {instanceID: 0}
