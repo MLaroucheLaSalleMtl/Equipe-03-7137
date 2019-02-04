@@ -109,6 +109,204 @@ ScriptedImporter:
     100208: _MapPrfab/sandbox2/shading
     100210: _MapPrfab/sandbox2/shading/Object_112 (TRS)
     100212: _MapPrfab/sandbox2/shading/Object_334 (TRS)
+    100214: _MapPrfab/sandbox2/above/Object_379 (TRS)/Object_379 (CF)
+    100216: _MapPrfab/sandbox2/above/Object_379 (TRS)/Object_379 (CF)/Object_379
+    100218: _MapPrfab/sandbox2/above/Object_380 (TRS)/Object_380 (CF)
+    100220: _MapPrfab/sandbox2/above/Object_380 (TRS)/Object_380 (CF)/Object_380
+    100222: _MapPrfab/sandbox2/above/Object_381 (TRS)/Object_381 (CF)
+    100224: _MapPrfab/sandbox2/above/Object_381 (TRS)/Object_381 (CF)/Object_381
+    100226: _MapPrfab/sandbox2/above/Object_382 (TRS)/Object_382 (CF)
+    100228: _MapPrfab/sandbox2/above/Object_382 (TRS)/Object_382 (CF)/Object_382
+    100230: _MapPrfab/sandbox2/background/Object_193 (TRS)/Object_193 (CF)
+    100232: _MapPrfab/sandbox2/background/Object_193 (TRS)/Object_193 (CF)/Object_193
+    100234: _MapPrfab/sandbox2/background/Object_284 (TRS)/Object_284 (CF)
+    100236: _MapPrfab/sandbox2/background/Object_284 (TRS)/Object_284 (CF)/Object_284
+    100238: _MapPrfab/sandbox2/background/Object_287 (TRS)/Object_287 (CF)
+    100240: _MapPrfab/sandbox2/background/Object_287 (TRS)/Object_287 (CF)/Object_287
+    100242: _MapPrfab/sandbox2/background/Object_288 (TRS)/Object_288 (CF)
+    100244: _MapPrfab/sandbox2/background/Object_288 (TRS)/Object_288 (CF)/Object_288
+    100246: _MapPrfab/sandbox2/background/Object_291 (TRS)/Object_291 (CF)
+    100248: _MapPrfab/sandbox2/background/Object_291 (TRS)/Object_291 (CF)/Object_291
+    100250: _MapPrfab/sandbox2/background/Object_292 (TRS)/Object_292 (CF)
+    100252: _MapPrfab/sandbox2/background/Object_292 (TRS)/Object_292 (CF)/Object_292
+    100254: _MapPrfab/sandbox2/background/Object_293 (TRS)/Object_293 (CF)
+    100256: _MapPrfab/sandbox2/background/Object_293 (TRS)/Object_293 (CF)/Object_293
+    100258: _MapPrfab/sandbox2/background/Object_294 (TRS)/Object_294 (CF)
+    100260: _MapPrfab/sandbox2/background/Object_294 (TRS)/Object_294 (CF)/Object_294
+    100262: _MapPrfab/sandbox2/background/Object_295 (TRS)/Object_295 (CF)
+    100264: _MapPrfab/sandbox2/background/Object_295 (TRS)/Object_295 (CF)/Object_295
+    100266: _MapPrfab/sandbox2/background/Object_296 (TRS)/Object_296 (CF)
+    100268: _MapPrfab/sandbox2/background/Object_296 (TRS)/Object_296 (CF)/Object_296
+    100270: _MapPrfab/sandbox2/background/Object_297 (TRS)/Object_297 (CF)
+    100272: _MapPrfab/sandbox2/background/Object_297 (TRS)/Object_297 (CF)/Object_297
+    100274: _MapPrfab/sandbox2/background/Object_298 (TRS)/Object_298 (CF)
+    100276: _MapPrfab/sandbox2/background/Object_298 (TRS)/Object_298 (CF)/Object_298
+    100278: _MapPrfab/sandbox2/background/Object_299 (TRS)/Object_299 (CF)
+    100280: _MapPrfab/sandbox2/background/Object_299 (TRS)/Object_299 (CF)/Object_299
+    100282: _MapPrfab/sandbox2/background/Object_300 (TRS)/Object_300 (CF)
+    100284: _MapPrfab/sandbox2/background/Object_300 (TRS)/Object_300 (CF)/Object_300
+    100286: _MapPrfab/sandbox2/background/Object_301 (TRS)/Object_301 (CF)
+    100288: _MapPrfab/sandbox2/background/Object_301 (TRS)/Object_301 (CF)/Object_301
+    100290: _MapPrfab/sandbox2/background/Object_341 (TRS)/Object_341 (CF)
+    100292: _MapPrfab/sandbox2/background/Object_341 (TRS)/Object_341 (CF)/Object_341
+    100294: _MapPrfab/sandbox2/background/Object_342 (TRS)/Object_342 (CF)
+    100296: _MapPrfab/sandbox2/background/Object_342 (TRS)/Object_342 (CF)/Object_342
+    100298: _MapPrfab/sandbox2/background/Object_353 (TRS)/Object_353 (CF)
+    100300: _MapPrfab/sandbox2/background/Object_353 (TRS)/Object_353 (CF)/Object_353
+    100302: _MapPrfab/sandbox2/background/Object_361 (TRS)/Object_361 (CF)
+    100304: _MapPrfab/sandbox2/background/Object_361 (TRS)/Object_361 (CF)/Object_361
+    100306: _MapPrfab/sandbox2/background/Object_373 (TRS)/Object_373 (CF)
+    100308: _MapPrfab/sandbox2/background/Object_373 (TRS)/Object_373 (CF)/Object_373
+    100310: _MapPrfab/sandbox2/background/Object_374 (TRS)/Object_374 (CF)
+    100312: _MapPrfab/sandbox2/background/Object_374 (TRS)/Object_374 (CF)/Object_374
+    100314: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)/Object_220 (CF)
+    100316: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)/Object_220 (CF)/Object_220
+    100318: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)/Object_221 (CF)
+    100320: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)/Object_221 (CF)/Object_221
+    100322: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)/Object_227 (CF)
+    100324: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)/Object_227 (CF)/Object_227
+    100326: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)/Object_228 (CF)
+    100328: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)/Object_228 (CF)/Object_228
+    100330: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)/Object_229 (CF)
+    100332: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)/Object_229 (CF)/Object_229
+    100334: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)/Object_268 (CF)
+    100336: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)/Object_268 (CF)/Object_268
+    100338: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)/Object_359 (CF)
+    100340: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)/Object_359 (CF)/Object_359
+    100342: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)/Object_360 (CF)
+    100344: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)/Object_360 (CF)/Object_360
+    100346: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)/Object_364 (CF)
+    100348: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)/Object_364 (CF)/Object_364
+    100350: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)/Object_366 (CF)
+    100352: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)/Object_366 (CF)/Object_366
+    100354: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)/Object_367 (CF)
+    100356: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)/Object_367 (CF)/Object_367
+    100358: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)/Object_368 (CF)
+    100360: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)/Object_368 (CF)/Object_368
+    100362: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)/Object_369 (CF)
+    100364: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)/Object_369 (CF)/Object_369
+    100366: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)/Object_370 (CF)
+    100368: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)/Object_370 (CF)/Object_370
+    100370: _MapPrfab/sandbox2/game/block (TRS)/block (CF)
+    100372: _MapPrfab/sandbox2/game/block (TRS)/block (CF)/block
+    100374: _MapPrfab/sandbox2/game/block (TRS) (1)/block (CF)
+    100376: _MapPrfab/sandbox2/game/block (TRS) (1)/block (CF)/block
+    100378: _MapPrfab/sandbox2/game/hero (TRS)/hero (CF)
+    100380: _MapPrfab/sandbox2/game/hero (TRS)/hero (CF)/hero
+    100382: _MapPrfab/sandbox2/game/hey (TRS)/hey (CF)
+    100384: _MapPrfab/sandbox2/game/hey (TRS)/hey (CF)/hey
+    100386: _MapPrfab/sandbox2/game/Object_160 (TRS)/Object_160 (CF)
+    100388: _MapPrfab/sandbox2/game/Object_160 (TRS)/Object_160 (CF)/Object_160
+    100390: _MapPrfab/sandbox2/game/Object_189 (TRS)/Object_189 (CF)
+    100392: _MapPrfab/sandbox2/game/Object_189 (TRS)/Object_189 (CF)/Object_189
+    100394: _MapPrfab/sandbox2/game/Object_190 (TRS)/Object_190 (CF)
+    100396: _MapPrfab/sandbox2/game/Object_190 (TRS)/Object_190 (CF)/Object_190
+    100398: _MapPrfab/sandbox2/game/Object_192 (TRS)/Object_192 (CF)
+    100400: _MapPrfab/sandbox2/game/Object_192 (TRS)/Object_192 (CF)/Object_192
+    100402: _MapPrfab/sandbox2/game/Object_285 (TRS)/Object_285 (CF)
+    100404: _MapPrfab/sandbox2/game/Object_285 (TRS)/Object_285 (CF)/Object_285
+    100406: _MapPrfab/sandbox2/ground/Object_196 (TRS)/Object_196 (CF)
+    100408: _MapPrfab/sandbox2/ground/Object_196 (TRS)/Object_196 (CF)/Object_196
+    100410: _MapPrfab/sandbox2/ground/Object_197 (TRS)/Object_197 (CF)
+    100412: _MapPrfab/sandbox2/ground/Object_197 (TRS)/Object_197 (CF)/Object_197
+    100414: _MapPrfab/sandbox2/ground/Object_232 (TRS)/Object_232 (CF)
+    100416: _MapPrfab/sandbox2/ground/Object_232 (TRS)/Object_232 (CF)/Object_232
+    100418: _MapPrfab/sandbox2/ground/Object_233 (TRS)/Object_233 (CF)
+    100420: _MapPrfab/sandbox2/ground/Object_233 (TRS)/Object_233 (CF)/Object_233
+    100422: _MapPrfab/sandbox2/ground/Object_237 (TRS)/Object_237 (CF)
+    100424: _MapPrfab/sandbox2/ground/Object_237 (TRS)/Object_237 (CF)/Object_237
+    100426: _MapPrfab/sandbox2/ground/Object_238 (TRS)/Object_238 (CF)
+    100428: _MapPrfab/sandbox2/ground/Object_238 (TRS)/Object_238 (CF)/Object_238
+    100430: _MapPrfab/sandbox2/ground/Object_258 (TRS)/Object_258 (CF)
+    100432: _MapPrfab/sandbox2/ground/Object_258 (TRS)/Object_258 (CF)/Object_258
+    100434: _MapPrfab/sandbox2/ground/Object_259 (TRS)/Object_259 (CF)
+    100436: _MapPrfab/sandbox2/ground/Object_259 (TRS)/Object_259 (CF)/Object_259
+    100438: _MapPrfab/sandbox2/ground/Object_260 (TRS)/Object_260 (CF)
+    100440: _MapPrfab/sandbox2/ground/Object_260 (TRS)/Object_260 (CF)/Object_260
+    100442: _MapPrfab/sandbox2/ground/Object_261 (TRS)/Object_261 (CF)
+    100444: _MapPrfab/sandbox2/ground/Object_261 (TRS)/Object_261 (CF)/Object_261
+    100446: _MapPrfab/sandbox2/ground/Object_262 (TRS)/Object_262 (CF)
+    100448: _MapPrfab/sandbox2/ground/Object_262 (TRS)/Object_262 (CF)/Object_262
+    100450: _MapPrfab/sandbox2/ground/Object_263 (TRS)/Object_263 (CF)
+    100452: _MapPrfab/sandbox2/ground/Object_263 (TRS)/Object_263 (CF)/Object_263
+    100454: _MapPrfab/sandbox2/ground/Object_264 (TRS)/Object_264 (CF)
+    100456: _MapPrfab/sandbox2/ground/Object_264 (TRS)/Object_264 (CF)/Object_264
+    100458: _MapPrfab/sandbox2/ground/Object_265 (TRS)/Object_265 (CF)
+    100460: _MapPrfab/sandbox2/ground/Object_265 (TRS)/Object_265 (CF)/Object_265
+    100462: _MapPrfab/sandbox2/ground/Object_266 (TRS)/Object_266 (CF)
+    100464: _MapPrfab/sandbox2/ground/Object_266 (TRS)/Object_266 (CF)/Object_266
+    100466: _MapPrfab/sandbox2/ground/Object_267 (TRS)/Object_267 (CF)
+    100468: _MapPrfab/sandbox2/ground/Object_267 (TRS)/Object_267 (CF)/Object_267
+    100470: _MapPrfab/sandbox2/ground/Object_270 (TRS)/Object_270 (CF)
+    100472: _MapPrfab/sandbox2/ground/Object_270 (TRS)/Object_270 (CF)/Object_270
+    100474: _MapPrfab/sandbox2/ground/Object_271 (TRS)/Object_271 (CF)
+    100476: _MapPrfab/sandbox2/ground/Object_271 (TRS)/Object_271 (CF)/Object_271
+    100478: _MapPrfab/sandbox2/ground/Object_272 (TRS)/Object_272 (CF)
+    100480: _MapPrfab/sandbox2/ground/Object_272 (TRS)/Object_272 (CF)/Object_272
+    100482: _MapPrfab/sandbox2/ground/Object_273 (TRS)/Object_273 (CF)
+    100484: _MapPrfab/sandbox2/ground/Object_273 (TRS)/Object_273 (CF)/Object_273
+    100486: _MapPrfab/sandbox2/ground/Object_274 (TRS)/Object_274 (CF)
+    100488: _MapPrfab/sandbox2/ground/Object_274 (TRS)/Object_274 (CF)/Object_274
+    100490: _MapPrfab/sandbox2/ground/Object_275 (TRS)/Object_275 (CF)
+    100492: _MapPrfab/sandbox2/ground/Object_275 (TRS)/Object_275 (CF)/Object_275
+    100494: _MapPrfab/sandbox2/ground/Object_276 (TRS)/Object_276 (CF)
+    100496: _MapPrfab/sandbox2/ground/Object_276 (TRS)/Object_276 (CF)/Object_276
+    100498: _MapPrfab/sandbox2/ground/Object_277 (TRS)/Object_277 (CF)
+    100500: _MapPrfab/sandbox2/ground/Object_277 (TRS)/Object_277 (CF)/Object_277
+    100502: _MapPrfab/sandbox2/ground/Object_278 (TRS)/Object_278 (CF)
+    100504: _MapPrfab/sandbox2/ground/Object_278 (TRS)/Object_278 (CF)/Object_278
+    100506: _MapPrfab/sandbox2/ground/Object_279 (TRS)/Object_279 (CF)
+    100508: _MapPrfab/sandbox2/ground/Object_279 (TRS)/Object_279 (CF)/Object_279
+    100510: _MapPrfab/sandbox2/ground/Object_280 (TRS)/Object_280 (CF)
+    100512: _MapPrfab/sandbox2/ground/Object_280 (TRS)/Object_280 (CF)/Object_280
+    100514: _MapPrfab/sandbox2/ground/Object_281 (TRS)/Object_281 (CF)
+    100516: _MapPrfab/sandbox2/ground/Object_281 (TRS)/Object_281 (CF)/Object_281
+    100518: _MapPrfab/sandbox2/ground/Object_282 (TRS)/Object_282 (CF)
+    100520: _MapPrfab/sandbox2/ground/Object_282 (TRS)/Object_282 (CF)/Object_282
+    100522: _MapPrfab/sandbox2/ground/Object_283 (TRS)/Object_283 (CF)
+    100524: _MapPrfab/sandbox2/ground/Object_283 (TRS)/Object_283 (CF)/Object_283
+    100526: _MapPrfab/sandbox2/ground/Object_286 (TRS)/Object_286 (CF)
+    100528: _MapPrfab/sandbox2/ground/Object_286 (TRS)/Object_286 (CF)/Object_286
+    100530: _MapPrfab/sandbox2/ground/Object_343 (TRS)/Object_343 (CF)
+    100532: _MapPrfab/sandbox2/ground/Object_343 (TRS)/Object_343 (CF)/Object_343
+    100534: _MapPrfab/sandbox2/ground/Object_344 (TRS)/Object_344 (CF)
+    100536: _MapPrfab/sandbox2/ground/Object_344 (TRS)/Object_344 (CF)/Object_344
+    100538: _MapPrfab/sandbox2/ground/Object_345 (TRS)/Object_345 (CF)
+    100540: _MapPrfab/sandbox2/ground/Object_345 (TRS)/Object_345 (CF)/Object_345
+    100542: _MapPrfab/sandbox2/ground/Object_346 (TRS)/Object_346 (CF)
+    100544: _MapPrfab/sandbox2/ground/Object_346 (TRS)/Object_346 (CF)/Object_346
+    100546: _MapPrfab/sandbox2/ground/Object_347 (TRS)/Object_347 (CF)
+    100548: _MapPrfab/sandbox2/ground/Object_347 (TRS)/Object_347 (CF)/Object_347
+    100550: _MapPrfab/sandbox2/ground/Object_348 (TRS)/Object_348 (CF)
+    100552: _MapPrfab/sandbox2/ground/Object_348 (TRS)/Object_348 (CF)/Object_348
+    100554: _MapPrfab/sandbox2/ground/Object_349 (TRS)/Object_349 (CF)
+    100556: _MapPrfab/sandbox2/ground/Object_349 (TRS)/Object_349 (CF)/Object_349
+    100558: _MapPrfab/sandbox2/ground/Object_350 (TRS)/Object_350 (CF)
+    100560: _MapPrfab/sandbox2/ground/Object_350 (TRS)/Object_350 (CF)/Object_350
+    100562: _MapPrfab/sandbox2/ground/Object_351 (TRS)/Object_351 (CF)
+    100564: _MapPrfab/sandbox2/ground/Object_351 (TRS)/Object_351 (CF)/Object_351
+    100566: _MapPrfab/sandbox2/ground/Object_352 (TRS)/Object_352 (CF)
+    100568: _MapPrfab/sandbox2/ground/Object_352 (TRS)/Object_352 (CF)/Object_352
+    100570: _MapPrfab/sandbox2/ground/Object_383 (TRS)/Object_383 (CF)
+    100572: _MapPrfab/sandbox2/ground/Object_383 (TRS)/Object_383 (CF)/Object_383
+    100574: _MapPrfab/sandbox2/ground/Object_384 (TRS)/Object_384 (CF)
+    100576: _MapPrfab/sandbox2/ground/Object_384 (TRS)/Object_384 (CF)/Object_384
+    100578: _MapPrfab/sandbox2/light/Object_335 (TRS)/Object_335 (CF)
+    100580: _MapPrfab/sandbox2/light/Object_335 (TRS)/Object_335 (CF)/Object_335
+    100582: _MapPrfab/sandbox2/light/Object_336 (TRS)/Object_336 (CF)
+    100584: _MapPrfab/sandbox2/light/Object_336 (TRS)/Object_336 (CF)/Object_336
+    100586: _MapPrfab/sandbox2/light/Object_337 (TRS)/Object_337 (CF)
+    100588: _MapPrfab/sandbox2/light/Object_337 (TRS)/Object_337 (CF)/Object_337
+    100590: _MapPrfab/sandbox2/light/Object_338 (TRS)/Object_338 (CF)
+    100592: _MapPrfab/sandbox2/light/Object_338 (TRS)/Object_338 (CF)/Object_338
+    100594: _MapPrfab/sandbox2/light/Object_339 (TRS)/Object_339 (CF)
+    100596: _MapPrfab/sandbox2/light/Object_339 (TRS)/Object_339 (CF)/Object_339
+    100598: _MapPrfab/sandbox2/light/Object_340 (TRS)/Object_340 (CF)
+    100600: _MapPrfab/sandbox2/light/Object_340 (TRS)/Object_340 (CF)/Object_340
+    100602: _MapPrfab/sandbox2/shading/Object_112 (TRS)/Object_112 (CF)
+    100604: _MapPrfab/sandbox2/shading/Object_112 (TRS)/Object_112 (CF)/Object_112
+    100606: _MapPrfab/sandbox2/shading/Object_334 (TRS)/Object_334 (CF)
+    100608: _MapPrfab/sandbox2/shading/Object_334 (TRS)/Object_334 (CF)/Object_334
     400000: _MapPrfab/sandbox2/Transform
     400002: _MapPrfab/sandbox2/above/Transform
     400004: _MapPrfab/sandbox2/above/Object_379 (TRS)/Transform
@@ -216,6 +414,204 @@ ScriptedImporter:
     400208: _MapPrfab/sandbox2/shading/Transform
     400210: _MapPrfab/sandbox2/shading/Object_112 (TRS)/Transform
     400212: _MapPrfab/sandbox2/shading/Object_334 (TRS)/Transform
+    400214: _MapPrfab/sandbox2/above/Object_379 (TRS)/Object_379 (CF)/Transform
+    400216: _MapPrfab/sandbox2/above/Object_379 (TRS)/Object_379 (CF)/Object_379/Transform
+    400218: _MapPrfab/sandbox2/above/Object_380 (TRS)/Object_380 (CF)/Transform
+    400220: _MapPrfab/sandbox2/above/Object_380 (TRS)/Object_380 (CF)/Object_380/Transform
+    400222: _MapPrfab/sandbox2/above/Object_381 (TRS)/Object_381 (CF)/Transform
+    400224: _MapPrfab/sandbox2/above/Object_381 (TRS)/Object_381 (CF)/Object_381/Transform
+    400226: _MapPrfab/sandbox2/above/Object_382 (TRS)/Object_382 (CF)/Transform
+    400228: _MapPrfab/sandbox2/above/Object_382 (TRS)/Object_382 (CF)/Object_382/Transform
+    400230: _MapPrfab/sandbox2/background/Object_193 (TRS)/Object_193 (CF)/Transform
+    400232: _MapPrfab/sandbox2/background/Object_193 (TRS)/Object_193 (CF)/Object_193/Transform
+    400234: _MapPrfab/sandbox2/background/Object_284 (TRS)/Object_284 (CF)/Transform
+    400236: _MapPrfab/sandbox2/background/Object_284 (TRS)/Object_284 (CF)/Object_284/Transform
+    400238: _MapPrfab/sandbox2/background/Object_287 (TRS)/Object_287 (CF)/Transform
+    400240: _MapPrfab/sandbox2/background/Object_287 (TRS)/Object_287 (CF)/Object_287/Transform
+    400242: _MapPrfab/sandbox2/background/Object_288 (TRS)/Object_288 (CF)/Transform
+    400244: _MapPrfab/sandbox2/background/Object_288 (TRS)/Object_288 (CF)/Object_288/Transform
+    400246: _MapPrfab/sandbox2/background/Object_291 (TRS)/Object_291 (CF)/Transform
+    400248: _MapPrfab/sandbox2/background/Object_291 (TRS)/Object_291 (CF)/Object_291/Transform
+    400250: _MapPrfab/sandbox2/background/Object_292 (TRS)/Object_292 (CF)/Transform
+    400252: _MapPrfab/sandbox2/background/Object_292 (TRS)/Object_292 (CF)/Object_292/Transform
+    400254: _MapPrfab/sandbox2/background/Object_293 (TRS)/Object_293 (CF)/Transform
+    400256: _MapPrfab/sandbox2/background/Object_293 (TRS)/Object_293 (CF)/Object_293/Transform
+    400258: _MapPrfab/sandbox2/background/Object_294 (TRS)/Object_294 (CF)/Transform
+    400260: _MapPrfab/sandbox2/background/Object_294 (TRS)/Object_294 (CF)/Object_294/Transform
+    400262: _MapPrfab/sandbox2/background/Object_295 (TRS)/Object_295 (CF)/Transform
+    400264: _MapPrfab/sandbox2/background/Object_295 (TRS)/Object_295 (CF)/Object_295/Transform
+    400266: _MapPrfab/sandbox2/background/Object_296 (TRS)/Object_296 (CF)/Transform
+    400268: _MapPrfab/sandbox2/background/Object_296 (TRS)/Object_296 (CF)/Object_296/Transform
+    400270: _MapPrfab/sandbox2/background/Object_297 (TRS)/Object_297 (CF)/Transform
+    400272: _MapPrfab/sandbox2/background/Object_297 (TRS)/Object_297 (CF)/Object_297/Transform
+    400274: _MapPrfab/sandbox2/background/Object_298 (TRS)/Object_298 (CF)/Transform
+    400276: _MapPrfab/sandbox2/background/Object_298 (TRS)/Object_298 (CF)/Object_298/Transform
+    400278: _MapPrfab/sandbox2/background/Object_299 (TRS)/Object_299 (CF)/Transform
+    400280: _MapPrfab/sandbox2/background/Object_299 (TRS)/Object_299 (CF)/Object_299/Transform
+    400282: _MapPrfab/sandbox2/background/Object_300 (TRS)/Object_300 (CF)/Transform
+    400284: _MapPrfab/sandbox2/background/Object_300 (TRS)/Object_300 (CF)/Object_300/Transform
+    400286: _MapPrfab/sandbox2/background/Object_301 (TRS)/Object_301 (CF)/Transform
+    400288: _MapPrfab/sandbox2/background/Object_301 (TRS)/Object_301 (CF)/Object_301/Transform
+    400290: _MapPrfab/sandbox2/background/Object_341 (TRS)/Object_341 (CF)/Transform
+    400292: _MapPrfab/sandbox2/background/Object_341 (TRS)/Object_341 (CF)/Object_341/Transform
+    400294: _MapPrfab/sandbox2/background/Object_342 (TRS)/Object_342 (CF)/Transform
+    400296: _MapPrfab/sandbox2/background/Object_342 (TRS)/Object_342 (CF)/Object_342/Transform
+    400298: _MapPrfab/sandbox2/background/Object_353 (TRS)/Object_353 (CF)/Transform
+    400300: _MapPrfab/sandbox2/background/Object_353 (TRS)/Object_353 (CF)/Object_353/Transform
+    400302: _MapPrfab/sandbox2/background/Object_361 (TRS)/Object_361 (CF)/Transform
+    400304: _MapPrfab/sandbox2/background/Object_361 (TRS)/Object_361 (CF)/Object_361/Transform
+    400306: _MapPrfab/sandbox2/background/Object_373 (TRS)/Object_373 (CF)/Transform
+    400308: _MapPrfab/sandbox2/background/Object_373 (TRS)/Object_373 (CF)/Object_373/Transform
+    400310: _MapPrfab/sandbox2/background/Object_374 (TRS)/Object_374 (CF)/Transform
+    400312: _MapPrfab/sandbox2/background/Object_374 (TRS)/Object_374 (CF)/Object_374/Transform
+    400314: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)/Object_220 (CF)/Transform
+    400316: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)/Object_220 (CF)/Object_220/Transform
+    400318: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)/Object_221 (CF)/Transform
+    400320: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)/Object_221 (CF)/Object_221/Transform
+    400322: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)/Object_227 (CF)/Transform
+    400324: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)/Object_227 (CF)/Object_227/Transform
+    400326: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)/Object_228 (CF)/Transform
+    400328: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)/Object_228 (CF)/Object_228/Transform
+    400330: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)/Object_229 (CF)/Transform
+    400332: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)/Object_229 (CF)/Object_229/Transform
+    400334: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)/Object_268 (CF)/Transform
+    400336: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)/Object_268 (CF)/Object_268/Transform
+    400338: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)/Object_359 (CF)/Transform
+    400340: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)/Object_359 (CF)/Object_359/Transform
+    400342: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)/Object_360 (CF)/Transform
+    400344: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)/Object_360 (CF)/Object_360/Transform
+    400346: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)/Object_364 (CF)/Transform
+    400348: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)/Object_364 (CF)/Object_364/Transform
+    400350: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)/Object_366 (CF)/Transform
+    400352: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)/Object_366 (CF)/Object_366/Transform
+    400354: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)/Object_367 (CF)/Transform
+    400356: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)/Object_367 (CF)/Object_367/Transform
+    400358: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)/Object_368 (CF)/Transform
+    400360: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)/Object_368 (CF)/Object_368/Transform
+    400362: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)/Object_369 (CF)/Transform
+    400364: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)/Object_369 (CF)/Object_369/Transform
+    400366: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)/Object_370 (CF)/Transform
+    400368: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)/Object_370 (CF)/Object_370/Transform
+    400370: _MapPrfab/sandbox2/game/block (TRS)/block (CF)/Transform
+    400372: _MapPrfab/sandbox2/game/block (TRS)/block (CF)/block/Transform
+    400374: _MapPrfab/sandbox2/game/block (TRS) (1)/block (CF)/Transform
+    400376: _MapPrfab/sandbox2/game/block (TRS) (1)/block (CF)/block/Transform
+    400378: _MapPrfab/sandbox2/game/hero (TRS)/hero (CF)/Transform
+    400380: _MapPrfab/sandbox2/game/hero (TRS)/hero (CF)/hero/Transform
+    400382: _MapPrfab/sandbox2/game/hey (TRS)/hey (CF)/Transform
+    400384: _MapPrfab/sandbox2/game/hey (TRS)/hey (CF)/hey/Transform
+    400386: _MapPrfab/sandbox2/game/Object_160 (TRS)/Object_160 (CF)/Transform
+    400388: _MapPrfab/sandbox2/game/Object_160 (TRS)/Object_160 (CF)/Object_160/Transform
+    400390: _MapPrfab/sandbox2/game/Object_189 (TRS)/Object_189 (CF)/Transform
+    400392: _MapPrfab/sandbox2/game/Object_189 (TRS)/Object_189 (CF)/Object_189/Transform
+    400394: _MapPrfab/sandbox2/game/Object_190 (TRS)/Object_190 (CF)/Transform
+    400396: _MapPrfab/sandbox2/game/Object_190 (TRS)/Object_190 (CF)/Object_190/Transform
+    400398: _MapPrfab/sandbox2/game/Object_192 (TRS)/Object_192 (CF)/Transform
+    400400: _MapPrfab/sandbox2/game/Object_192 (TRS)/Object_192 (CF)/Object_192/Transform
+    400402: _MapPrfab/sandbox2/game/Object_285 (TRS)/Object_285 (CF)/Transform
+    400404: _MapPrfab/sandbox2/game/Object_285 (TRS)/Object_285 (CF)/Object_285/Transform
+    400406: _MapPrfab/sandbox2/ground/Object_196 (TRS)/Object_196 (CF)/Transform
+    400408: _MapPrfab/sandbox2/ground/Object_196 (TRS)/Object_196 (CF)/Object_196/Transform
+    400410: _MapPrfab/sandbox2/ground/Object_197 (TRS)/Object_197 (CF)/Transform
+    400412: _MapPrfab/sandbox2/ground/Object_197 (TRS)/Object_197 (CF)/Object_197/Transform
+    400414: _MapPrfab/sandbox2/ground/Object_232 (TRS)/Object_232 (CF)/Transform
+    400416: _MapPrfab/sandbox2/ground/Object_232 (TRS)/Object_232 (CF)/Object_232/Transform
+    400418: _MapPrfab/sandbox2/ground/Object_233 (TRS)/Object_233 (CF)/Transform
+    400420: _MapPrfab/sandbox2/ground/Object_233 (TRS)/Object_233 (CF)/Object_233/Transform
+    400422: _MapPrfab/sandbox2/ground/Object_237 (TRS)/Object_237 (CF)/Transform
+    400424: _MapPrfab/sandbox2/ground/Object_237 (TRS)/Object_237 (CF)/Object_237/Transform
+    400426: _MapPrfab/sandbox2/ground/Object_238 (TRS)/Object_238 (CF)/Transform
+    400428: _MapPrfab/sandbox2/ground/Object_238 (TRS)/Object_238 (CF)/Object_238/Transform
+    400430: _MapPrfab/sandbox2/ground/Object_258 (TRS)/Object_258 (CF)/Transform
+    400432: _MapPrfab/sandbox2/ground/Object_258 (TRS)/Object_258 (CF)/Object_258/Transform
+    400434: _MapPrfab/sandbox2/ground/Object_259 (TRS)/Object_259 (CF)/Transform
+    400436: _MapPrfab/sandbox2/ground/Object_259 (TRS)/Object_259 (CF)/Object_259/Transform
+    400438: _MapPrfab/sandbox2/ground/Object_260 (TRS)/Object_260 (CF)/Transform
+    400440: _MapPrfab/sandbox2/ground/Object_260 (TRS)/Object_260 (CF)/Object_260/Transform
+    400442: _MapPrfab/sandbox2/ground/Object_261 (TRS)/Object_261 (CF)/Transform
+    400444: _MapPrfab/sandbox2/ground/Object_261 (TRS)/Object_261 (CF)/Object_261/Transform
+    400446: _MapPrfab/sandbox2/ground/Object_262 (TRS)/Object_262 (CF)/Transform
+    400448: _MapPrfab/sandbox2/ground/Object_262 (TRS)/Object_262 (CF)/Object_262/Transform
+    400450: _MapPrfab/sandbox2/ground/Object_263 (TRS)/Object_263 (CF)/Transform
+    400452: _MapPrfab/sandbox2/ground/Object_263 (TRS)/Object_263 (CF)/Object_263/Transform
+    400454: _MapPrfab/sandbox2/ground/Object_264 (TRS)/Object_264 (CF)/Transform
+    400456: _MapPrfab/sandbox2/ground/Object_264 (TRS)/Object_264 (CF)/Object_264/Transform
+    400458: _MapPrfab/sandbox2/ground/Object_265 (TRS)/Object_265 (CF)/Transform
+    400460: _MapPrfab/sandbox2/ground/Object_265 (TRS)/Object_265 (CF)/Object_265/Transform
+    400462: _MapPrfab/sandbox2/ground/Object_266 (TRS)/Object_266 (CF)/Transform
+    400464: _MapPrfab/sandbox2/ground/Object_266 (TRS)/Object_266 (CF)/Object_266/Transform
+    400466: _MapPrfab/sandbox2/ground/Object_267 (TRS)/Object_267 (CF)/Transform
+    400468: _MapPrfab/sandbox2/ground/Object_267 (TRS)/Object_267 (CF)/Object_267/Transform
+    400470: _MapPrfab/sandbox2/ground/Object_270 (TRS)/Object_270 (CF)/Transform
+    400472: _MapPrfab/sandbox2/ground/Object_270 (TRS)/Object_270 (CF)/Object_270/Transform
+    400474: _MapPrfab/sandbox2/ground/Object_271 (TRS)/Object_271 (CF)/Transform
+    400476: _MapPrfab/sandbox2/ground/Object_271 (TRS)/Object_271 (CF)/Object_271/Transform
+    400478: _MapPrfab/sandbox2/ground/Object_272 (TRS)/Object_272 (CF)/Transform
+    400480: _MapPrfab/sandbox2/ground/Object_272 (TRS)/Object_272 (CF)/Object_272/Transform
+    400482: _MapPrfab/sandbox2/ground/Object_273 (TRS)/Object_273 (CF)/Transform
+    400484: _MapPrfab/sandbox2/ground/Object_273 (TRS)/Object_273 (CF)/Object_273/Transform
+    400486: _MapPrfab/sandbox2/ground/Object_274 (TRS)/Object_274 (CF)/Transform
+    400488: _MapPrfab/sandbox2/ground/Object_274 (TRS)/Object_274 (CF)/Object_274/Transform
+    400490: _MapPrfab/sandbox2/ground/Object_275 (TRS)/Object_275 (CF)/Transform
+    400492: _MapPrfab/sandbox2/ground/Object_275 (TRS)/Object_275 (CF)/Object_275/Transform
+    400494: _MapPrfab/sandbox2/ground/Object_276 (TRS)/Object_276 (CF)/Transform
+    400496: _MapPrfab/sandbox2/ground/Object_276 (TRS)/Object_276 (CF)/Object_276/Transform
+    400498: _MapPrfab/sandbox2/ground/Object_277 (TRS)/Object_277 (CF)/Transform
+    400500: _MapPrfab/sandbox2/ground/Object_277 (TRS)/Object_277 (CF)/Object_277/Transform
+    400502: _MapPrfab/sandbox2/ground/Object_278 (TRS)/Object_278 (CF)/Transform
+    400504: _MapPrfab/sandbox2/ground/Object_278 (TRS)/Object_278 (CF)/Object_278/Transform
+    400506: _MapPrfab/sandbox2/ground/Object_279 (TRS)/Object_279 (CF)/Transform
+    400508: _MapPrfab/sandbox2/ground/Object_279 (TRS)/Object_279 (CF)/Object_279/Transform
+    400510: _MapPrfab/sandbox2/ground/Object_280 (TRS)/Object_280 (CF)/Transform
+    400512: _MapPrfab/sandbox2/ground/Object_280 (TRS)/Object_280 (CF)/Object_280/Transform
+    400514: _MapPrfab/sandbox2/ground/Object_281 (TRS)/Object_281 (CF)/Transform
+    400516: _MapPrfab/sandbox2/ground/Object_281 (TRS)/Object_281 (CF)/Object_281/Transform
+    400518: _MapPrfab/sandbox2/ground/Object_282 (TRS)/Object_282 (CF)/Transform
+    400520: _MapPrfab/sandbox2/ground/Object_282 (TRS)/Object_282 (CF)/Object_282/Transform
+    400522: _MapPrfab/sandbox2/ground/Object_283 (TRS)/Object_283 (CF)/Transform
+    400524: _MapPrfab/sandbox2/ground/Object_283 (TRS)/Object_283 (CF)/Object_283/Transform
+    400526: _MapPrfab/sandbox2/ground/Object_286 (TRS)/Object_286 (CF)/Transform
+    400528: _MapPrfab/sandbox2/ground/Object_286 (TRS)/Object_286 (CF)/Object_286/Transform
+    400530: _MapPrfab/sandbox2/ground/Object_343 (TRS)/Object_343 (CF)/Transform
+    400532: _MapPrfab/sandbox2/ground/Object_343 (TRS)/Object_343 (CF)/Object_343/Transform
+    400534: _MapPrfab/sandbox2/ground/Object_344 (TRS)/Object_344 (CF)/Transform
+    400536: _MapPrfab/sandbox2/ground/Object_344 (TRS)/Object_344 (CF)/Object_344/Transform
+    400538: _MapPrfab/sandbox2/ground/Object_345 (TRS)/Object_345 (CF)/Transform
+    400540: _MapPrfab/sandbox2/ground/Object_345 (TRS)/Object_345 (CF)/Object_345/Transform
+    400542: _MapPrfab/sandbox2/ground/Object_346 (TRS)/Object_346 (CF)/Transform
+    400544: _MapPrfab/sandbox2/ground/Object_346 (TRS)/Object_346 (CF)/Object_346/Transform
+    400546: _MapPrfab/sandbox2/ground/Object_347 (TRS)/Object_347 (CF)/Transform
+    400548: _MapPrfab/sandbox2/ground/Object_347 (TRS)/Object_347 (CF)/Object_347/Transform
+    400550: _MapPrfab/sandbox2/ground/Object_348 (TRS)/Object_348 (CF)/Transform
+    400552: _MapPrfab/sandbox2/ground/Object_348 (TRS)/Object_348 (CF)/Object_348/Transform
+    400554: _MapPrfab/sandbox2/ground/Object_349 (TRS)/Object_349 (CF)/Transform
+    400556: _MapPrfab/sandbox2/ground/Object_349 (TRS)/Object_349 (CF)/Object_349/Transform
+    400558: _MapPrfab/sandbox2/ground/Object_350 (TRS)/Object_350 (CF)/Transform
+    400560: _MapPrfab/sandbox2/ground/Object_350 (TRS)/Object_350 (CF)/Object_350/Transform
+    400562: _MapPrfab/sandbox2/ground/Object_351 (TRS)/Object_351 (CF)/Transform
+    400564: _MapPrfab/sandbox2/ground/Object_351 (TRS)/Object_351 (CF)/Object_351/Transform
+    400566: _MapPrfab/sandbox2/ground/Object_352 (TRS)/Object_352 (CF)/Transform
+    400568: _MapPrfab/sandbox2/ground/Object_352 (TRS)/Object_352 (CF)/Object_352/Transform
+    400570: _MapPrfab/sandbox2/ground/Object_383 (TRS)/Object_383 (CF)/Transform
+    400572: _MapPrfab/sandbox2/ground/Object_383 (TRS)/Object_383 (CF)/Object_383/Transform
+    400574: _MapPrfab/sandbox2/ground/Object_384 (TRS)/Object_384 (CF)/Transform
+    400576: _MapPrfab/sandbox2/ground/Object_384 (TRS)/Object_384 (CF)/Object_384/Transform
+    400578: _MapPrfab/sandbox2/light/Object_335 (TRS)/Object_335 (CF)/Transform
+    400580: _MapPrfab/sandbox2/light/Object_335 (TRS)/Object_335 (CF)/Object_335/Transform
+    400582: _MapPrfab/sandbox2/light/Object_336 (TRS)/Object_336 (CF)/Transform
+    400584: _MapPrfab/sandbox2/light/Object_336 (TRS)/Object_336 (CF)/Object_336/Transform
+    400586: _MapPrfab/sandbox2/light/Object_337 (TRS)/Object_337 (CF)/Transform
+    400588: _MapPrfab/sandbox2/light/Object_337 (TRS)/Object_337 (CF)/Object_337/Transform
+    400590: _MapPrfab/sandbox2/light/Object_338 (TRS)/Object_338 (CF)/Transform
+    400592: _MapPrfab/sandbox2/light/Object_338 (TRS)/Object_338 (CF)/Object_338/Transform
+    400594: _MapPrfab/sandbox2/light/Object_339 (TRS)/Object_339 (CF)/Transform
+    400596: _MapPrfab/sandbox2/light/Object_339 (TRS)/Object_339 (CF)/Object_339/Transform
+    400598: _MapPrfab/sandbox2/light/Object_340 (TRS)/Object_340 (CF)/Transform
+    400600: _MapPrfab/sandbox2/light/Object_340 (TRS)/Object_340 (CF)/Object_340/Transform
+    400602: _MapPrfab/sandbox2/shading/Object_112 (TRS)/Object_112 (CF)/Transform
+    400604: _MapPrfab/sandbox2/shading/Object_112 (TRS)/Object_112 (CF)/Object_112/Transform
+    400606: _MapPrfab/sandbox2/shading/Object_334 (TRS)/Object_334 (CF)/Transform
+    400608: _MapPrfab/sandbox2/shading/Object_334 (TRS)/Object_334 (CF)/Object_334/Transform
     11400000: _MapPrfab/sandbox2/MonoBehaviour-SuperTiled2Unity.SuperMap
     11400002: _MapPrfab/sandbox2/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
     11400004: _MapPrfab/sandbox2/above/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
@@ -432,6 +828,229 @@ ScriptedImporter:
     11400426: _MapPrfab/sandbox2/shading/Object_334 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
     11400428: _superAsset
     11400430: _TilesetScriptObjectInternal_1
+    11400432: Tile_objs_1
+    11400434: Tile_objs_2
+    11400436: Tile_objs_3
+    11400438: Tile_objs_4
+    11400440: Tile_objs_5
+    11400442: Tile_objs_6
+    11400444: Tile_objs_7
+    11400446: Tile_objs_8
+    11400448: Tile_objs_9
+    11400450: Tile_objs_10
+    11400452: Tile_objs_11
+    11400454: Tile_objs_12
+    11400456: Tile_objs_13
+    11400458: Tile_objs_14
+    11400460: Tile_objs_15
+    11400462: Tile_objs_16
+    11400464: Tile_objs_17
+    11400466: Tile_objs_18
+    11400468: Tile_objs_19
+    11400470: Tile_objs_20
+    11400472: Tile_objs_21
+    11400474: Tile_objs_22
+    11400476: Tile_objs_23
+    11400478: Tile_objs_24
+    11400480: Tile_objs_25
+    11400482: Tile_objs_26
+    11400484: Tile_objs_27
+    11400486: Tile_objs_28
+    11400488: Tile_objs_29
+    11400490: Tile_objs_30
+    11400492: Tile_objs_31
+    11400494: Tile_objs_32
+    11400496: Tile_objs_33
+    11400498: Tile_objs_34
+    11400500: Tile_objs_35
+    11400502: Tile_objs_36
+    11400504: Tile_objs_37
+    11400506: Tile_objs_38
+    11400508: Tile_objs_39
+    11400510: Tile_objs_40
+    11400512: Tile_objs_41
+    11400514: Tile_objs_42
+    11400516: Tile_objs_43
+    11400518: Tile_objs_44
+    11400520: Tile_objs_45
+    11400522: Tile_objs_46
+    11400524: Tile_objs_47
+    11400526: Tile_objs_49
+    11400528: Tile_objs_50
+    11400530: Tile_objs_51
+    11400532: Tile_objs_52
+    11400534: Tile_objs_53
+    11400536: Tile_objs_54
+    11400538: Tile_objs_55
+    11400540: Tile_objs_56
+    11400542: Tile_objs_57
+    11400544: Tile_objs_58
+    11400546: Tile_objs_59
+    11400548: Tile_objs_60
+    11400550: Tile_objs_61
+    11400552: Tile_objs_62
+    11400554: Tile_objs_63
+    21200000: _MapPrfab/sandbox2/above/Object_379 (TRS)/Object_379 (CF)/Object_379/SpriteRenderer
+    21200002: _MapPrfab/sandbox2/above/Object_380 (TRS)/Object_380 (CF)/Object_380/SpriteRenderer
+    21200004: _MapPrfab/sandbox2/above/Object_381 (TRS)/Object_381 (CF)/Object_381/SpriteRenderer
+    21200006: _MapPrfab/sandbox2/above/Object_382 (TRS)/Object_382 (CF)/Object_382/SpriteRenderer
+    21200008: _MapPrfab/sandbox2/background/Object_193 (TRS)/Object_193 (CF)/Object_193/SpriteRenderer
+    21200010: _MapPrfab/sandbox2/background/Object_284 (TRS)/Object_284 (CF)/Object_284/SpriteRenderer
+    21200012: _MapPrfab/sandbox2/background/Object_287 (TRS)/Object_287 (CF)/Object_287/SpriteRenderer
+    21200014: _MapPrfab/sandbox2/background/Object_288 (TRS)/Object_288 (CF)/Object_288/SpriteRenderer
+    21200016: _MapPrfab/sandbox2/background/Object_291 (TRS)/Object_291 (CF)/Object_291/SpriteRenderer
+    21200018: _MapPrfab/sandbox2/background/Object_292 (TRS)/Object_292 (CF)/Object_292/SpriteRenderer
+    21200020: _MapPrfab/sandbox2/background/Object_293 (TRS)/Object_293 (CF)/Object_293/SpriteRenderer
+    21200022: _MapPrfab/sandbox2/background/Object_294 (TRS)/Object_294 (CF)/Object_294/SpriteRenderer
+    21200024: _MapPrfab/sandbox2/background/Object_295 (TRS)/Object_295 (CF)/Object_295/SpriteRenderer
+    21200026: _MapPrfab/sandbox2/background/Object_296 (TRS)/Object_296 (CF)/Object_296/SpriteRenderer
+    21200028: _MapPrfab/sandbox2/background/Object_297 (TRS)/Object_297 (CF)/Object_297/SpriteRenderer
+    21200030: _MapPrfab/sandbox2/background/Object_298 (TRS)/Object_298 (CF)/Object_298/SpriteRenderer
+    21200032: _MapPrfab/sandbox2/background/Object_299 (TRS)/Object_299 (CF)/Object_299/SpriteRenderer
+    21200034: _MapPrfab/sandbox2/background/Object_300 (TRS)/Object_300 (CF)/Object_300/SpriteRenderer
+    21200036: _MapPrfab/sandbox2/background/Object_301 (TRS)/Object_301 (CF)/Object_301/SpriteRenderer
+    21200038: _MapPrfab/sandbox2/background/Object_341 (TRS)/Object_341 (CF)/Object_341/SpriteRenderer
+    21200040: _MapPrfab/sandbox2/background/Object_342 (TRS)/Object_342 (CF)/Object_342/SpriteRenderer
+    21200042: _MapPrfab/sandbox2/background/Object_353 (TRS)/Object_353 (CF)/Object_353/SpriteRenderer
+    21200044: _MapPrfab/sandbox2/background/Object_361 (TRS)/Object_361 (CF)/Object_361/SpriteRenderer
+    21200046: _MapPrfab/sandbox2/background/Object_373 (TRS)/Object_373 (CF)/Object_373/SpriteRenderer
+    21200048: _MapPrfab/sandbox2/background/Object_374 (TRS)/Object_374 (CF)/Object_374/SpriteRenderer
+    21200050: _MapPrfab/sandbox2/castledeco/Object_220 (TRS)/Object_220 (CF)/Object_220/SpriteRenderer
+    21200052: _MapPrfab/sandbox2/castledeco/Object_221 (TRS)/Object_221 (CF)/Object_221/SpriteRenderer
+    21200054: _MapPrfab/sandbox2/castledeco/Object_227 (TRS)/Object_227 (CF)/Object_227/SpriteRenderer
+    21200056: _MapPrfab/sandbox2/castledeco/Object_228 (TRS)/Object_228 (CF)/Object_228/SpriteRenderer
+    21200058: _MapPrfab/sandbox2/castledeco/Object_229 (TRS)/Object_229 (CF)/Object_229/SpriteRenderer
+    21200060: _MapPrfab/sandbox2/castledeco/Object_268 (TRS)/Object_268 (CF)/Object_268/SpriteRenderer
+    21200062: _MapPrfab/sandbox2/castledeco/Object_359 (TRS)/Object_359 (CF)/Object_359/SpriteRenderer
+    21200064: _MapPrfab/sandbox2/castledeco/Object_360 (TRS)/Object_360 (CF)/Object_360/SpriteRenderer
+    21200066: _MapPrfab/sandbox2/castledeco/Object_364 (TRS)/Object_364 (CF)/Object_364/SpriteRenderer
+    21200068: _MapPrfab/sandbox2/castledeco/Object_366 (TRS)/Object_366 (CF)/Object_366/SpriteRenderer
+    21200070: _MapPrfab/sandbox2/castledeco/Object_367 (TRS)/Object_367 (CF)/Object_367/SpriteRenderer
+    21200072: _MapPrfab/sandbox2/castledeco/Object_368 (TRS)/Object_368 (CF)/Object_368/SpriteRenderer
+    21200074: _MapPrfab/sandbox2/castledeco/Object_369 (TRS)/Object_369 (CF)/Object_369/SpriteRenderer
+    21200076: _MapPrfab/sandbox2/castledeco/Object_370 (TRS)/Object_370 (CF)/Object_370/SpriteRenderer
+    21200078: _MapPrfab/sandbox2/game/block (TRS)/block (CF)/block/SpriteRenderer
+    21200080: _MapPrfab/sandbox2/game/block (TRS) (1)/block (CF)/block/SpriteRenderer
+    21200082: _MapPrfab/sandbox2/game/hero (TRS)/hero (CF)/hero/SpriteRenderer
+    21200084: _MapPrfab/sandbox2/game/hey (TRS)/hey (CF)/hey/SpriteRenderer
+    21200086: _MapPrfab/sandbox2/game/Object_160 (TRS)/Object_160 (CF)/Object_160/SpriteRenderer
+    21200088: _MapPrfab/sandbox2/game/Object_189 (TRS)/Object_189 (CF)/Object_189/SpriteRenderer
+    21200090: _MapPrfab/sandbox2/game/Object_190 (TRS)/Object_190 (CF)/Object_190/SpriteRenderer
+    21200092: _MapPrfab/sandbox2/game/Object_192 (TRS)/Object_192 (CF)/Object_192/SpriteRenderer
+    21200094: _MapPrfab/sandbox2/game/Object_285 (TRS)/Object_285 (CF)/Object_285/SpriteRenderer
+    21200096: _MapPrfab/sandbox2/ground/Object_196 (TRS)/Object_196 (CF)/Object_196/SpriteRenderer
+    21200098: _MapPrfab/sandbox2/ground/Object_197 (TRS)/Object_197 (CF)/Object_197/SpriteRenderer
+    21200100: _MapPrfab/sandbox2/ground/Object_232 (TRS)/Object_232 (CF)/Object_232/SpriteRenderer
+    21200102: _MapPrfab/sandbox2/ground/Object_233 (TRS)/Object_233 (CF)/Object_233/SpriteRenderer
+    21200104: _MapPrfab/sandbox2/ground/Object_237 (TRS)/Object_237 (CF)/Object_237/SpriteRenderer
+    21200106: _MapPrfab/sandbox2/ground/Object_238 (TRS)/Object_238 (CF)/Object_238/SpriteRenderer
+    21200108: _MapPrfab/sandbox2/ground/Object_258 (TRS)/Object_258 (CF)/Object_258/SpriteRenderer
+    21200110: _MapPrfab/sandbox2/ground/Object_259 (TRS)/Object_259 (CF)/Object_259/SpriteRenderer
+    21200112: _MapPrfab/sandbox2/ground/Object_260 (TRS)/Object_260 (CF)/Object_260/SpriteRenderer
+    21200114: _MapPrfab/sandbox2/ground/Object_261 (TRS)/Object_261 (CF)/Object_261/SpriteRenderer
+    21200116: _MapPrfab/sandbox2/ground/Object_262 (TRS)/Object_262 (CF)/Object_262/SpriteRenderer
+    21200118: _MapPrfab/sandbox2/ground/Object_263 (TRS)/Object_263 (CF)/Object_263/SpriteRenderer
+    21200120: _MapPrfab/sandbox2/ground/Object_264 (TRS)/Object_264 (CF)/Object_264/SpriteRenderer
+    21200122: _MapPrfab/sandbox2/ground/Object_265 (TRS)/Object_265 (CF)/Object_265/SpriteRenderer
+    21200124: _MapPrfab/sandbox2/ground/Object_266 (TRS)/Object_266 (CF)/Object_266/SpriteRenderer
+    21200126: _MapPrfab/sandbox2/ground/Object_267 (TRS)/Object_267 (CF)/Object_267/SpriteRenderer
+    21200128: _MapPrfab/sandbox2/ground/Object_270 (TRS)/Object_270 (CF)/Object_270/SpriteRenderer
+    21200130: _MapPrfab/sandbox2/ground/Object_271 (TRS)/Object_271 (CF)/Object_271/SpriteRenderer
+    21200132: _MapPrfab/sandbox2/ground/Object_272 (TRS)/Object_272 (CF)/Object_272/SpriteRenderer
+    21200134: _MapPrfab/sandbox2/ground/Object_273 (TRS)/Object_273 (CF)/Object_273/SpriteRenderer
+    21200136: _MapPrfab/sandbox2/ground/Object_274 (TRS)/Object_274 (CF)/Object_274/SpriteRenderer
+    21200138: _MapPrfab/sandbox2/ground/Object_275 (TRS)/Object_275 (CF)/Object_275/SpriteRenderer
+    21200140: _MapPrfab/sandbox2/ground/Object_276 (TRS)/Object_276 (CF)/Object_276/SpriteRenderer
+    21200142: _MapPrfab/sandbox2/ground/Object_277 (TRS)/Object_277 (CF)/Object_277/SpriteRenderer
+    21200144: _MapPrfab/sandbox2/ground/Object_278 (TRS)/Object_278 (CF)/Object_278/SpriteRenderer
+    21200146: _MapPrfab/sandbox2/ground/Object_279 (TRS)/Object_279 (CF)/Object_279/SpriteRenderer
+    21200148: _MapPrfab/sandbox2/ground/Object_280 (TRS)/Object_280 (CF)/Object_280/SpriteRenderer
+    21200150: _MapPrfab/sandbox2/ground/Object_281 (TRS)/Object_281 (CF)/Object_281/SpriteRenderer
+    21200152: _MapPrfab/sandbox2/ground/Object_282 (TRS)/Object_282 (CF)/Object_282/SpriteRenderer
+    21200154: _MapPrfab/sandbox2/ground/Object_283 (TRS)/Object_283 (CF)/Object_283/SpriteRenderer
+    21200156: _MapPrfab/sandbox2/ground/Object_286 (TRS)/Object_286 (CF)/Object_286/SpriteRenderer
+    21200158: _MapPrfab/sandbox2/ground/Object_343 (TRS)/Object_343 (CF)/Object_343/SpriteRenderer
+    21200160: _MapPrfab/sandbox2/ground/Object_344 (TRS)/Object_344 (CF)/Object_344/SpriteRenderer
+    21200162: _MapPrfab/sandbox2/ground/Object_345 (TRS)/Object_345 (CF)/Object_345/SpriteRenderer
+    21200164: _MapPrfab/sandbox2/ground/Object_346 (TRS)/Object_346 (CF)/Object_346/SpriteRenderer
+    21200166: _MapPrfab/sandbox2/ground/Object_347 (TRS)/Object_347 (CF)/Object_347/SpriteRenderer
+    21200168: _MapPrfab/sandbox2/ground/Object_348 (TRS)/Object_348 (CF)/Object_348/SpriteRenderer
+    21200170: _MapPrfab/sandbox2/ground/Object_349 (TRS)/Object_349 (CF)/Object_349/SpriteRenderer
+    21200172: _MapPrfab/sandbox2/ground/Object_350 (TRS)/Object_350 (CF)/Object_350/SpriteRenderer
+    21200174: _MapPrfab/sandbox2/ground/Object_351 (TRS)/Object_351 (CF)/Object_351/SpriteRenderer
+    21200176: _MapPrfab/sandbox2/ground/Object_352 (TRS)/Object_352 (CF)/Object_352/SpriteRenderer
+    21200178: _MapPrfab/sandbox2/ground/Object_383 (TRS)/Object_383 (CF)/Object_383/SpriteRenderer
+    21200180: _MapPrfab/sandbox2/ground/Object_384 (TRS)/Object_384 (CF)/Object_384/SpriteRenderer
+    21200182: _MapPrfab/sandbox2/light/Object_335 (TRS)/Object_335 (CF)/Object_335/SpriteRenderer
+    21200184: _MapPrfab/sandbox2/light/Object_336 (TRS)/Object_336 (CF)/Object_336/SpriteRenderer
+    21200186: _MapPrfab/sandbox2/light/Object_337 (TRS)/Object_337 (CF)/Object_337/SpriteRenderer
+    21200188: _MapPrfab/sandbox2/light/Object_338 (TRS)/Object_338 (CF)/Object_338/SpriteRenderer
+    21200190: _MapPrfab/sandbox2/light/Object_339 (TRS)/Object_339 (CF)/Object_339/SpriteRenderer
+    21200192: _MapPrfab/sandbox2/light/Object_340 (TRS)/Object_340 (CF)/Object_340/SpriteRenderer
+    21200194: _MapPrfab/sandbox2/shading/Object_112 (TRS)/Object_112 (CF)/Object_112/SpriteRenderer
+    21200196: _MapPrfab/sandbox2/shading/Object_334 (TRS)/Object_334 (CF)/Object_334/SpriteRenderer
+    21300000: Sprite_objs_1
+    21300002: Sprite_objs_2
+    21300004: Sprite_objs_3
+    21300006: Sprite_objs_4
+    21300008: Sprite_objs_5
+    21300010: Sprite_objs_6
+    21300012: Sprite_objs_7
+    21300014: Sprite_objs_8
+    21300016: Sprite_objs_9
+    21300018: Sprite_objs_10
+    21300020: Sprite_objs_11
+    21300022: Sprite_objs_12
+    21300024: Sprite_objs_13
+    21300026: Sprite_objs_14
+    21300028: Sprite_objs_15
+    21300030: Sprite_objs_16
+    21300032: Sprite_objs_17
+    21300034: Sprite_objs_18
+    21300036: Sprite_objs_19
+    21300038: Sprite_objs_20
+    21300040: Sprite_objs_21
+    21300042: Sprite_objs_22
+    21300044: Sprite_objs_23
+    21300046: Sprite_objs_24
+    21300048: Sprite_objs_25
+    21300050: Sprite_objs_26
+    21300052: Sprite_objs_27
+    21300054: Sprite_objs_28
+    21300056: Sprite_objs_29
+    21300058: Sprite_objs_30
+    21300060: Sprite_objs_31
+    21300062: Sprite_objs_32
+    21300064: Sprite_objs_33
+    21300066: Sprite_objs_34
+    21300068: Sprite_objs_35
+    21300070: Sprite_objs_36
+    21300072: Sprite_objs_37
+    21300074: Sprite_objs_38
+    21300076: Sprite_objs_39
+    21300078: Sprite_objs_40
+    21300080: Sprite_objs_41
+    21300082: Sprite_objs_42
+    21300084: Sprite_objs_43
+    21300086: Sprite_objs_44
+    21300088: Sprite_objs_45
+    21300090: Sprite_objs_46
+    21300092: Sprite_objs_47
+    21300094: Sprite_objs_49
+    21300096: Sprite_objs_50
+    21300098: Sprite_objs_51
+    21300100: Sprite_objs_52
+    21300102: Sprite_objs_53
+    21300104: Sprite_objs_54
+    21300106: Sprite_objs_55
+    21300108: Sprite_objs_56
+    21300110: Sprite_objs_57
+    21300112: Sprite_objs_58
+    21300114: Sprite_objs_59
+    21300116: Sprite_objs_60
+    21300118: Sprite_objs_61
+    21300120: Sprite_objs_62
+    21300122: Sprite_objs_63
     100100000: _MapPrfab
     2569400265252428796: _MapPrfab/sandbox2/Grid
   externalObjects: {}
@@ -439,115 +1058,14 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
-  errors:
-  - Texture was imported at a smaller size. Make sure 'Max Size' on 'alter.png' is
-    at least '192'
-  - Missing tile '6' from on tile object ''
-  - Missing tile '15' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '50' from on tile object ''
-  - Missing tile '50' from on tile object ''
-  - Missing tile '50' from on tile object ''
-  - Missing tile '50' from on tile object ''
-  - Missing tile '50' from on tile object ''
-  - Missing tile '50' from on tile object ''
-  - Missing tile '6' from on tile object ''
-  - Missing tile '6' from on tile object ''
-  - Missing tile '6' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '6' from on tile object ''
-  - Missing tile '6' from on tile object ''
-  - Missing tile '28' from on tile object ''
-  - Missing tile '29' from on tile object ''
-  - Missing tile '28' from on tile object ''
-  - Missing tile '29' from on tile object ''
-  - Missing tile '18' from on tile object ''
-  - Missing tile '18' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '32' from on tile object ''
-  - Missing tile '32' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '32' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '32' from on tile object ''
-  - Missing tile '10' from on tile object ''
-  - Missing tile '37' from on tile object ''
-  - Missing tile '8' from on tile object ''
-  - Missing tile '9' from on tile object ''
-  - Missing tile '36' from on tile object ''
-  - Missing tile '28' from on tile object ''
-  - Missing tile '29' from on tile object ''
-  - Missing tile '29' from on tile object ''
-  - Missing tile '8' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '32' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '32' from on tile object ''
-  - Missing tile '32' from on tile object ''
-  - Missing tile '33' from on tile object ''
-  - Missing tile '36' from on tile object ''
-  - Missing tile '9' from on tile object ''
-  - Missing tile '8' from on tile object ''
-  - Missing tile '37' from on tile object ''
-  - Missing tile '36' from on tile object ''
-  - Missing tile '37' from on tile object ''
-  - Missing tile '29' from on tile object ''
-  - Missing tile '18' from on tile object ''
-  - Missing tile '37' from on tile object ''
-  - Missing tile '36' from on tile object ''
-  - Missing tile '55' from on tile object ''
-  - Missing tile '55' from on tile object ''
-  - Missing tile '55' from on tile object ''
-  - Missing tile '36' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '54' from on tile object ''
-  - Missing tile '56' from on tile object ''
-  - Missing tile '56' from on tile object ''
-  - Missing tile '56' from on tile object ''
-  - Missing tile '56' from on tile object ''
-  - Missing tile '45' from on tile object ''
-  - Missing tile '45' from on tile object ''
-  - Missing tile '16' from on tile object ''
-  - Missing tile '16' from on tile object ''
-  - Missing tile '16' from on tile object ''
-  - Missing tile '16' from on tile object ''
-  - Missing tile '16' from on tile object ''
-  - Missing tile '16' from on tile object ''
-  - Missing tile '22' from on tile object ''
-  - Missing tile '44' from on tile object ''
-  - Missing tile '3' from on tile object ''
-  - Missing tile '2' from on tile object ''
-  - Missing tile '63' from on tile object ''
-  - Missing tile '17' from on tile object ''
-  - Missing tile '17' from on tile object ''
-  - Missing tile '44' from on tile object ''
-  - Missing tile '17' from on tile object ''
-  - Missing tile '51' from on tile object ''
-  - Missing tile '51' from on tile object ''
-  - Missing tile '51' from on tile object ''
-  - Missing tile '51' from on tile object ''
+  errors: []
   warnings:
   - Tileset 'objs' is an embedded tileset. Exported tilesets are preferred.
   missingSortingLayers: []
   missingLayers: []
   pixelsPerUnit: 100
   edgesPerEllipse: 32
-  numberOfObjectsImported: 3
+  numberOfObjectsImported: 127
   tilesAsObjects: 0
   importSorting: 0
   isIsometric: 0
