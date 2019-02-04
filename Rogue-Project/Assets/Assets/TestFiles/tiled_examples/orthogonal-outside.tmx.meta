@@ -1,0 +1,895 @@
+fileFormatVersion: 2
+guid: 6bc731ff934b0ec429a507a94e6b0818
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: _MapPrfab/orthogonal-outside
+    100002: _MapPrfab/orthogonal-outside/Fringe
+    100004: _MapPrfab/orthogonal-outside/Ground
+    100006: _MapPrfab/orthogonal-outside/Objects
+    100008: _MapPrfab/orthogonal-outside/Objects/discover chest
+    100010: _MapPrfab/orthogonal-outside/Objects/guard
+    100012: _MapPrfab/orthogonal-outside/Objects/guard (1)
+    100014: _MapPrfab/orthogonal-outside/Objects/maggots
+    100016: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)
+    100018: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)/Object_10 (CF)
+    100020: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)/Object_10 (CF)/Object_10
+    100022: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)
+    100024: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)/Object_11 (CF)
+    100026: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)/Object_11 (CF)/Object_11
+    100028: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)
+    100030: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)/Object_12 (CF)
+    100032: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)/Object_12 (CF)/Object_12
+    100034: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)
+    100036: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)/Object_13 (CF)
+    100038: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)/Object_13 (CF)/Object_13
+    100040: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)
+    100042: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)/Object_14 (CF)
+    100044: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)/Object_14 (CF)/Object_14
+    100046: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)
+    100048: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)/Object_16 (CF)
+    100050: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)/Object_16 (CF)/Object_16
+    100052: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)
+    100054: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)/Object_17 (CF)
+    100056: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)/Object_17 (CF)/Object_17
+    100058: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)
+    100060: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)/Object_18 (CF)
+    100062: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)/Object_18 (CF)/Object_18
+    100064: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)
+    100066: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)/Object_19 (CF)
+    100068: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)/Object_19 (CF)/Object_19
+    100070: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)
+    100072: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)/Object_21 (CF)
+    100074: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)/Object_21 (CF)/Object_21
+    100076: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)
+    100078: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)/Object_22 (CF)
+    100080: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)/Object_22 (CF)/Object_22
+    100082: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)
+    100084: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)/Object_23 (CF)
+    100086: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)/Object_23 (CF)/Object_23
+    100088: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)
+    100090: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)/Object_24 (CF)
+    100092: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)/Object_24 (CF)/Object_24
+    100094: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)
+    100096: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)/Object_25 (CF)
+    100098: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)/Object_25 (CF)/Object_25
+    100100: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)
+    100102: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)/Object_26 (CF)
+    100104: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)/Object_26 (CF)/Object_26
+    100106: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)
+    100108: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)/Object_27 (CF)
+    100110: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)/Object_27 (CF)/Object_27
+    100112: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)
+    100114: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)/Object_28 (CF)
+    100116: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)/Object_28 (CF)/Object_28
+    100118: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)
+    100120: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)/Object_29 (CF)
+    100122: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)/Object_29 (CF)/Object_29
+    100124: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)
+    100126: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)/Object_30 (CF)
+    100128: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)/Object_30 (CF)/Object_30
+    100130: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)
+    100132: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)/Object_31 (CF)
+    100134: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)/Object_31 (CF)/Object_31
+    100136: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)
+    100138: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)/Object_32 (CF)
+    100140: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)/Object_32 (CF)/Object_32
+    100142: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)
+    100144: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)/Object_33 (CF)
+    100146: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)/Object_33 (CF)/Object_33
+    100148: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)
+    100150: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)/Object_34 (CF)
+    100152: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)/Object_34 (CF)/Object_34
+    100154: _MapPrfab/orthogonal-outside/Objects/player-start
+    100156: _MapPrfab/orthogonal-outside/Objects/unreachable
+    100158: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon
+    100160: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (1)
+    100162: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (2)
+    100164: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (3)
+    100166: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (4)
+    100168: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (5)
+    100170: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (6)
+    400000: _MapPrfab/orthogonal-outside/Transform
+    400002: _MapPrfab/orthogonal-outside/Fringe/Transform
+    400004: _MapPrfab/orthogonal-outside/Ground/Transform
+    400006: _MapPrfab/orthogonal-outside/Objects/Transform
+    400008: _MapPrfab/orthogonal-outside/Objects/discover chest/Transform
+    400010: _MapPrfab/orthogonal-outside/Objects/guard/Transform
+    400012: _MapPrfab/orthogonal-outside/Objects/guard (1)/Transform
+    400014: _MapPrfab/orthogonal-outside/Objects/maggots/Transform
+    400016: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)/Transform
+    400018: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)/Object_10 (CF)/Transform
+    400020: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)/Object_10 (CF)/Object_10/Transform
+    400022: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)/Transform
+    400024: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)/Object_11 (CF)/Transform
+    400026: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)/Object_11 (CF)/Object_11/Transform
+    400028: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)/Transform
+    400030: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)/Object_12 (CF)/Transform
+    400032: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)/Object_12 (CF)/Object_12/Transform
+    400034: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)/Transform
+    400036: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)/Object_13 (CF)/Transform
+    400038: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)/Object_13 (CF)/Object_13/Transform
+    400040: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)/Transform
+    400042: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)/Object_14 (CF)/Transform
+    400044: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)/Object_14 (CF)/Object_14/Transform
+    400046: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)/Transform
+    400048: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)/Object_16 (CF)/Transform
+    400050: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)/Object_16 (CF)/Object_16/Transform
+    400052: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)/Transform
+    400054: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)/Object_17 (CF)/Transform
+    400056: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)/Object_17 (CF)/Object_17/Transform
+    400058: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)/Transform
+    400060: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)/Object_18 (CF)/Transform
+    400062: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)/Object_18 (CF)/Object_18/Transform
+    400064: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)/Transform
+    400066: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)/Object_19 (CF)/Transform
+    400068: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)/Object_19 (CF)/Object_19/Transform
+    400070: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)/Transform
+    400072: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)/Object_21 (CF)/Transform
+    400074: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)/Object_21 (CF)/Object_21/Transform
+    400076: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)/Transform
+    400078: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)/Object_22 (CF)/Transform
+    400080: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)/Object_22 (CF)/Object_22/Transform
+    400082: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)/Transform
+    400084: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)/Object_23 (CF)/Transform
+    400086: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)/Object_23 (CF)/Object_23/Transform
+    400088: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)/Transform
+    400090: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)/Object_24 (CF)/Transform
+    400092: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)/Object_24 (CF)/Object_24/Transform
+    400094: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)/Transform
+    400096: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)/Object_25 (CF)/Transform
+    400098: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)/Object_25 (CF)/Object_25/Transform
+    400100: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)/Transform
+    400102: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)/Object_26 (CF)/Transform
+    400104: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)/Object_26 (CF)/Object_26/Transform
+    400106: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)/Transform
+    400108: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)/Object_27 (CF)/Transform
+    400110: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)/Object_27 (CF)/Object_27/Transform
+    400112: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)/Transform
+    400114: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)/Object_28 (CF)/Transform
+    400116: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)/Object_28 (CF)/Object_28/Transform
+    400118: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)/Transform
+    400120: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)/Object_29 (CF)/Transform
+    400122: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)/Object_29 (CF)/Object_29/Transform
+    400124: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)/Transform
+    400126: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)/Object_30 (CF)/Transform
+    400128: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)/Object_30 (CF)/Object_30/Transform
+    400130: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)/Transform
+    400132: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)/Object_31 (CF)/Transform
+    400134: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)/Object_31 (CF)/Object_31/Transform
+    400136: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)/Transform
+    400138: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)/Object_32 (CF)/Transform
+    400140: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)/Object_32 (CF)/Object_32/Transform
+    400142: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)/Transform
+    400144: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)/Object_33 (CF)/Transform
+    400146: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)/Object_33 (CF)/Object_33/Transform
+    400148: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)/Transform
+    400150: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)/Object_34 (CF)/Transform
+    400152: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)/Object_34 (CF)/Object_34/Transform
+    400154: _MapPrfab/orthogonal-outside/Objects/player-start/Transform
+    400156: _MapPrfab/orthogonal-outside/Objects/unreachable/Transform
+    400158: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon/Transform
+    400160: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (1)/Transform
+    400162: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (2)/Transform
+    400164: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (3)/Transform
+    400166: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (4)/Transform
+    400168: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (5)/Transform
+    400170: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (6)/Transform
+    2800000: Atlas_outdoor_1
+    5000000: _MapPrfab/orthogonal-outside/Objects/unreachable/Rigidbody2D
+    5800000: _MapPrfab/orthogonal-outside/Objects/discover chest/CircleCollider2D
+    6000000: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon/PolygonCollider2D
+    6000002: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (1)/PolygonCollider2D
+    6000004: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (2)/PolygonCollider2D
+    6000006: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (3)/PolygonCollider2D
+    6000008: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (4)/PolygonCollider2D
+    6000010: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (5)/PolygonCollider2D
+    6000012: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (6)/PolygonCollider2D
+    6100000: _MapPrfab/orthogonal-outside/Objects/maggots/BoxCollider2D
+    6100002: _MapPrfab/orthogonal-outside/Objects/player-start/BoxCollider2D
+    6600000: _MapPrfab/orthogonal-outside/Objects/unreachable/CompositeCollider2D
+    6800000: _MapPrfab/orthogonal-outside/Objects/guard/EdgeCollider2D
+    6800002: _MapPrfab/orthogonal-outside/Objects/guard (1)/EdgeCollider2D
+    11400000: _MapPrfab/orthogonal-outside/MonoBehaviour-SuperTiled2Unity.SuperMap
+    11400002: _MapPrfab/orthogonal-outside/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400004: _MapPrfab/orthogonal-outside/Fringe/MonoBehaviour-SuperTiled2Unity.SuperTileLayer
+    11400006: _MapPrfab/orthogonal-outside/Fringe/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400008: _MapPrfab/orthogonal-outside/Ground/MonoBehaviour-SuperTiled2Unity.SuperTileLayer
+    11400010: _MapPrfab/orthogonal-outside/Ground/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400012: _MapPrfab/orthogonal-outside/Objects/MonoBehaviour-SuperTiled2Unity.SuperObjectLayer
+    11400014: _MapPrfab/orthogonal-outside/Objects/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400016: _MapPrfab/orthogonal-outside/Objects/discover chest/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400018: _MapPrfab/orthogonal-outside/Objects/discover chest/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400020: _MapPrfab/orthogonal-outside/Objects/discover chest/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400022: _MapPrfab/orthogonal-outside/Objects/guard/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400024: _MapPrfab/orthogonal-outside/Objects/guard/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400026: _MapPrfab/orthogonal-outside/Objects/guard/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400028: _MapPrfab/orthogonal-outside/Objects/guard (1)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400030: _MapPrfab/orthogonal-outside/Objects/guard (1)/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400032: _MapPrfab/orthogonal-outside/Objects/guard (1)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400034: _MapPrfab/orthogonal-outside/Objects/maggots/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400036: _MapPrfab/orthogonal-outside/Objects/maggots/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400038: _MapPrfab/orthogonal-outside/Objects/maggots/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400040: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400042: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400044: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400046: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400048: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400050: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400052: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400054: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400056: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400058: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400060: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400062: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400064: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400066: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400068: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400070: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400072: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400074: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400076: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400078: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400080: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400082: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400084: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400086: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400088: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400090: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400092: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400094: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400096: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400098: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400100: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400102: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400104: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400106: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400108: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400110: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400112: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400114: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400116: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400118: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400120: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400122: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400124: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400126: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400128: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400130: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400132: _MapPrfab/orthogonal-outside/Objects/player-start/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400134: _MapPrfab/orthogonal-outside/Objects/player-start/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400136: _MapPrfab/orthogonal-outside/Objects/player-start/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400138: _MapPrfab/orthogonal-outside/Objects/unreachable/MonoBehaviour-SuperTiled2Unity.SuperObject
+    11400140: _MapPrfab/orthogonal-outside/Objects/unreachable/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400142: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400144: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (1)/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400146: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (2)/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400148: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (3)/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400150: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (4)/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400152: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (5)/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400154: _MapPrfab/orthogonal-outside/Objects/unreachable/ConvexPolygon (6)/MonoBehaviour-SuperTiled2Unity.SuperColliderComponent
+    11400156: _superAsset
+    11400158: _TilesetScriptObjectInternal_1
+    11400160: Tile_outdoor_1
+    11400162: Tile_outdoor_2
+    11400164: Tile_outdoor_3
+    11400166: Tile_outdoor_4
+    11400168: Tile_outdoor_5
+    11400170: Tile_outdoor_6
+    11400172: Tile_outdoor_7
+    11400174: Tile_outdoor_8
+    11400176: Tile_outdoor_9
+    11400178: Tile_outdoor_10
+    11400180: Tile_outdoor_11
+    11400182: Tile_outdoor_12
+    11400184: Tile_outdoor_13
+    11400186: Tile_outdoor_14
+    11400188: Tile_outdoor_15
+    11400190: Tile_outdoor_16
+    11400192: Tile_outdoor_17
+    11400194: Tile_outdoor_18
+    11400196: Tile_outdoor_19
+    11400198: Tile_outdoor_20
+    11400200: Tile_outdoor_21
+    11400202: Tile_outdoor_22
+    11400204: Tile_outdoor_23
+    11400206: Tile_outdoor_24
+    11400208: Tile_outdoor_25
+    11400210: Tile_outdoor_26
+    11400212: Tile_outdoor_27
+    11400214: Tile_outdoor_28
+    11400216: Tile_outdoor_29
+    11400218: Tile_outdoor_30
+    11400220: Tile_outdoor_31
+    11400222: Tile_outdoor_32
+    11400224: Tile_outdoor_33
+    11400226: Tile_outdoor_34
+    11400228: Tile_outdoor_35
+    11400230: Tile_outdoor_36
+    11400232: Tile_outdoor_37
+    11400234: Tile_outdoor_38
+    11400236: Tile_outdoor_39
+    11400238: Tile_outdoor_40
+    11400240: Tile_outdoor_41
+    11400242: Tile_outdoor_42
+    11400244: Tile_outdoor_43
+    11400246: Tile_outdoor_44
+    11400248: Tile_outdoor_45
+    11400250: Tile_outdoor_46
+    11400252: Tile_outdoor_47
+    11400254: Tile_outdoor_48
+    11400256: Tile_outdoor_49
+    11400258: Tile_outdoor_50
+    11400260: Tile_outdoor_51
+    11400262: Tile_outdoor_52
+    11400264: Tile_outdoor_53
+    11400266: Tile_outdoor_54
+    11400268: Tile_outdoor_55
+    11400270: Tile_outdoor_56
+    11400272: Tile_outdoor_57
+    11400274: Tile_outdoor_58
+    11400276: Tile_outdoor_59
+    11400278: Tile_outdoor_60
+    11400280: Tile_outdoor_61
+    11400282: Tile_outdoor_62
+    11400284: Tile_outdoor_63
+    11400286: Tile_outdoor_64
+    11400288: Tile_outdoor_65
+    11400290: Tile_outdoor_66
+    11400292: Tile_outdoor_67
+    11400294: Tile_outdoor_68
+    11400296: Tile_outdoor_69
+    11400298: Tile_outdoor_70
+    11400300: Tile_outdoor_71
+    11400302: Tile_outdoor_72
+    11400304: Tile_outdoor_73
+    11400306: Tile_outdoor_74
+    11400308: Tile_outdoor_75
+    11400310: Tile_outdoor_76
+    11400312: Tile_outdoor_77
+    11400314: Tile_outdoor_78
+    11400316: Tile_outdoor_79
+    11400318: Tile_outdoor_80
+    11400320: Tile_outdoor_81
+    11400322: Tile_outdoor_82
+    11400324: Tile_outdoor_83
+    11400326: Tile_outdoor_84
+    11400328: Tile_outdoor_85
+    11400330: Tile_outdoor_86
+    11400332: Tile_outdoor_87
+    11400334: Tile_outdoor_88
+    11400336: Tile_outdoor_89
+    11400338: Tile_outdoor_90
+    11400340: Tile_outdoor_91
+    11400342: Tile_outdoor_92
+    11400344: Tile_outdoor_93
+    11400346: Tile_outdoor_94
+    11400348: Tile_outdoor_95
+    11400350: Tile_outdoor_96
+    11400352: Tile_outdoor_97
+    11400354: Tile_outdoor_98
+    11400356: Tile_outdoor_99
+    11400358: Tile_outdoor_100
+    11400360: Tile_outdoor_101
+    11400362: Tile_outdoor_102
+    11400364: Tile_outdoor_103
+    11400366: Tile_outdoor_104
+    11400368: Tile_outdoor_105
+    11400370: Tile_outdoor_106
+    11400372: Tile_outdoor_107
+    11400374: Tile_outdoor_108
+    11400376: Tile_outdoor_109
+    11400378: Tile_outdoor_110
+    11400380: Tile_outdoor_111
+    11400382: Tile_outdoor_112
+    11400384: Tile_outdoor_113
+    11400386: Tile_outdoor_114
+    11400388: Tile_outdoor_115
+    11400390: Tile_outdoor_116
+    11400392: Tile_outdoor_117
+    11400394: Tile_outdoor_118
+    11400396: Tile_outdoor_119
+    11400398: Tile_outdoor_120
+    11400400: Tile_outdoor_121
+    11400402: Tile_outdoor_122
+    11400404: Tile_outdoor_123
+    11400406: Tile_outdoor_124
+    11400408: Tile_outdoor_125
+    11400410: Tile_outdoor_126
+    11400412: Tile_outdoor_127
+    11400414: Tile_outdoor_128
+    11400416: Tile_outdoor_129
+    11400418: Tile_outdoor_130
+    11400420: Tile_outdoor_131
+    11400422: Tile_outdoor_132
+    11400424: Tile_outdoor_133
+    11400426: Tile_outdoor_134
+    11400428: Tile_outdoor_135
+    11400430: Tile_outdoor_136
+    11400432: Tile_outdoor_137
+    11400434: Tile_outdoor_138
+    11400436: Tile_outdoor_139
+    11400438: Tile_outdoor_140
+    11400440: Tile_outdoor_141
+    11400442: Tile_outdoor_142
+    11400444: Tile_outdoor_143
+    11400446: Tile_outdoor_144
+    11400448: Tile_outdoor_145
+    11400450: Tile_outdoor_146
+    11400452: Tile_outdoor_147
+    11400454: Tile_outdoor_148
+    11400456: Tile_outdoor_149
+    11400458: Tile_outdoor_150
+    11400460: Tile_outdoor_151
+    11400462: Tile_outdoor_152
+    11400464: Tile_outdoor_153
+    11400466: Tile_outdoor_154
+    11400468: Tile_outdoor_155
+    11400470: Tile_outdoor_156
+    11400472: Tile_outdoor_157
+    11400474: Tile_outdoor_158
+    11400476: Tile_outdoor_159
+    11400478: Tile_outdoor_160
+    11400480: Tile_outdoor_161
+    11400482: Tile_outdoor_162
+    11400484: Tile_outdoor_163
+    11400486: Tile_outdoor_164
+    11400488: Tile_outdoor_165
+    11400490: Tile_outdoor_166
+    11400492: Tile_outdoor_167
+    11400494: Tile_outdoor_168
+    11400496: Tile_outdoor_169
+    11400498: Tile_outdoor_170
+    11400500: Tile_outdoor_171
+    11400502: Tile_outdoor_172
+    11400504: Tile_outdoor_173
+    11400506: Tile_outdoor_174
+    11400508: Tile_outdoor_175
+    11400510: Tile_outdoor_176
+    11400512: Tile_outdoor_177
+    11400514: Tile_outdoor_178
+    11400516: Tile_outdoor_179
+    11400518: Tile_outdoor_180
+    11400520: Tile_outdoor_181
+    11400522: Tile_outdoor_182
+    11400524: Tile_outdoor_183
+    11400526: Tile_outdoor_184
+    11400528: Tile_outdoor_185
+    11400530: Tile_outdoor_186
+    11400532: Tile_outdoor_187
+    11400534: Tile_outdoor_188
+    11400536: Tile_outdoor_189
+    11400538: Tile_outdoor_190
+    11400540: Tile_outdoor_191
+    11400542: Tile_outdoor_192
+    11400544: Tile_outdoor_193
+    11400546: Tile_outdoor_194
+    11400548: Tile_outdoor_195
+    11400550: Tile_outdoor_196
+    11400552: Tile_outdoor_197
+    11400554: Tile_outdoor_198
+    11400556: Tile_outdoor_199
+    11400558: Tile_outdoor_200
+    11400560: Tile_outdoor_201
+    11400562: Tile_outdoor_202
+    11400564: Tile_outdoor_203
+    11400566: Tile_outdoor_204
+    11400568: Tile_outdoor_205
+    11400570: Tile_outdoor_206
+    11400572: Tile_outdoor_207
+    11400574: Tile_outdoor_208
+    11400576: Tile_outdoor_209
+    11400578: Tile_outdoor_210
+    11400580: Tile_outdoor_211
+    11400582: Tile_outdoor_212
+    11400584: Tile_outdoor_213
+    11400586: Tile_outdoor_214
+    11400588: Tile_outdoor_215
+    11400590: Tile_outdoor_216
+    11400592: Tile_outdoor_217
+    11400594: Tile_outdoor_218
+    11400596: Tile_outdoor_219
+    11400598: Tile_outdoor_220
+    11400600: Tile_outdoor_221
+    11400602: Tile_outdoor_222
+    11400604: Tile_outdoor_223
+    11400606: Tile_outdoor_224
+    11400608: Tile_outdoor_225
+    11400610: Tile_outdoor_226
+    11400612: Tile_outdoor_227
+    11400614: Tile_outdoor_228
+    11400616: Tile_outdoor_229
+    11400618: Tile_outdoor_230
+    11400620: Tile_outdoor_231
+    11400622: Tile_outdoor_232
+    11400624: Tile_outdoor_233
+    11400626: Tile_outdoor_234
+    11400628: Tile_outdoor_235
+    11400630: Tile_outdoor_236
+    11400632: Tile_outdoor_237
+    11400634: Tile_outdoor_238
+    11400636: Tile_outdoor_239
+    11400638: Tile_outdoor_240
+    11400640: Tile_outdoor_241
+    11400642: Tile_outdoor_242
+    11400644: Tile_outdoor_243
+    11400646: Tile_outdoor_244
+    11400648: Tile_outdoor_245
+    11400650: Tile_outdoor_246
+    11400652: Tile_outdoor_247
+    11400654: Tile_outdoor_248
+    11400656: Tile_outdoor_249
+    11400658: Tile_outdoor_250
+    11400660: Tile_outdoor_251
+    11400662: Tile_outdoor_252
+    11400664: Tile_outdoor_253
+    11400666: Tile_outdoor_254
+    11400668: Tile_outdoor_255
+    11400670: Tile_outdoor_256
+    11400672: Tile_outdoor_257
+    11400674: Tile_outdoor_258
+    11400676: Tile_outdoor_259
+    11400678: Tile_outdoor_260
+    11400680: Tile_outdoor_261
+    11400682: Tile_outdoor_262
+    11400684: Tile_outdoor_263
+    11400686: Tile_outdoor_264
+    11400688: Tile_outdoor_265
+    11400690: Tile_outdoor_266
+    11400692: Tile_outdoor_267
+    11400694: Tile_outdoor_268
+    11400696: Tile_outdoor_269
+    11400698: Tile_outdoor_270
+    11400700: Tile_outdoor_271
+    11400702: Tile_outdoor_272
+    11400704: Tile_outdoor_273
+    11400706: Tile_outdoor_274
+    11400708: Tile_outdoor_275
+    11400710: Tile_outdoor_276
+    11400712: Tile_outdoor_277
+    11400714: Tile_outdoor_278
+    11400716: Tile_outdoor_279
+    11400718: Tile_outdoor_280
+    11400720: Tile_outdoor_281
+    11400722: Tile_outdoor_282
+    11400724: Tile_outdoor_283
+    11400726: Tile_outdoor_284
+    11400728: Tile_outdoor_285
+    11400730: Tile_outdoor_286
+    11400732: Tile_outdoor_287
+    11400734: Tile_outdoor_288
+    21200000: _MapPrfab/orthogonal-outside/Objects/Object_10 (TRS)/Object_10 (CF)/Object_10/SpriteRenderer
+    21200002: _MapPrfab/orthogonal-outside/Objects/Object_11 (TRS)/Object_11 (CF)/Object_11/SpriteRenderer
+    21200004: _MapPrfab/orthogonal-outside/Objects/Object_12 (TRS)/Object_12 (CF)/Object_12/SpriteRenderer
+    21200006: _MapPrfab/orthogonal-outside/Objects/Object_13 (TRS)/Object_13 (CF)/Object_13/SpriteRenderer
+    21200008: _MapPrfab/orthogonal-outside/Objects/Object_14 (TRS)/Object_14 (CF)/Object_14/SpriteRenderer
+    21200010: _MapPrfab/orthogonal-outside/Objects/Object_16 (TRS)/Object_16 (CF)/Object_16/SpriteRenderer
+    21200012: _MapPrfab/orthogonal-outside/Objects/Object_17 (TRS)/Object_17 (CF)/Object_17/SpriteRenderer
+    21200014: _MapPrfab/orthogonal-outside/Objects/Object_18 (TRS)/Object_18 (CF)/Object_18/SpriteRenderer
+    21200016: _MapPrfab/orthogonal-outside/Objects/Object_19 (TRS)/Object_19 (CF)/Object_19/SpriteRenderer
+    21200018: _MapPrfab/orthogonal-outside/Objects/Object_21 (TRS)/Object_21 (CF)/Object_21/SpriteRenderer
+    21200020: _MapPrfab/orthogonal-outside/Objects/Object_22 (TRS)/Object_22 (CF)/Object_22/SpriteRenderer
+    21200022: _MapPrfab/orthogonal-outside/Objects/Object_23 (TRS)/Object_23 (CF)/Object_23/SpriteRenderer
+    21200024: _MapPrfab/orthogonal-outside/Objects/Object_24 (TRS)/Object_24 (CF)/Object_24/SpriteRenderer
+    21200026: _MapPrfab/orthogonal-outside/Objects/Object_25 (TRS)/Object_25 (CF)/Object_25/SpriteRenderer
+    21200028: _MapPrfab/orthogonal-outside/Objects/Object_26 (TRS)/Object_26 (CF)/Object_26/SpriteRenderer
+    21200030: _MapPrfab/orthogonal-outside/Objects/Object_27 (TRS)/Object_27 (CF)/Object_27/SpriteRenderer
+    21200032: _MapPrfab/orthogonal-outside/Objects/Object_28 (TRS)/Object_28 (CF)/Object_28/SpriteRenderer
+    21200034: _MapPrfab/orthogonal-outside/Objects/Object_29 (TRS)/Object_29 (CF)/Object_29/SpriteRenderer
+    21200036: _MapPrfab/orthogonal-outside/Objects/Object_30 (TRS)/Object_30 (CF)/Object_30/SpriteRenderer
+    21200038: _MapPrfab/orthogonal-outside/Objects/Object_31 (TRS)/Object_31 (CF)/Object_31/SpriteRenderer
+    21200040: _MapPrfab/orthogonal-outside/Objects/Object_32 (TRS)/Object_32 (CF)/Object_32/SpriteRenderer
+    21200042: _MapPrfab/orthogonal-outside/Objects/Object_33 (TRS)/Object_33 (CF)/Object_33/SpriteRenderer
+    21200044: _MapPrfab/orthogonal-outside/Objects/Object_34 (TRS)/Object_34 (CF)/Object_34/SpriteRenderer
+    21300000: Sprite_outdoor_1
+    21300002: Sprite_outdoor_2
+    21300004: Sprite_outdoor_3
+    21300006: Sprite_outdoor_4
+    21300008: Sprite_outdoor_5
+    21300010: Sprite_outdoor_6
+    21300012: Sprite_outdoor_7
+    21300014: Sprite_outdoor_8
+    21300016: Sprite_outdoor_9
+    21300018: Sprite_outdoor_10
+    21300020: Sprite_outdoor_11
+    21300022: Sprite_outdoor_12
+    21300024: Sprite_outdoor_13
+    21300026: Sprite_outdoor_14
+    21300028: Sprite_outdoor_15
+    21300030: Sprite_outdoor_16
+    21300032: Sprite_outdoor_17
+    21300034: Sprite_outdoor_18
+    21300036: Sprite_outdoor_19
+    21300038: Sprite_outdoor_20
+    21300040: Sprite_outdoor_21
+    21300042: Sprite_outdoor_22
+    21300044: Sprite_outdoor_23
+    21300046: Sprite_outdoor_24
+    21300048: Sprite_outdoor_25
+    21300050: Sprite_outdoor_26
+    21300052: Sprite_outdoor_27
+    21300054: Sprite_outdoor_28
+    21300056: Sprite_outdoor_29
+    21300058: Sprite_outdoor_30
+    21300060: Sprite_outdoor_31
+    21300062: Sprite_outdoor_32
+    21300064: Sprite_outdoor_33
+    21300066: Sprite_outdoor_34
+    21300068: Sprite_outdoor_35
+    21300070: Sprite_outdoor_36
+    21300072: Sprite_outdoor_37
+    21300074: Sprite_outdoor_38
+    21300076: Sprite_outdoor_39
+    21300078: Sprite_outdoor_40
+    21300080: Sprite_outdoor_41
+    21300082: Sprite_outdoor_42
+    21300084: Sprite_outdoor_43
+    21300086: Sprite_outdoor_44
+    21300088: Sprite_outdoor_45
+    21300090: Sprite_outdoor_46
+    21300092: Sprite_outdoor_47
+    21300094: Sprite_outdoor_48
+    21300096: Sprite_outdoor_49
+    21300098: Sprite_outdoor_50
+    21300100: Sprite_outdoor_51
+    21300102: Sprite_outdoor_52
+    21300104: Sprite_outdoor_53
+    21300106: Sprite_outdoor_54
+    21300108: Sprite_outdoor_55
+    21300110: Sprite_outdoor_56
+    21300112: Sprite_outdoor_57
+    21300114: Sprite_outdoor_58
+    21300116: Sprite_outdoor_59
+    21300118: Sprite_outdoor_60
+    21300120: Sprite_outdoor_61
+    21300122: Sprite_outdoor_62
+    21300124: Sprite_outdoor_63
+    21300126: Sprite_outdoor_64
+    21300128: Sprite_outdoor_65
+    21300130: Sprite_outdoor_66
+    21300132: Sprite_outdoor_67
+    21300134: Sprite_outdoor_68
+    21300136: Sprite_outdoor_69
+    21300138: Sprite_outdoor_70
+    21300140: Sprite_outdoor_71
+    21300142: Sprite_outdoor_72
+    21300144: Sprite_outdoor_73
+    21300146: Sprite_outdoor_74
+    21300148: Sprite_outdoor_75
+    21300150: Sprite_outdoor_76
+    21300152: Sprite_outdoor_77
+    21300154: Sprite_outdoor_78
+    21300156: Sprite_outdoor_79
+    21300158: Sprite_outdoor_80
+    21300160: Sprite_outdoor_81
+    21300162: Sprite_outdoor_82
+    21300164: Sprite_outdoor_83
+    21300166: Sprite_outdoor_84
+    21300168: Sprite_outdoor_85
+    21300170: Sprite_outdoor_86
+    21300172: Sprite_outdoor_87
+    21300174: Sprite_outdoor_88
+    21300176: Sprite_outdoor_89
+    21300178: Sprite_outdoor_90
+    21300180: Sprite_outdoor_91
+    21300182: Sprite_outdoor_92
+    21300184: Sprite_outdoor_93
+    21300186: Sprite_outdoor_94
+    21300188: Sprite_outdoor_95
+    21300190: Sprite_outdoor_96
+    21300192: Sprite_outdoor_97
+    21300194: Sprite_outdoor_98
+    21300196: Sprite_outdoor_99
+    21300198: Sprite_outdoor_100
+    21300200: Sprite_outdoor_101
+    21300202: Sprite_outdoor_102
+    21300204: Sprite_outdoor_103
+    21300206: Sprite_outdoor_104
+    21300208: Sprite_outdoor_105
+    21300210: Sprite_outdoor_106
+    21300212: Sprite_outdoor_107
+    21300214: Sprite_outdoor_108
+    21300216: Sprite_outdoor_109
+    21300218: Sprite_outdoor_110
+    21300220: Sprite_outdoor_111
+    21300222: Sprite_outdoor_112
+    21300224: Sprite_outdoor_113
+    21300226: Sprite_outdoor_114
+    21300228: Sprite_outdoor_115
+    21300230: Sprite_outdoor_116
+    21300232: Sprite_outdoor_117
+    21300234: Sprite_outdoor_118
+    21300236: Sprite_outdoor_119
+    21300238: Sprite_outdoor_120
+    21300240: Sprite_outdoor_121
+    21300242: Sprite_outdoor_122
+    21300244: Sprite_outdoor_123
+    21300246: Sprite_outdoor_124
+    21300248: Sprite_outdoor_125
+    21300250: Sprite_outdoor_126
+    21300252: Sprite_outdoor_127
+    21300254: Sprite_outdoor_128
+    21300256: Sprite_outdoor_129
+    21300258: Sprite_outdoor_130
+    21300260: Sprite_outdoor_131
+    21300262: Sprite_outdoor_132
+    21300264: Sprite_outdoor_133
+    21300266: Sprite_outdoor_134
+    21300268: Sprite_outdoor_135
+    21300270: Sprite_outdoor_136
+    21300272: Sprite_outdoor_137
+    21300274: Sprite_outdoor_138
+    21300276: Sprite_outdoor_139
+    21300278: Sprite_outdoor_140
+    21300280: Sprite_outdoor_141
+    21300282: Sprite_outdoor_142
+    21300284: Sprite_outdoor_143
+    21300286: Sprite_outdoor_144
+    21300288: Sprite_outdoor_145
+    21300290: Sprite_outdoor_146
+    21300292: Sprite_outdoor_147
+    21300294: Sprite_outdoor_148
+    21300296: Sprite_outdoor_149
+    21300298: Sprite_outdoor_150
+    21300300: Sprite_outdoor_151
+    21300302: Sprite_outdoor_152
+    21300304: Sprite_outdoor_153
+    21300306: Sprite_outdoor_154
+    21300308: Sprite_outdoor_155
+    21300310: Sprite_outdoor_156
+    21300312: Sprite_outdoor_157
+    21300314: Sprite_outdoor_158
+    21300316: Sprite_outdoor_159
+    21300318: Sprite_outdoor_160
+    21300320: Sprite_outdoor_161
+    21300322: Sprite_outdoor_162
+    21300324: Sprite_outdoor_163
+    21300326: Sprite_outdoor_164
+    21300328: Sprite_outdoor_165
+    21300330: Sprite_outdoor_166
+    21300332: Sprite_outdoor_167
+    21300334: Sprite_outdoor_168
+    21300336: Sprite_outdoor_169
+    21300338: Sprite_outdoor_170
+    21300340: Sprite_outdoor_171
+    21300342: Sprite_outdoor_172
+    21300344: Sprite_outdoor_173
+    21300346: Sprite_outdoor_174
+    21300348: Sprite_outdoor_175
+    21300350: Sprite_outdoor_176
+    21300352: Sprite_outdoor_177
+    21300354: Sprite_outdoor_178
+    21300356: Sprite_outdoor_179
+    21300358: Sprite_outdoor_180
+    21300360: Sprite_outdoor_181
+    21300362: Sprite_outdoor_182
+    21300364: Sprite_outdoor_183
+    21300366: Sprite_outdoor_184
+    21300368: Sprite_outdoor_185
+    21300370: Sprite_outdoor_186
+    21300372: Sprite_outdoor_187
+    21300374: Sprite_outdoor_188
+    21300376: Sprite_outdoor_189
+    21300378: Sprite_outdoor_190
+    21300380: Sprite_outdoor_191
+    21300382: Sprite_outdoor_192
+    21300384: Sprite_outdoor_193
+    21300386: Sprite_outdoor_194
+    21300388: Sprite_outdoor_195
+    21300390: Sprite_outdoor_196
+    21300392: Sprite_outdoor_197
+    21300394: Sprite_outdoor_198
+    21300396: Sprite_outdoor_199
+    21300398: Sprite_outdoor_200
+    21300400: Sprite_outdoor_201
+    21300402: Sprite_outdoor_202
+    21300404: Sprite_outdoor_203
+    21300406: Sprite_outdoor_204
+    21300408: Sprite_outdoor_205
+    21300410: Sprite_outdoor_206
+    21300412: Sprite_outdoor_207
+    21300414: Sprite_outdoor_208
+    21300416: Sprite_outdoor_209
+    21300418: Sprite_outdoor_210
+    21300420: Sprite_outdoor_211
+    21300422: Sprite_outdoor_212
+    21300424: Sprite_outdoor_213
+    21300426: Sprite_outdoor_214
+    21300428: Sprite_outdoor_215
+    21300430: Sprite_outdoor_216
+    21300432: Sprite_outdoor_217
+    21300434: Sprite_outdoor_218
+    21300436: Sprite_outdoor_219
+    21300438: Sprite_outdoor_220
+    21300440: Sprite_outdoor_221
+    21300442: Sprite_outdoor_222
+    21300444: Sprite_outdoor_223
+    21300446: Sprite_outdoor_224
+    21300448: Sprite_outdoor_225
+    21300450: Sprite_outdoor_226
+    21300452: Sprite_outdoor_227
+    21300454: Sprite_outdoor_228
+    21300456: Sprite_outdoor_229
+    21300458: Sprite_outdoor_230
+    21300460: Sprite_outdoor_231
+    21300462: Sprite_outdoor_232
+    21300464: Sprite_outdoor_233
+    21300466: Sprite_outdoor_234
+    21300468: Sprite_outdoor_235
+    21300470: Sprite_outdoor_236
+    21300472: Sprite_outdoor_237
+    21300474: Sprite_outdoor_238
+    21300476: Sprite_outdoor_239
+    21300478: Sprite_outdoor_240
+    21300480: Sprite_outdoor_241
+    21300482: Sprite_outdoor_242
+    21300484: Sprite_outdoor_243
+    21300486: Sprite_outdoor_244
+    21300488: Sprite_outdoor_245
+    21300490: Sprite_outdoor_246
+    21300492: Sprite_outdoor_247
+    21300494: Sprite_outdoor_248
+    21300496: Sprite_outdoor_249
+    21300498: Sprite_outdoor_250
+    21300500: Sprite_outdoor_251
+    21300502: Sprite_outdoor_252
+    21300504: Sprite_outdoor_253
+    21300506: Sprite_outdoor_254
+    21300508: Sprite_outdoor_255
+    21300510: Sprite_outdoor_256
+    21300512: Sprite_outdoor_257
+    21300514: Sprite_outdoor_258
+    21300516: Sprite_outdoor_259
+    21300518: Sprite_outdoor_260
+    21300520: Sprite_outdoor_261
+    21300522: Sprite_outdoor_262
+    21300524: Sprite_outdoor_263
+    21300526: Sprite_outdoor_264
+    21300528: Sprite_outdoor_265
+    21300530: Sprite_outdoor_266
+    21300532: Sprite_outdoor_267
+    21300534: Sprite_outdoor_268
+    21300536: Sprite_outdoor_269
+    21300538: Sprite_outdoor_270
+    21300540: Sprite_outdoor_271
+    21300542: Sprite_outdoor_272
+    21300544: Sprite_outdoor_273
+    21300546: Sprite_outdoor_274
+    21300548: Sprite_outdoor_275
+    21300550: Sprite_outdoor_276
+    21300552: Sprite_outdoor_277
+    21300554: Sprite_outdoor_278
+    21300556: Sprite_outdoor_279
+    21300558: Sprite_outdoor_280
+    21300560: Sprite_outdoor_281
+    21300562: Sprite_outdoor_282
+    21300564: Sprite_outdoor_283
+    21300566: Sprite_outdoor_284
+    21300568: Sprite_outdoor_285
+    21300570: Sprite_outdoor_286
+    21300572: Sprite_outdoor_287
+    21300574: Sprite_outdoor_288
+    100100000: _MapPrfab
+    2569400265252428796: _MapPrfab/orthogonal-outside/Grid
+    3664157343022684176: _MapPrfab/orthogonal-outside/Fringe/TilemapRenderer
+    3664157343022684178: _MapPrfab/orthogonal-outside/Ground/TilemapRenderer
+    8195094279510102542: _MapPrfab/orthogonal-outside/Fringe/Tilemap
+    8195094279510102544: _MapPrfab/orthogonal-outside/Ground/Tilemap
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
+  errors: []
+  warnings:
+  - Tileset 'outdoor' is an embedded tileset. Exported tilesets are preferred.
+  missingSortingLayers: []
+  missingLayers: []
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 580
+  tilesAsObjects: 0
+  importSorting: 0
+  isIsometric: 0
+  customImporterClassName: 
+  internalTilesets:
+  - {instanceID: 0}

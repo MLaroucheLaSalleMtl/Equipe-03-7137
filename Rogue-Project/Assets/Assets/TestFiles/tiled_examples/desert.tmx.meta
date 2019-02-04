@@ -1,0 +1,76 @@
+fileFormatVersion: 2
+guid: 8435ff5bfb7118748b15d5b4d01221c5
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: _MapPrfab/desert
+    100002: _MapPrfab/desert/Ground
+    400000: _MapPrfab/desert/Transform
+    400002: _MapPrfab/desert/Ground/Transform
+    11400000: _MapPrfab/desert/MonoBehaviour-SuperTiled2Unity.SuperMap
+    11400002: _MapPrfab/desert/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400004: _MapPrfab/desert/Ground/MonoBehaviour-SuperTiled2Unity.SuperTileLayer
+    11400006: _MapPrfab/desert/Ground/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400008: _superAsset
+    100100000: _MapPrfab
+    2569400265252428796: _MapPrfab/desert/Grid
+    3664157343022684176: _MapPrfab/desert/Ground/TilemapRenderer
+    8195094279510102542: _MapPrfab/desert/Ground/Tilemap
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
+  errors:
+  - Errors detected in tileset 'desert.tsx'. Check the tileset inspector for more
+    details. Your map may be broken until these are fixed.
+  - Could not find tile 30. Make sure the tilesets were successfully imported.
+  - Could not find tile 14. Make sure the tilesets were successfully imported.
+  - Could not find tile 15. Make sure the tilesets were successfully imported.
+  - Could not find tile 16. Make sure the tilesets were successfully imported.
+  - Could not find tile 46. Make sure the tilesets were successfully imported.
+  - Could not find tile 31. Make sure the tilesets were successfully imported.
+  - Could not find tile 22. Make sure the tilesets were successfully imported.
+  - Could not find tile 23. Make sure the tilesets were successfully imported.
+  - Could not find tile 24. Make sure the tilesets were successfully imported.
+  - Could not find tile 1. Make sure the tilesets were successfully imported.
+  - Could not find tile 2. Make sure the tilesets were successfully imported.
+  - Could not find tile 3. Make sure the tilesets were successfully imported.
+  - Could not find tile 25. Make sure the tilesets were successfully imported.
+  - Could not find tile 26. Make sure the tilesets were successfully imported.
+  - Could not find tile 27. Make sure the tilesets were successfully imported.
+  - Could not find tile 9. Make sure the tilesets were successfully imported.
+  - Could not find tile 10. Make sure the tilesets were successfully imported.
+  - Could not find tile 11. Make sure the tilesets were successfully imported.
+  - Could not find tile 33. Make sure the tilesets were successfully imported.
+  - Could not find tile 34. Make sure the tilesets were successfully imported.
+  - Could not find tile 35. Make sure the tilesets were successfully imported.
+  - Could not find tile 40. Make sure the tilesets were successfully imported.
+  - Could not find tile 36. Make sure the tilesets were successfully imported.
+  - Could not find tile 42. Make sure the tilesets were successfully imported.
+  - Could not find tile 37. Make sure the tilesets were successfully imported.
+  - Could not find tile 38. Make sure the tilesets were successfully imported.
+  - Could not find tile 48. Make sure the tilesets were successfully imported.
+  - Could not find tile 44. Make sure the tilesets were successfully imported.
+  - Could not find tile 45. Make sure the tilesets were successfully imported.
+  - Could not find tile 39. Make sure the tilesets were successfully imported.
+  - Could not find tile 41. Make sure the tilesets were successfully imported.
+  - Could not find tile 43. Make sure the tilesets were successfully imported.
+  - Could not find tile 7. Make sure the tilesets were successfully imported.
+  - Could not find tile 8. Make sure the tilesets were successfully imported.
+  - Could not find tile 29. Make sure the tilesets were successfully imported.
+  - Could not find tile 17. Make sure the tilesets were successfully imported.
+  - Could not find tile 18. Make sure the tilesets were successfully imported.
+  - Could not find tile 19. Make sure the tilesets were successfully imported.
+  - Could not find tile 32. Make sure the tilesets were successfully imported.
+  - Could not find tile 47. Make sure the tilesets were successfully imported.
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 2
+  tilesAsObjects: 0
+  importSorting: 0
+  isIsometric: 0
+  customImporterClassName: 
+  internalTilesets: []
