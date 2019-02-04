@@ -1,0 +1,64 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerBehaviour : MonoBehaviour
+{
+    //Variable List.//
+    public float walkingSpeed;
+    public float moveX;
+    public float moveY;
+    private Vector2 direction;
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+        GetInput();
+        Move();
+        //Input for the Animator.//
+        moveX = Input.GetAxis("Horizontal");
+        moveY = Input.GetAxis("Vertical");
+
+        //Output for the Animator.//
+        animator.SetFloat("MoveX", moveX);
+        animator.SetFloat("MoveY", moveY);
+    }
+
+    void Move ()
+    {
+        transform.Translate(direction * walkingSpeed * Time.deltaTime); //DeltaTime makes moving more fluid.//
+    }
+
+    private void GetInput()
+    { 
+        direction = Vector2.zero; //RaZ.//
+        animator.SetLayerWeight(0, 1);
+        animator.SetFloat("MouseX", direction.x);
+        animator.SetFloat("MouseY", direction.y);
+
+
+        //Could be changed for InputManager's - Marc's way.//
+        if (Input.GetKey(KeyCode.W))
+        {
+            direction += Vector2.up;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            direction += Vector2.left;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            direction += Vector2.down;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            direction += Vector2.right;
+        }
+    }
+}
