@@ -49,7 +49,7 @@ public class Loading : MonoBehaviour
         loadingIcon.fillAmount = loadingProgress;
         loadingSlider.value = loadingProgress;
 
-        //Puts demicals into Percentage.//
+        //Puts decimals into Percentage.//
         loadingText.text = loadingProgress * 100f + "%";
     }
 }
