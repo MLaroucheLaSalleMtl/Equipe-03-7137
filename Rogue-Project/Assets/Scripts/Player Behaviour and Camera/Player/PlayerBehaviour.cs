@@ -17,7 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void FixedUpdate ()
     {
         GetInput();
         Move();
@@ -33,30 +33,31 @@ public class PlayerBehaviour : MonoBehaviour
     void Move ()
     {
         transform.Translate(direction * walkingSpeed * Time.deltaTime); //DeltaTime makes moving more fluid.//
+        print("Character is going: Horizontal: " + direction.x + " Vertical: " +  direction.y);
     }
 
     private void GetInput()
     { 
         direction = Vector2.zero; //RaZ.//
-        animator.SetLayerWeight(0, 1);
+        //animator.SetLayerWeight(0, 1);
         animator.SetFloat("MouseX", direction.x);
         animator.SetFloat("MouseY", direction.y);
 
 
         //Could be changed for InputManager's - Marc's way.//
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetAxisRaw("Vertical") > 0.5)
         {
             direction += Vector2.up;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetAxisRaw("Horizontal") < -0.5)
         {
             direction += Vector2.left;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetAxisRaw("Vertical") < -0.5)
         {
             direction += Vector2.down;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetAxisRaw("Horizontal") > 0.5)
         {
             direction += Vector2.right;
         }
