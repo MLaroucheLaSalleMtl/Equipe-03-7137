@@ -3596,7 +3596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myFx: {fileID: 5572285716198048507}
-  soundFx: {fileID: 8300000, guid: eccc704465399894888aa836a5f35793, type: 3}
+  soundFx: {fileID: 8300000, guid: 36502af5bdc3b604b9b1806d7c104092, type: 3}
 --- !u!222 &5572285716246060875
 CanvasRenderer:
   m_ObjectHideFlags: 0
