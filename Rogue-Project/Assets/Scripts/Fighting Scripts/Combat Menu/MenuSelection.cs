@@ -25,7 +25,6 @@ public class MenuSelection : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("fuck");
             if (index < totalCommands - 1)
             {
                 index++;

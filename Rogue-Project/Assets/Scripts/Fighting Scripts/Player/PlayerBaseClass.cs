@@ -5,14 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerBaseClass 
 {
-    //Manage's player's name.//
+    //Manages player's name.//
     public string playerName;
 
-    //Manage's the starting HP and current HP.//
+    //Manages the starting HP and current HP.//
     public float baseHP;
     public float currentHP;
 
-    //Manage's the starting MP and current MP.//
+    //Manages the starting MP and current MP.//
     public float baseMP;
     public float currentMP;
 

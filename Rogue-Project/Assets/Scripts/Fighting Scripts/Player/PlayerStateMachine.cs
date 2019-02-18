@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class FightingState : MonoBehaviour
+public class PlayerStateMachine : MonoBehaviour
 {
-    public PlayerBaseClass mainCharacter;
-
+    public PlayerBaseClass playerBaseClass;
     public enum TurnState
     {
         ADDTOLIST,
@@ -21,7 +19,7 @@ public class FightingState : MonoBehaviour
     //Health as a progress Bar.//
     private float current_Cooldown = 0.0f;
     private float max_Cooldown = 5.0f;
-    public Image ProgressBar;
+    //  public Image ProgressBar;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +30,23 @@ public class FightingState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(currentState)
+        switchState();
+    }
+    void UpgradeProgressBar()
+    {
+        current_Cooldown = current_Cooldown + Time.deltaTime;
+        float calc_Cooldown = current_Cooldown / max_Cooldown;
+        //ProgressBar.transform.localScale = new Vector3(Mathf.Clamp(calc_Cooldown, 0, 1), ProgressBar.transform.localScale.y, ProgressBar.transform.localScale.z);
+
+        if (current_Cooldown >= max_Cooldown)
+        {
+            currentState = TurnState.ADDTOLIST;
+        }
+    }
+
+    void switchState()
+    {
+        switch (currentState)
         {
             case (TurnState.ADDTOLIST):
                 break;
@@ -48,22 +62,11 @@ public class FightingState : MonoBehaviour
                 break;
 
             case (TurnState.ACTION):
+
                 break;
 
             case (TurnState.DEAD):
                 break;
-        }
-    }
-
-    void UpgradeProgressBar()
-    {
-        current_Cooldown = current_Cooldown + Time.deltaTime;
-        float calc_Cooldown = current_Cooldown / max_Cooldown;
-        ProgressBar.transform.localScale = new Vector3(Mathf.Clamp(calc_Cooldown, 0, 1), ProgressBar.transform.localScale.y, ProgressBar.transform.localScale.z);
-        
-        if(current_Cooldown >= max_Cooldown)
-        {
-            currentState = TurnState.ADDTOLIST;
         }
     }
 }
