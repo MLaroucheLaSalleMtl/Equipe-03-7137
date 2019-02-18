@@ -8,7 +8,7 @@ public class EnemyStateMachine : MonoBehaviour
     private BattleStateMachine battleStateMachine;
 
     public EnemyBaseClass enemyBaseClass;
-    public PlayerBaseClass playerBaseClass;
+   
 
     public enum TurnState
     {
