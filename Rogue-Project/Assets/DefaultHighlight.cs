@@ -9,7 +9,6 @@ public class DefaultHighlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventSystem.current.SetSelectedGameObject(gameObject, null);
     }
 
     // Update is called once per frame
