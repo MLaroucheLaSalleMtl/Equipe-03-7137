@@ -25,7 +25,6 @@ public class MenuSelection : MonoBehaviour
     {
         if (Input.GetAxisRaw("Vertical") <0)
         {
-            Debug.Log("fuck");
             if (index < totalCommands - 1)
             {
                 index++;
