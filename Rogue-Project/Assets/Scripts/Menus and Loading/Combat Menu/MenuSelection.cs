@@ -23,7 +23,7 @@ public class MenuSelection : MonoBehaviour
 
     private void SelectionDirection()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetAxisRaw("Vertical") <0)
         {
             Debug.Log("fuck");
             if (index < totalCommands - 1)
@@ -35,7 +35,7 @@ public class MenuSelection : MonoBehaviour
                 position.z = 0.0f;
             }
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetAxisRaw("Vertical") > 0)
         {
             if (index > 0)
             {
