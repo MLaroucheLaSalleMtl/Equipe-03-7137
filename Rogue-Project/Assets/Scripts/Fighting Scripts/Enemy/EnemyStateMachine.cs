@@ -83,7 +83,7 @@ public class EnemyStateMachine : MonoBehaviour
     {
         TurnHandler attack = new TurnHandler();
 
-        attack.attackersName = enemyBaseClass.playerName;
+        attack.attackersName = enemyBaseClass.name;
         attack.Type = "Enemy";
         attack.AttackerGameObject = this.gameObject;
         //Attack the player at random if there is an ally to the Main Character it will attack, if there is only one person it will always attack one person.//

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-    public abstract class DummyClass
+    public abstract class DummyBaseClass
     {
     //Manages user's name.//
     public string name;
@@ -24,6 +24,7 @@ using System.Threading.Tasks;
     public int Defense;      //=> Used to reduce incoming attacks - Could be armor based.//
     public int Intelligence; //=> could be used for spells and such.//
     public int Luck;         //=> Influences the RUN command during a match and evasive attacks.//
+
 
 
     //Types of actions
