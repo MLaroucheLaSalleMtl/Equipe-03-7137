@@ -610,11 +610,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnList: []
-  MainCharacter:
-  - {fileID: 1789802225}
-  Enemies:
-  - {fileID: 263901134}
-  - {fileID: 1365463428}
+  MainCharacter: []
+  Enemies: []
   battleState: 0
 --- !u!4 &449210159
 Transform:
