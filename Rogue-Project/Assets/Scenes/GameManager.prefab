@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 1
-  PausePannel: {fileID: 8925794507000999914, guid: de29ebfd95605fa4cbc36de64f9f8241,
-    type: 3}
-  OptionsPannel: {fileID: 7057545906772296833, guid: 5fde0718aeb304448a47c37057586ad1,
-    type: 3}
+  PausePannel: {fileID: 0}
+  OptionsPannel: {fileID: 0}
   Level1: {fileID: 0}
