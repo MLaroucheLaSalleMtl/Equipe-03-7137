@@ -528,18 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBaseClass:
-    playerName: 
-    baseHP: 0
-    currentHP: 0
-    baseMP: 0
-    currentMP: 0
-    baseAttack: 0
-    currentAttack: 0
-    baseDefense: 0
-    currentDefense: 0
-  playerBaseClass:
-    enemyGrade: 0
-    playerName: 
+    name: Enemy A
     baseHP: 0
     currentHP: 0
     baseMP: 0
@@ -549,8 +538,10 @@ MonoBehaviour:
     Defense: 0
     Intelligence: 0
     Luck: 0
+    enemyGrade: 0
   currentState: 0
   ProgressBar: {fileID: 0}
+  HeroAttack: {fileID: 0}
 --- !u!1 &414528448
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,8 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBaseClass:
-    enemyGrade: 0
-    playerName: 
+    name: MC
     baseHP: 0
     currentHP: 0
     baseMP: 0
@@ -1283,18 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBaseClass:
-    playerName: 
-    baseHP: 0
-    currentHP: 0
-    baseMP: 0
-    currentMP: 0
-    baseAttack: 0
-    currentAttack: 0
-    baseDefense: 0
-    currentDefense: 0
-  playerBaseClass:
-    enemyGrade: 0
-    playerName: 
+    name: Enemy B
     baseHP: 0
     currentHP: 0
     baseMP: 0
@@ -1304,8 +1283,10 @@ MonoBehaviour:
     Defense: 0
     Intelligence: 0
     Luck: 0
+    enemyGrade: 0
   currentState: 0
   ProgressBar: {fileID: 0}
+  HeroAttack: {fileID: 0}
 --- !u!1 &1424348640
 GameObject:
   m_ObjectHideFlags: 0

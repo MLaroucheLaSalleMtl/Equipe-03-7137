@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: 92e5b992534c20e42a91439560fa87f0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MC-Walking-Down_0
+    21300000: MC-Standing
     21300002: MC-Walking-Down_1
     21300004: MC-Walking-Down_2
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -66,7 +66,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,6 +122,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1607886524fca494aa957b07f92dba93
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-Standing
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 248
+        width: 92
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccc1061f451b174a919d93b58326278
       vertices: []
       indices: 
       edges: []
