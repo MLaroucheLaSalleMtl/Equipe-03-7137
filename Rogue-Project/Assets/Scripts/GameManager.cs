@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     
     public void optionsButton()
     {
-        PausePannel.SetActive(false);
+        //PausePannel.SetActive(false);
         OptionsPannel.SetActive(true);
         changeState(GameState.OPTIONS);
     }
