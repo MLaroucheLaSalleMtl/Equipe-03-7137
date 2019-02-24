@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
---- !u!1 &5138495753206761518
-=======
 --- !u!1 &1386469790654290749
->>>>>>> SPRINTenCOURS
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,13 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 5138495753206761516}
-  - component: {fileID: 5138495753206761517}
-=======
   - component: {fileID: 1386469790654290751}
   - component: {fileID: 1386469790654290750}
->>>>>>> SPRINTenCOURS
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -26,21 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
---- !u!4 &5138495753206761516
-=======
 --- !u!4 &1386469790654290751
->>>>>>> SPRINTenCOURS
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 5138495753206761518}
-=======
   m_GameObject: {fileID: 1386469790654290749}
->>>>>>> SPRINTenCOURS
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 284.47546, y: 185.83537, z: 9.086859}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -48,21 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!114 &5138495753206761517
-=======
 --- !u!114 &1386469790654290750
->>>>>>> SPRINTenCOURS
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 5138495753206761518}
-=======
   m_GameObject: {fileID: 1386469790654290749}
->>>>>>> SPRINTenCOURS
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 722885ee5fa059c49b5b0e52687b56ff, type: 3}
