@@ -846,6 +846,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &334702236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 742217307356584118, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+    type: 3}
+  m_PrefabInstance: {fileID: 742217307741336093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &779824102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -917,7 +923,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PausePannel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1697504589}
     - target: {fileID: 1386469790654290750, guid: 231417494654a684a8026f13c4c61110,
         type: 3}
       propertyPath: OptionsPannel
@@ -933,6 +939,11 @@ PrefabInstance:
       propertyPath: PausePannel
       value: 
       objectReference: {fileID: 1697504589}
+    - target: {fileID: 1386469790654290750, guid: 231417494654a684a8026f13c4c61110,
+        type: 3}
+      propertyPath: MainCharacter
+      value: 
+      objectReference: {fileID: 334702236}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231417494654a684a8026f13c4c61110, type: 3}
 --- !u!1 &814940897
