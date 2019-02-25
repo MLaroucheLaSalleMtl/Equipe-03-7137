@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class BattleStateMachine2 : MonoBehaviour
 {
     //Constant List.//
     private const float ATTACK_TIME = 0.05f;
-    private const float DISTANCE_ATTACKER = 2.0f;
-    private const float ANIMATION_SPEED = 5.0F;
+    public const float DISTANCE_ATTACKER = 2.0f;
+    public const float ANIMATION_SPEED = 5.0F;
 
     //Variables List.//
     
@@ -21,10 +22,12 @@ public class BattleStateMachine2 : MonoBehaviour
     public List<TurnHandler> TurnList = new List<TurnHandler>();
     public List<GameObject> MainCharacter = new List<GameObject>();
     public List<GameObject> Enemies = new List<GameObject>();
+    public List<Transform> SpawnPoints = new List<Transform>();
 
     //Vectors.//
     private Vector3 StartPosition;
 
+    //Enums.//
     public enum StateOfBattle
     {
         WAITING,
@@ -37,7 +40,22 @@ public class BattleStateMachine2 : MonoBehaviour
     }
     public StateOfBattle Battle_State;
 
-    private void B_State()
+    void Awake()//Adds the enemies' names to a list.//
+    {
+        for(int i = 0; i < GameManager.gameManager.enemyCount; i++)
+        {
+            GameObject newEnemy = Instantiate(GameManager.gameManager.NumberOfEnemies[i], SpawnPoints[i].position, Quaternion.identity) as GameObject;
+            //spawn enemies and give them shit.//
+            Enemies.Add(newEnemy); //Add the new enemies that were in the vicinity to the list for the fight.//
+        }
+    }
+
+    void Update()
+    {
+        B_State();
+    }
+
+    private void B_State() //Manages the different states of the ongoing battle.//
     {
         switch (Battle_State)
         {
@@ -59,24 +77,21 @@ public class BattleStateMachine2 : MonoBehaviour
                 break;
 
             case (StateOfBattle.CHECK_ALIVE):
-                
+
+                /**Needs to be checked at the end of either turn and change the battle state to what it once was. 
+                   Basically an interruption to check if either party is still alive.**/
+
+                CheckIfAlive();
                 break;
 
             case (StateOfBattle.WIN):
-                //Check if enemy < 0 and player > 1.//
                 //Display "You've won", press ok and come back to main map.//
                 break;
 
             case (StateOfBattle.LOSE):
-                //Check if enemy > 1 and player > 0.//
                 //Display "You died", press ok and come back to main map.//
                 break;
         }
-    }
-
-    void Update()
-    {
-        B_State();
     }
 
     private void PlayerTurn()
@@ -97,7 +112,7 @@ public class BattleStateMachine2 : MonoBehaviour
             Battle_State = StateOfBattle.ENEMY_TURN;
         }
     }
-    private void CheckTurnList() //Initial test to see if the fight is a new one.//
+    private void CheckTurnList() //Initial test to see if the fight is a new one, if new => Change state to Player_Turn.//
     {
         if (TurnList.Count > 0)
         {
@@ -115,12 +130,16 @@ public class BattleStateMachine2 : MonoBehaviour
         {
             Battle_State = StateOfBattle.LOSE;
         }
+        if ((MainCharacter.Count >= 0) && (Enemies.Count > 0))
+        {
+            //Change battle state to what it was.//
+        }
+
     }
     public void CollectActions(TurnHandler Turn) //Add attackers' attack to a list.//
     {
         TurnList.Add(Turn);
     }
-
 
     //Add small animation for the attacking opponent to move toward the enemy.//
     private IEnumerator TimeForAction()

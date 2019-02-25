@@ -8,7 +8,11 @@ public class EnemyStateMachine : MonoBehaviour
     private BattleStateMachine battleStateMachine;
 
     public EnemyBaseClass enemyBaseClass;
+<<<<<<< HEAD
+    public PlayerBaseClass playerBaseClass;
+=======
    
+>>>>>>> Alonso
 
     public enum TurnState
     {
@@ -83,7 +87,11 @@ public class EnemyStateMachine : MonoBehaviour
     {
         TurnHandler attack = new TurnHandler();
 
+<<<<<<< HEAD
+        attack.attackersName = enemyBaseClass.playerName;
+=======
         attack.attackersName = enemyBaseClass.name;
+>>>>>>> Alonso
         attack.Type = "Enemy";
         attack.AttackerGameObject = this.gameObject;
         //Attack the player at random if there is an ally to the Main Character it will attack, if there is only one person it will always attack one person.//
