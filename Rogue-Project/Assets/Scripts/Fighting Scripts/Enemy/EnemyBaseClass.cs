@@ -10,24 +10,11 @@ public enum EnemyGrade
 }
 
 [System.Serializable]
-public class EnemyBaseClass : DummyBaseClass
+public abstract class EnemyBaseClass : DummyBaseClass
 {
 
     //To make different types of enemy based on their grade.//
     public EnemyGrade enemyGrade;
 
-    public override void Attack()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void Defend()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void UseItem()
-    {
-        throw new System.NotImplementedException();
-    }
+    
 }

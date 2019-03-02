@@ -20,10 +20,12 @@ public class GameManager : MonoBehaviour
 
     public static GameManager gameManager;
     public GameObject MainCharacter;
+    [SerializeField] private GameObject battleManager;
 
     //Thingy to make battle screen appear, Brad's way thing.
 
     private AsyncOperation async;
+
     public void StartBtn(int i)
     {
         if (async == null)
@@ -36,15 +38,26 @@ public class GameManager : MonoBehaviour
     [Header("Game State")]
     public GameState currentState;
 
+
+    [Header("Pannels")]
+    public GameObject PausePannel;
+    public GameObject OptionsPannel;
+
+    [Header("Levels")]
+    public GameObject Level1;
+    public GameObject Level2;
+    public GameObject Level3;
+
     void Awake()
     {
         CheckGM();
-
-        if (!GameObject.Find("MainCharacter"))
+        battleManager.SetActive(false);
+        if (!GameObject.Find("MC-Standing"))
         {
             GameObject MC = Instantiate(MainCharacter, Vector3.zero, Quaternion.identity) as GameObject; //Set the MC vector to 0 and same for rotation (Quaternion).//
             MC.name = "Main Character";
         }
+        
     }
 
     void Start()
@@ -165,11 +178,4 @@ public class GameManager : MonoBehaviour
         currentState = newState;
     }
 
-    [Header("Pannels")]
-    public GameObject PausePannel;
-    public GameObject OptionsPannel;
-
-    [Header("Levels")]
-    public GameObject Level1;
-           
 }
