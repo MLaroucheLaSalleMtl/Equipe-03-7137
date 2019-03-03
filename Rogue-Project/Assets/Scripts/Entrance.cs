@@ -6,26 +6,36 @@ using UnityEngine.UI;
 
 public class Entrance : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    static int levelNum = 1;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.tag == "CavernEntry")
+        print("colliding with _______");
+        if (collision.gameObject.tag == "Player" && gameObject.tag == "CavernEntry")
         {
-            CavernEntry();
+            print("colliding with cavern");
+            Entrance.CavernEntry();
         }
-        else if (gameObject.tag == "CabinEntry")
+        else if (collision.gameObject.tag == "Player" && gameObject.tag == "CabinEntry")
         {
-            CabinEntry();
+            print("colliding with cabin");
+            Entrance.CabinEntry();
         }
     }
 
-    private void CabinEntry()
+    public static void CabinEntry()
     {
-        throw new NotImplementedException();
+        GameObject level = GameManager.gameManager.levels[levelNum];//trouver le gameobject du level présent
+        level.SetActive(false);
+        //activer le safe house level
+        GameManager.gameManager.levels[0].SetActive(true);
     }
 
-    private void CavernEntry()
+    public static void CavernEntry()
     {
-        throw new NotImplementedException();
+        GameObject level = GameManager.gameManager.levels[levelNum];//trouver le gameobject du level présent
+        level.SetActive(false);
+        //activer le safe house level
+        GameManager.gameManager.levels[++levelNum].SetActive(true);
     }
 
     // Start is called before the first frame update

@@ -62,4 +62,5 @@ public class PlayerBehaviour : MonoBehaviour
             direction += Vector2.right;
         }
     }
+
 }

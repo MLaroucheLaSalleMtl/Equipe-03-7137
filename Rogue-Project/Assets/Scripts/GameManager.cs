@@ -44,14 +44,30 @@ public class GameManager : MonoBehaviour
     public GameObject OptionsPannel;
 
     [Header("Levels")]
-    public GameObject Level1;
-    public GameObject Level2;
-    public GameObject Level3;
+    public GameObject[] levels; //NOTE :levels[o] == safehouse
 
     void Awake()
     {
         CheckGM();
         battleManager.SetActive(false);
+
+        //getting all the levels
+        for (int i = 0; i < levels.Length; i++)
+        {
+            if (i == 0)
+            {
+                levels[0] = GameObject.Find("SafeHouse");
+                print("found the safehouse level");
+            }
+            else
+            {
+                levels[i] = GameObject.Find($"Level{i}");
+                print($"found level{i}");
+            }
+            levels[i].SetActive(false);
+        }
+        levels[1].SetActive(true);
+
         if (!GameObject.Find("MC-Standing"))
         {
             GameObject MC = Instantiate(MainCharacter, Vector3.zero, Quaternion.identity) as GameObject; //Set the MC vector to 0 and same for rotation (Quaternion).//
@@ -62,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
 
