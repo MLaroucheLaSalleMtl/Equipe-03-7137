@@ -44,29 +44,43 @@ public class GameManager : MonoBehaviour
     public GameObject OptionsPannel;
 
     [Header("Levels")]
-    public GameObject[] levels; //NOTE :levels[o] == safehouse
+    public GameObject[] levels = new GameObject[5]; //NOTE :levels[o] == safehouse
 
     void Awake()
     {
         CheckGM();
         battleManager.SetActive(false);
-
+        foreach (var item in levels) // activate all items to get them
+        {
+            if (!item.activeInHierarchy) 
+            {
+                item.SetActive(true);
+            }
+        }
         //getting all the levels
         for (int i = 0; i < levels.Length; i++)
         {
             if (i == 0)
             {
-                levels[0] = GameObject.Find("SafeHouse");
-                print("found the safehouse level");
+                levels[i] = GameObject.Find("SafeHouse");
+                print("found safehouse lvl");
+                levels[i].SetActive(false);
             }
             else
             {
                 levels[i] = GameObject.Find($"Level{i}");
                 print($"found level{i}");
             }
-            levels[i].SetActive(false);
+
+            if (levels[i].activeInHierarchy)
+            {
+                levels[i].SetActive(false);
+            }
         }
-        levels[1].SetActive(true);
+        if (!levels[1].activeInHierarchy)
+        {
+            levels[1].SetActive(true);
+        }
 
         if (!GameObject.Find("MC-Standing"))
         {

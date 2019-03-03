@@ -18,15 +18,16 @@ public class Entrance : MonoBehaviour
         else if (collision.gameObject.tag == "Player" && gameObject.tag == "CabinEntry")
         {
             print("colliding with cabin");
-            Entrance.CabinEntry();
+            Entrance.CabinEntry(ref collision);
         }
     }
 
-    public static void CabinEntry()
+    public static void CabinEntry(ref Collider2D collision)
     {
         GameObject level = GameManager.gameManager.levels[levelNum];//trouver le gameobject du level présent
         level.SetActive(false);
         //activer le safe house level
+        GameManager.gameManager.levels[0] = Instantiate(GameManager.gameManager.levels[0], collision.transform.position, Quaternion.identity);
         GameManager.gameManager.levels[0].SetActive(true);
     }
 
