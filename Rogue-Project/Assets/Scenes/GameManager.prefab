@@ -43,7 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722885ee5fa059c49b5b0e52687b56ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWalking: 0
+  CanFight: 0
+  isFighting: 0
+  enemyCount: 0
+  NumberOfEnemies: []
+  MainCharacter: {fileID: 0}
+  battleManager: {fileID: 0}
   currentState: 1
   PausePannel: {fileID: 0}
   OptionsPannel: {fileID: 0}
-  Level1: {fileID: 0}
+  levels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
