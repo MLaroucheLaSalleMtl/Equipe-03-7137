@@ -5,8 +5,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class EnemyBaseClass
-{
-
+{   
     //To make different types of enemy based on their grade.//
     public enum EnemyGrade
     {
@@ -18,7 +17,7 @@ public class EnemyBaseClass
     public EnemyGrade enemyGrade;
 
     //Manages enemy's name.//
-    public string playerName;
+    public string enemyName;
 
     //Manages the starting HP and current HP.//
     public float baseHP;
