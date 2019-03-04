@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class BattleStateMachine2 : MonoBehaviour
+public class BattleStateMachine : MonoBehaviour
 {
+    //Constants - Variables - Lists - Etc.//
+    #region
     //Constant List.//
     private const float ATTACK_TIME = 0.05f;
     public const float DISTANCE_ATTACKER = 2.0f;
@@ -17,6 +19,7 @@ public class BattleStateMachine2 : MonoBehaviour
     private float max_Cooldown = 5.0f;
 
     private bool ActionStarted = false;
+    private bool isDefending = false;
 
     //Lists.//
     public List<TurnHandler> TurnList = new List<TurnHandler>();
@@ -27,6 +30,13 @@ public class BattleStateMachine2 : MonoBehaviour
     //Vectors.//
     private Vector3 StartPosition;
 
+    //Game Objects.//
+    public GameObject Hero;
+    public GameObject TargettedEnemy;
+    
+    //Script Access.//
+    private BasicAttack bAttacks;
+    private DummyBaseClass DBC;
     //Enums.//
     public enum StateOfBattle
     {
@@ -38,7 +48,10 @@ public class BattleStateMachine2 : MonoBehaviour
         WIN,
         LOSE
     }
+
     public StateOfBattle Battle_State;
+    #endregion
+
 
     void Awake()//Adds the enemies' names to a list.//
     {
@@ -90,28 +103,18 @@ public class BattleStateMachine2 : MonoBehaviour
 
             case (StateOfBattle.LOSE):
                 //Display "You died", press ok and come back to main map.//
+
                 break;
         }
     }
 
-    private void PlayerTurn()
+    private void CollectActions(TurnHandler Turn) //Add attackers' attack to a list.//
     {
-
-    }
-    private void EnemyTurn()
-    {
-
+        TurnList.Add(Turn);
     }
 
-    private void EnemyTakingAction() //Wait for 'X' amount of seconds before switching state. => Increase/Decrease max_Cooldown.//
-    {
-        current_Cooldown = current_Cooldown + Time.deltaTime;
-
-        if (current_Cooldown >= max_Cooldown)
-        {
-            Battle_State = StateOfBattle.ENEMY_TURN;
-        }
-    }
+    //Check ups - Region.//
+    #region
     private void CheckTurnList() //Initial test to see if the fight is a new one, if new => Change state to Player_Turn.//
     {
         if (TurnList.Count > 0)
@@ -121,7 +124,7 @@ public class BattleStateMachine2 : MonoBehaviour
     }
     private void CheckIfAlive() //Check whoever has remaining people alive.//
     {
-        if((MainCharacter.Count > 0) && (Enemies.Count <= 0))
+        if ((MainCharacter.Count > 0) && (Enemies.Count <= 0))
         {
             Battle_State = StateOfBattle.WIN;
         }
@@ -136,11 +139,66 @@ public class BattleStateMachine2 : MonoBehaviour
         }
 
     }
-    public void CollectActions(TurnHandler Turn) //Add attackers' attack to a list.//
+    #endregion
+
+    //Main Character - Region.//
+    #region
+    private void PlayerTurn()
     {
-        TurnList.Add(Turn);
+        //Add.//
     }
 
+    private void PlayerDefend(float damageReceived) //Put defenses up then change state of battle.//
+    {
+        isDefending = true;
+        Battle_State = StateOfBattle.WAITING;
+    }
+
+    private void PlayerAttack() //Need help here.// //Send damage to the targetted enemy.//
+    {
+        float givenDamage = bAttacks.Damage;
+        //TargettedEnemy.GetComponent<healthcomponentcalice>.doDamageCalice(givenDamage);
+    }
+    private void ReceiveAttackMC(float damageReceived) //Remove HP from the MC's health and check if the HPs are at 0 or lower (Check if alive = null).//
+    {
+        DBC.currentHP -= damageReceived;
+
+        if(DBC.currentHP <= 0)
+        {
+            DBC.currentHP = 0;
+            Battle_State = StateOfBattle.LOSE;
+        }
+    }
+    #endregion
+
+    //Enemy - Region.//
+    #region
+    //Everything below is Enemy stuff.//
+    private void EnemyTurn()
+    {
+        //TurnHandler attack = new TurnHandler();
+
+        //attack.attackersName = Hero.playerName;
+        //attack.AttackerGameObject = this.gameObject;
+        ////Attack the player at random if there is an ally to the Main Character it will attack, if there is only one person it will always attack one person.//
+        //attack.AttackersTarget = battleStateMachine.MainCharacter[Random.Range(0, battleStateMachine.MainCharacter.Count)];
+
+        //battleStateMachine.gatherActions(attack);
+    }
+    private void EnemyTakingAction() //Wait for 'X' amount of seconds before switching state. => Increase/Decrease max_Cooldown.//
+    {
+        current_Cooldown = current_Cooldown + Time.deltaTime;
+
+        if (current_Cooldown >= max_Cooldown)
+        {
+            Battle_State = StateOfBattle.ENEMY_TURN;
+        }
+    }
+
+    #endregion
+
+    //Animation - Region.///
+    #region
     //Add small animation for the attacking opponent to move toward the enemy.//
     private IEnumerator TimeForAction()
     {
@@ -151,9 +209,9 @@ public class BattleStateMachine2 : MonoBehaviour
         Vector3 MainCharactersPosition = new Vector3
             (
             //Move enemy towards the player.//
-            //opponent.transform.position.x - DISTANCE_ATTACKER,
-            //opponent.transform.position.y, 
-            //opponent.transform.position.Z
+            Hero.transform.position.x - DISTANCE_ATTACKER,
+            Hero.transform.position.y,
+            Hero.transform.position.z
             );
 
         while (MoveTowardsEnemy(MainCharactersPosition)){yield return null;}
@@ -163,11 +221,7 @@ public class BattleStateMachine2 : MonoBehaviour
         Vector3 firstPosition = StartPosition; //Moves the attacker back to its starting position.//
         while (MoveTowardsStart(firstPosition)){yield return null;}
 
-        //Reset BattleStateMachine
-        TurnList.RemoveAt(0);
-        Battle_State = StateOfBattle.WAITING;
-        ActionStarted = false;
-        current_Cooldown = 0.0f;
+        BSM_Reset(); //Reset.//
     }
     private bool MoveTowardsEnemy(Vector3 target) //Move towards the opponent.//
     {
@@ -177,5 +231,17 @@ public class BattleStateMachine2 : MonoBehaviour
     {
         return target != (transform.position = Vector3.MoveTowards(transform.position, target, ANIMATION_SPEED * Time.deltaTime));
     }
+    #endregion
 
+    //Resets - Region./
+    #region
+    private void BSM_Reset()
+    {
+        //Reset BattleStateMachine
+        TurnList.RemoveAt(0);
+        Battle_State = StateOfBattle.WAITING;
+        ActionStarted = false;
+        current_Cooldown = 0.0f;
+    }
+    #endregion
 }
