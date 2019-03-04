@@ -15,13 +15,29 @@ public class EntryManager : MonoBehaviour
 
     }
 
-    public static void CavernEntry(int levelNum)
+    public static void CavernEntry(ref Collider2D collision, int levelNum)
     {
 
-        //activer le safe house level
+        //aller vers le prochain level
         GameManager.gameManager.levels[GameManager.currentLevel].SetActive(false);
         GameManager.gameManager.levels[levelNum].SetActive(true);
         GameManager.currentLevel = levelNum;
+        GameManager.gameManager.camera.backgroundColor = new Color(21, 18, 4, 255);
+
+    }
+
+    public static void CavernExit(ref Collider2D collision, int levelNum)
+    {
+
+        //aller vers le dernier level
+        GameManager.gameManager.levels[GameManager.currentLevel].SetActive(false);
+        if (levelNum <= 1)
+        {
+            levelNum = 2;
+        }
+        GameManager.gameManager.levels[--levelNum].SetActive(true);
+        GameManager.currentLevel = levelNum;
+        GameManager.gameManager.MainCharacter.transform.localPosition = new Vector3(GameManager.gameManager.MainCharacter.transform.localPosition.x + 0.7f, GameManager.gameManager.MainCharacter.transform.localPosition.y, GameManager.gameManager.MainCharacter.transform.localPosition.z);
 
     }
 

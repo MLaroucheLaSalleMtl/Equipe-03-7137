@@ -8,6 +8,7 @@ TagManager:
   - MainCharacter
   - CavernEntry
   - CabinEntry
+  - CavernExit
   layers:
   - Default
   - TransparentFX
