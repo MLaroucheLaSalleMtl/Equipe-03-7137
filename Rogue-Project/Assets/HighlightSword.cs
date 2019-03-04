@@ -12,8 +12,14 @@ public class HighlightSword : MonoBehaviour, IPointerEnterHandler
 
 
 
-    public void OnPointerEnter(PointerEventData eventData)
+     public void OnPointerEnter(PointerEventData eventData)
     {
+        CatchSword();
+
+    }
+
+    public void CatchSword() {
+
         Quaternion rot = new Quaternion();
         if (x > 0)
         {
@@ -26,8 +32,8 @@ public class HighlightSword : MonoBehaviour, IPointerEnterHandler
             rot.eulerAngles = new Vector3(0, 0, 0);
         }
         sword.transform.rotation = rot;
-        sword.transform.position= transform.position + new Vector3(x, 0, 0);
-
+        sword.transform.position = transform.position + new Vector3(x, 0, 0);
     }
+
 }
     
