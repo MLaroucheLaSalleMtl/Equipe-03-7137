@@ -1,153 +1,72 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerStateMachine : MonoBehaviour
+using UnityEngine.UI;
+public class PlayerStateMachine2 : MonoBehaviour
 {
-    //Constants - Variables - Lists - Etc.//
-    #region
-    //Constant List.//
-    private const float ATTACK_TIME = 0.05f;
-    public const float DISTANCE_ATTACKER = 2.0f;    //Distance between the enemy and the player during the attack.//
-    public const float ANIMATION_SPEED = 5.0F;      //Speed of the 'going to' theenemy.//
-    private const float DEFENDING_DEMULTIPLIER = 0.25F;     //Multiplier if the player is defending.//
-
-    //Variables List.//
-    //Manages the time before the enemy attacks.//
-    private float current_Cooldown = 0.0f;
-    private float max_Cooldown = 5.0f;
-
-    //Bool.//
-    private bool ActionStarted = false;
-    private bool isDefending = false;
-
-    //Lists.//
-    public List<GameObject> MainCharacter = new List<GameObject>();
-    public List<GameObject> Enemies = new List<GameObject>();
-    public List<Transform> SpawnPoints = new List<Transform>();
-
-    //Vectors.//
-    private Vector3 StartPosition;
-
-    //Game Objects.//
-    public GameObject Hero;
-    public GameObject TargettedEnemy;
-
-    //Script Access.//
-    private BasicAttack bAttacks;
-    private DummyBaseClass DBC;
-    private BattleStateMachine BSM;
-
-    //Enums.//
-    public enum StateOfBattle
+    public PlayerBaseClass playerBaseClass;
+    public enum TurnState
     {
-        PROCESSING,
         ADDTOLIST,
+        PROCESSING,
         WAITING,
         SELECTING,
         ACTION,
         DEAD
-
     }
+    public TurnState currentState;
 
-    public StateOfBattle Battle_State;
-    #endregion
+    //Health as a progress Bar.//
+    private float current_Cooldown = 0.0f;
+    private float max_Cooldown = 5.0f;
+    //  public Image ProgressBar;
 
+    // Start is called before the first frame update
     void Start()
     {
-        Battle_State = StateOfBattle.PROCESSING;
-        BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
+        currentState = TurnState.PROCESSING;
     }
 
+    // Update is called once per frame
     void Update()
     {
-
-        switch (Battle_State)
-        {
-            case (StateOfBattle.PROCESSING):
-                TurnTimer();
-                break;
-
-            case (StateOfBattle.ADDTOLIST):
-                BSM.MCManagement.Add(this.gameObject);
-                Battle_State = StateOfBattle.WAITING;
-                break;
-
-            case (StateOfBattle.WAITING):
-                //idle
-                break;
-
-            case (StateOfBattle.ACTION):
-                TimeForAction();
-                Battle_State = StateOfBattle.WAITING;
-                break;
-
-            case (StateOfBattle.DEAD):
-                break;
-        }
-
+        switchState();
     }
-
-
-
-
-    void TurnTimer()
+    void UpgradeProgressBar()
     {
         current_Cooldown = current_Cooldown + Time.deltaTime;
+        float calc_Cooldown = current_Cooldown / max_Cooldown;
+        //ProgressBar.transform.localScale = new Vector3(Mathf.Clamp(calc_Cooldown, 0, 1), ProgressBar.transform.localScale.y, ProgressBar.transform.localScale.z);
 
         if (current_Cooldown >= max_Cooldown)
         {
-            Battle_State = StateOfBattle.ACTION;
+            currentState = TurnState.ADDTOLIST;
         }
     }
 
-    //Animation - Region.///
-    #region
-    //Add small animation for the attacking opponent to move toward the enemy.//
-    private IEnumerator TimeForAction()
+    void switchState()
     {
-        if (ActionStarted) { yield break; }
+        switch (currentState)
+        {
+            case (TurnState.ADDTOLIST):
+                break;
 
-        ActionStarted = true;
+            case (TurnState.PROCESSING):
+                UpgradeProgressBar();
+                break;
 
-        Vector3 MainCharactersPosition = new Vector3
-            (
-            //Move enemy towards the player.//
-            Hero.transform.position.x - DISTANCE_ATTACKER,
-            Hero.transform.position.y,
-            Hero.transform.position.z
-            );
+            case (TurnState.WAITING):
+                break;
 
-        while (MoveTowardsEnemy(MainCharactersPosition)) { yield return null; }
-        
-        //DoDamage here.//
+            case (TurnState.SELECTING):
+                break;
 
-        yield return new WaitForSeconds(ATTACK_TIME); //After moving towards the enemy, waits for 'X' seconds.//
+            case (TurnState.ACTION):
 
-        Vector3 firstPosition = StartPosition; //Moves the attacker back to its starting position.//
-        while (MoveTowardsStart(firstPosition)) { yield return null; }
+                break;
 
-        BSM_Reset(); //Reset.//
+            case (TurnState.DEAD):
+                break;
+        }
     }
-    private bool MoveTowardsEnemy(Vector3 target) //Move towards the opponent.//
-    {
-        return target != (transform.position = Vector3.MoveTowards(transform.position, target, ANIMATION_SPEED * Time.deltaTime));
-    }
-    private bool MoveTowardsStart(Vector3 target) //Move back to start.//
-    {
-        return target != (transform.position = Vector3.MoveTowards(transform.position, target, ANIMATION_SPEED * Time.deltaTime));
-    }
-    #endregion
-
-    //Resets - Region./
-    #region
-    private void BSM_Reset()
-    {
-        //Reset BattleStateMachine
-        Battle_State = StateOfBattle.WAITING;
-        ActionStarted = false;
-        current_Cooldown = 0.0f;
-    }
-    #endregion
-
 }
