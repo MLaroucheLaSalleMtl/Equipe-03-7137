@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isWalking = false;
     public bool CanFight = false; //Prevent from entering a fight twice => enemyVicinity(); //
     public bool isFighting = false;
-
+    
     public int enemyCount = 0;
 
     //Lists.//
@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     [Header("[Levels]")]
     public GameObject[] levels = new GameObject[5]; //NOTE :levels[o] == safehouse
+    public static int currentLevel = 1;
+    public static int previousLevel = 0;
 
     void Awake()
     {
