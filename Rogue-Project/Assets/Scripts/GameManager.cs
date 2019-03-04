@@ -35,15 +35,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [Header("Game State")]
+    [Header("[Game State]")]
     public GameState currentState;
 
 
-    [Header("Pannels")]
+    [Header("[Pannels]")]
     public GameObject PausePannel;
     public GameObject OptionsPannel;
 
-    [Header("Levels")]
+    [Header("[Levels]")]
     public GameObject[] levels = new GameObject[5]; //NOTE :levels[o] == safehouse
 
     void Awake()
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             levels[1].SetActive(true);
         }
 
-        if (!GameObject.Find("MC-Standing"))
+        if (!GameObject.Find("MainCharacter"))
         {
             GameObject MC = Instantiate(MainCharacter, Vector3.zero, Quaternion.identity) as GameObject; //Set the MC vector to 0 and same for rotation (Quaternion).//
             MC.name = "Main Character";
