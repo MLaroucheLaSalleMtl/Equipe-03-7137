@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
             isFighting = true;
         }
     }
-    private void StartFight()
+    public void StartFight()
     {
         //Count how many enemies are in the vicinity.//
         for (int i = 0; i < enemyCount; i++)
