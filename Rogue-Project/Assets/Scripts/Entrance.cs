@@ -13,12 +13,17 @@ public class Entrance : MonoBehaviour
         if (collision.gameObject.tag == "Player" && gameObject.tag == "CavernEntry")
         {
             print("colliding with cavern");
-            EntryManager.CavernEntry(levelNum);
+            EntryManager.CavernEntry(ref collision, levelNum);
         }
         else if (collision.gameObject.tag == "Player" && gameObject.tag == "CabinEntry")
         {
             print("colliding with cabin");
             EntryManager.CabinEntry(ref collision);
+        }
+        else if (collision.gameObject.tag == "Player" && gameObject.tag == "CavernExit")
+        {
+            print("colliding with cavern exit");
+            EntryManager.CavernExit(ref collision, levelNum);
         }
     }
 

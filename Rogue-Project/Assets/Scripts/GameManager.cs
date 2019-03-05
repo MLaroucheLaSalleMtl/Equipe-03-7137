@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     //Lists.//
     public List<GameObject> NumberOfEnemies = new List<GameObject>(); //Manages the numbers of enemies inside a Fight.//
 
-
+    public Camera camera;
     public static GameManager gameManager;
     public GameObject MainCharacter;
     [SerializeField] private GameObject battleManager;
