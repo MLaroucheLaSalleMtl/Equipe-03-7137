@@ -34,19 +34,19 @@ public class BattleStateMachine : MonoBehaviour
     {
         for (int i = 0; i < GM.enemyCount; i++)
         {
-            //GameObject NewEnemy = Instantiate
-            //    (
-            //        GameManager.gameManager.NumberOfEnemies[i], 
-            //        //Deal with enemy/enemies' position on awake.//
-            //        Quaternion.identity
+            GameObject NewEnemy = Instantiate
+                (
+                    GameManager.gameManager.NumberOfEnemies[i],
+                    //Deal with enemy/enemies' position on awake.//
+                    Quaternion.identity
 
-            //    ) as GameObject;
+                ) as GameObject;
 
-            //NewEnemy.name = NewEnemy.GetComponent<EnemyStateMachine>().enemy.theName + "_" + (i + 1);
-            //NewEnemy.GetComponent<EnemyStateMachine>().enemy.theName = NewEnemy.name;
+            NewEnemy.name = NewEnemy.GetComponent<EnemyStateMachine>().EBS.enemyName + "_" + (i + 1);
+            NewEnemy.GetComponent<EnemyStateMachine>().EBS.enemyName = NewEnemy.name;
 
-            ////Add the enemy or enemies to the list.//
-            //EnemyCharacters.Add(NewEnemy);
+            //Add the enemy or enemies to the list.//
+            Enemies.Add(NewEnemy);
         }
     }
 
@@ -94,33 +94,35 @@ public class BattleStateMachine : MonoBehaviour
         //If it is the enemy's turn to play, check for enemy to fight and targets one if it doesn't have a target in hand.//
         if (TurnList[0].Type == "Enemy")
         {
+            Debug.Log("Enemy's turn");
             EnemyStateMachine ESM = performer.GetComponent<EnemyStateMachine>();
+            
 
-            //for (int i = 0; i < MainCharacter.Count; i++)
-            //{
+            for (int i = 0; i < MainCharacter.Count; i++)
+            {
 
-            //    if (TurnList[0].Target == MainCharacter[i]) //Already has a target ? => Change the State of ESM.//
-            //    {
-            //        ESM.targetPlayer = TurnList[0].Target;
+                if (TurnList[0].Target == MainCharacter[i]) //Already has a target ? => Change the State of ESM.//
+                {
+                    ESM.targetPlayer = TurnList[0].Target;
 
-            //        ESM.currentState = EnemyStateMachine.TurnState.ACTION;
-            //        break;
-            //    }
+                    ESM.Current_Battle_State = EnemyStateMachine.BattleState.ACTION;
+                    break;
+                }
 
-            //    else //Does not have a target ? => Find one and then change the State of ESM.//
-            //    {
-            //        TurnList[0].Target = MainCharacter[Random.Range(0, MainCharacter.Count)];
-            //        ESM.targetPlayer = TurnList[0].Target;
+                else //Does not have a target ? => Find one and then change the State of ESM.//
+                {
+                    TurnList[0].Target = MainCharacter[Random.Range(0, MainCharacter.Count)];
+                    ESM.targetPlayer = TurnList[0].Target;
 
-            //        ESM.currentState = EnemyStateMachine.TurnState.ACTION;
-            //        break;
-            //    }
-            //}
+                    ESM.Current_Battle_State = EnemyStateMachine.BattleState.ACTION;
+                    break;
+                }
+            }
         }
         //If it is the Player's turn to play.//
         if (TurnList[0].Type == "Player")
         {
-
+            Debug.Log("Player's turn");
             PlayerStateMachine PSM = performer.GetComponent<PlayerStateMachine>();
             PSM.targetEnemy = TurnList[0].Target;
             PSM.State_Of_Battle = PlayerStateMachine.BattleState.ACTION;
