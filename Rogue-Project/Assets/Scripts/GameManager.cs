@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
     public bool isWalking = false;
     public bool CanFight = false; //Prevent from entering a fight twice => enemyVicinity(); //
     public bool isFighting = false;
-
+    
     public int enemyCount = 0;
 
     //Lists.//
     public List<GameObject> NumberOfEnemies = new List<GameObject>(); //Manages the numbers of enemies inside a Fight.//
 
-
+    public Camera camera;
     public static GameManager gameManager;
     public GameObject MainCharacter;
     [SerializeField] private GameObject battleManager;
@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     [Header("[Levels]")]
     public GameObject[] levels = new GameObject[5]; //NOTE :levels[o] == safehouse
+    public static int currentLevel = 1;
+    public static int previousLevel = 0;
 
     void Awake()
     {
@@ -132,7 +134,7 @@ public class GameManager : MonoBehaviour
             isFighting = true;
         }
     }
-    private void StartFight()
+    public void StartFight()
     {
         //Count how many enemies are in the vicinity.//
         for (int i = 0; i < enemyCount; i++)

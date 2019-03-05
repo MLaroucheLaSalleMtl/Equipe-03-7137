@@ -33,7 +33,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Move ()
     {
         transform.Translate(direction * walkingSpeed * Time.deltaTime); //DeltaTime makes moving more fluid.//
-        print("Character is going: Horizontal: " + direction.x + " Vertical: " +  direction.y);
+      //  print("Character is going: Horizontal: " + direction.x + " Vertical: " +  direction.y);
     }
 
     private void GetInput()
