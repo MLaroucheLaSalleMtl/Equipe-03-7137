@@ -55,6 +55,7 @@ public class PlayerStateMachine : MonoBehaviour
         State_Of_Battle = BattleState.WAITING;
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
         playerSelector.SetActive(false);
+        
 
         //startPosition = transform.position; => To be seen if we use one or not.//
     }
@@ -68,7 +69,7 @@ public class PlayerStateMachine : MonoBehaviour
                 break;
 
             case (BattleState.ADDTOLIST):
-               // BSM.PlayerManagement.Add(this.gameObject);
+                BSM.PlayerManagement.Add(this.gameObject);
                 State_Of_Battle = BattleState.BUFFER;
                 break;  
 

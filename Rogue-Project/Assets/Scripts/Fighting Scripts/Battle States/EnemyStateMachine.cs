@@ -164,7 +164,6 @@ public class EnemyStateMachine : MonoBehaviour
 
         //Select an attack - Here.//
 
-
         BSM.List_Of_Turns(thisAttack);
     }
 
