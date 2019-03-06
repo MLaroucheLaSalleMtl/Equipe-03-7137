@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 742217307356584112}
   - component: {fileID: 742217307356584113}
   - component: {fileID: 742217307356584108}
+  - component: {fileID: 7414373375438686113}
   - component: {fileID: 742217307356584109}
   m_Layer: 0
   m_Name: MC-Standing
@@ -226,6 +227,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.76, y: 0.55}
   m_EdgeRadius: 0
+--- !u!114 &7414373375438686113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742217307356584118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bdcc2dff43d4be40b27675262c75871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Player
+  baseHP: 100
+  currentHP: 100
+  baseMP: 100
+  currentMP: 100
+  Strength: 1
+  Constitution: 2
+  Defense: 3
+  Intelligence: 4
+  Luck: 5
 --- !u!50 &742217307356584109
 Rigidbody2D:
   serializedVersion: 4
