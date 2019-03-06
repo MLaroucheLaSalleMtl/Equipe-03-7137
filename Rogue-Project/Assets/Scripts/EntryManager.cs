@@ -14,15 +14,6 @@ public class EntryManager : MonoBehaviour
         GameManager.currentLevel = 0;
 
     }
-    public static void CabinExit(ref Collider2D collision)
-    {
-
-        //activer le safe house level
-        GameManager.gameManager.levels[GameManager.previousLevel].SetActive(true);
-        GameManager.gameManager.levels[0].SetActive(false);
-        GameManager.currentLevel = GameManager.previousLevel;
-
-    }
 
     public static void CavernEntry(ref Collider2D collision, int levelNum)
     {
@@ -50,18 +41,4 @@ public class EntryManager : MonoBehaviour
 
     }
 
-    public static void CabinExit(ref Collider2D collision, int levelNum)
-    {
-
-        //sortir de la cabane et aller au dernier level
-        GameManager.gameManager.levels[GameManager.currentLevel].SetActive(false);
-        if (levelNum >= 0)
-        {
-            levelNum = 1;
-        }
-        GameManager.gameManager.levels[--levelNum].SetActive(true);
-        GameManager.currentLevel = levelNum;
-        GameManager.gameManager.MainCharacter.transform.localPosition = new Vector3(GameManager.gameManager.MainCharacter.transform.localPosition.x + 0.7f, GameManager.gameManager.MainCharacter.transform.localPosition.y, GameManager.gameManager.MainCharacter.transform.localPosition.z);
-
-    }
 }

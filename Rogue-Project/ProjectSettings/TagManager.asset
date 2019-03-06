@@ -9,8 +9,6 @@ TagManager:
   - CavernEntry
   - CabinEntry
   - CavernExit
-  - BedCollider
-  - DoorCollider
   layers:
   - Default
   - TransparentFX
