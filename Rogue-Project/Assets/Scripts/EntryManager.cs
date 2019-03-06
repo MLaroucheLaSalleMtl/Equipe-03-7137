@@ -32,7 +32,14 @@ public class EntryManager : MonoBehaviour
         GameManager.gameManager.levels[GameManager.currentLevel].SetActive(false);
         GameManager.gameManager.levels[levelNum].SetActive(true);
         GameManager.currentLevel = levelNum;
-        GameManager.gameManager.camera.backgroundColor = new Color32(21, 18, 4, 255);
+        if (levelNum == 2)
+        {
+            GameManager.gameManager.camera.backgroundColor = new Color32(21, 18, 4, 255);
+        }
+        else if (levelNum == 3)
+        {
+            GameManager.gameManager.camera.backgroundColor = new Color32(21, 18, 4, 255);
+        }
 
     }
 
