@@ -10,22 +10,19 @@ public class BattleStateMachine : MonoBehaviour
     //Lists.//
     public List<TurnHandler> TurnList = new List<TurnHandler>();
 
-
-    //public List<EnemyStateMachine> EnemiesList = new List<EnemyStateMachine>();
-    //public List<EnemyStateMachine> PlayerList = new List<EnemyStateMachine>();
-
-    public List<EnemyStateMachine> Enemies = new List<EnemyStateMachine>();
-    public List<PlayerStateMachine> MainCharacter = new List<PlayerStateMachine>();
+    public List<GameObject> Enemies = new List<GameObject>();
+    public List<GameObject> MainCharacter = new List<GameObject>();
+    public List<GameObject> PlayerManagement = new List<GameObject>();
+    public List<GameObject> TargetBtns = new List<GameObject>();
 
     //Script Access.//
     private TurnHandler playerChoice;
     //private GameManager GM;
 
     //Game Objects.//
+    public GameObject targetButtons;
     public GameObject targetPanel;
     public GameObject commandsPanel;
-
-    
 
     //Buttons.//
     public Button attackButton;
@@ -55,15 +52,33 @@ public class BattleStateMachine : MonoBehaviour
     #region Awake, Start, Update
     void Awake()
     {
-        commandsPanel.SetActive(true);
-        targetPanel.SetActive(false);
+        for (int i = 0; i < GameManager.gameManager.enemyCount; i++)
+        {
+            GameObject NewEnemy = Instantiate
+                (
+                    GameManager.gameManager.NumberOfEnemies[i],
+                    Vector2.zero,
+                    Quaternion.identity
+
+                ) as GameObject;
+
+            NewEnemy.name = NewEnemy.GetComponent<EnemyStateMachine>().EBS.enemyName + "_" + (i + 1);
+            NewEnemy.GetComponent<EnemyStateMachine>().EBS.enemyName = NewEnemy.name;
+
+            //Add the enemy or enemies to the list.//
+            Enemies.Add(NewEnemy);
+        }
     }
 
     // Use this for initialization
     void Start()
     {
         Current_Battle_State = BattleState.WAITING;
-        MainCharacter[0].PBS = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBaseClass>(); //Uses the MC stats in the battle.//
+        
+        MainCharacter.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        Enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        commandsPanel.SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -109,34 +124,37 @@ public class BattleStateMachine : MonoBehaviour
     {
         if (TurnList.Count > 0)
         {
+            TargetButtons();
             Current_Battle_State = BattleState.TAKEACTION;
         }
     }
 
     private void TakeActionBoS()
     {
+
         GameObject performer = GameObject.Find(TurnList[0].Attacker);
 
         //If it is the enemy's turn to play, check for enemy to fight and targets one if it doesn't have a target in hand.//
         if (TurnList[0].Type == "Enemy")
         {
             Debug.Log("Enemy turn.");
-            EnemyStateMachine ESM = Enemies.Find(x => x.EBS.enemyName == TurnList[0].Attacker); ;
+            EnemyStateMachine ESM = GameObject.Find(TurnList[0].Attacker).GetComponent<EnemyStateMachine>();
 
 
             for (int j = 0; j < MainCharacter.Count; j++)
             {
-                if (TurnList[0].Target == null) //Already has a target ? => Change the State of ESM.//
+
+                if (TurnList[0].Target == MainCharacter[j]) //Already has a target ? => Change the State of ESM.//
                 {
-                    ESM.targetPlayer = MainCharacter[0];
+                    ESM.targetPlayer = TurnList[0].Target;
 
                     ESM.Current_Battle_State = EnemyStateMachine.BattleState.ACTION;
                 }
 
                 else //Does not have a target ? => Find one and then change the State of ESM.//
                 {
-                    TurnList[0].Target = MainCharacter[0].PBS.playerName;
-                    ESM.targetPlayer = MainCharacter[0];
+                    TurnList[0].Target = MainCharacter[Random.Range(0, MainCharacter.Count)];
+                    ESM.targetPlayer = TurnList[0].Target;
 
                     ESM.Current_Battle_State = EnemyStateMachine.BattleState.ACTION;
                     break; //Prevent the loop to repeat itself one more time, its job has been done.//
@@ -149,7 +167,7 @@ public class BattleStateMachine : MonoBehaviour
         {
             Debug.Log("Player's turn");
             PlayerStateMachine PSM = performer.GetComponent<PlayerStateMachine>();
-            PSM.targetEnemy = Enemies.Find(x=> x.EBS.enemyName == TurnList[0].Target);
+            PSM.targetEnemy = TurnList[0].Target;
             PSM.State_Of_Battle = PlayerStateMachine.BattleState.ACTION;
         }
 
@@ -158,45 +176,36 @@ public class BattleStateMachine : MonoBehaviour
     #endregion
 
     #region Player State Methods
+
+
     private void Commands()
     {
         commandsPanel.SetActive(true);
+        attackButton.onClick.AddListener(() => input1());   
     }
 
-    public void input1()
+    private void input1()
     {
         Debug.Log("input 1 clicked.");
-    
+        playerChoice.Attacker = PlayerManagement[0].name;
+        playerChoice.AttackersGameObject = PlayerManagement[0];
+        playerChoice.Type = "Player";
+
         commandsPanel.SetActive(false);
         targetPanel.SetActive(true);
     }
-    public void input2(string enemyIsTarget)
+    public void input2(GameObject enemyIsTarget)
     {
-        Debug.Log(enemyIsTarget);
+        playerChoice.Target = enemyIsTarget;
         currentPlayerState = PlayerState.TURNDONE;
     }
 
-    public void EnemyA_Button()
-    {
-        Debug.Log("Enemy A Selected");
-        input2(Enemies[0].EBS.enemyName);
-    }
-    public void EnemyB_Button()
-    {
-        Debug.Log("Enemy B Selected");
-        input2(Enemies[1].EBS.enemyName);
-    }
-
-    public void EnemyC_Button()
-    {
-        Debug.Log("Enemy C Selected");
-        input2(Enemies[2].EBS.enemyName);
-    }
 
     private void PlayerIsChoosing()
     {
-        if (MainCharacter.Count > 0)
+        if (PlayerManagement.Count > 0)
         {
+            PlayerManagement[0].transform.Find("selector").gameObject.SetActive(true);
             playerChoice = new TurnHandler();
             currentPlayerState = PlayerState.WAITING;
         }
@@ -204,6 +213,9 @@ public class BattleStateMachine : MonoBehaviour
 
     private void PlayerIsDone()
     {
+        TurnList.Add(playerChoice);
+        PlayerManagement[0].transform.Find("Selector").gameObject.SetActive(false);
+        PlayerManagement.RemoveAt(0);
         currentPlayerState = PlayerState.CHOOSEACTIONS;
     }
 
@@ -216,6 +228,33 @@ public class BattleStateMachine : MonoBehaviour
     {
         TurnList.Add(turns);
     }
+
+    public void TargetButtons()
+    {
+        foreach(GameObject targetButton in TargetBtns)
+        {
+            Destroy(targetButton);
+        }
+        
+        foreach(GameObject enemy in Enemies)
+        {
+            Debug.Log("Button Created");
+            GameObject newButton = Instantiate(targetButtons) as GameObject;
+            EnemyTarget ETButton = newButton.GetComponent<EnemyTarget>();
+
+            EnemyStateMachine currentEnemy = enemy.GetComponent<EnemyStateMachine>();
+            Text buttonText = newButton.transform.Find("EnemyName").gameObject.GetComponent<Text>();
+
+            buttonText.text = currentEnemy.EBS.enemyName;
+            ETButton.enemyGameObject = enemy;
+
+            newButton.transform.SetParent(Spacer, false);   
+            TargetBtns.Add(newButton);
+        }
+    }
+
+
+
     #endregion
 
 }
