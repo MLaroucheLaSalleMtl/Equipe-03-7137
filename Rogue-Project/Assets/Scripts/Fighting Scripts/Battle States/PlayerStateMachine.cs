@@ -21,11 +21,13 @@ public class PlayerStateMachine : MonoBehaviour
     //Script Access.//
     public PlayerBaseClass PBS;
     private BattleStateMachine BSM;
+    private BaseAttack BasicAttack;
 
     //Bool.//
     private bool isDefending = false;
     private bool isAlive = true;
     private bool hasActionStarted = false;
+
 
     //Game Objects.//
     public GameObject targetEnemy;
@@ -160,8 +162,8 @@ public class PlayerStateMachine : MonoBehaviour
 
     void doDamage()
     {
-        //float damageDone = //selected attack damage.//
-        //targetEnemy.GetComponent<EnemyStateMachine>().takeDamage(damageDone);
+        float damageDone = BasicAttack.Damage;
+        targetEnemy.GetComponent<EnemyStateMachine>().takeDamage(damageDone);
     }
 
     #endregion
