@@ -16,11 +16,9 @@ public class BattleStateMachine : MonoBehaviour
 
     public List<EnemyStateMachine> Enemies = new List<EnemyStateMachine>();
     public List<PlayerStateMachine> MainCharacter = new List<PlayerStateMachine>();
-   //public List<GameObject> PlayerManagement = new List<GameObject>();
-    public List<GameObject> TargetBtns = new List<GameObject>();
 
     //Script Access.//
-    //private TurnHandler playerChoice;
+    private TurnHandler playerChoice;
     //private GameManager GM;
 
     //Game Objects.//
@@ -66,7 +64,6 @@ public class BattleStateMachine : MonoBehaviour
     {
         Current_Battle_State = BattleState.WAITING;
         MainCharacter[0].PBS = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBaseClass>(); //Uses the MC stats in the battle.//
-
     }
 
     // Update is called once per frame
@@ -176,8 +173,7 @@ public class BattleStateMachine : MonoBehaviour
     public void input2(string enemyIsTarget)
     {
         Debug.Log(enemyIsTarget);
-
-            currentPlayerState = PlayerState.TURNDONE;
+        currentPlayerState = PlayerState.TURNDONE;
     }
 
     public void EnemyA_Button()
@@ -201,7 +197,7 @@ public class BattleStateMachine : MonoBehaviour
     {
         if (MainCharacter.Count > 0)
         {
-            //playerChoice = new TurnHandler();
+            playerChoice = new TurnHandler();
             currentPlayerState = PlayerState.WAITING;
         }
     }
@@ -209,7 +205,6 @@ public class BattleStateMachine : MonoBehaviour
     private void PlayerIsDone()
     {
         currentPlayerState = PlayerState.CHOOSEACTIONS;
-        //TurnList.RemoveAt(0);
     }
 
 
