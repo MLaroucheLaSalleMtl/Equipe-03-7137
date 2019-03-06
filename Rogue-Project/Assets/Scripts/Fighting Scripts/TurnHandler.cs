@@ -5,9 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class TurnHandler 
 {
-    public string attackersName;
+    //Attacker's variables.//
+    public string Attacker;
     public string Type;
+    public GameObject AttackersGameObject;
 
-    public GameObject AttackerGameObject;
-    public GameObject AttackersTarget;
+    //Target's variables.//
+    public GameObject Target;
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
     public GameObject PausePannel;
     public GameObject OptionsPannel;
 
+    [Header("[Interaction Pannels]")]
+    public GameObject BedPannel;
+
     [Header("[Levels]")]
     public GameObject[] levels = new GameObject[5]; //NOTE :levels[o] == safehouse
     public static int currentLevel = 1;
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         CheckGM();
-        battleManager.SetActive(false);
+        //battleManager.SetActive(false);
         foreach (var item in levels) // activate all items to get them
         {
             if (!item.activeInHierarchy) 
@@ -208,6 +211,6 @@ public class GameManager : MonoBehaviour
     public void changeState(GameState newState)
     {
         currentState = newState;
-    }
+    }    
 
 }
