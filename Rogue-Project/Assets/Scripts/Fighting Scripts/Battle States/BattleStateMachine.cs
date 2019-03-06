@@ -87,7 +87,6 @@ public class BattleStateMachine : MonoBehaviour
         switch (Current_Battle_State)
         {
             case (BattleState.WAITING):
-                
                 WaitingBoS();
                 break;
 

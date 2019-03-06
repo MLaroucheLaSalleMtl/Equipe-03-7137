@@ -116,16 +116,9 @@ public class EnemyStateMachine : MonoBehaviour
 
     private void BoS_Reset() //Resets the Battle State at the end of a turn.//
     {
-        if (BSM.Enemies.Count < 0)
-        {
             BSM.Current_Battle_State = BattleStateMachine.BattleState.WAITING;
             current_Timer = 0f;
-            Current_Battle_State = BattleState.WAITING;
-        }
-        else
-        {
-            Current_Battle_State = BattleState.BUFFER;
-        }
+            Current_Battle_State = BattleState.WAITING;   
     }
 
     private bool MoveToEnemy(Vector3 target)
