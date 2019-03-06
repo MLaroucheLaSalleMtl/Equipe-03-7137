@@ -74,7 +74,7 @@ public class BattleStateMachine : MonoBehaviour
     void Start()
     {
         Current_Battle_State = BattleState.WAITING;
-        TargetButtons();
+        
         MainCharacter.AddRange(GameObject.FindGameObjectsWithTag("Player"));
         Enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
         commandsPanel.SetActive(true);
@@ -87,7 +87,6 @@ public class BattleStateMachine : MonoBehaviour
         switch (Current_Battle_State)
         {
             case (BattleState.WAITING):
-                
                 WaitingBoS();
                 break;
 
@@ -103,14 +102,17 @@ public class BattleStateMachine : MonoBehaviour
         switch(currentPlayerState)
         {
             case (PlayerState.CHOOSEACTIONS):
+                Debug.Log("choose to fuck off");
                 PlayerIsChoosing();
                 break;
 
             case (PlayerState.WAITING):
+                
                 //Buffer state;
                 break;
 
             case (PlayerState.TURNDONE):
+                Debug.Log("done to fuck off");
                 PlayerIsDone();
                 break;
         }
@@ -122,6 +124,7 @@ public class BattleStateMachine : MonoBehaviour
     {
         if (TurnList.Count > 0)
         {
+            TargetButtons();
             Current_Battle_State = BattleState.TAKEACTION;
         }
     }
@@ -178,8 +181,7 @@ public class BattleStateMachine : MonoBehaviour
     private void Commands()
     {
         commandsPanel.SetActive(true);
-        attackButton.onClick.AddListener(() => input1());
-        
+        attackButton.onClick.AddListener(() => input1());   
     }
 
     private void input1()
@@ -236,6 +238,7 @@ public class BattleStateMachine : MonoBehaviour
         
         foreach(GameObject enemy in Enemies)
         {
+            Debug.Log("Button Created");
             GameObject newButton = Instantiate(targetButtons) as GameObject;
             EnemyTarget ETButton = newButton.GetComponent<EnemyTarget>();
 

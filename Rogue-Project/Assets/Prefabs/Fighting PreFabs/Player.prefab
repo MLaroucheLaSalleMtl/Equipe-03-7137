@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3385958851114357146}
   - component: {fileID: 7956207446437730817}
   m_Layer: 0
-  m_Name: MainCharacter
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,8 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39608c955f820a349909231b62b10c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ANIMATION_SPEED: 10
+  ANIMATION_DISTANCE: 5
   PBS:
-    playerName: Main Character
+    playerName: Player
     baseHP: 100
     currentHP: 100
     baseMP: 100
