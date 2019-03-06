@@ -6,11 +6,11 @@ public class PlayerStateMachine : MonoBehaviour
 {
     #region Variables and etc
     [Header("Defending multiplier - Lower the less damage the player takes.")]
-    public const float DEFEND_MULTI = 25;
+    public float DEFEND_MULTI = 25;
 
     //Handles the timer between each Actions .//
     [Header("Everything concerning the time it takes between attacks.")]
-    private const float MAX_COOLDOWN = 10.0f;
+    private float MAX_COOLDOWN = 10.0f;
     private float current_Timer = 0.0f;
 
     //Animation speed before the attack.//
@@ -30,7 +30,7 @@ public class PlayerStateMachine : MonoBehaviour
 
 
     //Game Objects.//
-    public GameObject targetEnemy;
+    public EnemyStateMachine targetEnemy;
     public GameObject playerSelector;
 
     //Positions.//
@@ -56,6 +56,7 @@ public class PlayerStateMachine : MonoBehaviour
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
         playerSelector.SetActive(false);
         
+        
 
         //startPosition = transform.position; => To be seen if we use one or not.//
     }
@@ -69,7 +70,6 @@ public class PlayerStateMachine : MonoBehaviour
                 break;
 
             case (BattleState.ADDTOLIST):
-                BSM.PlayerManagement.Add(this.gameObject);
                 State_Of_Battle = BattleState.BUFFER;
                 break;  
 
@@ -94,7 +94,7 @@ public class PlayerStateMachine : MonoBehaviour
         //Brings the MainCharacter towards the selected enemy.//
         Vector3 targetPos = new Vector3
             (
-                targetEnemy.transform.position.x + ANIMATION_DISTANCE, 
+                targetEnemy.gameObject.transform.position.x + ANIMATION_DISTANCE, 
                 targetEnemy.transform.position.y, 
                 targetEnemy.transform.position.z
             );

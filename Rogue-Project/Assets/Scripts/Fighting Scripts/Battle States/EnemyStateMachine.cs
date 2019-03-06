@@ -8,7 +8,7 @@ public class EnemyStateMachine : MonoBehaviour
     #region Variables and etc
     //Handles the timer between each Actions .//
     [Header("Everything concerning the time it takes between attacks.")]
-    private float MAX_COOLDOWN = 10.0f;
+    private float MAX_COOLDOWN = 0.5f;
     private float current_Timer = 0.0f;
 
     //Animation speed before the attack.//
@@ -26,7 +26,7 @@ public class EnemyStateMachine : MonoBehaviour
     private bool hasActionStarted = false;
 
     //Game Objects.//
-    public GameObject targetPlayer;
+    public PlayerStateMachine targetPlayer;
     public GameObject enemySelector;
 
     //Positions.//
@@ -118,7 +118,7 @@ public class EnemyStateMachine : MonoBehaviour
     {
             BSM.Current_Battle_State = BattleStateMachine.BattleState.WAITING;
             current_Timer = 0f;
-            Current_Battle_State = BattleState.WAITING;   
+            Current_Battle_State = BattleState.BUFFER;   
     }
 
     private bool MoveToEnemy(Vector3 target)
@@ -159,12 +159,12 @@ public class EnemyStateMachine : MonoBehaviour
         TurnHandler thisAttack = new TurnHandler();
         thisAttack.Attacker = EBS.enemyName;
         thisAttack.Type = "Enemy";
-        thisAttack.AttackersGameObject = this.gameObject;
-        thisAttack.Target = BSM.MainCharacter[Random.Range(0, BSM.MainCharacter.Count)];
+
+        //thisAttack.Target = BSM.MainCharacter[Random.Range(0, BSM.MainCharacter.Count)];
 
         //Select an attack - Here.//
 
-        BSM.List_Of_Turns(thisAttack);
+        BSM.List_Of_Turns(thisAttack);  
     }
 
     void Attack_Timer() //Prevent AI's failure to crash/stop the flow of the game, if the enemy or the player doesn't attack or do anything within a certain time => Switch character.//
