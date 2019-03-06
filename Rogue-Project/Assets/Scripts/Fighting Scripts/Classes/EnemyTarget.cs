@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class EnemyTarget : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject enemyGameObject;
+
+    public void SelectEnemy()
     {
-        
+        GameObject.Find("GameManager").GetComponent<BattleStateMachine>().input2(enemyGameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ToggleOn()
     {
-        
+        enemyGameObject.transform.Find("eSelector").gameObject.SetActive(true);
     }
+
+    public void ToggleOff()
+    {
+        enemyGameObject.transform.Find("eSelector").gameObject.SetActive(false);
+    }
+
 }

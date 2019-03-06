@@ -15,8 +15,8 @@ public class PlayerStateMachine : MonoBehaviour
 
     //Animation speed before the attack.//
     [Header("Everything concerning the animation of the player.")]
-    public const float ANIMATION_SPEED = 10.0f;
-    public const float ANIMATION_DISTANCE = 5.0F;
+    public float ANIMATION_SPEED = 10.0f;
+    public float ANIMATION_DISTANCE = 5.0F;
 
     //Script Access.//
     public PlayerBaseClass PBS;
@@ -31,6 +31,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     //Game Objects.//
     public GameObject targetEnemy;
+    public GameObject playerSelector;
 
     //Positions.//
     private Vector3 startPosition;
@@ -43,14 +44,17 @@ public class PlayerStateMachine : MonoBehaviour
         ACTION,
     }
     public BattleState State_Of_Battle;
+
+
     #endregion
 
     #region Awake, Start, Update
     void Start()
     {
+        current_Timer = 0.0f;
         State_Of_Battle = BattleState.WAITING;
-
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
+        playerSelector.SetActive(false);
 
         //startPosition = transform.position; => To be seen if we use one or not.//
     }
@@ -64,7 +68,7 @@ public class PlayerStateMachine : MonoBehaviour
                 break;
 
             case (BattleState.ADDTOLIST):
-                BSM.PlayerManagement.Add(this.gameObject);
+               // BSM.PlayerManagement.Add(this.gameObject);
                 State_Of_Battle = BattleState.BUFFER;
                 break;
 
