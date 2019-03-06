@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
     public GameObject PausePannel;
     public GameObject OptionsPannel;
 
+    [Header("[Interaction Pannels]")]
+    public GameObject BedPannel;
+
     [Header("[Levels]")]
     public GameObject[] levels = new GameObject[5]; //NOTE :levels[o] == safehouse
     public static int currentLevel = 1;
@@ -208,6 +211,6 @@ public class GameManager : MonoBehaviour
     public void changeState(GameState newState)
     {
         currentState = newState;
-    }
+    }    
 
 }
