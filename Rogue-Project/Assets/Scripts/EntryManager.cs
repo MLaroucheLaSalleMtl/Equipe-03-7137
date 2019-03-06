@@ -9,15 +9,16 @@ public class EntryManager : MonoBehaviour
 
         //activer le safe house level
         GameManager.gameManager.levels[GameManager.currentLevel].SetActive(false);
-        GameManager.gameManager.levels[0] = Instantiate(GameManager.gameManager.levels[0], collision.transform.position, Quaternion.identity);
+        GameManager.gameManager.levels[0] = Instantiate(GameManager.gameManager.levels[0], new Vector3(collision.transform.position.x + 0.26f, collision.transform.position.y + 1.13f, collision.transform.position.z), Quaternion.identity);
         GameManager.gameManager.levels[0].SetActive(true);
+        GameManager.previousLevel = GameManager.currentLevel;
         GameManager.currentLevel = 0;
 
     }
     public static void CabinExit(ref Collider2D collision)
     {
 
-        //activer le safe house level
+        //desactiver le safe house level
         GameManager.gameManager.levels[GameManager.previousLevel].SetActive(true);
         GameManager.gameManager.levels[0].SetActive(false);
         GameManager.currentLevel = GameManager.previousLevel;

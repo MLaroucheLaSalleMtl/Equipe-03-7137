@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 742217307356584109}
   m_Layer: 0
   m_Name: MC-Standing
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +222,7 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
   m_Size: {x: 0.76, y: 0.55}
   m_EdgeRadius: 0
