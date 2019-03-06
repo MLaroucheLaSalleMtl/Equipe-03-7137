@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ANIMATION_SPEED: 1000
-  ANIMATION_DISTANCE: 5
+  ANIMATION_DISTANCE: 50
   EBS:
     enemyGrade: 0
     enemyName: Enemy

@@ -68,7 +68,7 @@ public class PlayerStateMachine : MonoBehaviour
                 break;
 
             case (BattleState.ADDTOLIST):
-                BSM.PlayerManagement.Add(this.gameObject);
+               // BSM.PlayerManagement.Add(this.gameObject);
                 State_Of_Battle = BattleState.BUFFER;
                 break;  
 
