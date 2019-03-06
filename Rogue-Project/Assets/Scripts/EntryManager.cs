@@ -38,7 +38,7 @@ public class EntryManager : MonoBehaviour
         }
         else if (levelNum == 3)
         {
-            GameManager.gameManager.camera.backgroundColor = new Color32(21, 18, 4, 255);
+            GameManager.gameManager.camera.backgroundColor = new Color32(119, 103, 44, 255);
         }
 
     }
