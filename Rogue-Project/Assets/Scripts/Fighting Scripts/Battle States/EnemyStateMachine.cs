@@ -8,13 +8,13 @@ public class EnemyStateMachine : MonoBehaviour
     #region Variables and etc
     //Handles the timer between each Actions .//
     [Header("Everything concerning the time it takes between attacks.")]
-    private const float MAX_COOLDOWN = 10.0f;
+    private float MAX_COOLDOWN = 10.0f;
     private float current_Timer = 0.0f;
 
     //Animation speed before the attack.//
     [Header("Everything concerning the animation of the player.")]
-    public const float ANIMATION_SPEED = 10.0f;
-    public const float ANIMATION_DISTANCE = 5.0F;
+    public float ANIMATION_SPEED = 10.0f;
+    public float ANIMATION_DISTANCE = 5.0F;
 
     //Script Access.//
     public EnemyBaseClass EBS;
@@ -27,6 +27,7 @@ public class EnemyStateMachine : MonoBehaviour
 
     //Game Objects.//
     public GameObject targetPlayer;
+    public GameObject enemySelector;
 
     //Positions.//
     private Vector3 startPosition;
@@ -48,6 +49,7 @@ public class EnemyStateMachine : MonoBehaviour
         Current_Battle_State = BattleState.WAITING;
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
         startPosition = transform.position;
+        enemySelector.SetActive(false);
     }
 
     void Update()

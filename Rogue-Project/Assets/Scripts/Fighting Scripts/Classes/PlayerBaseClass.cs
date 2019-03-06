@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class PlayerBaseClass:MonoBehaviour
+public class PlayerBaseClass
 {
     //Manages player's name.//
     public string playerName;

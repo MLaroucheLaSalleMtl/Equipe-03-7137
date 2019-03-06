@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         CheckGM();
-        battleManager.SetActive(false);
+        //battleManager.SetActive(false);
         foreach (var item in levels) // activate all items to get them
         {
             if (!item.activeInHierarchy) 
