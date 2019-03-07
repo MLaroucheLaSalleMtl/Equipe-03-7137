@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public Camera camera;
     public static GameManager gameManager;
     public GameObject MainCharacter;
-    [SerializeField] private GameObject battleManager;
+    [SerializeField] private BattleStateMachine battleManager;
 
     //Thingy to make battle screen appear, Brad's way thing.
 
@@ -137,21 +137,18 @@ public class GameManager : MonoBehaviour
             isFighting = true;
         }
     }
+
+
+       static public bool inAFight = false;
     public void StartFight()
     {
-        //Count how many enemies are in the vicinity.//
-        for (int i = 0; i < enemyCount; i++)
+        if (!inAFight)
         {
-            //NumberOfEnemies.Add(  //Add enemies within range? // )
-
+            battleManager.StartBattle();
+            print("Battle started");
         }
+        inAFight = true;
 
-        //Popup scene Brad's way.//
-
-        //Player Reset.//
-        isWalking = false;
-        isFighting = false;
-        CanFight = false;
     }
     private void CheckGM() //Check for gameManager object duplication.//
     {

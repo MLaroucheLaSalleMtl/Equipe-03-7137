@@ -123,19 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39608c955f820a349909231b62b10c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DEFEND_MULTI: 25
   ANIMATION_SPEED: 10
   ANIMATION_DISTANCE: 5
-  PBS:
-    playerName: Player
-    baseHP: 100
-    currentHP: 100
-    baseMP: 100
-    currentMP: 100
-    Strength: 5
-    Constitution: 5
-    Defense: 5
-    Intelligence: 5
-    Luck: 5
+  PBS: {fileID: 0}
+  miniShield: {fileID: 0}
   targetEnemy: {fileID: 0}
   playerSelector: {fileID: 3385958850414534853}
   State_Of_Battle: 0
+  input: 6

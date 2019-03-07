@@ -8,8 +8,8 @@ public class TurnHandler
     //Attacker's variables.//
     public string Attacker;
     public string Type;
-    public GameObject AttackersGameObject;
+    public string Target;
 
     //Target's variables.//
-    public GameObject Target;
+ 
 }

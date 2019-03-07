@@ -40,8 +40,8 @@ public class PlayerBehaviour : MonoBehaviour
     { 
         direction = Vector2.zero; //RaZ.//
         //animator.SetLayerWeight(0, 1);
-        animator.SetFloat("MouseX", direction.x);
-        animator.SetFloat("MouseY", direction.y);
+        animator.SetFloat("MoveX", direction.x);
+        animator.SetFloat("MoveY", direction.y);
 
 
         //Could be changed for InputManager's - Marc's way.//

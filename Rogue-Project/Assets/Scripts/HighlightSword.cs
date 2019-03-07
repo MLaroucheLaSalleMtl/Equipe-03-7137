@@ -8,7 +8,8 @@ public class HighlightSword : MonoBehaviour, IPointerEnterHandler
 {
 
     public float x = 0;
-    [SerializeField] private GameObject sword;
+    public float y = 0;
+    public GameObject sword;
 
 
 
@@ -33,6 +34,11 @@ public class HighlightSword : MonoBehaviour, IPointerEnterHandler
         }
         sword.transform.rotation = rot;
         sword.transform.position = transform.position + new Vector3(x, 0, 0);
+    }
+    public void CatchSwordPlayer() {
+
+      
+        sword.transform.position = transform.position + new Vector3(x, y, 0);
     }
 
 }

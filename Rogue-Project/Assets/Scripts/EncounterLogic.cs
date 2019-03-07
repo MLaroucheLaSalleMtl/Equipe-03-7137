@@ -13,7 +13,7 @@ public class EncounterLogic : MonoBehaviour
 
     // Update is called once per frame
     private float chanceTime = 0f;
-    private float maxChanceTime = 1f;
+    private float maxChanceTime = 2f;
     private bool isIn = false;
     void Update() {
         if (isIn)
@@ -22,7 +22,7 @@ public class EncounterLogic : MonoBehaviour
            
             if (chanceTime > maxChanceTime)
             {
-                if (Random.Range(1, 100) <20)
+                if (Random.Range(1, 100) <100)
                 {
                     game.StartFight();
                 }

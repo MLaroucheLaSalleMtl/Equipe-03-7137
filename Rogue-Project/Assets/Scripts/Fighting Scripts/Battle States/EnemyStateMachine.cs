@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class EnemyStateMachine : MonoBehaviour
+public class EnemyStateMachine : MonoBehaviour,StateMachine
 {
 
     #region Variables and etc
     //Handles the timer between each Actions .//
     [Header("Everything concerning the time it takes between attacks.")]
-    private float MAX_COOLDOWN = 10.0f;
+    private float MAX_COOLDOWN = 0.5f;
     private float current_Timer = 0.0f;
 
     //Animation speed before the attack.//
@@ -26,60 +27,65 @@ public class EnemyStateMachine : MonoBehaviour
     private bool hasActionStarted = false;
 
     //Game Objects.//
-    public GameObject targetPlayer;
+    public PlayerStateMachine targetPlayer;
     public GameObject enemySelector;
 
     //Positions.//
     private Vector3 startPosition;
-
-    public enum BattleState
-    {
-        WAITING,
-        CHOOSEACTION,
-        BUFFER,
-        ACTION,
-        DEAD
-    }
+    public Text UIname;
+    
     public BattleState Current_Battle_State;
     #endregion
 
     #region Awake, Start, Update
     void Start()
     {
-        Current_Battle_State = BattleState.WAITING;
+        Current_Battle_State = BattleState.WAITINGFORINPUT;
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
         startPosition = transform.position;
         enemySelector.SetActive(false);
     }
+   public  void StartBattle() {
+        if (EBS != null)
+        {
+
+            UIname.text = EBS.enemyName;
+            print("UI: "+UIname.text);
+        }
+        
+
+
+    }
 
     void Update()
     {
-        switch (Current_Battle_State)
-        {
-            case (BattleState.WAITING):
-                Attack_Timer();
-                break;
+        //StartBattle();
+    //    switch (Current_Battle_State)
+    //    {
+    //        case (BattleState.WAITINGFORINPUT):
+    //            Attack_Timer();
+    //            break;
 
-            case (BattleState.CHOOSEACTION):
-                if (BSM.MainCharacter.Count == 0)
-                {
-                    break;
-                }
-                else
-                {
-                    chooseAction();
-                    Current_Battle_State = BattleState.BUFFER;
-                }
-                break;
+    //        case (BattleState.CHOOSEACTION):
+    //            if (BSM.Players.Count == 0)
+    //            {
+    //                break;
+    //            }
+    //            else
+    //            {
+    //                chooseAction();
+    //                Current_Battle_State = BattleState.BUFFER;
+    //            }
+    //            break;
 
-            case (BattleState.BUFFER):
-                //Buffer Battle State, for the animation and all.//
-                break;
+    //        case (BattleState.BUFFER):
+    //            //Buffer Battle State, for the animation and all.//
+    //            break;
 
-            case (BattleState.ACTION):
-                StartCoroutine(actionTimer());
-                break;
-        }
+    //        case (BattleState.ATTACK):
+    //            StartCoroutine(actionTimer());
+    //            break;
+        
     }
     #endregion
 
@@ -116,9 +122,9 @@ public class EnemyStateMachine : MonoBehaviour
 
     private void BoS_Reset() //Resets the Battle State at the end of a turn.//
     {
-            BSM.Current_Battle_State = BattleStateMachine.BattleState.WAITING;
-            current_Timer = 0f;
-            Current_Battle_State = BattleState.WAITING;   
+        BSM.Current_Battle_State = BattleState.WAITINGFORINPUT;
+        current_Timer = 0f;
+        Current_Battle_State = BattleState.BUFFER;
     }
 
     private bool MoveToEnemy(Vector3 target)
@@ -154,19 +160,18 @@ public class EnemyStateMachine : MonoBehaviour
 
     #endregion
 
-    void chooseAction()
-    {
-        TurnHandler thisAttack = new TurnHandler();
-        thisAttack.Attacker = EBS.enemyName;
-        thisAttack.Type = "Enemy";
-        thisAttack.AttackersGameObject = this.gameObject;
-        thisAttack.Target = BSM.MainCharacter[Random.Range(0, BSM.MainCharacter.Count)];
+    //void chooseAction()
+    //{
+    //    TurnHandler thisAttack = new TurnHandler();
+    //    thisAttack.Attacker = EBS.enemyName;
+    //    thisAttack.Type = "Enemy";
 
-        //Select an attack - Here.//
+    //    //thisAttack.Target = BSM.MainCharacter[Random.Range(0, BSM.MainCharacter.Count)];
 
+    //    //Select an attack - Here.//
 
-        BSM.List_Of_Turns(thisAttack);
-    }
+    //    BSM.List_Of_Turns(thisAttack);
+    //}
 
     void Attack_Timer() //Prevent AI's failure to crash/stop the flow of the game, if the enemy or the player doesn't attack or do anything within a certain time => Switch character.//
     {
@@ -177,5 +182,9 @@ public class EnemyStateMachine : MonoBehaviour
         {
             Current_Battle_State = BattleState.CHOOSEACTION;
         }
+    }
+
+    public void DoAi() {
+
     }
 }

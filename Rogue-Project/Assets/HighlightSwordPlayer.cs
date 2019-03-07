@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HighlightChange : MonoBehaviour
+public class HighlightSwordPlayer : MonoBehaviour
 {
     private HighlightSword[] buttons;
 
@@ -14,7 +14,7 @@ public class HighlightChange : MonoBehaviour
     void Awake()
     {
         buttons = GetComponentsInChildren<HighlightSword>();
-       
+
         foreach (HighlightSword h in buttons)
         {
             if (h.gameObject.activeSelf)
@@ -26,31 +26,29 @@ public class HighlightChange : MonoBehaviour
 
     void OnEnable()
     {
-        buttons[0].CatchSword();
+        buttons[0].CatchSwordPlayer();
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Vertical"))
-        {
-            currentButton = (currentButton - (int)Input.GetAxisRaw("Vertical")) % numberOfAwakeButtons;
-            if (currentButton < 0)
-            {
-                currentButton = 5;
-            }
-        }
+        
         if (Input.GetButtonDown("Horizontal"))
         {
-            currentButton = (currentButton + 3) % numberOfAwakeButtons;
+            currentButton = (currentButton+1) % numberOfAwakeButtons;
         }
 
         buttons[currentButton].CatchSword();
         if (Input.GetButtonDown("Jump"))
         {
-            var eventSystem = EventSystem.current;
-            buttons[currentButton].gameObject.GetComponent<Button>().onClick.Invoke();
-            ExecuteEvents.Execute(buttons[currentButton].gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+
 
         }
+    }
+
+    void DisableSword() {
+        foreach (HighlightSword h in buttons) {
+            h.sword.SetActive(false);
+        }
+
     }
 }

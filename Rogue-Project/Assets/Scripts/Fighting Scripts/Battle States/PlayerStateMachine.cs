@@ -2,20 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateMachine : MonoBehaviour
+[System.Serializable]
+public enum PlayerState {
+    WAITINGFORINPUT,
+    ATTACK,
+    DEFEND,
+    STARTUP,
+    RUN,
+    USE_SKILL,
+    USE_ITEM,
+    DEAD,
+    BUFFER
+
+}
+[System.Serializable]
+public enum PlayerInput {
+
+    ATTACK,DEFEND,INSPECT,USE_ITEM,USE_SKILLS,RUN,NULL
+
+
+}
+
+public class PlayerStateMachine : MonoBehaviour, StateMachine
 {
     #region Variables and etc
     [Header("Defending multiplier - Lower the less damage the player takes.")]
-    public const float DEFEND_MULTI = 25;
+    public float DEFEND_MULTI = 25;
 
     //Handles the timer between each Actions .//
     [Header("Everything concerning the time it takes between attacks.")]
-    private const float MAX_COOLDOWN = 10.0f;
+    private float MAX_COOLDOWN = 10.0f;
     private float current_Timer = 0.0f;
 
     //Animation speed before the attack.//
     [Header("Everything concerning the animation of the player.")]
-    public float ANIMATION_SPEED = 10.0f;
+    public float ANIMATION_SPEED = 1000000000.0f;
     public float ANIMATION_DISTANCE = 5.0F;
 
     //Script Access.//
@@ -25,111 +46,124 @@ public class PlayerStateMachine : MonoBehaviour
 
     //Bool.//
     private bool isDefending = false;
+    public GameObject miniShield;
     private bool isAlive = true;
     private bool hasActionStarted = false;
 
 
     //Game Objects.//
-    public GameObject targetEnemy;
+    public EnemyStateMachine targetEnemy;
     public GameObject playerSelector;
 
     //Positions.//
     private Vector3 startPosition;
 
-    public enum BattleState
-    {
-        WAITING,
-        ADDTOLIST,
-        BUFFER,
-        ACTION,
-    }
-    public BattleState State_Of_Battle;
 
+    public PlayerState State_Of_Battle;
+    public PlayerInput input = PlayerInput.NULL;
 
     #endregion
 
     #region Awake, Start, Update
+    void Awake() {
+        startPosition = new Vector3(250,65,0);
+    }
     void Start()
     {
+        
+        miniShield.SetActive(false);
         current_Timer = 0.0f;
-        State_Of_Battle = BattleState.WAITING;
+        State_Of_Battle = PlayerState.WAITINGFORINPUT;
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
         playerSelector.SetActive(false);
 
+
+
         //startPosition = transform.position; => To be seen if we use one or not.//
     }
-
+   public  void StartUp() {
+        miniShield.SetActive(false);
+        State_Of_Battle = PlayerState.WAITINGFORINPUT;
+        input = PlayerInput.NULL;
+    }
     void Update()
     {
-        switch (State_Of_Battle)
-        {
-            case (BattleState.WAITING):
-                Attack_Timer();
-                break;
-
-            case (BattleState.ADDTOLIST):
-               // BSM.PlayerManagement.Add(this.gameObject);
-                State_Of_Battle = BattleState.BUFFER;
-                break;  
-
-            case (BattleState.BUFFER):
-                //Buffer Battle State, for the animation and all.//
-                break;
-
-            case (BattleState.ACTION):
-                StartCoroutine(actionTimer());
-                break;
-        }
+        
+        
 
     }
     #endregion
 
     #region Animation
-    private IEnumerator actionTimer()
+    public IEnumerator actionTimer()
     {
-        if (hasActionStarted){yield break;}
+        //startPosition = gameObject.transform.position;
+        if (hasActionStarted) { yield break; }
         hasActionStarted = true;
 
         //Brings the MainCharacter towards the selected enemy.//
         Vector3 targetPos = new Vector3
             (
-                targetEnemy.transform.position.x + ANIMATION_DISTANCE, 
-                targetEnemy.transform.position.y, 
+                targetEnemy.gameObject.transform.position.x + ANIMATION_DISTANCE,
+                targetEnemy.transform.position.y,
                 targetEnemy.transform.position.z
             );
 
 
-        while (MoveToEnemy(targetPos)){yield return null;}
+        while (MoveToEnemy(targetPos)) { yield return null; }
         yield return new WaitForSeconds(0.5f);
 
         doDamage(); //Attack the selected target.//
 
         //animate back to start position
         Vector3 originPOS = startPosition;
-        while (MoveToOrigin(originPOS)){yield return null;}
+        print(originPOS);
+
+        while (MoveToOrigin(originPOS)) { yield return null; }
+        //remove from bsm list
+       // BSM.TurnList.RemoveAt(0);
+
+       // BoS_Reset();
+
+        hasActionStarted = false;
+    }
+    private IEnumerator DefendTimer()
+    {
+        MovingShieldAnim();
+
+       
+
+       
         //remove from bsm list
         BSM.TurnList.RemoveAt(0);
 
         BoS_Reset();
 
         hasActionStarted = false;
+        yield return null;
     }
 
+    void MovingShieldAnim() {
+
+
+
+    }
     private void BoS_Reset() //Resets the Battle State at the end of a turn.//
     {
         if (PBS.currentHP > 0)
         {
-            BSM.Current_Battle_State = BattleStateMachine.BattleState.WAITING;
+            BSM.Current_Battle_State = BattleState.WAITINGFORINPUT;
             current_Timer = 0f;
-            State_Of_Battle = BattleState.WAITING;
+            State_Of_Battle = PlayerState.WAITINGFORINPUT;
+            isDefending = false;
         }
         else
         {
-            State_Of_Battle = BattleState.BUFFER;
+            State_Of_Battle = PlayerState.BUFFER;
         }
     }
 
-    private bool MoveToEnemy(Vector3 target)
+    public bool MoveToEnemy(Vector3 target)
     {
         return target != (transform.position = Vector3.MoveTowards(transform.position, target, ANIMATION_SPEED * Time.deltaTime));
     }
@@ -144,10 +178,11 @@ public class PlayerStateMachine : MonoBehaviour
     #region Player Damage
     public void takeDamage(float damageAmount)
     {
-        if(isDefending)
+        if (isDefending)
         {
             //Reduces HP on attack received + Defense bonus.//
             PBS.currentHP -= damageAmount * (DEFEND_MULTI / 100);
+
         }
         else
         {
@@ -158,7 +193,7 @@ public class PlayerStateMachine : MonoBehaviour
 
         if (PBS.currentHP <= 0)
         {
-            PBS.currentHP = 0; 
+            PBS.currentHP = 0;
             //Dead battle state.///
         }
     }
@@ -166,8 +201,8 @@ public class PlayerStateMachine : MonoBehaviour
 
     void doDamage()
     {
-        float damageDone = BasicAttack.Damage;
-        targetEnemy.GetComponent<EnemyStateMachine>().takeDamage(damageDone);
+        //float damageDone = BasicAttack.Damage;
+       // targetEnemy.GetComponent<EnemyStateMachine>().takeDamage(damageDone);
     }
 
     #endregion
@@ -179,9 +214,22 @@ public class PlayerStateMachine : MonoBehaviour
 
         if (current_Timer >= MAX_COOLDOWN)
         {
-            State_Of_Battle = BattleState.ADDTOLIST;
+           // State_Of_Battle = PlayerState.ADDTOLIST;
         }
     }
+    #region Actions
 
+    public void Defend() {
+        isDefending = true;
+        State_Of_Battle = PlayerState.DEFEND;
+    }
+
+    public void EndTurn() {
+        input = PlayerInput.NULL;
+
+
+    }
+
+
+    #endregion
 }
-

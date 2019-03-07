@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-    public abstract class DummyBaseClass
+
+public abstract class DummyBaseClass
     {
         //Manages user's name.//
         public string name;

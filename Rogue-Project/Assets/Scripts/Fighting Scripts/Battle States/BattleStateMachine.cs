@@ -3,6 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum BattleState
+{
+    ORDERING,
+    WAITINGFORINPUT,
+    TAKEACTION,
+    PERFORMACTION,
+
+    ADDTOLIST,
+    BUFFER,
+    ATTACK,
+    DEFEND,
+    CHOOSEACTION,
+    DEAD,
+    CHOOSETARGET,
+    END_TURN,
+    END_BATTLE,
+    ENEMYMOVE,
+    STARTBATTLE,
+}
 public class BattleStateMachine : MonoBehaviour
 {
     #region Variable, Classes and etc.
@@ -10,165 +29,321 @@ public class BattleStateMachine : MonoBehaviour
     //Lists.//
     public List<TurnHandler> TurnList = new List<TurnHandler>();
 
-    public List<GameObject> Enemies = new List<GameObject>();
-    public List<GameObject> MainCharacter = new List<GameObject>();
-    public List<GameObject> PlayerManagement = new List<GameObject>();
-    public List<GameObject> TargetBtns = new List<GameObject>();
 
+    //public List<EnemyStateMachine> EnemiesList = new List<EnemyStateMachine>();
+    //public List<EnemyStateMachine> PlayerList = new List<EnemyStateMachine>();
+
+    public List<EnemyStateMachine> Enemies = new List<EnemyStateMachine>();
+    public List<PlayerStateMachine> Players = new List<PlayerStateMachine>();
+    private List<PlayerStateMachine> playersAlive = new List<PlayerStateMachine>();
+    private List<EnemyStateMachine> enemiesAlive = new List<EnemyStateMachine>();
+    private List<EnemyBaseClass> potentialEnemies = new List<EnemyBaseClass>() {
+        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf() 
+    };
     //Script Access.//
     private TurnHandler playerChoice;
     //private GameManager GM;
 
     //Game Objects.//
-    public GameObject targetButtons;
     public GameObject targetPanel;
     public GameObject commandsPanel;
+   // public GameObject selectPlayerSword;
+    public GameObject BattleCanvas;
+    public PlayerBehaviour OverWorldPlayer;
 
     //Buttons.//
     public Button attackButton;
-
+    public GameObject[] buttonsTargets;
     //Transforms.//
     private Transform Spacer;
 
-    public enum BattleState
-    {
-        WAITING,
-        TAKEACTION,
-        PERFORMACTION,
-    }
+
     public BattleState Current_Battle_State;
-
-    public enum PlayerState
-    {
-        WAITING,
-        CHOOSEACTIONS,
-        TARGETENEMY,
-        TURNDONE
-    }
+    public Text[] enemynames;
     public PlayerState currentPlayerState;
-
+    private int selectedTarget = -1;
     #endregion
 
     #region Awake, Start, Update
+    void OnEnable() {
+        foreach (EnemyStateMachine e in Enemies)
+        {
+            e.EBS = null;
+        }
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            Enemies[i].EBS = potentialEnemies[i];
+
+        }
+      //  BattleCanvas.SetActive(true);
+        Current_Battle_State = BattleState.STARTBATTLE;
+    }
     void Awake()
     {
-        for (int i = 0; i < GameManager.gameManager.enemyCount; i++)
-        {
-            GameObject NewEnemy = Instantiate
-                (
-                    GameManager.gameManager.NumberOfEnemies[i],
-                    Vector2.zero,
-                    Quaternion.identity
-
-                ) as GameObject;
-
-            NewEnemy.name = NewEnemy.GetComponent<EnemyStateMachine>().EBS.enemyName + "_" + (i + 1);
-            NewEnemy.GetComponent<EnemyStateMachine>().EBS.enemyName = NewEnemy.name;
-
-            //Add the enemy or enemies to the list.//
-            Enemies.Add(NewEnemy);
-        }
+        Current_Battle_State = BattleState.STARTBATTLE;
+        commandsPanel.SetActive(true);
+        targetPanel.SetActive(false);
     }
 
     // Use this for initialization
     void Start()
     {
-        Current_Battle_State = BattleState.WAITING;
-        
-        MainCharacter.AddRange(GameObject.FindGameObjectsWithTag("Player"));
-        Enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-        commandsPanel.SetActive(true);
 
+        foreach (EnemyStateMachine e in Enemies)
+        {
+            e.EBS = null;
+        }
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            Enemies[i].EBS = potentialEnemies[i];
+
+        }
+
+
+       // selectPlayerSword.SetActive(false);
+        Current_Battle_State = BattleState.STARTBATTLE;
+        Players[0].PBS = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBaseClass>(); //Uses the MC stats in the battle.//
     }
-
+    float time = 1f;
     // Update is called once per frame
     void Update()
     {
+       // print(Current_Battle_State);
+
         switch (Current_Battle_State)
         {
-            case (BattleState.WAITING):
-                WaitingBoS();
+            case BattleState.STARTBATTLE:
+                MakeListOfOrders();
+
+                Current_Battle_State = BattleState.ORDERING;
+                break;
+            case BattleState.ORDERING:
+                Current_Battle_State = BattleState.WAITINGFORINPUT;
+                break;
+            case BattleState.WAITINGFORINPUT:
+               // print(playersAlive[0].input);
+              //  selectPlayerSword.SetActive(true);
+                if (playersAlive[0].input != PlayerInput.NULL)
+                { 
+                    Current_Battle_State = BattleState.PERFORMACTION;
+
+               // selectPlayerSword.SetActive(false);
+                }
+                else
+                {
+
+                }
+
+
+                break;
+            case BattleState.PERFORMACTION:
+                switch (playersAlive[0].input)
+                {
+                    case PlayerInput.ATTACK: Current_Battle_State = BattleState.CHOOSETARGET; break;
+                    case PlayerInput.DEFEND:
+                        playersAlive[0].Defend();
+                        Current_Battle_State = BattleState.END_TURN;
+                        break;
+                    case PlayerInput.INSPECT: Current_Battle_State = BattleState.CHOOSETARGET; break;
+                    case PlayerInput.USE_ITEM: break;
+                    case PlayerInput.USE_SKILLS: break;
+                    case PlayerInput.RUN: Current_Battle_State = BattleState.END_BATTLE; break;
+
+                }
+                break;
+            case BattleState.CHOOSETARGET:
+                if (selectedTarget >-1)
+                {
+                    switch (playersAlive[0].input)
+                    {
+                        case PlayerInput.ATTACK:
+                            EnemyStateMachine targetEnemy = enemiesAlive[selectedTarget];
+                            // playersAlive[0].StartCoroutine(Players[0].actionTimer());
+                            Image enem = targetEnemy.gameObject.GetComponent<Image>();
+                            Color temp = new Color(255, 255, 255, 255);
+                            Color red = new Color(1, 0, 0, 1);
+                            time = time - Time.deltaTime;
+                            if (time > 0)
+                            {
+                                
+                                
+                                enem.color= red;
+                            }
+                            else
+                            {
+                                time = 1;
+                                enem.color = temp;
+                                Current_Battle_State = BattleState.END_TURN;
+                                print("ping");
+                            }
+                            break;
+                        case PlayerInput.INSPECT: break;
+                    }
+                }
                 break;
 
-            case (BattleState.TAKEACTION):
-                TakeActionBoS();
+            case BattleState.END_TURN:
+                foreach(PlayerStateMachine p in playersAlive)
+                {
+                    p.EndTurn();
+
+                }
+                Current_Battle_State =BattleState.ENEMYMOVE;
                 break;
 
-            case (BattleState.PERFORMACTION):
-                //Buffer Battle State, for the animation and all.//
+            case BattleState.ENEMYMOVE:
+                foreach (EnemyStateMachine e in enemiesAlive) {
+                    e.DoAi();
+
+                }
+                Current_Battle_State = BattleState.ORDERING;
                 break;
+            case BattleState.END_BATTLE:
+                if (enemiesAlive.Count == 0)
+                {
+                    EndBattle();
+                }
+                else {
+                    EscapeBattle();
+                }
+                OverWorldPlayer.enabled = true;
+                GameManager.inAFight = false;
+                break;
+
+
         }
 
-        switch(currentPlayerState)
+        for (int i = 0; i < Enemies.Count; i++)
         {
-            case (PlayerState.CHOOSEACTIONS):
-                Debug.Log("choose to fuck off");
-                PlayerIsChoosing();
-                break;
+            if (enemiesAlive[i].EBS != null)
+            {
+                Enemies[i].gameObject.SetActive(true);
+                buttonsTargets[i].SetActive(true);
+               // print(enemiesAlive[i].EBS);
+            }
+            else
+            {
+                Enemies[i].gameObject.SetActive(false);
+                buttonsTargets[i].SetActive(false);
 
-            case (PlayerState.WAITING):
-                
-                //Buffer state;
-                break;
-
-            case (PlayerState.TURNDONE):
-                Debug.Log("done to fuck off");
-                PlayerIsDone();
-                break;
+            }
         }
+        //print(playersAlive[0].input);
+
+
+        //switch (Current_Battle_State)
+        //{
+        //    case (BattleState.WAITINGFORINPUT):
+        //        WaitingBoS();
+        //        break;
+
+        //    case (BattleState.TAKEACTION):
+        //        TakeActionBoS();
+        //        break;
+
+        //    case (BattleState.PERFORMACTION):
+        //        //Buffer Battle State, for the animation and all.//
+        //        break;
+        //}
+
+        //switch (currentPlayerState)
+        //{
+        //    case (PlayerState.CHOOSEACTIONS):
+        //        Debug.Log("choose to fuck off");
+        //        PlayerIsChoosing();
+        //        break;
+
+        //    case (PlayerState.WAITING):
+
+        //        //Buffer state;
+        //        break;
+
+        //    case (PlayerState.TURNDONE):
+        //        Debug.Log("done to fuck off");
+        //        PlayerIsDone();
+        //        break;
+        //}
     }
     #endregion
 
     #region Battle State Methods
+
+    void MakeListOfOrders()
+    {
+        
+        foreach (PlayerStateMachine p in Players)
+        {
+            p.StartUp();
+            playersAlive.Add(p);
+            //print(p);
+            
+        }
+        for (int i = 0; i < Enemies.Count; i++)
+        {
+            if (Enemies[i].EBS != null)
+            {
+                enemynames[i].text = Enemies[i].EBS.enemyName;
+                print(enemynames[i].text);
+            }
+            else {
+                Enemies[i].gameObject.SetActive(false);
+            }
+            enemiesAlive.Add(Enemies[i]);
+            enemiesAlive[i].StartBattle();
+        }
+        
+
+    }
+    
+
+
+
     private void WaitingBoS()
     {
         if (TurnList.Count > 0)
         {
-            TargetButtons();
             Current_Battle_State = BattleState.TAKEACTION;
         }
     }
 
     private void TakeActionBoS()
     {
-
         GameObject performer = GameObject.Find(TurnList[0].Attacker);
 
         //If it is the enemy's turn to play, check for enemy to fight and targets one if it doesn't have a target in hand.//
         if (TurnList[0].Type == "Enemy")
         {
             Debug.Log("Enemy turn.");
-            EnemyStateMachine ESM = GameObject.Find(TurnList[0].Attacker).GetComponent<EnemyStateMachine>();
+            EnemyStateMachine ESM = Enemies.Find(x => x.EBS.enemyName == TurnList[0].Attacker); ;
 
 
-            for (int j = 0; j < MainCharacter.Count; j++)
+            for (int j = 0; j < Players.Count; j++)
             {
-
-                if (TurnList[0].Target == MainCharacter[j]) //Already has a target ? => Change the State of ESM.//
+                if (TurnList[0].Target == null) //Already has a target ? => Change the State of ESM.//
                 {
-                    ESM.targetPlayer = TurnList[0].Target;
+                    ESM.targetPlayer = Players[0];
 
-                    ESM.Current_Battle_State = EnemyStateMachine.BattleState.ACTION;
+                    ESM.Current_Battle_State = BattleState.ATTACK;
                 }
 
                 else //Does not have a target ? => Find one and then change the State of ESM.//
                 {
-                    TurnList[0].Target = MainCharacter[Random.Range(0, MainCharacter.Count)];
-                    ESM.targetPlayer = TurnList[0].Target;
+                    TurnList[0].Target = Players[0].PBS.playerName;
+                    ESM.targetPlayer = Players[0];
 
-                    ESM.Current_Battle_State = EnemyStateMachine.BattleState.ACTION;
+                    ESM.Current_Battle_State = BattleState.ATTACK;
                     break; //Prevent the loop to repeat itself one more time, its job has been done.//
                 }
             }
-            
+
         }
         //If it is the Player's turn to play.//
         if (TurnList[0].Type == "Player")
         {
             Debug.Log("Player's turn");
             PlayerStateMachine PSM = performer.GetComponent<PlayerStateMachine>();
-            PSM.targetEnemy = TurnList[0].Target;
-            PSM.State_Of_Battle = PlayerStateMachine.BattleState.ACTION;
+            PSM.targetEnemy = Enemies.Find(x => x.EBS.enemyName == TurnList[0].Target);
+            PSM.State_Of_Battle = PlayerState.ATTACK;
         }
 
         Current_Battle_State = BattleState.PERFORMACTION;
@@ -176,51 +351,64 @@ public class BattleStateMachine : MonoBehaviour
     #endregion
 
     #region Player State Methods
-
-
     private void Commands()
     {
         commandsPanel.SetActive(true);
-        attackButton.onClick.AddListener(() => input1());   
     }
 
-    private void input1()
+    public void SwitchToTargeting()
     {
-        Debug.Log("input 1 clicked.");
-        playerChoice.Attacker = PlayerManagement[0].name;
-        playerChoice.AttackersGameObject = PlayerManagement[0];
-        playerChoice.Type = "Player";
-
         commandsPanel.SetActive(false);
         targetPanel.SetActive(true);
     }
-    public void input2(GameObject enemyIsTarget)
+    
+    public void SwitchToCommands()
     {
-        playerChoice.Target = enemyIsTarget;
-        currentPlayerState = PlayerState.TURNDONE;
+        commandsPanel.SetActive(true);
+        targetPanel.SetActive(false);
+    }
+
+    
+    public void SelectTarget(int value) {
+        selectedTarget = value;
+        print("Enemy " + value + " Selected");
+    }
+
+    public void UserInput(int input)
+    {
+        playersAlive[0].input = (PlayerInput)input;
+        print("Ping: " + input);
     }
 
 
-    private void PlayerIsChoosing()
+    
+
+    public void EndBattle()
     {
-        if (PlayerManagement.Count > 0)
+        BattleCanvas.SetActive(false);
+
+    }
+    public void EscapeBattle()
+    {
+        BattleCanvas.SetActive(false);
+
+    }
+    public void StartBattle()
+    {
+        OverWorldPlayer.enabled = false;
+
+        foreach (EnemyStateMachine e in Enemies)
         {
-            PlayerManagement[0].transform.Find("selector").gameObject.SetActive(true);
-            playerChoice = new TurnHandler();
-            currentPlayerState = PlayerState.WAITING;
+            e.EBS = null;
         }
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            Enemies[i].EBS = potentialEnemies[i];
+
+        }
+        BattleCanvas.SetActive(true);
+        
     }
-
-    private void PlayerIsDone()
-    {
-        TurnList.Add(playerChoice);
-        PlayerManagement[0].transform.Find("Selector").gameObject.SetActive(false);
-        PlayerManagement.RemoveAt(0);
-        currentPlayerState = PlayerState.CHOOSEACTIONS;
-    }
-
-
-
     #endregion
 
     #region Other
@@ -228,33 +416,6 @@ public class BattleStateMachine : MonoBehaviour
     {
         TurnList.Add(turns);
     }
-
-    public void TargetButtons()
-    {
-        foreach(GameObject targetButton in TargetBtns)
-        {
-            Destroy(targetButton);
-        }
-        
-        foreach(GameObject enemy in Enemies)
-        {
-            Debug.Log("Button Created");
-            GameObject newButton = Instantiate(targetButtons) as GameObject;
-            EnemyTarget ETButton = newButton.GetComponent<EnemyTarget>();
-
-            EnemyStateMachine currentEnemy = enemy.GetComponent<EnemyStateMachine>();
-            Text buttonText = newButton.transform.Find("EnemyName").gameObject.GetComponent<Text>();
-
-            buttonText.text = currentEnemy.EBS.enemyName;
-            ETButton.enemyGameObject = enemy;
-
-            newButton.transform.SetParent(Spacer, false);   
-            TargetBtns.Add(newButton);
-        }
-    }
-
-
-
     #endregion
 
 }
