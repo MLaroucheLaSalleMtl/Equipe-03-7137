@@ -69,16 +69,21 @@ public class BattleStateMachine : MonoBehaviour
     #region Awake, Start, Update
     void OnEnable()
     {
+        potentialEnemies.Clear();
+        potentialEnemies = new List<EnemyBaseClass>() {
+        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
+    };
         foreach (EnemyStateMachine e in Enemies)
         {
             e.EBS = null;
         }
-        for (int i = 0; i < Random.Range(3, 3); i++)
+        for (int i = 0; i < Random.Range(1, 3); i++)
         {
             Enemies[i].EBS = potentialEnemies[i];
 
         }
         //  BattleCanvas.SetActive(true);
+        MakeListOfOrders();
         Current_Battle_State = BattleState.STARTBATTLE;
     }
     void Awake()
@@ -91,12 +96,15 @@ public class BattleStateMachine : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        potentialEnemies.Clear();
+        potentialEnemies = new List<EnemyBaseClass>() {
+        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
+    };
         foreach (EnemyStateMachine e in Enemies)
         {
             e.EBS = null;
         }
-        for (int i = 0; i < Random.Range(3, 3); i++)
+        for (int i = 0; i < Random.Range(1, 3); i++)
         {
             Enemies[i].EBS = potentialEnemies[i];
 
@@ -113,14 +121,40 @@ public class BattleStateMachine : MonoBehaviour
     bool onlyOnce = false;
     float timer = 0;
     // Update is called once per frame
+    bool Exit = false;
     void Update()
     {
+        bool battleEnded = true;
+        foreach (EnemyStateMachine e in enemiesAlive)
+        {
+            
+            if (e.EBS != null && e.EBS.currentHP > 0)
+            {
+                battleEnded = false;
+                break;
+            }
+
+        }
         // print(Current_Battle_State);
         if (BattleCanvas.activeSelf)
         {
             switch (Current_Battle_State)
             {
                 case BattleState.STARTBATTLE:
+                    potentialEnemies.Clear();
+                    potentialEnemies = new List<EnemyBaseClass>() {
+        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
+    };
+                    foreach (EnemyStateMachine e in Enemies)
+                    {
+                        e.EBS = null;
+                    }
+                    for (int i = 0; i < Random.Range(1, 3); i++)
+                    {
+                        Enemies[i].EBS = potentialEnemies[i];
+                        print("Added: " +potentialEnemies[i].enemyName);
+
+                    }
                     MakeListOfOrders();
 
                     Current_Battle_State = BattleState.ORDERING;
@@ -159,7 +193,7 @@ public class BattleStateMachine : MonoBehaviour
                         case PlayerInput.INSPECT: Current_Battle_State = BattleState.CHOOSETARGET; break;
                         case PlayerInput.USE_ITEM: break;
                         case PlayerInput.USE_SKILLS: break;
-                        case PlayerInput.RUN: Current_Battle_State = BattleState.END_BATTLE; break;
+                        case PlayerInput.RUN: Current_Battle_State = BattleState.END_BATTLE; battleEnded = true; Exit = true; break;
 
                     }
                     break;
@@ -183,6 +217,7 @@ public class BattleStateMachine : MonoBehaviour
                                 }
                                 else
                                 {
+                                    playersAlive[0].Attack(targetEnemy);
                                     time = 1;
                                     enem.color = temp;
                                     Current_Battle_State = BattleState.END_TURN;
@@ -209,10 +244,17 @@ public class BattleStateMachine : MonoBehaviour
                     Animator anim = enemiesAlive[enemyTurn].GetComponent<Animator>();
                     if (!onlyOnce)
                     {
-                        enemiesAlive[enemyTurn].Attack(playersAlive[0]);
+                        if (enemiesAlive[enemyTurn].EBS != null && enemiesAlive[enemyTurn].EBS.currentHP > 0)
+                        {
+                            enemiesAlive[enemyTurn].Attack(playersAlive[0]);
 
-                        anim.SetTrigger("Attack");
-                        onlyOnce = true;
+                            anim.SetTrigger("Attack");
+                            onlyOnce = true;
+                        }
+                        else {
+                            enemyTurn++;
+                            timer = 0;
+                        }
                     }
                     timer += Time.deltaTime;
                     if (timer > 2f)
@@ -224,44 +266,48 @@ public class BattleStateMachine : MonoBehaviour
                     if (enemyTurn == enemiesAlive.Count)
                     {
                         enemyTurn = 0;
-                        Current_Battle_State = BattleState.ORDERING;
+                        Current_Battle_State = BattleState.END_BATTLE;
                         //enemyTurnDone = false;
                     }
                     break;
                 case BattleState.END_BATTLE:
-                    if (enemiesAlive.Count == 0)
-                    {
-                        Current_Battle_State = BattleState.STARTBATTLE;
+                    print(battleEnded);
 
-                        EndBattle();
-                    }
-                    else
+                    if (battleEnded||Exit)
                     {
-                        Current_Battle_State = BattleState.STARTBATTLE;
+                            Current_Battle_State = BattleState.STARTBATTLE;
 
-                        EscapeBattle();
+                            EndBattle();
+
+                        
+                        OverWorldPlayer.enabled = true;
+                        GameManager.inAFight = false;
+                        Exit = false;
                     }
-                    OverWorldPlayer.enabled = true;
-                    GameManager.inAFight = false;
+                    else {
+                        Current_Battle_State = BattleState.ORDERING;
+                    }
                     break;
 
-
             }
-
-            for (int i = 0; i < Enemies.Count; i++)
+            
+           
+            for (int i = 0; i < enemiesAlive.Count; i++)
             {
-                if (enemiesAlive[i].EBS != null)
+                if (enemiesAlive[i].EBS != null && enemiesAlive[i].EBS.currentHP>0)
                 {
                     Enemies[i].gameObject.SetActive(true);
                     buttonsTargets[i].SetActive(true);
 
-                    // print(enemiesAlive[i].EBS);
+
                 }
                 else
                 {
                     Enemies[i].gameObject.SetActive(false);
                     buttonsTargets[i].SetActive(false);
+                    print("Removed " + enemiesAlive[i].EBS);
 
+                   
                 }
             }
             //print(playersAlive[0].input);
@@ -308,6 +354,7 @@ public class BattleStateMachine : MonoBehaviour
     void MakeListOfOrders()
     {
         commandsPanel.SetActive(true);
+        playersAlive.Clear();
         foreach (PlayerStateMachine p in Players)
         {
             p.StartUp();
@@ -416,8 +463,10 @@ public class BattleStateMachine : MonoBehaviour
 
     public void UserInput(int input)
     {
-        playersAlive[0].input = (PlayerInput)input;
-        print("Ping: " + input);
+        
+            playersAlive[0].input = (PlayerInput)input;
+            print("Ping: " + input);
+        
     }
 
 
@@ -441,7 +490,7 @@ public class BattleStateMachine : MonoBehaviour
         {
             e.EBS = null;
         }
-        for (int i = 0; i < Random.Range(3, 3); i++)
+        for (int i = 0; i < Random.Range(1, 3); i++)
         {
             Enemies[i].EBS = potentialEnemies[i];
 

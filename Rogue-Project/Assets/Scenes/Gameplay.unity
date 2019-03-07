@@ -3093,6 +3093,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 857219151480675586, guid: 8010179e0ecd8aa4f807625fe475137a,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 857219151553248764, guid: 8010179e0ecd8aa4f807625fe475137a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4971,6 +4976,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: baseHP
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: currentHP
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: baseMP
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: currentMP
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: Strength
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: Constitution
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: Defense
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: Intelligence
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414373375438686113, guid: 5ee7fa63862d98c40806b1d76d7d3532,
+        type: 3}
+      propertyPath: Luck
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ee7fa63862d98c40806b1d76d7d3532, type: 3}

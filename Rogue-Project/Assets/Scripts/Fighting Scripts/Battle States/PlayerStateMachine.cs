@@ -198,7 +198,9 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
         }
     }
 
-
+    public void Attack(EnemyStateMachine e) {
+        e.EBS.currentHP -= PBS.Strength;
+    }
     void doDamage()
     {
         //float damageDone = BasicAttack.Damage;
