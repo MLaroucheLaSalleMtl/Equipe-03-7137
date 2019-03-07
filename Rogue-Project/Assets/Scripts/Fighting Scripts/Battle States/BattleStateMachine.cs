@@ -315,6 +315,7 @@ public class BattleStateMachine : MonoBehaviour
             //print(p);
 
         }
+        enemiesAlive.Clear();
         for (int i = 0; i < Enemies.Count; i++)
         {
             if (Enemies[i].EBS != null)
