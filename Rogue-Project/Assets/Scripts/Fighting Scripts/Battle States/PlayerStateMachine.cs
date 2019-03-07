@@ -66,12 +66,12 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
 
     #region Awake, Start, Update
     void Awake() {
-        startPosition = new Vector3(250,65,0);
+        startPosition = transform.position;
     }
     void Start()
     {
         
-        miniShield.SetActive(false);
+      //  miniShield.SetActive(false);
         current_Timer = 0.0f;
         State_Of_Battle = PlayerState.WAITINGFORINPUT;
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
@@ -82,7 +82,7 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
         //startPosition = transform.position; => To be seen if we use one or not.//
     }
    public  void StartUp() {
-        miniShield.SetActive(false);
+       // miniShield.SetActive(false);
         State_Of_Battle = PlayerState.WAITINGFORINPUT;
         input = PlayerInput.NULL;
     }

@@ -22,7 +22,7 @@ public class EncounterLogic : MonoBehaviour
            
             if (chanceTime > maxChanceTime)
             {
-                if (Random.Range(1, 100) <100)
+                if (Random.Range(1, 100) <50)
                 {
                     game.StartFight();
                 }

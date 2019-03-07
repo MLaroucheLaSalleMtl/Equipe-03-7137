@@ -173,6 +173,11 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
     //    BSM.List_Of_Turns(thisAttack);
     //}
 
+    public void Attack(PlayerStateMachine p) {
+       p.PBS.currentHP -= EBS.currentAttack/10;
+
+    }
+
     void Attack_Timer() //Prevent AI's failure to crash/stop the flow of the game, if the enemy or the player doesn't attack or do anything within a certain time => Switch character.//
     {
         current_Timer = current_Timer + Time.deltaTime;
