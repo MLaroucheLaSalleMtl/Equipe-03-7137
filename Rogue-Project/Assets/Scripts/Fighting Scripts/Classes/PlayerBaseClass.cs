@@ -22,4 +22,6 @@ public class PlayerBaseClass : MonoBehaviour
     public int Defense;      //=> Used to reduce incoming attacks - Could be armor based.//
     public int Intelligence; //=> could be used for spells and such.//
     public int Luck;         //=> Influences the RUN command during a match and evasive attacks.//
+    public int Exp =0;
+    public int level = 1;
 }
