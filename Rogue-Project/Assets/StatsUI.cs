@@ -8,6 +8,8 @@ public class StatsUI : MonoBehaviour
     private Text[] texts;
     private PlayerStateMachine player;
     private PlayerBaseClass playerStats;
+    //public Text HPText;
+    //public Text ManaText;
     // Start is called before the first frame update
     void Start()
     {
