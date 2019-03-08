@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BedScript : MonoBehaviour
 {
-
+    public PlayerBaseClass playerBaseClass;
+    public PlayerBehaviour playerBehaviour;
     public GameObject BedPannel;
     // Start is called before the first frame update
     void Start()
@@ -12,12 +13,19 @@ public class BedScript : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && gameObject.tag == "BedCollider")
         {
             print("colliding with Bed");
+            BedPannel.SetActive(true);
             bool pauseState = BedPannel.activeSelf;
+            playerBehaviour.enabled = false;
         }
 
         if (collision.gameObject.tag == "Player" && gameObject.tag == "DoorCollider")
@@ -29,11 +37,13 @@ public class BedScript : MonoBehaviour
     public void yesButton()
     {
         //il faut mettre le code pour remplir le HP
+        playerBaseClass.currentHP = playerBaseClass.baseHP;
+        playerBehaviour.enabled = true;
         BedPannel.SetActive(false);
     }
     public void noButton()
     {
-        //il faut mettre le code pour remplir le HP
+        playerBehaviour.enabled = true;
         BedPannel.SetActive(false);
     }
 }
