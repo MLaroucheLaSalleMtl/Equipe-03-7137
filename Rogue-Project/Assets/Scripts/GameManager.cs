@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public enum GameState { PAUSE, GAMEPLAY, OPTIONS, FIGHTING }
+public enum GameState { PAUSE, GAMEPLAY, OPTIONS, FIGHTING, ITEMS }
 
 
 public class GameManager : MonoBehaviour
@@ -15,12 +15,18 @@ public class GameManager : MonoBehaviour
     public int enemyCount = 0;
 
     //Lists.//
+
+    //il faut creer la liste pour les items et une autre pour les images des items.
     public List<GameObject> NumberOfEnemies = new List<GameObject>(); //Manages the numbers of enemies inside a Fight.//
 
     public Camera camera;
     public static GameManager gameManager;
     public GameObject MainCharacter;
+    private Inventory inventory;
+
     [SerializeField] private BattleStateMachine battleManager;
+
+
 
     //Thingy to make battle screen appear, Brad's way thing.
 
@@ -42,6 +48,7 @@ public class GameManager : MonoBehaviour
     [Header("[Pannels]")]
     public GameObject PausePannel;
     public GameObject OptionsPannel;
+    public GameObject ItemsPannel;
 
     [Header("[Interaction Pannels]")]
     public GameObject BedPannel;
@@ -97,12 +104,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
     }
 
 
     void Update()
     {
+        bool Idown = Input.GetKey(KeyCode.I);
         if (Input.GetButtonDown("Cancel"))
         {
             pauseGame();
@@ -126,6 +134,12 @@ public class GameManager : MonoBehaviour
                 //Make shit pop-up.//
 
                 break;
+        }
+        if (Idown)
+        {
+            btnItems();
+            inventory.loadInventory();
+            changeState(GameState.ITEMS);
         }
     }
 
@@ -171,6 +185,7 @@ public class GameManager : MonoBehaviour
         bool pauseState = PausePannel.activeSelf;
         pauseState = !pauseState;
         PausePannel.SetActive(!PausePannel.activeSelf);
+        ItemsPannel.SetActive(false);
 
         switch (pauseState)
         {
@@ -208,6 +223,19 @@ public class GameManager : MonoBehaviour
     public void changeState(GameState newState)
     {
         currentState = newState;
-    }    
+    }   
+    
+    public void btnItems()
+    {
+        ItemsPannel.SetActive(true);
+        changeState(GameState.ITEMS);
+    }
+
+    public void CloseItemsPannel()
+    {
+        ItemsPannel.SetActive(false);
+        changeState(GameState.GAMEPLAY);
+        inventory.clearLoadedItems();
+    }
 
 }
