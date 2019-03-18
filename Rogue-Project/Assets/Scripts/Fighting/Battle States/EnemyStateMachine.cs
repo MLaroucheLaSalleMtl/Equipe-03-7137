@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+public enum Move {
+Attack,Defend,Skill,Item
+
+}
 
 public class EnemyStateMachine : MonoBehaviour,StateMachine
 {
 
-    #region Variables and etc
+   
     //Handles the timer between each Actions .//
     [Header("Everything concerning the time it takes between attacks.")]
     private float MAX_COOLDOWN = 0.5f;
@@ -35,16 +39,8 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
     public Text UIname;
     
     public BattleState Current_Battle_State;
-    #endregion
-
-    #region Awake, Start, Update
-    void Start()
-    {
-        Current_Battle_State = BattleState.WAITINGFORINPUT;
-        BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
-        startPosition = transform.position;
-        enemySelector.SetActive(false);
-    }
+        
+ 
    public  void StartBattle() {
         if (EBS != null)
         {
@@ -87,46 +83,10 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
     //            break;
         
     }
-    #endregion
+     
+    
 
-    #region Animation
-    private IEnumerator actionTimer()
-    {
-        if (hasActionStarted) { yield break; }
-        hasActionStarted = true;
-
-        //Brings the MainCharacter towards the selected enemy.//
-        Vector3 targetPos = new Vector3
-            (
-                targetPlayer.transform.position.x + ANIMATION_DISTANCE,
-                targetPlayer.transform.position.y,
-                targetPlayer.transform.position.z
-            );
-
-
-        while (MoveToEnemy(targetPos)) { yield return null; }
-        yield return new WaitForSeconds(0.5f);
-
-        //Do the attack to the enemy, depending on chosen attack - Here.//
-
-        //animate back to start position
-        Vector3 originPOS = startPosition;
-        while (MoveToOrigin(originPOS)) { yield return null; }
-        //remove from bsm list
-        BSM.TurnList.RemoveAt(0);
-
-        BoS_Reset();
-
-        hasActionStarted = false;
-    }
-
-    private void BoS_Reset() //Resets the Battle State at the end of a turn.//
-    {
-        BSM.Current_Battle_State = BattleState.WAITINGFORINPUT;
-        current_Timer = 0f;
-        Current_Battle_State = BattleState.BUFFER;
-    }
-
+  
     private bool MoveToEnemy(Vector3 target)
     {
         return target != (transform.position = Vector3.MoveTowards(transform.position, target, ANIMATION_SPEED * Time.deltaTime));
@@ -136,9 +96,9 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
     {
         return target != (transform.position = Vector3.MoveTowards(transform.position, target, ANIMATION_SPEED * Time.deltaTime));
     }
-    #endregion
+   
 
-    #region Enemy Damage
+    
     //void doDamage()
     //{
     //    float damageDone = EBS.currentAttack + BSM.TurnList[0].chosenAttack.attackDmg;
@@ -158,7 +118,12 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
 
     }
 
-    #endregion
+    public void DoMove(PlayerStateMachine player) {
+
+        Attack(player);
+
+
+    }
 
     //void chooseAction()
     //{
