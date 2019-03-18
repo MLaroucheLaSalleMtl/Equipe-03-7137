@@ -25,7 +25,7 @@ public enum PlayerInput {
 
 public class PlayerStateMachine : MonoBehaviour, StateMachine
 {
-    #region Variables and etc
+  
     [Header("Defending multiplier - Lower the less damage the player takes.")]
     public float DEFEND_MULTI = 25;
 
@@ -62,9 +62,9 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
     public PlayerState State_Of_Battle;
     public PlayerInput input = PlayerInput.NULL;
 
-    #endregion
+  
 
-    #region Awake, Start, Update
+   
     void Awake() {
         startPosition = transform.position;
     }
@@ -86,68 +86,10 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
         State_Of_Battle = PlayerState.WAITINGFORINPUT;
         input = PlayerInput.NULL;
     }
-    void Update()
-    {
-        
-        
-
-    }
-    #endregion
-
-    #region Animation
-    public IEnumerator actionTimer()
-    {
-        //startPosition = gameObject.transform.position;
-        if (hasActionStarted) { yield break; }
-        hasActionStarted = true;
-
-        //Brings the MainCharacter towards the selected enemy.//
-        Vector3 targetPos = new Vector3
-            (
-                targetEnemy.gameObject.transform.position.x + ANIMATION_DISTANCE,
-                targetEnemy.transform.position.y,
-                targetEnemy.transform.position.z
-            );
 
 
-        while (MoveToEnemy(targetPos)) { yield return null; }
-        yield return new WaitForSeconds(0.5f);
+ 
 
-        doDamage(); //Attack the selected target.//
-
-        //animate back to start position
-        Vector3 originPOS = startPosition;
-        print(originPOS);
-
-        while (MoveToOrigin(originPOS)) { yield return null; }
-        //remove from bsm list
-       // BSM.TurnList.RemoveAt(0);
-
-       // BoS_Reset();
-
-        hasActionStarted = false;
-    }
-    private IEnumerator DefendTimer()
-    {
-        MovingShieldAnim();
-
-       
-
-       
-        //remove from bsm list
-        BSM.TurnList.RemoveAt(0);
-
-        BoS_Reset();
-
-        hasActionStarted = false;
-        yield return null;
-    }
-
-    void MovingShieldAnim() {
-
-
-
-    }
     private void BoS_Reset() //Resets the Battle State at the end of a turn.//
     {
         if (PBS.currentHP > 0)
@@ -173,41 +115,7 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
         return target != (transform.position = Vector3.MoveTowards(transform.position, target, ANIMATION_SPEED * Time.deltaTime));
     }
 
-    #endregion
-
-    #region Player Damage
-    public void takeDamage(float damageAmount)
-    {
-        if (isDefending)
-        {
-            //Reduces HP on attack received + Defense bonus.//
-            PBS.currentHP -= damageAmount * (DEFEND_MULTI / 100);
-
-        }
-        else
-        {
-            //Reduces HP on attack received.//
-            PBS.currentHP -= damageAmount;
-        }
-
-
-        if (PBS.currentHP <= 0)
-        {
-            PBS.currentHP = 0;
-            //Dead battle state.///
-        }
-    }
-
-    public void Attack(EnemyStateMachine e) {
-        e.EBS.currentHP -= PBS.Strength;
-    }
-    void doDamage()
-    {
-        //float damageDone = BasicAttack.Damage;
-       // targetEnemy.GetComponent<EnemyStateMachine>().takeDamage(damageDone);
-    }
-
-    #endregion
+   
 
     void Attack_Timer() //Prevent AI's failure to crash/stop the flow of the game, if the enemy or the player doesn't attack or do anything within a certain time => Switch character.//
     {
@@ -219,7 +127,7 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
            // State_Of_Battle = PlayerState.ADDTOLIST;
         }
     }
-    #region Actions
+   
 
     public void Defend() {
         isDefending = true;
@@ -233,5 +141,5 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
     }
 
 
-    #endregion
+    
 }
