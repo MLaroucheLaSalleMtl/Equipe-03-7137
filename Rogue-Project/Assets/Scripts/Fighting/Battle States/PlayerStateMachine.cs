@@ -127,21 +127,6 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
 
         hasActionStarted = false;
     }
-    private IEnumerator DefendTimer()
-    {
-        MovingShieldAnim();
-
-       
-
-       
-        //remove from bsm list
-        BSM.TurnList.RemoveAt(0);
-
-        BoS_Reset();
-
-        hasActionStarted = false;
-        yield return null;
-    }
 
     void MovingShieldAnim() {
 
