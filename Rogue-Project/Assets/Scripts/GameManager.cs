@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public GameObject PausePannel;
     public GameObject OptionsPannel;
     public GameObject ItemsPannel;
+    public GameObject ItemInfoPannel;
 
     [Header("[Interaction Pannels]")]
     public GameObject BedPannel;
@@ -105,6 +106,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
+        ItemsPannel.SetActive(false);
+        ItemInfoPannel.SetActive(false);
     }
 
 
@@ -238,4 +241,13 @@ public class GameManager : MonoBehaviour
         inventory.clearLoadedItems();
     }
 
+    public void openItemInfoPannel()
+    {
+        ItemInfoPannel.SetActive(true);
+    }
+
+    public void closeItemInfoPannel()
+    {
+        ItemInfoPannel.SetActive(false);
+    }
 }
