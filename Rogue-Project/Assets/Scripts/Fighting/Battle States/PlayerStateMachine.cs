@@ -25,7 +25,7 @@ public enum PlayerInput {
 
 public class PlayerStateMachine : MonoBehaviour, StateMachine
 {
-    #region Variables and etc
+  
     [Header("Defending multiplier - Lower the less damage the player takes.")]
     public float DEFEND_MULTI = 25;
 
@@ -62,9 +62,9 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
     public PlayerState State_Of_Battle;
     public PlayerInput input = PlayerInput.NULL;
 
-    #endregion
+  
 
-    #region Awake, Start, Update
+   
     void Awake() {
         startPosition = transform.position;
     }
@@ -86,6 +86,7 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
         State_Of_Battle = PlayerState.WAITINGFORINPUT;
         input = PlayerInput.NULL;
     }
+<<<<<<< HEAD
     void Update()
     {
         
@@ -129,10 +130,12 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
     }
 
     void MovingShieldAnim() {
+=======
+>>>>>>> SPRINTenCOURS
 
 
+ 
 
-    }
     private void BoS_Reset() //Resets the Battle State at the end of a turn.//
     {
         if (PBS.currentHP > 0)
@@ -158,41 +161,7 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
         return target != (transform.position = Vector3.MoveTowards(transform.position, target, ANIMATION_SPEED * Time.deltaTime));
     }
 
-    #endregion
-
-    #region Player Damage
-    public void takeDamage(float damageAmount)
-    {
-        if (isDefending)
-        {
-            //Reduces HP on attack received + Defense bonus.//
-            PBS.currentHP -= damageAmount * (DEFEND_MULTI / 100);
-
-        }
-        else
-        {
-            //Reduces HP on attack received.//
-            PBS.currentHP -= damageAmount;
-        }
-
-
-        if (PBS.currentHP <= 0)
-        {
-            PBS.currentHP = 0;
-            //Dead battle state.///
-        }
-    }
-
-    public void Attack(EnemyStateMachine e) {
-        e.EBS.currentHP -= PBS.Strength;
-    }
-    void doDamage()
-    {
-        //float damageDone = BasicAttack.Damage;
-       // targetEnemy.GetComponent<EnemyStateMachine>().takeDamage(damageDone);
-    }
-
-    #endregion
+   
 
     void Attack_Timer() //Prevent AI's failure to crash/stop the flow of the game, if the enemy or the player doesn't attack or do anything within a certain time => Switch character.//
     {
@@ -204,7 +173,7 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
            // State_Of_Battle = PlayerState.ADDTOLIST;
         }
     }
-    #region Actions
+   
 
     public void Defend() {
         isDefending = true;
@@ -218,5 +187,5 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
     }
 
 
-    #endregion
+    
 }
