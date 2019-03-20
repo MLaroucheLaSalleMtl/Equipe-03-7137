@@ -229,7 +229,7 @@ public class BattleStateMachine : MonoBehaviour
                                 }
                                 else
                                 {
-                                    playersAlive[0].Attack(targetEnemy);
+                                    //playersAlive[0].Attack(targetEnemy); // what is this wtf
                                     time = 1;
                                     enem.color = temp;
                                     Current_Battle_State = BattleState.END_TURN;
