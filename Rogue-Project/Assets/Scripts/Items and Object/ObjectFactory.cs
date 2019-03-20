@@ -17,40 +17,30 @@ class Item : DummyBaseClass
 
 abstract class ObjectFactory : Item
 {
+    //declaration des enums pour tous les objets
     public enum ItemType
     {
-        Weapon,
-        Armor
+        Weapon, Armor
     };
     public enum WeaponType
     {
-        Melee,
-        Distance
+        Melee, Distance
     };
     public enum MeleeClass
     {
-        Sword,
-        Spear,
-        Dagger,
-        Hammer,
-        Axe,
-        DoubleAxe
+        Sword, Spear, Dagger, Hammer, Axe, DoubleAxe
+    };
+    public enum DistanceClass
+    {
+        Bow, CrossBow, ThrowDaggers
     };
     public enum ArmorType
     {
-        Head,
-        Shoulders,
-        Plate,
-        Legs,
-        Gloves,
-        Boots
+        Head, Shoulders, Plate, Legs, Gloves, Boots
     };
     public enum ArmorClass
     {
-        Leather,
-        Iron,
-        Steel,
-        Cloth
+        Leather, Iron, Steel, Cloth
     };
 
     public ObjectFactory(string name, Statistics stats, string image) : base (name, stats, image)
@@ -109,123 +99,134 @@ class ObjectControllerFactory : ObjectFactory
         MeleeClass weaponName = (MeleeClass)randomWeapClass;
         ArmorClass armorName = (ArmorClass)randomArmorClass;
 
-        MakeAWeapon();
-        MakeAnArmor();
+        PlayerBaseClass levelMC = GameManager.gameManager.MainCharacter.GetComponent<PlayerBaseClass>();
 
-        void MakeAWeapon()
+        Statistics NewStats(int level)
         {
-            //make a weapon
-            if (randomItem == (int)ItemType.Weapon) // 0 = weapon
-            {
-                if (randomWeapType == (int)WeaponType.Melee) // 0 = melee
-                {
-                    MakeAWeapClass(randomWeapClass);
-                }
-                else if (randomWeapType == (int)WeaponType.Distance)  // 1 = distance
-                {
-                    MakeAWeapClass(randomWeapClass);
-                }
-            }
-        }
-        void MakeAnArmor()
-        {
-            //make an armor
-            if (randomItem == (int)ItemType.Armor)  // 1 = armure
-            {
-                MakeAnArmorType(randomArmorType);
-            }
-        }
-        void MakeAnArmorType(int randomType)
-        {
-            switch (randomType)
-            {
-                case 0:
-                    //head
-                    MakeAnArmorClass(randomArmorClass);
-                    break;
-                case 1:
-                    //shoulders
-                    MakeAnArmorClass(randomArmorClass);
-                    break;
-                case 2:
-                    //plate
-                    MakeAnArmorClass(randomArmorClass);
-                    break;
-                case 3:
-                    //legs
-                    MakeAnArmorClass(randomArmorClass);
-                    break;
-                case 4:
-                    //gloves
-                    MakeAnArmorClass(randomArmorClass);
-                    break;
-                case 5:
-                    //boots
-                    MakeAnArmorClass(randomArmorClass);
-                    break;
-            }
-        }
-        void MakeAnArmorClass(int randomClass)
-        {
-            switch (randomClass)
-            {
-                case 0:
-                    //leather
-
-                    break;
-                case 1:
-                    //iron
-
-                    break;
-                case 2:
-                    //steel
-
-                    break;
-                case 3:
-                    //cloth
-
-                    break;
-            }
-        }
-        void MakeAWeapClass(int randomClass)
-        {
-            switch (randomClass)
-            {
-                case 0:
-                    //sword
-
-                    break;
-                case 1:
-                    //spear
-
-                    break;
-                case 2:
-                    //dagger
-
-                    break;
-                case 3:
-                    //hammer
-
-                    break;
-                case 4:
-                    //axe
-
-                    break;
-                case 5:
-                    //doubleaxe
-
-                    break;
-            }
+            Statistics statistics = new Statistics();
+            statistics.Attack += random.Next(0, level + 1);
+            statistics.Defense += random.Next(0, level + 1);
+            statistics.Support += random.Next(0, level + 1);
+            return statistics;
         }
         void MakeFullWeapon()
         {
-            items.Add(new Weapon(weaponName.ToString(), new Statistics { }, weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass));
+            items.Add(new Weapon(weaponName.ToString(), NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass));
         }
         void MakeFullArmor()
         {
             items.Add(new Armor(armorName.ToString(), new Statistics { }, armorName.ToString(), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass));
         }
-
         return items.ToArray();
     }
 }
+
+/*
+MakeAWeapon();
+MakeAnArmor();
+
+void MakeAWeapon()
+{
+    //make a weapon
+    if (randomItem == (int)ItemType.Weapon) // 0 = weapon
+    {
+        if (randomWeapType == (int)WeaponType.Melee) // 0 = melee
+        {
+            MakeAWeapClass(randomWeapClass);
+        }
+        else if (randomWeapType == (int)WeaponType.Distance)  // 1 = distance
+        {
+            MakeAWeapClass(randomWeapClass);
+        }
+    }
+}
+void MakeAnArmor()
+{
+    //make an armor
+    if (randomItem == (int)ItemType.Armor)  // 1 = armure
+    {
+        MakeAnArmorType(randomArmorType);
+    }
+}
+void MakeAnArmorType(int randomType)
+{
+    switch (randomType)
+    {
+        case 0:
+            //head
+            MakeAnArmorClass(randomArmorClass);
+            break;
+        case 1:
+            //shoulders
+            MakeAnArmorClass(randomArmorClass);
+            break;
+        case 2:
+            //plate
+            MakeAnArmorClass(randomArmorClass);
+            break;
+        case 3:
+            //legs
+            MakeAnArmorClass(randomArmorClass);
+            break;
+        case 4:
+            //gloves
+            MakeAnArmorClass(randomArmorClass);
+            break;
+        case 5:
+            //boots
+            MakeAnArmorClass(randomArmorClass);
+            break;
+    }
+}
+void MakeAnArmorClass(int randomClass)
+{
+    switch (randomClass)
+    {
+        case 0:
+            //leather
+
+            break;
+        case 1:
+            //iron
+
+            break;
+        case 2:
+            //steel
+
+            break;
+        case 3:
+            //cloth
+
+            break;
+    }
+}
+void MakeAWeapClass(int randomClass)
+{
+    switch (randomClass)
+    {
+        case 0:
+            //sword
+
+            break;
+        case 1:
+            //spear
+
+            break;
+        case 2:
+            //dagger
+
+            break;
+        case 3:
+            //hammer
+
+            break;
+        case 4:
+            //axe
+
+            break;
+        case 5:
+            //doubleaxe
+
+            break;
+    }
+}*/

@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 public struct Statistics
 {
-    public int Strength;
-    public int Agility;
-    public int Endurance;
-    public int Wisdom;
-    public int Intelligence;
+    public int Defense;
+    public int Attack;
     public int Luck;
-
-
+    public int Support;
+    //public int Strength;
+    //public int Agility;
+    //public int Endurance;
+    //public int Wisdom;
+    //public int Intelligence;
+    //public int Luck;
 }
 
 public abstract class DummyBaseClass
