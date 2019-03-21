@@ -87,7 +87,52 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
         State_Of_Battle = PlayerState.WAITINGFORINPUT;
         input = PlayerInput.NULL;
     }
+<<<<<<< Updated upstream
     
+=======
+
+    #region Animation
+    public IEnumerator actionTimer()
+    {
+        //startPosition = gameObject.transform.position;
+        if (hasActionStarted) { yield break; }
+        hasActionStarted = true;
+
+        //Brings the MainCharacter towards the selected enemy.//
+        Vector3 targetPos = new Vector3
+            (
+                targetEnemy.gameObject.transform.position.x + ANIMATION_DISTANCE,
+                targetEnemy.transform.position.y,
+                targetEnemy.transform.position.z
+            );
+
+
+        while (MoveToEnemy(targetPos)) { yield return null; }
+        yield return new WaitForSeconds(0.5f);
+
+        doDamage(); //Attack the selected target.//
+
+        //animate back to start position
+        Vector3 originPOS = startPosition;
+        print(originPOS);
+
+        while (MoveToOrigin(originPOS)) { yield return null; }
+        //remove from bsm list
+       // BSM.TurnList.RemoveAt(0);
+
+       // BoS_Reset();
+
+        hasActionStarted = false;
+    }
+
+    void MovingShieldAnim() {
+=======
+>>>>>>> SPRINTenCOURS
+
+
+ 
+
+>>>>>>> Stashed changes
     private void BoS_Reset() //Resets the Battle State at the end of a turn.//
     {
         if (PBS.currentHP > 0)
