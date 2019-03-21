@@ -87,9 +87,6 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
         State_Of_Battle = PlayerState.WAITINGFORINPUT;
         input = PlayerInput.NULL;
     }
-<<<<<<< Updated upstream
-    
-=======
 
     #region Animation
     public IEnumerator actionTimer()
