@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 class Item : DummyBaseClass
 {
@@ -56,7 +57,7 @@ abstract class ObjectFactory : Item
 
 class ObjectControllerFactory : ObjectFactory
 {
-    static Random random = new Random();
+    static System.Random random = new System.Random();
     WeaponType weaponType;
     MeleeClass weaponClass;
     ArmorType armorType;
@@ -103,8 +104,10 @@ class ObjectControllerFactory : ObjectFactory
 
         for (int i = 0; i < randomNumber; i++)
         {
-            if (randomLuck > 60)
+            Debug.Log($"Les chances de looter un objet sont de {randomLuck}");
+            if (randomLuck > 30)
             {
+                Debug.Log("au moins un objet devrait être looté");
                 if (randomItem == 1)
                 {
                     MakeFullArmor();
@@ -127,12 +130,12 @@ class ObjectControllerFactory : ObjectFactory
         void MakeFullWeapon()
         {
             items.Add(new Weapon(weaponName.ToString(), NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass));
-            Console.WriteLine($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass}");
+            Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass}");
         }
         void MakeFullArmor()
         {
             items.Add(new Armor(armorName.ToString(), NewStats(levelMC.level), armorName.ToString(), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass));
-            Console.WriteLine($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass}");
+            Debug.Log($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass}");
         }
         return items.ToArray();
     }
