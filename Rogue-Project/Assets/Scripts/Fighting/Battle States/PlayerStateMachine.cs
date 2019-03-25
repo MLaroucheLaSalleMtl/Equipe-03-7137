@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,7 +53,7 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
 
 
     //Game Objects.//
-    public EnemyStateMachine targetEnemy;
+    //public EnemyStateMachine targetEnemy; not useful
     public GameObject playerSelector;
 
     //Positions.//
@@ -135,6 +136,10 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
 
     }
 
-
-    
+    public void Attack(EnemyStateMachine targetEnemy)
+    {
+        BasicAttack = new BasicAttack();
+        targetEnemy.EBS.currentHP -= BasicAttack.Damage - targetEnemy.EBS.currentDefense;
+        State_Of_Battle = PlayerState.ATTACK;
+    }
 }

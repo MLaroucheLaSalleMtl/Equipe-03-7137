@@ -6,7 +6,7 @@ public class BasicAttack : BaseAttack
 {
     private const float STRENGTH_MULTI = 1.5f;
 
-    PlayerBaseClass PBC;
+    PlayerBaseClass PBC = GameManager.gameManager.MainCharacter.GetComponent<PlayerBaseClass>();
 
     public BasicAttack()
     {
