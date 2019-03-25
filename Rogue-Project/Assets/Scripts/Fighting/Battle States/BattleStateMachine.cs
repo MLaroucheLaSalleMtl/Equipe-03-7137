@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+#region Variables
 public enum BattleState
 {
     ORDERING,
@@ -26,18 +27,16 @@ public enum BattleState
 }
 public class BattleStateMachine : MonoBehaviour
 {
-   
-    
-
-
     public EXPUi ui;
     public List<EnemyStateMachine> Enemies = new List<EnemyStateMachine>();
     public List<PlayerStateMachine> Players = new List<PlayerStateMachine>();
     private List<PlayerStateMachine> playersAlive = new List<PlayerStateMachine>();
     private List<EnemyStateMachine> enemiesAlive = new List<EnemyStateMachine>();
-    private List<EnemyBaseClass> potentialEnemies = new List<EnemyBaseClass>() {
+    private List<EnemyBaseClass> potentialEnemies = new List<EnemyBaseClass>()
+    {
         EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
     };
+
     //Script Access.//
     private TurnHandler playerChoice;
     //private GameManager GM;
@@ -45,48 +44,42 @@ public class BattleStateMachine : MonoBehaviour
     //Game Objects.//
     public GameObject targetPanel;
     public GameObject commandsPanel;
-    // public GameObject selectPlayerSword;
+    //public GameObject selectPlayerSword;
     public GameObject BattleCanvas;
     public PlayerBehaviour OverWorldPlayer;
     public GameObject EndScreen;
+
     //Buttons.//
     public Button attackButton;
 
     public GameObject[] buttonsTargets;
+
     //Transforms.//
     private Transform Spacer;
 
-
-    public BattleState Current_Battle_State;
+    //Text.//
     public Text[] enemynames;
-    public PlayerState currentPlayerState;
-    private int selectedTarget = -1;
-   
-    int totalEXP;
-    
-    void OnEnable()
-    {
-        ui.Disable();
-        potentialEnemies.Clear();
-        potentialEnemies = new List<EnemyBaseClass>() {
-        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
-    };
 
-        totalEXP = 0;
-        
-        foreach (EnemyStateMachine e in Enemies)
-        {
-            e.EBS = null;
-        }
-        for (int i = 0; i < Random.Range(1, 3); i++)
-        {
-            Enemies[i].EBS = potentialEnemies[i];
-            totalEXP += 30;
-        }
-        //  BattleCanvas.SetActive(true);
-        MakeListOfOrders();
-        Current_Battle_State = BattleState.STARTBATTLE;
-    }
+    //Variable.//
+    public static bool enemyTurnDone = false;
+    bool onlyOnce = false;
+    bool Exit = false;
+
+    int enemyTurn = 0;
+    int totalEXP;
+    private int selectedTarget = -1;
+
+    float lastTimer = 100f;
+    float time = 1f;
+    float timer = 0;
+
+    //Enum.//
+    public BattleState Current_Battle_State;
+    public PlayerState currentPlayerState;
+
+    #endregion
+
+    #region Awake, Start, Update
     void Awake()
     {
         ui.Disable();
@@ -95,8 +88,6 @@ public class BattleStateMachine : MonoBehaviour
         commandsPanel.SetActive(true);
         targetPanel.SetActive(false);
     }
-
-    // Use this for initialization
     void Start()
     {
         EndScreen.SetActive(false);
@@ -123,16 +114,9 @@ public class BattleStateMachine : MonoBehaviour
         Current_Battle_State = BattleState.STARTBATTLE;
         Players[0].PBS = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBaseClass>(); //Uses the MC stats in the battle.//
     }
-    float lastTimer = 100f;
-    float time = 1f;
-    int enemyTurn = 0;
-    public static bool enemyTurnDone = false;
-    bool onlyOnce = false;
-    float timer = 0;
-    // Update is called once per frame
-    bool Exit = false;
     void Update()
     {
+        Debug.Log(enemiesAlive[0].EBS.currentHP);
         bool battleEnded = true;
         foreach (EnemyStateMachine e in enemiesAlive)
         {
@@ -147,9 +131,11 @@ public class BattleStateMachine : MonoBehaviour
         // print(Current_Battle_State);
         if (BattleCanvas.activeSelf)
         {
+            
             switch (Current_Battle_State)
             {
                 case BattleState.STARTBATTLE:
+                    
                     ui.Disable();
 
                     potentialEnemies.Clear();
@@ -352,12 +338,29 @@ public class BattleStateMachine : MonoBehaviour
           
         }
     }
- 
+    #endregion
+    void OnEnable()
+    {
+        ui.Disable();
+        potentialEnemies.Clear();
+        potentialEnemies = new List<EnemyBaseClass>() {
+        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
+    };
 
-  
-    public void GameOver() {
-        SceneManager.LoadScene("gameplay");
+        totalEXP = 0;
 
+        foreach (EnemyStateMachine e in Enemies)
+        {
+            e.EBS = null;
+        }
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            Enemies[i].EBS = potentialEnemies[i];
+            totalEXP += 30;
+        }
+        //  BattleCanvas.SetActive(true);
+        MakeListOfOrders();
+        Current_Battle_State = BattleState.STARTBATTLE;
     }
     void MakeListOfOrders()
     {
@@ -368,7 +371,6 @@ public class BattleStateMachine : MonoBehaviour
             p.StartUp();
             playersAlive.Add(p);
             //print(p);
-
         }
         enemiesAlive.Clear();
         for (int i = 0; i < Enemies.Count; i++)
@@ -385,18 +387,8 @@ public class BattleStateMachine : MonoBehaviour
             enemiesAlive.Add(Enemies[i]);
             enemiesAlive[i].StartBattle();
         }
-
-
     }
-
-
-
-
-
-    
-   
-
-
+    #region Switch and Commands
     private void Commands()
     {
         commandsPanel.SetActive(true);
@@ -413,35 +405,28 @@ public class BattleStateMachine : MonoBehaviour
         commandsPanel.SetActive(true);
         targetPanel.SetActive(false);
     }
-
-
+    #endregion
+    #region User Input
     public void SelectTarget(int value)
     {
         selectedTarget = value;
         print("Enemy " + value + " Selected");
     }
-
     public void UserInput(int input)
     {
-        
-            playersAlive[0].input = (PlayerInput)input;
-            print("Ping: " + input);
-        
+        playersAlive[0].input = (PlayerInput)input;
+        print("Ping: " + input);   
     }
-
-
-
-
+    #endregion
+    #region Game Over, End, Escape and Start Battle
     public void EndBattle()
     {
         ObjectControllerFactory.LootObjects();
         BattleCanvas.SetActive(false);
-
     }
     public void EscapeBattle()
     {
         BattleCanvas.SetActive(false);
-
     }
     public void StartBattle()
     {
@@ -455,13 +440,13 @@ public class BattleStateMachine : MonoBehaviour
         {
             Enemies[i].EBS = potentialEnemies[i];
             totalEXP = 30;
-
-
         }
         BattleCanvas.SetActive(true);
-
     }
- 
+    public void GameOver()
+    {
+        SceneManager.LoadScene("gameplay");
+    }
 
+    #endregion
 }
-
