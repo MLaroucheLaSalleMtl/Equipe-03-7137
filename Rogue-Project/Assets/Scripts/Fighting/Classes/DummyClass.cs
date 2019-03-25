@@ -10,12 +10,11 @@ public struct Statistics
     public int Attack;
     public int Luck;
     public int Support;
-    //public int Strength;
-    //public int Agility;
-    //public int Endurance;
-    //public int Wisdom;
-    //public int Intelligence;
-    //public int Luck;
+    public int Strength;
+    public int Agility;
+    public int Endurance;
+    public int Wisdom;
+    public int Intelligence;
 }
 
 public abstract class DummyBaseClass

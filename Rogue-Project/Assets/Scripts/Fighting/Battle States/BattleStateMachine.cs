@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -189,7 +189,7 @@ public class BattleStateMachine : MonoBehaviour
                     }
                     else
                     {
-
+                        //TODO this is empty ?
                     }
 
 
@@ -229,7 +229,7 @@ public class BattleStateMachine : MonoBehaviour
                                 }
                                 else
                                 {
-                                    //playersAlive[0].Attack(targetEnemy); // what is this wtf
+                                    playersAlive[0].Attack(targetEnemy);
                                     time = 1;
                                     enem.color = temp;
                                     Current_Battle_State = BattleState.END_TURN;
@@ -434,6 +434,7 @@ public class BattleStateMachine : MonoBehaviour
 
     public void EndBattle()
     {
+        ObjectControllerFactory.LootObjects();
         BattleCanvas.SetActive(false);
 
     }

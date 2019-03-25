@@ -6,7 +6,7 @@ public class BasicAttack : BaseAttack
 {
     private const float STRENGTH_MULTI = 1.5f;
 
-    DummyBaseClass DBC;
+    PlayerBaseClass PBC;
 
     public BasicAttack()
     {
@@ -15,6 +15,6 @@ public class BasicAttack : BaseAttack
         AttacksDescription = "Attacks the enemy with all his might!";
 
         //Attack's Damage.//
-        Damage = 10.0f + (DBC.baseStats.Strength * STRENGTH_MULTI); // => Extra damages added depending on MC's strength's value.//
+        Damage = 10.0f + (PBC.Strength * STRENGTH_MULTI); // => Extra damages added depending on MC's strength's value.//
     }
 }

@@ -101,6 +101,21 @@ class ObjectControllerFactory : ObjectFactory
 
         PlayerBaseClass levelMC = GameManager.gameManager.MainCharacter.GetComponent<PlayerBaseClass>();
 
+        for (int i = 0; i < randomNumber; i++)
+        {
+            if (randomLuck > 60)
+            {
+                if (randomItem == 1)
+                {
+                    MakeFullArmor();
+                }
+                else
+                {
+                    MakeFullWeapon();
+                }
+            }
+        }
+
         Statistics NewStats(int level)
         {
             Statistics statistics = new Statistics();
@@ -112,10 +127,12 @@ class ObjectControllerFactory : ObjectFactory
         void MakeFullWeapon()
         {
             items.Add(new Weapon(weaponName.ToString(), NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass));
+            Console.WriteLine($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass}");
         }
         void MakeFullArmor()
         {
-            items.Add(new Armor(armorName.ToString(), new Statistics { }, armorName.ToString(), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass));
+            items.Add(new Armor(armorName.ToString(), NewStats(levelMC.level), armorName.ToString(), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass));
+            Console.WriteLine($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass}");
         }
         return items.ToArray();
     }
