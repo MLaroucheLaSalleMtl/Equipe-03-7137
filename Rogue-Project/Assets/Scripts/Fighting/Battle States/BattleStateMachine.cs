@@ -421,6 +421,7 @@ public class BattleStateMachine : MonoBehaviour
     #region Game Over, End, Escape and Start Battle
     public void EndBattle()
     {
+        Debug.Log("on va essayer de looter un objet");
         ObjectControllerFactory.LootObjects();
         BattleCanvas.SetActive(false);
     }
