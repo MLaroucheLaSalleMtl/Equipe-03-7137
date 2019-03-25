@@ -96,6 +96,7 @@ public class OrcAI : MonoBehaviour
 
     private void normalAttack()
     {
+        
         PSM.PBS.currentHP -= EBC.currentAttack;
         currentState = EnemyState.HEALTH_CHECK;
     }
