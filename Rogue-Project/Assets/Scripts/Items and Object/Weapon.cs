@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 class Weapon : ObjectControllerFactory
 {
     WeaponType weaponType;
-    MeleeClass weaponClass;
+    MeleeClass meleeClass;
+    DistanceClass distanceClass;
 
     public Weapon(string name, Statistics stats, string image, WeaponType weaponType, MeleeClass weaponClass) : base(name, stats, image)
     {
@@ -15,6 +16,15 @@ class Weapon : ObjectControllerFactory
         baseStats = stats;
         this.image = image;
         this.weaponType = weaponType;
-        this.weaponClass = weaponClass;
+        this.meleeClass = weaponClass;
+    }
+
+    public Weapon(string name, Statistics stats, string image, WeaponType weaponType, DistanceClass weaponClass) : base(name, stats, image)
+    {
+        this.name = name;
+        baseStats = stats;
+        this.image = image;
+        this.weaponType = weaponType;
+        this.distanceClass = weaponClass;
     }
 }

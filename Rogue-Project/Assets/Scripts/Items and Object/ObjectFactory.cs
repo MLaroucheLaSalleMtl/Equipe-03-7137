@@ -117,6 +117,10 @@ class ObjectControllerFactory : ObjectFactory
                     MakeFullWeapon();
                 }
             }
+            else
+            {
+                Debug.Log("aucun objet cette fois-ci");
+            }
         }
 
         Statistics NewStats(int level)
@@ -129,8 +133,18 @@ class ObjectControllerFactory : ObjectFactory
         }
         void MakeFullWeapon()
         {
-            items.Add(new Weapon(weaponName.ToString(), NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass));
-            Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass}");
+            if (randomWeapType == 0)
+            {
+                items.Add(new Weapon(weaponName.ToString(), NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass));
+                Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass}");
+                //TODO add DAO here
+            }
+            else
+            {
+                items.Add(new Weapon(weaponName.ToString(), NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass));
+                Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(DistanceClass)randomWeapClass}");
+                //TODO add DAO here
+            }
         }
         void MakeFullArmor()
         {
