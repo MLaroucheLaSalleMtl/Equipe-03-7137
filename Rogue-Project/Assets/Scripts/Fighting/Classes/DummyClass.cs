@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 public struct Statistics
 {
@@ -17,7 +18,7 @@ public struct Statistics
     public int Intelligence;
 }
 
-public abstract class DummyBaseClass
+public abstract class DummyBaseClass : MonoBehaviour
 {
     //Manages user's name.//
     public string name;
