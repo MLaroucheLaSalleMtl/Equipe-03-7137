@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+
 class Item : DummyBaseClass
 {
     public Item(string name, Statistics stats, string image) : base(name, stats, image)
@@ -13,6 +14,7 @@ class Item : DummyBaseClass
         baseStats = stats;
         this.image = image;
     }
+
     //this is just to make the rest more readable (inheriting from item, instead of dummybaseclass)
 }
 
