@@ -17,34 +17,36 @@ class Item : DummyBaseClass
     //this is just to make the rest more readable (inheriting from item, instead of dummybaseclass)
 }
 
+#region ENUMS
+//declaration des enums pour tous les objets
+public enum ItemType
+{
+    Weapon, Armor
+};
+public enum WeaponType
+{
+    Melee, Distance
+};
+public enum MeleeClass
+{
+    Sword, Spear, Dagger, Hammer, Axe, DoubleAxe
+};
+public enum DistanceClass
+{
+    Bow, CrossBow, ThrowDaggers
+};
+public enum ArmorType
+{
+    Head, Shoulders, Plate, Legs, Gloves, Boots
+};
+public enum ArmorClass
+{
+    Leather, Iron, Steel, Cloth
+};
+#endregion
+
 abstract class ObjectFactory : Item
 {
-    //declaration des enums pour tous les objets
-    public enum ItemType
-    {
-        Weapon, Armor
-    };
-    public enum WeaponType
-    {
-        Melee, Distance
-    };
-    public enum MeleeClass
-    {
-        Sword, Spear, Dagger, Hammer, Axe, DoubleAxe
-    };
-    public enum DistanceClass
-    {
-        Bow, CrossBow, ThrowDaggers
-    };
-    public enum ArmorType
-    {
-        Head, Shoulders, Plate, Legs, Gloves, Boots
-    };
-    public enum ArmorClass
-    {
-        Leather, Iron, Steel, Cloth
-    };
-
     public ObjectFactory(string name, Statistics stats, string image) : base (name, stats, image)
     {
         this.name = name;
