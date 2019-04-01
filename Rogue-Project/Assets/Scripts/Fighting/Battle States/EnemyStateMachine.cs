@@ -139,7 +139,13 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
     //}
 
     public void Attack(PlayerStateMachine p) {
-       p.PBS.currentHP -= EBS.currentAttack/10;
+        float modifier = 1f;
+
+        if (p.isDefending) {
+            modifier = 0.5f;
+        }
+
+       p.PBS.currentHP -= EBS.currentAttack*modifier/10 ;
 
     }
 

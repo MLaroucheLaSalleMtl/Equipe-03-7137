@@ -46,7 +46,7 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
     private BaseAttack BasicAttack;
 
     //Bool.//
-    private bool isDefending = false;
+    public bool isDefending = false;
     public GameObject miniShield;
     private bool isAlive = true;
     private bool hasActionStarted = false;

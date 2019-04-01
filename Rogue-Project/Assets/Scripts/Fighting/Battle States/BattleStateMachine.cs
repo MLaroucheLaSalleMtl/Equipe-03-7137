@@ -13,8 +13,7 @@ public enum BattleState
     TAKEACTION,
     PERFORMACTION,
 
-    ADDTOLIST,
-    BUFFER,
+   
     ATTACK,
     DEFEND,
     CHOOSEACTION,
@@ -23,7 +22,8 @@ public enum BattleState
     END_TURN,
     END_BATTLE,
     ENEMYMOVE,
-    STARTBATTLE,
+    STARTBATTLE
+    
 }
 public class BattleStateMachine : MonoBehaviour
 {
@@ -59,7 +59,7 @@ public class BattleStateMachine : MonoBehaviour
 
     //Text.//
     public Text[] enemynames;
-
+    public InspectLogic inspLog;
     //Variable.//
     public static bool enemyTurnDone = false;
     bool onlyOnce = false;
@@ -75,7 +75,7 @@ public class BattleStateMachine : MonoBehaviour
 
     //Enum.//
     public BattleState Current_Battle_State;
-    public PlayerState currentPlayerState;
+  
 
     #endregion
 
@@ -172,9 +172,12 @@ public class BattleStateMachine : MonoBehaviour
                         case PlayerInput.ATTACK: Current_Battle_State = BattleState.CHOOSETARGET; break;
                         case PlayerInput.DEFEND:
                             playersAlive[0].Defend();
+                            commandsPanel.SetActive(false);
                             Current_Battle_State = BattleState.END_TURN;
                             break;
-                        case PlayerInput.INSPECT: Current_Battle_State = BattleState.CHOOSETARGET; break;
+                        case PlayerInput.INSPECT:
+                            inspLog.gameObject.SetActive(true);
+                           Current_Battle_State = BattleState.CHOOSETARGET; break;
                         case PlayerInput.USE_ITEM: break;
                         case PlayerInput.USE_SKILLS: break;
                         case PlayerInput.RUN: Current_Battle_State = BattleState.END_BATTLE; battleEnded = true; Exit = true; break;
@@ -208,10 +211,15 @@ public class BattleStateMachine : MonoBehaviour
                                     print("ping");
                                 }
                                 break;
-                            case PlayerInput.INSPECT: break;
+                            case PlayerInput.INSPECT:
+                               
+                                
+                                inspLog.esm = enemiesAlive[selectedTarget];
+                                break;
                         }
                     }
                     break;
+                
 
                 case BattleState.END_TURN:
                     targetPanel.SetActive(false);
@@ -279,6 +287,7 @@ public class BattleStateMachine : MonoBehaviour
                     }
                     else {
                         Current_Battle_State = BattleState.ORDERING;
+                        playersAlive[0].isDefending = false;
                     }
                     if (Exit) {
                         Current_Battle_State = BattleState.STARTBATTLE;
