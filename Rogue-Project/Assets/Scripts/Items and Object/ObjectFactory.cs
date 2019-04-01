@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class Item : DummyBaseClass
+public class Item : DummyBaseClass
 {
     public Item(string name, Statistics stats, string image) : base(name, stats, image)
     {
@@ -45,7 +45,7 @@ public enum ArmorClass
 };
 #endregion
 
-abstract class ObjectFactory : Item
+public abstract class ObjectFactory : Item
 {
     public ObjectFactory(string name, Statistics stats, string image) : base (name, stats, image)
     {
@@ -58,7 +58,7 @@ abstract class ObjectFactory : Item
     abstract public ObjectFactory CreateArmor();
 }
 
-class ObjectControllerFactory : ObjectFactory
+public class ObjectControllerFactory : ObjectFactory
 {
     static System.Random random = new System.Random();
     WeaponType weaponType;
