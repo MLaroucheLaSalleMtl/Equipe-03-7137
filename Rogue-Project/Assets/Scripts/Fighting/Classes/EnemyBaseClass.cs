@@ -17,6 +17,7 @@ public class EnemyBaseClass
 
     //Manages enemy's name.//
     public string enemyName;
+    public int level;
 
     //Manages the starting HP and current HP.//
     public float baseHP;
@@ -40,6 +41,7 @@ public class EnemyBaseClass
         return new EnemyBaseClass()
         {
             enemyName = "Goblin",
+            level = 3,
             baseHP = 10,
             currentHP = 10,
             baseAttack = 10,
@@ -55,6 +57,7 @@ public class EnemyBaseClass
         return new EnemyBaseClass()
         {
             enemyName = "Orc",
+            level = 4,
             baseHP = 20,
             currentHP = 20,
             baseAttack = 20,
@@ -70,6 +73,7 @@ public class EnemyBaseClass
         return new EnemyBaseClass()
         {
             enemyName = "Elf",
+            level = 5,
             baseHP = 10,
             currentHP = 10,
             baseAttack = 20,
