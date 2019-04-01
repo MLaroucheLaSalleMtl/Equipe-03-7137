@@ -94,20 +94,6 @@ public class BattleStateMachine : MonoBehaviour
 
         ui.Disable();
 
-        potentialEnemies.Clear();
-        potentialEnemies = new List<EnemyBaseClass>() {
-        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
-    };
-        totalEXP = 0;
-        foreach (EnemyStateMachine e in Enemies)
-        {
-            e.EBS = null;
-        }
-        for (int i = 0; i < Random.Range(1, 3); i++)
-        {
-            Enemies[i].EBS = potentialEnemies[i];
-            totalEXP += 30;
-        }
 
 
         // selectPlayerSword.SetActive(false);
@@ -116,7 +102,7 @@ public class BattleStateMachine : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(enemiesAlive[0].EBS.currentHP);
+       // Debug.Log(enemiesAlive[0].EBS.currentHP);
         bool battleEnded = true;
         foreach (EnemyStateMachine e in enemiesAlive)
         {
@@ -339,29 +325,7 @@ public class BattleStateMachine : MonoBehaviour
         }
     }
     #endregion
-    void OnEnable()
-    {
-        ui.Disable();
-        potentialEnemies.Clear();
-        potentialEnemies = new List<EnemyBaseClass>() {
-        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
-    };
-
-        totalEXP = 0;
-
-        foreach (EnemyStateMachine e in Enemies)
-        {
-            e.EBS = null;
-        }
-        for (int i = 0; i < Random.Range(1, 3); i++)
-        {
-            Enemies[i].EBS = potentialEnemies[i];
-            totalEXP += 30;
-        }
-        //  BattleCanvas.SetActive(true);
-        MakeListOfOrders();
-        Current_Battle_State = BattleState.STARTBATTLE;
-    }
+  
     void MakeListOfOrders()
     {
         commandsPanel.SetActive(true);
@@ -421,27 +385,22 @@ public class BattleStateMachine : MonoBehaviour
     #region Game Over, End, Escape and Start Battle
     public void EndBattle()
     {
+        EncounterLogic.ResetChance();
         Debug.Log("on va essayer de looter un objet");
         ObjectControllerFactory.LootObjects();
         BattleCanvas.SetActive(false);
     }
     public void EscapeBattle()
     {
+        EncounterLogic.ResetChance();
         BattleCanvas.SetActive(false);
     }
     public void StartBattle()
     {
+        
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
-        foreach (EnemyStateMachine e in Enemies)
-        {
-            e.EBS = null;
-        }
-        for (int i = 0; i < Random.Range(1, 3); i++)
-        {
-            Enemies[i].EBS = potentialEnemies[i];
-            totalEXP = 30;
-        }
+        
         BattleCanvas.SetActive(true);
     }
     public void GameOver()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[System.Serializable]
 public class EnemyBaseClass
 {   
     //To make different types of enemy based on their grade.//
