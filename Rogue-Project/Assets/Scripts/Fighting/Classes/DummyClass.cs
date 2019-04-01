@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using System.Threading.Tasks;
-using UnityEngine;
 
 public struct Statistics
 {
