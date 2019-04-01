@@ -139,7 +139,9 @@ public class PlayerStateMachine : MonoBehaviour, StateMachine
     public void Attack(EnemyStateMachine targetEnemy)
     {
         BasicAttack = new BasicAttack();
-        targetEnemy.EBS.currentHP -= BasicAttack.Damage - targetEnemy.EBS.currentDefense;
+
+        targetEnemy.EBS.currentHP -= BasicAttack.Damage/targetEnemy.EBS.currentDefense;
+        print("Player hits " + (BasicAttack.Damage/targetEnemy.EBS.currentDefense) + " to "+ targetEnemy.EBS.enemyName + " :"+targetEnemy.EBS.baseHP);
         State_Of_Battle = PlayerState.ATTACK;
     }
 }
