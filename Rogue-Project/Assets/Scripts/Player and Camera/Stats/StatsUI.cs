@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StatsUI : MonoBehaviour
 {
-    private Text[] texts;
+    public Text[] texts;
     private PlayerStateMachine player;
     private PlayerBaseClass playerStats;
     //public Text HPText;

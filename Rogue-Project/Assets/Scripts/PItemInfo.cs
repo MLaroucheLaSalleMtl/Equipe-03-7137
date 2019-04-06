@@ -15,7 +15,7 @@ public class PItemInfo : MonoBehaviour
     public Text itemName;
     public Text damage;
 
-    public Image[] statsImage;
+    //public Image[] statsImage;
 
     [Header("Buttons")]
     public Button use;
