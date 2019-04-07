@@ -9,6 +9,7 @@ public class PItemInfo : MonoBehaviour
 
     public int slotID;
     public GameObject objectSlot;
+    private Weapon weapon;
 
     [Header("Item Info")]
     public Image itemImg;
@@ -32,4 +33,14 @@ public class PItemInfo : MonoBehaviour
     {
         
     }
+
+    //public void loadItemInfo()
+    //{
+    //    Item itemInfo = objectSlot.GetComponent<Item>();
+    //    int itemId = itemInfo.id;
+
+    //    itemName.text = gameManager.name[itemId];
+    //    itemImg.sprite = weapon.image[itemId];
+    //    itemType.text = WeaponType[itemId];
+    //}
 }
