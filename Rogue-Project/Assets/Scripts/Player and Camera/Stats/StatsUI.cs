@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class StatsUI : MonoBehaviour
 {
-    private Text[] texts;
+    public Text[] texts;
     private PlayerStateMachine player;
-    private PlayerBaseClass playerStats;
+    public PlayerBaseClass playerStats;
     //public Text HPText;
     //public Text ManaText;
     // Start is called before the first frame update
@@ -29,5 +29,7 @@ public class StatsUI : MonoBehaviour
         texts[5].text = "DEF: "+playerStats.Defense.ToString();
         texts[6].text = "INT: " +playerStats.Intelligence.ToString();
         texts[7].text = "LUC: "+playerStats.Luck.ToString();
+        texts[8].text = "EXP: " + playerStats.Exp.ToString();
+        texts[9].text = "LVL: " + playerStats.level.ToString();
     }
 }
