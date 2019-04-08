@@ -56,7 +56,12 @@ public class OrcAI : MonoBehaviour
 
     void Update()
     {
-        switch(currentState)
+
+    }
+
+    public void Attack()
+    {
+        switch (currentState)
         {
             case EnemyState.HEALTH_CHECK:
                 CheckHealth();
@@ -68,7 +73,7 @@ public class OrcAI : MonoBehaviour
                 Berserker();
                 break;
 
-            case EnemyState.NORMAL_ATTACK: 
+            case EnemyState.NORMAL_ATTACK:
                 normalAttack();
                 break;
 
@@ -77,7 +82,6 @@ public class OrcAI : MonoBehaviour
                 SecondWindTurns++;
                 break;
         }
-
     }
 
     #region Actions

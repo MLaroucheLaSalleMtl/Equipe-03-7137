@@ -65,6 +65,18 @@ public class GoblinAI : MonoBehaviour
         }
     }
 
+    public void Attack(PlayerStateMachine player)
+    {
+        int i = 0;
+        while(i < 5)
+        {
+            Update();
+            i++;
+        }
+        
+        
+    }
+
     #region Type of Attacks
     private void NormalAttack()
     {

@@ -2,4 +2,13 @@
 <catalog>
   <item Name="Sword" Attack="0" Defense="2" Support="2" image="Sword" objectType="Melee" objectClass="Sword" />
   <item Name="Sword" Attack="0" Defense="0" Support="2" image="Sword" objectType="Melee" objectClass="Sword" />
+  <item Name="Axe" Attack="1" Defense="1" Support="1" image="Axe" objectType="Melee" objectClass="Sword" />
+  <item Name="Iron" Attack="1" Defense="1" Support="1" image="Iron" objectType="Head" objectClass="Leather" />
+  <item Name="Axe" Attack="1" Defense="1" Support="1" image="Axe" objectType="Melee" objectClass="Sword" />
+  <item Name="Dagger" Attack="1" Defense="1" Support="1" image="Dagger" objectType="Melee" objectClass="Sword" />
+  <item Name="Dagger" Attack="1" Defense="1" Support="1" image="Dagger" objectType="Melee" objectClass="Sword" />
+  <item Name="Steel" Attack="1" Defense="1" Support="1" image="Steel" objectType="Head" objectClass="Leather" />
+  <item Name="Steel" Attack="1" Defense="1" Support="1" image="Steel" objectType="Head" objectClass="Leather" />
+  <item Name="Axe" Attack="1" Defense="1" Support="1" image="Axe" objectType="Melee" objectClass="Sword" />
+  <item Name="Cloth" Attack="1" Defense="1" Support="1" image="Cloth" objectType="Head" objectClass="Leather" />
 </catalog>

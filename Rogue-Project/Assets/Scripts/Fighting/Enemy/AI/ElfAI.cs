@@ -7,10 +7,11 @@ public class ElfAI : MonoBehaviour
     #region Variables
     //Script access.//
     readonly ColorHue ColorHues;
-    EnemyBaseClass EBC;
     readonly PlayerBaseClass PBC;
     readonly BattleStateMachine BDSM;
     PlayerStateMachine PSM;
+    EnemyBaseClass EBC;
+
 
     //Consts.//
     //Attack Decision Maker.//
@@ -52,6 +53,10 @@ public class ElfAI : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+    public void Attack()
     {
         switch (currentState)
         {
