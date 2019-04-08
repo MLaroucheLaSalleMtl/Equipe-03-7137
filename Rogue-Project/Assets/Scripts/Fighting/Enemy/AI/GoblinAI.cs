@@ -3,23 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class GoblinAI : MonoBehaviour
+public class GoblinAI 
 {
     #region Variables
     //Script access.//
     readonly ColorHue ColorHues;
-    EnemyBaseClass EBC;
-    readonly PlayerBaseClass PBC;
-    readonly BattleStateMachine BDSM;
-    PlayerStateMachine PSM;
 
     //Consts.//
     private const int MAX_FRENZY = 1;
+    private const float DAMAGE_MULTI= 1.5F;
     //Attack Decision Maker.//
 
     //Bool.//
     private bool hasReceivedDamage = false;
-
 
     private int frenzyCount;
 
@@ -47,73 +43,69 @@ public class GoblinAI : MonoBehaviour
         currentState = EnemyState.PICK_ATTACK;
     }
 
-    void Update()
+    void Update(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
         switch (currentState)
         {
             case EnemyState.PICK_ATTACK:
-                pickAttack();
+                pickAttack(EBC, PBS);
                 break;
 
             case EnemyState.NORMAL_ATTACK:
-                NormalAttack();
+                NormalAttack(EBC, PBS);
                 break;
 
             case EnemyState.FRENZY:
-                FrenzyAttack();
+                FrenzyAttack(EBC, PBS);
                 break;
         }
     }
 
-    public void Attack(PlayerStateMachine player)
+    public void Attack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        int i = 0;
-        while(i < 5)
-        {
-            Update();
-            i++;
-        }
-        
-        
+        Update(EBC, PBS);
     }
 
     #region Type of Attacks
-    private void NormalAttack()
+    private void NormalAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        PSM.PBS.currentHP -= EBC.currentAttack;
+        PBS.currentHP -= EBC.currentAttack;
+        Debug.Log("NormalAttack");
         currentState = EnemyState.PICK_ATTACK;
     }
 
 
-    private void FrenzyAttack()
+    private void FrenzyAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        PSM.PBS.currentHP -= EBC.currentAttack;
+        Debug.Log("Frenzy Attack");
+        PBS.currentHP -= EBC.currentAttack * DAMAGE_MULTI;
         EBC.currentHP -= EBC.currentAttack;
 
         currentState = EnemyState.PICK_ATTACK;
     }
     #endregion
 
-    private void CheckDamage()
+    private void CheckDamage(EnemyBaseClass EBC)
     {
+        Debug.Log("Check Damage");
         if (EBC.currentHP < EBC.baseHP)
         {
             hasReceivedDamage = true;
         }
     }
 
-    private void pickAttack()
+    private void pickAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        CheckDamage();
+        CheckDamage(EBC);
 
         if ((hasReceivedDamage) && (frenzyCount < MAX_FRENZY))
         {
             frenzyCount++;
-            currentState = EnemyState.FRENZY;
+            FrenzyAttack(EBC, PBS);
         }
         else
         {
-            NormalAttack();
+            NormalAttack(EBC, PBS);
         }
     }
 

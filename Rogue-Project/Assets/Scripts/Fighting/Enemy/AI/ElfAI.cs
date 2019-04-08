@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class ElfAI : MonoBehaviour
+public class ElfAI 
 {
     #region Variables
     //Script access.//
     readonly ColorHue ColorHues;
-    readonly PlayerBaseClass PBC;
-    readonly BattleStateMachine BDSM;
-    PlayerStateMachine PSM;
-    EnemyBaseClass EBC;
+
 
 
     //Consts.//
@@ -56,7 +53,7 @@ public class ElfAI : MonoBehaviour
     {
 
     }
-    public void Attack()
+    public void Attack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
         switch (currentState)
         {
@@ -65,19 +62,19 @@ public class ElfAI : MonoBehaviour
                 break;
 
             case EnemyState.NORMAL_ATTACK:
-                NormalAttack();
+                NormalAttack(EBC, PBS);
                 break;
 
             case EnemyState.CRIT_ATTACK:
-                CriticalHit();
+                CriticalHit(EBC, PBS);
                 break;
 
             case EnemyState.SHADOW_ATTACK:
-                AttackFromShadows();
+                AttackFromShadows(EBC, PBS);
                 break;
 
             case EnemyState.DEADLY_ATTACK:
-                DeadlyAttack();
+                DeadlyAttack(EBC, PBS);
                 break;
         }
     }
@@ -136,24 +133,24 @@ public class ElfAI : MonoBehaviour
     }
     #endregion
     #region Types of Attacks
-    private void NormalAttack()
+    private void NormalAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        PSM.PBS.currentHP -= EBC.currentAttack;
+        PBS.currentHP -= EBC.currentAttack;
         ResetEnemy();
     }
-    private void CriticalHit()
+    private void CriticalHit(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        PSM.PBS.currentHP -= EBC.currentAttack * REGULAR_CRITICAL;
+        PBS.currentHP -= EBC.currentAttack * REGULAR_CRITICAL;
         ResetEnemy();
     }
-    private void AttackFromShadows()
+    private void AttackFromShadows(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        PSM.PBS.currentHP -= EBC.currentAttack * HIGHER_CRITICAL;
+        PBS.currentHP -= EBC.currentAttack * HIGHER_CRITICAL;
         ResetEnemy();
     }
-    private void DeadlyAttack()
+    private void DeadlyAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        PSM.PBS.currentHP -= EBC.currentAttack * HIGHEST_CRITICAL;
+        PBS.currentHP -= EBC.currentAttack * HIGHEST_CRITICAL;
         ResetEnemy();
     }
 
