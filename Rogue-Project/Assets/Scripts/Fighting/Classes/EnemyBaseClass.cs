@@ -37,13 +37,22 @@ public class EnemyBaseClass
     //EXP
     public float expGiven;
 
-    public static EnemyBaseClass Goblin() {
+    //Script access.//
+    public GoblinAI GobAi;
+    public OrcAI OrcAi;
+    public ElfAI ElfAi;
+
+    public static EnemyBaseClass Goblin()
+    {
+        
         return new EnemyBaseClass()
         {
+            GobAi = new GoblinAI(),
+
             enemyName = "Goblin",
             level = 3,
-            baseHP = 10,
-            currentHP = 10,
+            baseHP = 50,
+            currentHP = 50,
             baseAttack = 10,
             currentAttack = 10,
             baseDefense = 10,
@@ -53,13 +62,19 @@ public class EnemyBaseClass
             expGiven = 10
 
         };
-    }public static EnemyBaseClass Orc() {
+
+        
+    }
+
+    public static EnemyBaseClass Orc() {
         return new EnemyBaseClass()
         {
+            OrcAi = new OrcAI(),
+
             enemyName = "Orc",
             level = 4,
-            baseHP = 20,
-            currentHP = 20,
+            baseHP = 50,
+            currentHP = 50,
             baseAttack = 20,
             currentAttack = 20,
             baseDefense = 5,
@@ -72,6 +87,8 @@ public class EnemyBaseClass
     }public static EnemyBaseClass Elf() {
         return new EnemyBaseClass()
         {
+            ElfAi = new ElfAI(),
+
             enemyName = "Elf",
             level = 5,
             baseHP = 10,
@@ -83,7 +100,6 @@ public class EnemyBaseClass
             baseMP = 10,
             currentMP = 10,
             expGiven = 25
-
         };
     }
 }

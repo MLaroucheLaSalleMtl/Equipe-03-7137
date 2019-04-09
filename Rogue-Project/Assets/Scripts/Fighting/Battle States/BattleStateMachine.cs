@@ -91,7 +91,7 @@ public class BattleStateMachine : MonoBehaviour
     void Start()
     {
         EndScreen.SetActive(false);
-
+        
         ui.Disable();
 
 
@@ -126,13 +126,13 @@ public class BattleStateMachine : MonoBehaviour
 
                     potentialEnemies.Clear();
                     potentialEnemies = new List<EnemyBaseClass>() {
-        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
+        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf(), 
     };totalEXP = 0;
                     foreach (EnemyStateMachine e in Enemies)
                     {
                         e.EBS = null;
                     }
-                    for (int i = 0; i < Random.Range(1, 3); i++)
+                    for (int i = 0; i < Random.Range(1, 4); i++)
                     {
                         Enemies[i].EBS = potentialEnemies[i];
                         totalEXP += 30;
@@ -238,7 +238,7 @@ public class BattleStateMachine : MonoBehaviour
                     {
                         if (enemiesAlive[enemyTurn].EBS != null && enemiesAlive[enemyTurn].EBS.currentHP > 0)
                         {
-                            enemiesAlive[enemyTurn].DoMove(playersAlive[0]);
+                            enemiesAlive[enemyTurn].DoMove(playersAlive[0].PBS);
 
                             anim.SetTrigger("Attack");
                             onlyOnce = true;

@@ -4,16 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OrcAI : MonoBehaviour
+public class OrcAI
 {
     #region Variables
     //Script access.//
     readonly ColorHue ColorHues;
-    EnemyBaseClass EBC;
-    readonly PlayerBaseClass PBC;
-    readonly BattleStateMachine BDSM;
-    PlayerStateMachine PSM;
-
+   
+   
     //Consts.//
     private const int BERSERK_TRIGGER = 4; //At what treshold does the Orc goes berserk ? Max Health/Trigger
     private const int MAX_SECOND_WINDER = 1; //Maximum of times the Orc can second wind.//
@@ -41,9 +38,6 @@ public class OrcAI : MonoBehaviour
 
     public enum EnemyState
     {
-        BERSERKER,
-        NORMAL_ATTACK,
-        SECOND_WIND,
         HEALTH_CHECK
     }
     public EnemyState currentState;
@@ -54,79 +48,69 @@ public class OrcAI : MonoBehaviour
         currentState = EnemyState.HEALTH_CHECK;
     }
 
-    void Update()
+    void Update(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        switch(currentState)
+        Debug.Log(currentState);
+        switch (currentState)
         {
+            
             case EnemyState.HEALTH_CHECK:
-                CheckHealth();
-                break;
-
-
-            case EnemyState.BERSERKER: // => Maximum of three turns as Berserker.//
-                BerserkTurns++; //Increments to limit the amount of turns.//
-                Berserker();
-                break;
-
-            case EnemyState.NORMAL_ATTACK: 
-                normalAttack();
-                break;
-
-            case EnemyState.SECOND_WIND:
-                SecondWind();
-                SecondWindTurns++;
+                Debug.Log("Check Health - ORC");
+                CheckHealth(EBC, PBS);
                 break;
         }
+    }
 
+    public void Attack(EnemyBaseClass EBC, PlayerBaseClass PBS)
+    {
+        Debug.Log("Cyka");
+        Update(EBC, PBS);
+        
     }
 
     #region Actions
-    private void SecondWind()
+    private void SecondWind(EnemyBaseClass EBC)
     {
+        Debug.Log("Healed - ORC");
         EBC.currentHP += HEAL;
-       
-        currentState = EnemyState.HEALTH_CHECK;
     }
 
-    private void Berserker()
+    private void Berserker(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        PSM.PBS.currentHP -= EBC.currentAttack * BERSERK_MULTI;
-        currentState = EnemyState.HEALTH_CHECK;
+        Debug.Log("Berserker - ORC");
+        PBS.currentHP -= EBC.currentAttack * BERSERK_MULTI;
     }
 
-    private void normalAttack()
+    private void normalAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        
-        PSM.PBS.currentHP -= EBC.currentAttack;
-        currentState = EnemyState.HEALTH_CHECK;
+        Debug.Log("Normal Attack- ORC");
+        PBS.currentHP -= EBC.currentAttack;
     }
 
-    private void CheckHealth()
+    private void CheckHealth(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
+        Debug.Log("DEBUGGG");
         //Check if the current health is smaller than the Base Health divided by the Berserk Modifier.//
-        if ((EBC.currentHP <= EBC.baseHP / BERSERK_TRIGGER) && (!isBerserkUsed))  
+        if ((EBC.currentHP <= (EBC.baseHP / BERSERK_TRIGGER)) && (!isBerserkUsed))  
         {
             isLifeLow = true;
             isBerserk = true;
             isBerserkUsed = true;
 
-            OrcImage.color = ColorHue.ColourValue(ColorHue.ColorHues.Red);
-            currentState = EnemyState.BERSERKER;
-
-            return; 
+            //OrcImage.color = ColorHue.ColourValue(ColorHue.ColorHues.Red);
+            Berserker(EBC, PBS);
+            BerserkTurns++;
         }
         if ((isLifeLow) && (SecondWindTurns < MAX_SECOND_WINDER) && (!isBerserk))
         {
             isSecondWindUsed = true;
-            OrcImage.color = ColorHue.ColourValue(ColorHue.ColorHues.Golden);
-            currentState = EnemyState.SECOND_WIND;
-
-            return;
+            //OrcImage.color = ColorHue.ColourValue(ColorHue.ColorHues.Golden);
+            SecondWind(EBC);
+            SecondWindTurns++;
         }
         else
         {
-            currentState = EnemyState.NORMAL_ATTACK;
-            return;
+            normalAttack(EBC, PBS);
         }
     }
 

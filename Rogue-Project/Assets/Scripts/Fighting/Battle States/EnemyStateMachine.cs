@@ -24,6 +24,9 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
     //Script Access.//
     public EnemyBaseClass EBS;
     private BattleStateMachine BSM;
+    public ElfAI elfAI;
+    public OrcAI OAI;
+    private GoblinAI GAI;
 
     //Bool.//
     private bool isDefending = false;
@@ -41,11 +44,13 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
     public BattleState Current_Battle_State;
         
  
-   public  void StartBattle() {
+   public  void StartBattle()
+    {
         if (EBS != null)
         {
 
             UIname.text = EBS.enemyName;
+            
             print("UI: "+UIname.text);
         }
         
@@ -118,9 +123,26 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
 
     }
 
-    public void DoMove(PlayerStateMachine player) {
+    public void DoMove(PlayerBaseClass PBS) {
 
-        Attack(player);
+        if(EBS.enemyName == "Goblin")
+        {
+            Debug.Log("Goblin turn");
+            EBS.GobAi.Attack(EBS, PBS);
+        }
+
+        if (EBS.enemyName == "Orc")
+        {
+            Debug.Log("Orc turn");
+            EBS.OrcAi.Attack(EBS, PBS);
+        }
+
+
+        if (EBS.enemyName == "Elf")
+        {
+            Debug.Log("Elf turn");
+            EBS.ElfAi.Attack(EBS, PBS);
+        }
 
 
     }
@@ -138,7 +160,8 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
     //    BSM.List_Of_Turns(thisAttack);
     //}
 
-    public void Attack(PlayerStateMachine p) {
+    public void Attack(PlayerStateMachine p)
+    {
         float modifier = 1f;
 
         if (p.isDefending) {
