@@ -28,12 +28,12 @@ public class EncounterLogic : MonoBehaviour
             {
                 if (Random.Range(1, 100) <40)
                 {
-                    print(chanceTime);
+                    //print(chanceTime);
                     game.StartFight();
                 }
                 chanceTime = 0;
             }
-            print(chanceTime);
+            //print(chanceTime);
         }
     }
     void OnTriggerEnter2D(Collider2D col)

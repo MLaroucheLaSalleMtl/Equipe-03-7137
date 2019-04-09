@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+  <item Name="Sword" Attack="0" Defense="2" Support="2" image="Sword" objectType="Melee" objectClass="Sword" />
+  <item Name="Sword" Attack="0" Defense="0" Support="2" image="Sword" objectType="Melee" objectClass="Sword" />
+</catalog>

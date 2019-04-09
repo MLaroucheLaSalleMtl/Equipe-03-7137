@@ -24,4 +24,8 @@ public class PlayerBaseClass : MonoBehaviour
     public int Luck;         //=> Influences the RUN command during a match and evasive attacks.//
     public int Exp =0;
     public int level = 1;
+
+    //Inventory management.//
+    public static List<Item> inventory = new List<Item>();
+
 }
