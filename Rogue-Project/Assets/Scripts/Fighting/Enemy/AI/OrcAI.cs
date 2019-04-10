@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class OrcAI
 {
+    public bool DEBUG_ON = true;
     #region Variables
     //Script access.//
     readonly ColorHue ColorHues;
@@ -34,75 +35,53 @@ public class OrcAI
     //GameObjects.//
     public GameObject OrcEnemy;
     public Image OrcImage;
-
-
-    public enum EnemyState
-    {
-        HEALTH_CHECK
-    }
-    public EnemyState currentState;
     #endregion
 
-    private void Start()
-    {
-        currentState = EnemyState.HEALTH_CHECK;
-    }
-
-    void Update(EnemyBaseClass EBC, PlayerBaseClass PBS)
-    {
-        Debug.Log(currentState);
-        switch (currentState)
-        {
-            
-            case EnemyState.HEALTH_CHECK:
-                Debug.Log("Check Health - ORC");
-                CheckHealth(EBC, PBS);
-                break;
-        }
-    }
 
     public void Attack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        Debug.Log("Cyka");
-        Update(EBC, PBS);
-        
+        CheckHealth(EBC, PBS);
     }
 
     #region Actions
     private void SecondWind(EnemyBaseClass EBC)
     {
-        Debug.Log("Healed - ORC");
+        if (DEBUG_ON) { Debug.Log("SECOND WIND - ORC"); }
         EBC.currentHP += HEAL;
     }
 
     private void Berserker(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        Debug.Log("Berserker - ORC");
+        if (DEBUG_ON) { Debug.Log("BERSERK - ORC"); }
         PBS.currentHP -= EBC.currentAttack * BERSERK_MULTI;
     }
 
     private void normalAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        Debug.Log("Normal Attack- ORC");
+        if (DEBUG_ON) { Debug.Log("NORMAL ATTACK - ORC"); }
         PBS.currentHP -= EBC.currentAttack;
     }
 
     private void CheckHealth(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        Debug.Log("DEBUGGG");
+        if (DEBUG_ON) { Debug.Log("Check Health - ORC"); }
         //Check if the current health is smaller than the Base Health divided by the Berserk Modifier.//
         if ((EBC.currentHP <= (EBC.baseHP / BERSERK_TRIGGER)) && (!isBerserkUsed))  
         {
+            if (DEBUG_ON) { Debug.Log("BERSERK TRIGGER - ORC"); }
             isLifeLow = true;
             isBerserk = true;
             isBerserkUsed = true;
 
             //OrcImage.color = ColorHue.ColourValue(ColorHue.ColorHues.Red);
-            Berserker(EBC, PBS);
             BerserkTurns++;
+            Berserker(EBC, PBS);
+
+            return;
         }
-        if ((isLifeLow) && (SecondWindTurns < MAX_SECOND_WINDER) && (!isBerserk))
+        if ((isLifeLow) && (SecondWindTurns < MAX_SECOND_WINDER) && (isBerserkUsed))
         {
+            if (DEBUG_ON) { Debug.Log("SECONDWIND TRIGGER - ORC"); }
             isSecondWindUsed = true;
             //OrcImage.color = ColorHue.ColourValue(ColorHue.ColorHues.Golden);
             SecondWind(EBC);
