@@ -8,8 +8,6 @@ public class ElfAI
     //Script access.//
     readonly ColorHue ColorHues;
 
-
-
     //Consts.//
     //Attack Decision Maker.//
     private const int NORMAL_PERCENTAGE_MAX = 50;
@@ -31,52 +29,11 @@ public class ElfAI
     public GameObject ElfEnemy;
     public Image ElfImage;
 
-    public enum EnemyState
-    {
-        RANDOM_STATE,
-        SHADOW_ATTACK,
-        NORMAL_ATTACK,
-        CRIT_ATTACK,
-        DEADLY_ATTACK
-    }
-
-    public EnemyState currentState;
     #endregion
 
-    private void Start()
-    {
-        currentState = EnemyState.RANDOM_STATE;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void Attack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        switch (currentState)
-        {
-            case EnemyState.RANDOM_STATE:
-                attackDecisionMaker();
-                break;
-
-            case EnemyState.NORMAL_ATTACK:
-                NormalAttack(EBC, PBS);
-                break;
-
-            case EnemyState.CRIT_ATTACK:
-                CriticalHit(EBC, PBS);
-                break;
-
-            case EnemyState.SHADOW_ATTACK:
-                AttackFromShadows(EBC, PBS);
-                break;
-
-            case EnemyState.DEADLY_ATTACK:
-                DeadlyAttack(EBC, PBS);
-                break;
-        }
+        attackDecisionMaker(EBC, PBS);
     }
 
     #region Generate Random Shite
@@ -93,29 +50,31 @@ public class ElfAI
         return value2;
     }
 
-    private void attackDecisionMaker()
+    private void attackDecisionMaker(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
         int value = attackRandomGen();
 
         if(value <= NORMAL_PERCENTAGE_MAX)
         {
-            currentState = EnemyState.NORMAL_ATTACK;
+            Debug.Log("Normal Attack.");
+            NormalAttack(EBC, PBS);
             return;
         }
 
         if((value >= MIN_PERCENTAGE_CRIT) && (value <= MAX_PERCENTAGE_CRIT))
         {
-            currentState = EnemyState.CRIT_ATTACK;
+            Debug.Log("Crit Attack.");
+            CriticalHit(EBC, PBS);
             return;
         }
 
         else
         {   
-            ShadowDecisionMaker();
+            ShadowDecisionMaker(EBC, PBS);
         }
     }
 
-    private void ShadowDecisionMaker()
+    private void ShadowDecisionMaker(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
         isInvisible = true;
         ElfImage.color = ColorHue.ColourValue(ColorHue.ColorHues.Black); // => Invisible ?
@@ -124,11 +83,13 @@ public class ElfAI
 
         if(value <= HIGHER_CRIT_MAX_CHANCE) 
         {
-            currentState = EnemyState.SHADOW_ATTACK;
+            Debug.Log("Shadow Attack.");
+            AttackFromShadows(EBC, PBS);
         }
         else
         {
-            currentState = EnemyState.DEADLY_ATTACK;
+            Debug.Log("Shadowiest Attack.");
+            DeadlyAttack(EBC, PBS);
         }
     }
     #endregion
@@ -158,7 +119,6 @@ public class ElfAI
 
     private void ResetEnemy()
     {
-        currentState = EnemyState.RANDOM_STATE;
-        ElfImage.color = ColorHue.ColourValue(ColorHue.ColorHues.BaseColor);
+        //ElfImage.color = ColorHue.ColourValue(ColorHue.ColorHues.BaseColor); //To be implemented.//
     }
 }
