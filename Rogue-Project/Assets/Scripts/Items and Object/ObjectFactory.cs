@@ -47,11 +47,15 @@ public enum ArmorClass
 
 public abstract class ObjectFactory : Item
 {
-    public ObjectFactory(string name, Statistics stats, string image) : base (name, stats, image)
+    public bool equipped;
+    public int id;
+    public ObjectFactory(string name, Statistics stats, string image, bool equipped, int id) : base (name, stats, image)
     {
         this.name = name;
         baseStats = stats;
         this.image = image;
+        this.equipped = equipped;
+        this.id = id;
     }
 
     abstract public ObjectFactory CreateWeapon();
@@ -65,21 +69,24 @@ public class ObjectControllerFactory : ObjectFactory
     MeleeClass weaponClass;
     ArmorType armorType;
     ArmorClass armorClass;
+    static int id = 0;
 
-    public ObjectControllerFactory(string name, Statistics stats, string image) : base(name, stats, image)
+    public ObjectControllerFactory(string name, Statistics stats, string image, bool equipped, int id) : base(name, stats, image, equipped, id)
     {
         base.name = name;
         baseStats = stats;
         base.image = image;
+        base.equipped = equipped;
+        base.id = id;
     }
 
     public override ObjectFactory CreateWeapon()
     {
-        return new Weapon(name, baseStats, image, weaponType, weaponClass);
+        return new Weapon(name, baseStats, image, weaponType, weaponClass, equipped, id);
     }
     public override ObjectFactory CreateArmor()
     {
-        return new Armor(name, baseStats, image, armorType, armorClass);
+        return new Armor(name, baseStats, image, armorType, armorClass, equipped, id);
     }
 
     public static Item[] LootObjects()
@@ -101,12 +108,15 @@ public class ObjectControllerFactory : ObjectFactory
         //list of the items created TORETURN
         var items = new List<ObjectControllerFactory>();
         MeleeClass weaponName = (MeleeClass)randomWeapClass;
+        WeaponType weaponTypeName = (WeaponType)randomWeapType;
         ArmorClass armorName = (ArmorClass)randomArmorClass;
+        ArmorType armorTypeName = (ArmorType)randomArmorType;
 
         PlayerBaseClass levelMC = GameManager.gameManager.MainCharacter.GetComponent<PlayerBaseClass>();
 
         for (int i = 0; i < randomNumber; i++)
         {
+            id++;
             //randomization de la chance d'avoir un item
             randomLuck = random.Next(0, 101); //TODO remplacer le 100 par la chance du personnage
             //randomization du type d'objet créé
@@ -119,17 +129,21 @@ public class ObjectControllerFactory : ObjectFactory
             randomArmorType = random.Next(0, 6);
             //randomization de armor class
             randomArmorClass = random.Next(0, 4);
+            weaponName = (MeleeClass)randomWeapClass;
+            weaponTypeName = (WeaponType)randomWeapType;
+            armorName = (ArmorClass)randomArmorClass;
+            armorTypeName = (ArmorType)randomArmorType;
             Debug.Log($"Les chances de looter un objet sont de {randomLuck}");
             if (randomLuck > 0)
             {
                 Debug.Log("au moins un objet devrait être looté");
                 if (randomItem == 1)
                 {
-                    MakeFullArmor();
+                    MakeFullArmor(id);
                 }
                 else
                 {
-                    MakeFullWeapon();
+                    MakeFullWeapon(id);
                 }
             }
             else
@@ -146,32 +160,29 @@ public class ObjectControllerFactory : ObjectFactory
             statistics.Support += random.Next(1, level + 1);
             return statistics;
         }
-        void MakeFullWeapon()
+        void MakeFullWeapon(int id)
         {
             if (randomWeapType == 0)
             {
-                Weapon weaponTemp = new Weapon(weaponName.ToString(), NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass);
+                Weapon weaponTemp = new Weapon($"{weaponName.ToString()}", NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass, false, id);
                 items.Add(weaponTemp);
-                Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass}");
-                //TODO add DAO here
-                ItemXML.SaveItem(weaponTemp.name, weaponTemp.baseStats, weaponTemp.image, weaponTemp.weaponType.ToString(), weaponTemp.weaponClass.ToString());
+                Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass} {id.ToString()}");
+                ItemXML.SaveItem(weaponTemp.name, weaponTemp.baseStats, weaponTemp.image, weaponTemp.weaponType.ToString(), weaponTemp.weaponClass.ToString(), false, id);
             }
-            else
+            else if (randomWeapType == 1)
             {
-                Weapon weaponTemp = new Weapon(weaponName.ToString(), NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass);
+                Weapon weaponTemp = new Weapon($"{weaponName.ToString()}", NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass, false, id);
                 items.Add(weaponTemp);
-                Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(DistanceClass)randomWeapClass}");
-                //TODO add DAO here
-                ItemXML.SaveItem(weaponTemp.name, weaponTemp.baseStats, weaponTemp.image, weaponTemp.weaponType.ToString(), weaponTemp.weaponClass.ToString());
+                Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(DistanceClass)randomWeapClass} {id.ToString()}");
+                ItemXML.SaveItem(weaponTemp.name, weaponTemp.baseStats, weaponTemp.image, weaponTemp.weaponType.ToString(), weaponTemp.weaponClass.ToString(), false, id);
             }
         }
-        void MakeFullArmor()
+        void MakeFullArmor(int id)
         {
-            Armor armorTemp = new Armor(armorName.ToString(), NewStats(levelMC.level), armorName.ToString(), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass);
+            Armor armorTemp = new Armor($"{armorName.ToString()} {armorTypeName.ToString()}", NewStats(levelMC.level), armorName.ToString(), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass, false, id);
             items.Add(armorTemp);
-            Debug.Log($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass}");
-            ItemXML.SaveItem(armorTemp.name, armorTemp.baseStats, armorTemp.image, armorTemp.armorType.ToString(), armorTemp.armorClass.ToString());
-
+            Debug.Log($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass} {id.ToString()}");
+            ItemXML.SaveItem(armorTemp.name, armorTemp.baseStats, armorTemp.image, armorTemp.armorType.ToString(), armorTemp.armorClass.ToString(), false, id);
         }
         return items.ToArray();
     }

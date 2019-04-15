@@ -8,10 +8,10 @@ using System.Xml.Linq;
 
 public static class ItemXML
 {
-    public static void SaveItem(string name, Statistics statistics, string image, string objectType, string objectClass)
+    public static void SaveItem(string name, Statistics statistics, string image, string objectType, string objectClass, bool equipped, int id)
     {
         XDocument itemsDoc = XDocument.Load(@"Assets/Databases/Database/equipment.xml");
-        XNamespace dataPathOrWhatever = itemsDoc.Root.Name.Namespace;
+        XNamespace dataPath = itemsDoc.Root.Name.Namespace;
         var count = itemsDoc.Descendants("item").Count();
         string attack = statistics.Attack.ToString();
         string defense = statistics.Defense.ToString();
@@ -25,15 +25,17 @@ public static class ItemXML
             new XAttribute("Support", support),
             new XAttribute("image", image),
             new XAttribute("objectType", objectType),
-            new XAttribute("objectClass", objectClass)));
+            new XAttribute("objectClass", objectClass),
+            new XAttribute("equipped", equipped),
+            new XAttribute("id", id)));
         itemsDoc.Save(@"Assets/Databases/Database/equipment.xml");
     }
 
-    public static void LoadItem(string id)
+    public static void LoadItem(int id)
     {
         XDocument itemsDoc = XDocument.Load(@"Assets/Databases/Database/equipment.xml");
-        XNamespace dataPathOrWhatever = itemsDoc.Root.Name.Namespace;
-
-        
+        XNamespace dataPath = itemsDoc.Root.Name.Namespace;
+        var count = itemsDoc.Descendants("item").Count();
+        itemsDoc.Root.Elements("id");
     }
 }
