@@ -41,7 +41,7 @@ public class EncounterLogic : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             isIn = true;
-            if (gameObject.transform.parent.name == "LevelBoss")
+            if (gameObject.transform.parent.name == "Level4")
             {
                 game.BossFight();
             }
