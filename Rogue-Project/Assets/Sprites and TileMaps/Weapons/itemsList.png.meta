@@ -2,17 +2,17 @@ fileFormatVersion: 2
 guid: 253d58550601cbe4f81716d4183c8f96
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet_objects_0
-    21300002: spritesheet_objects_1
-    21300004: spritesheet_objects_2
-    21300006: spritesheet_objects_3
-    21300008: spritesheet_objects_4
-    21300010: spritesheet_objects_5
-    21300012: spritesheet_objects_6
-    21300014: spritesheet_objects_7
-    21300016: spritesheet_objects_8
-    21300018: spritesheet_objects_9
-    21300020: spritesheet_objects_10
+    21300000: DoubleAxe
+    21300002: Sword
+    21300004: Potion
+    21300006: Parchment
+    21300008: Bow
+    21300010: Dagger
+    21300012: Axe
+    21300014: Hammer
+    21300016: Head
+    21300018: Helmet
+    21300020: Book
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -117,221 +117,221 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_objects_0
+      name: DoubleAxe
       rect:
         serializedVersion: 2
-        x: 23
-        y: 37
-        width: 6
-        height: 16
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9468e0a555cef614e87a93eb6a6b450f
+      spriteID: 5b10208ee13c8c344af931a9c36271e4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_1
+      name: Sword
       rect:
         serializedVersion: 2
-        x: 36
-        y: 39
-        width: 8
-        height: 13
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce2c2d86fe2243f48978ec99ebb0f7b0
+      spriteID: 97be6b36c13ce2244885040bd67ad556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_2
+      name: Potion
       rect:
         serializedVersion: 2
-        x: 49
-        y: 37
-        width: 15
-        height: 15
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5fb57e4914887048a8b1c9ed680bdc2
+      spriteID: 92e559816d10b2742872ff354a8c2985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_3
+      name: Parchment
       rect:
         serializedVersion: 2
-        x: 2
-        y: 20
-        width: 12
-        height: 16
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1068d77840bc61c40999986e869181af
+      spriteID: d52898650b3961f43bda9f30a3727409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_4
+      name: Bow
       rect:
         serializedVersion: 2
-        x: 23
-        y: 22
-        width: 5
-        height: 11
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db777ad3e754de24bb931aae88117b83
+      spriteID: 26d4b658b56f1e64a8823b4c9fc1a44c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_5
+      name: Dagger
       rect:
         serializedVersion: 2
-        x: 34
-        y: 18
-        width: 9
-        height: 16
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7331b8ea01478ae449400195e4d44abd
+      spriteID: 3ffb3807814e8bc4bbea5fb23bcb9ff6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_6
+      name: Axe
       rect:
         serializedVersion: 2
-        x: 48
-        y: 19
-        width: 14
-        height: 14
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76102f40e27ee134eba5e5fbe586048e
+      spriteID: 188e373bfb8abbe41a5f4d0523a53dcc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_7
+      name: Hammer
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 11
-        height: 13
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8239fbe354dccc64587c3d48b8f93737
+      spriteID: 17cd17fe6bf7c1f4b83628d71e07c04b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_8
+      name: Head
       rect:
         serializedVersion: 2
-        x: 21
-        y: 2
-        width: 7
-        height: 15
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5375b9e667b1372499e3eaa598ec1523
+      spriteID: 4ba003111e943ca4683e12558f76dc40
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_9
+      name: Helmet
       rect:
         serializedVersion: 2
-        x: 34
-        y: 3
-        width: 12
-        height: 12
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c78b9bad1cbbeb47bc01399100807b8
+      spriteID: 53d486164872c5542a10d2319aa451b0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_objects_10
+      name: Book
       rect:
         serializedVersion: 2
-        x: 49
-        y: 2
-        width: 12
-        height: 14
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb4b13e16947e134e9ef4ec295572e43
+      spriteID: cf1ae935558afcd4a8d4540fb73dcd33
       vertices: []
       indices: 
       edges: []
@@ -339,7 +339,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cff88e5160727f44dae00f8d03998030
+    spriteID: 953d0a3f1b7eb7a4690dc2770f7d5133
     vertices: []
     indices: 
     edges: []

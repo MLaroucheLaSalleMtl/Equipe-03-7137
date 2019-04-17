@@ -23320,6 +23320,18 @@ MonoBehaviour:
   - {fileID: 1879571061}
   - {fileID: 23389109}
   loadedItems: []
+  allImages:
+  - {fileID: 1084059294}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1033452425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35266,7 +35278,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1058585051}
   m_HandleRect: {fileID: 1058585050}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0.9999998
   m_Size: 0.652
   m_NumberOfSteps: 0
   m_OnValueChanged:
