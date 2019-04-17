@@ -11,7 +11,7 @@ TextureImporter:
     21300012: Axe
     21300014: Hammer
     21300016: Head
-    21300018: Helmet
+    21300018: Armor
     21300020: Book
   externalObjects: {}
   serializedVersion: 7
@@ -297,7 +297,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Helmet
+      name: Armor
       rect:
         serializedVersion: 2
         x: 64

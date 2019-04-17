@@ -3,4 +3,8 @@
   <meleeWeapon0 name="DoubleAxe" attack="1" defense="3" support="3" image="DoubleAxe" objectType="Melee" objectClass="DoubleAxe" equipped="False" id="2" />
   <distanceWeapon0 name="Dagger" attack="3" defense="2" support="2" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="3" />
   <armor0 name="Leather Armor" attack="1" defense="2" support="3" image="Leather" objectType="Armor" objectClass="Leather" equipped="False" id="4" />
+  <armor0 name="Cloth Armor" attack="2" defense="2" support="3" image="Cloth" objectType="Armor" objectClass="Cloth" equipped="False" id="1" />
+  <distanceWeapon0 name="Dagger" attack="3" defense="2" support="1" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="2" />
+  <distanceWeapon1 name="Dagger" attack="3" defense="1" support="1" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="3" />
+  <potion0 name="Attack" attack="2" defense="3" support="1" image="Attack" objectType="Attack" equipped="False" id="4" />
 </catalog>

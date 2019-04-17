@@ -113,8 +113,7 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        bool iDown = Input.GetKey(KeyCode.I);
-        if (iDown)
+        if (Input.GetButtonDown("Inventory"))
         {
             ActivateInventory();
         }
@@ -122,26 +121,30 @@ public class GameManager : MonoBehaviour
 
     void ActivateInventory()
     {
-        bool itemState = ItemsPannel.activeSelf;
-        itemState = !itemState;
+        bool pauseState = ItemsPannel.activeSelf;
+        pauseState = !pauseState;
         ItemsPannel.SetActive(!ItemsPannel.activeSelf);
 
-        switch (itemState)
+        switch (pauseState)
         {
-            case true:
+            case false:
                 Time.timeScale = 0;
                 changeState(GameState.ITEMS);
                 break;
-            case false:
+            case true:
                 Time.timeScale = 1;
                 changeState(GameState.GAMEPLAY);
                 break;
         }
+        btnItems();
+        inventory.loadInventory();
+        changeState(GameState.ITEMS);
+        //print("hello inventory");
     }
 
     void Update()
     {
-        bool Idown = Input.GetKey(KeyCode.I);
+        //bool Idown = Input.GetKey(KeyCode.I);
         if (Input.GetButtonDown("Cancel"))
         {
             pauseGame();
@@ -166,13 +169,13 @@ public class GameManager : MonoBehaviour
 
                 break;
         }
-        if (Idown)
-        {
-            btnItems();
-            inventory.loadInventory();
-            changeState(GameState.ITEMS);
-            Idown = !Idown;
-        }
+        //if (Idown)
+        //{
+        //    btnItems();
+        //    inventory.loadInventory();
+        //    changeState(GameState.ITEMS);
+        //    Idown = !Idown;
+        //}
     }
 
     private void vicinityEnemy()
@@ -195,6 +198,15 @@ public class GameManager : MonoBehaviour
         }
         inAFight = true;
 
+    }
+    public void BossFight()
+    {
+        if (!inAFight)
+        {
+            battleManager.StartBossBattle();
+            print("Boss Battle Started !");
+        }
+        inAFight = true;
     }
     private void CheckGM() //Check for gameManager object duplication.//
     {
