@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -11,7 +11,9 @@ public class Inventory : MonoBehaviour
     public Image[] iconItem;
 
     public List<GameObject> inventoryItem;
-    public List<GameObject> loadedItems;
+    public List<Item> loadedItems;
+    public Image[] allImages;
+
 
     void Start()
     {
@@ -42,8 +44,11 @@ public class Inventory : MonoBehaviour
         {
             GameObject temp = Instantiate(item);
             Item itemInfo = temp.GetComponent<Item>();
-
-            loadedItems.Add(temp);
+            Item[] items = ItemXML.LoadArmors().ToArray();
+            foreach (Item i in items)
+            {
+                loadedItems.Add(i);
+            }
             slot[slotId].GetComponent<InventorySlot>().objectSlot = temp;
             slot[slotId].interactable = true;
 
@@ -55,7 +60,7 @@ public class Inventory : MonoBehaviour
 
     public void clearLoadedItems()
     {
-        foreach (GameObject li in loadedItems)
+        foreach (Item li in loadedItems)
         {
             Destroy(li);
         }
