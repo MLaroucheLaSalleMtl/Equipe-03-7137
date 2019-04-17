@@ -41,6 +41,10 @@ public class EncounterLogic : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             isIn = true;
+            if (gameObject.transform.parent.name == "Level4")
+            {
+                game.BossFight();
+            }
         }
     }
     void OnTriggerExit2D(Collider2D col)

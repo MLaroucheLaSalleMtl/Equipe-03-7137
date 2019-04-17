@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
 
     public List<GameObject> inventoryItem;
     public List<Item> loadedItems;
-    public Image[] allImages;
+    public Sprite[] allImages;
 
 
     void Start()

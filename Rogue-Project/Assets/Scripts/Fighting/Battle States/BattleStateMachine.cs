@@ -456,6 +456,14 @@ public class BattleStateMachine : MonoBehaviour
         
         BattleCanvas.SetActive(true);
     }
+    public void StartBossBattle()
+    {
+        FindObjectOfType<AudioManager>().switcharoo("OnBattle");
+        OverWorldPlayer.enabled = false;
+        totalEXP = 0;
+
+        BattleCanvas.SetActive(true);
+    }
     public void GameOver()
     {
         SceneManager.LoadScene("gameplay");
