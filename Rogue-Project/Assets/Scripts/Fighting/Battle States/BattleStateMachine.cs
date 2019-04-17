@@ -60,6 +60,10 @@ public class BattleStateMachine : MonoBehaviour
 
     //Text.//
     public Text[] enemynames;
+    public GameObject battleSlots;
+    private Image[] battleImage = new Image[3];
+    private Text[] battleText = new Text[3];
+
     public InspectLogic inspLog;
     //Variable.//
     public static bool enemyTurnDone = false;
@@ -76,15 +80,15 @@ public class BattleStateMachine : MonoBehaviour
 
     //Enum.//
     public BattleState Current_Battle_State;
-  
 
+    string absolutePath;
     #endregion
 
     #region Awake, Start, Update
     void Awake()
     {
         ui.Disable();
-
+        absolutePath = Application.dataPath;
         Current_Battle_State = BattleState.STARTBATTLE;
         commandsPanel.SetActive(true);
         targetPanel.SetActive(false);
@@ -95,7 +99,8 @@ public class BattleStateMachine : MonoBehaviour
         Time.timeScale = 1;
         ui.Disable();
 
-
+        battleImage = battleSlots.GetComponentsInChildren<Image>();
+        battleText = battleSlots.GetComponentsInChildren<Text>();
 
         // selectPlayerSword.SetActive(false);
         Current_Battle_State = BattleState.STARTBATTLE;
@@ -125,21 +130,7 @@ public class BattleStateMachine : MonoBehaviour
                     
                     ui.Disable();
 
-                    potentialEnemies.Clear();
-                    potentialEnemies = new List<EnemyBaseClass>() {
-        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf(), 
-    };totalEXP = 0;
-                    foreach (EnemyStateMachine e in Enemies)
-                    {
-                        e.EBS = null;
-                    }
-                    for (int i = 0; i < Random.Range(1, 4); i++)
-                    {
-                        Enemies[i].EBS = potentialEnemies[i];
-                        totalEXP += 30;
-                        print("Added: " +potentialEnemies[i].enemyName);
-
-                    }
+                   
                     MakeListOfOrders();
 
                     Current_Battle_State = BattleState.ORDERING;
@@ -390,10 +381,14 @@ public class BattleStateMachine : MonoBehaviour
         enemiesAlive.Clear();
         for (int i = 0; i < Enemies.Count; i++)
         {
+            
             if (Enemies[i].EBS != null)
             {
                 enemynames[i].text = Enemies[i].EBS.enemyName;
+                battleText[i].text = Enemies[i].EBS.enemyName;
+                battleImage[i].sprite = Resources.Load<Sprite>(Enemies[i].EBS.spritePath);
                 print(enemynames[i].text);
+                print("Loaded: " + Enemies[i].EBS.spritePath);
             }
             else
             {
@@ -453,15 +448,41 @@ public class BattleStateMachine : MonoBehaviour
         FindObjectOfType<AudioManager>().switcharoo("OnBattle");
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
-        
+        potentialEnemies.Clear();
+        potentialEnemies = new List<EnemyBaseClass>() {
+        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf(),
+    }; 
+        foreach (EnemyStateMachine e in Enemies)
+        {
+            e.EBS = null;
+        }
+        for (int i = 0; i < Random.Range(1, 4); i++)
+        {
+            Enemies[i].EBS = potentialEnemies[i];
+            totalEXP += 30;
+            print("Added: " + potentialEnemies[i].enemyName);
+
+        }
         BattleCanvas.SetActive(true);
     }
-    public void StartBossBattle()
+    public void StartBossBattle(List<EnemyBaseClass> bosses)
     {
         FindObjectOfType<AudioManager>().switcharoo("OnBattle");
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
+        potentialEnemies.Clear();
+        potentialEnemies = bosses;
+        foreach (EnemyStateMachine e in Enemies)
+        {
+            e.EBS = null;
+        }
+        for (int i = 0; i < Random.Range(1, 4); i++)
+        {
+            Enemies[i].EBS = potentialEnemies[i];
+            totalEXP += 30;
+            print("Added: " + potentialEnemies[i].enemyName);
 
+        }
         BattleCanvas.SetActive(true);
     }
     public void GameOver()
