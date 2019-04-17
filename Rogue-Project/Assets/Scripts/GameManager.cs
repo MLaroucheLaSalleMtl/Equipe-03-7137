@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
     {
         inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
         ItemsPannel.SetActive(false);
+        inAFight = false;
         ItemInfoPannel.SetActive(false);
     }
 
@@ -232,12 +233,14 @@ public class GameManager : MonoBehaviour
     {
         ItemsPannel.SetActive(true);
         changeState(GameState.ITEMS);
+        Time.timeScale = 0;
     }
 
     public void CloseItemsPannel()
     {
         ItemsPannel.SetActive(false);
         changeState(GameState.GAMEPLAY);
+        Time.timeScale = 1;
         inventory.clearLoadedItems();
     }
 

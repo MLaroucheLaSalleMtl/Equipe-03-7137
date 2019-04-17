@@ -51,8 +51,8 @@ public class EnemyBaseClass
 
             enemyName = "Goblin",
             level = 3,
-            baseHP = 50,
-            currentHP = 50,
+            baseHP = 10,
+            currentHP = 10,
             baseAttack = 10,
             currentAttack = 10,
             baseDefense = 10,
@@ -73,8 +73,8 @@ public class EnemyBaseClass
 
             enemyName = "Orc",
             level = 4,
-            baseHP = 50,
-            currentHP = 50,
+            baseHP = 10,
+            currentHP = 10,
             baseAttack = 20,
             currentAttack = 20,
             baseDefense = 5,

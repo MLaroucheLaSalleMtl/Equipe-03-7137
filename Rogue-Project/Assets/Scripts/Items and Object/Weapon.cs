@@ -4,27 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class Weapon : ObjectControllerFactory
+public class MeleeWeapon : ObjectControllerFactory
 {
-    WeaponType weaponType;
-    MeleeClass meleeClass;
-    DistanceClass distanceClass;
+    public WeaponType weaponType;
+    public MeleeClass meleeClass;
 
-    public Weapon(string name, Statistics stats, string image, WeaponType weaponType, MeleeClass weaponClass) : base(name, stats, image)
+    public MeleeWeapon(string name, Statistics stats, string image, WeaponType weaponType, MeleeClass weaponClass, bool equipped, int id) : base(name, stats, image, equipped, id)
     {
         this.name = name;
         baseStats = stats;
         this.image = image;
         this.weaponType = weaponType;
         this.meleeClass = weaponClass;
+        this.equipped = equipped;
+        this.id = id;
     }
+}
 
-    public Weapon(string name, Statistics stats, string image, WeaponType weaponType, DistanceClass weaponClass) : base(name, stats, image)
+public class DistanceWeapon : ObjectControllerFactory
+{
+    public WeaponType weaponType;
+    public DistanceClass distanceClass;
+
+    public DistanceWeapon(string name, Statistics stats, string image, WeaponType weaponType, DistanceClass weaponClass, bool equipped, int id) : base(name, stats, image, equipped, id)
     {
         this.name = name;
         baseStats = stats;
         this.image = image;
         this.weaponType = weaponType;
         this.distanceClass = weaponClass;
+        this.equipped = equipped;
+        this.id = id;
     }
 }

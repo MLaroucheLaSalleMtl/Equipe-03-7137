@@ -5,8 +5,10 @@ using UnityEngine;
 public class Item2 : MonoBehaviour
 {
     private GameManager gameManager;
+    private ObjectFactory objectFactory;
 
     public int ItemId;
+    public List<Item> ListTiems = new List<Item>();
 
     // Start is called before the first frame update
     void Start()
@@ -26,4 +28,6 @@ public class Item2 : MonoBehaviour
         print("çet item" + ItemId + "a été utilisé!"); // pour tester si fonctionne.
         //gameManager.useItemWeapon(itemId); // pour appeler la methode d'echange d'arme
     }
+
+    
 }

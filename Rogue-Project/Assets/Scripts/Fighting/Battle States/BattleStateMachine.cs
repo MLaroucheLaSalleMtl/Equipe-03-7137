@@ -22,7 +22,8 @@ public enum BattleState
     END_TURN,
     END_BATTLE,
     ENEMYMOVE,
-    STARTBATTLE
+    STARTBATTLE,
+    RUN_BATTLE
     
 }
 public class BattleStateMachine : MonoBehaviour
@@ -91,7 +92,7 @@ public class BattleStateMachine : MonoBehaviour
     void Start()
     {
         EndScreen.SetActive(false);
-        
+        Time.timeScale = 1;
         ui.Disable();
 
 
@@ -180,7 +181,7 @@ public class BattleStateMachine : MonoBehaviour
                            Current_Battle_State = BattleState.CHOOSETARGET; break;
                         case PlayerInput.USE_ITEM: break;
                         case PlayerInput.USE_SKILLS: break;
-                        case PlayerInput.RUN: Current_Battle_State = BattleState.END_BATTLE; battleEnded = true; Exit = true; break;
+                        case PlayerInput.RUN: Current_Battle_State = BattleState.RUN_BATTLE; battleEnded = true; Exit = true; break;
 
                     }
                     break;
@@ -303,7 +304,48 @@ public class BattleStateMachine : MonoBehaviour
 
 
                     break;
+                case BattleState.RUN_BATTLE:
+                    if (battleEnded)
+                    {
+                        lastTimer -= Time.timeScale;
+                        if (lastTimer < 0)
+                        {
+                            Current_Battle_State = BattleState.STARTBATTLE;
 
+                            EscapeBattle();
+
+
+                            OverWorldPlayer.enabled = true;
+                            GameManager.inAFight = false;
+
+                            lastTimer = 100f;
+                        }
+                        else
+                        {
+                            ui.Enable(totalEXP);
+
+                        }
+                    }
+                    else
+                    {
+                        Current_Battle_State = BattleState.ORDERING;
+                        playersAlive[0].isDefending = false;
+                    }
+                    if (Exit)
+                    {
+                        Current_Battle_State = BattleState.STARTBATTLE;
+
+                        EscapeBattle();
+
+
+                        OverWorldPlayer.enabled = true;
+                        GameManager.inAFight = false;
+                        Exit = false;
+                        lastTimer = 100f;
+                    }
+
+
+                    break;
             }
             
            
@@ -394,6 +436,7 @@ public class BattleStateMachine : MonoBehaviour
     #region Game Over, End, Escape and Start Battle
     public void EndBattle()
     {
+        FindObjectOfType<AudioManager>().switcharoo("OnGrass");
         EncounterLogic.ResetChance();
         Debug.Log("on va essayer de looter un objet");
         ObjectControllerFactory.LootObjects();
@@ -401,12 +444,13 @@ public class BattleStateMachine : MonoBehaviour
     }
     public void EscapeBattle()
     {
+        FindObjectOfType<AudioManager>().switcharoo("OnGrass");
         EncounterLogic.ResetChance();
         BattleCanvas.SetActive(false);
     }
     public void StartBattle()
     {
-        
+        FindObjectOfType<AudioManager>().switcharoo("OnBattle");
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
         

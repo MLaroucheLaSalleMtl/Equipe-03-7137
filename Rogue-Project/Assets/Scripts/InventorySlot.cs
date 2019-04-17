@@ -11,10 +11,11 @@ public class InventorySlot : MonoBehaviour
     public int slotID;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gameManager = FindObjectOfType(typeof(GameManager)) as GameManager;
         pItemInfo = FindObjectOfType(typeof(PItemInfo)) as PItemInfo;
+        objectSlot = gameObject;
     }
 
     // Update is called once per frame

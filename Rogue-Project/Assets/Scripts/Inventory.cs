@@ -13,13 +13,11 @@ public class Inventory : MonoBehaviour
     public List<GameObject> inventoryItem;
     public List<GameObject> loadedItems;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -32,13 +30,11 @@ public class Inventory : MonoBehaviour
         foreach (Button btn in slot)
         {
             btn.interactable = false;
-
         }
 
         foreach (Image i in iconItem)
         {
             i.sprite = null;
-
         }
 
         int slotId = 0;

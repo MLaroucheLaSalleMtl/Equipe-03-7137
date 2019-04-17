@@ -9,7 +9,7 @@ public class PItemInfo : MonoBehaviour
 
     public int slotID;
     public GameObject objectSlot;
-    private Weapon weapon;
+    private MeleeWeapon weapon;
 
     [Header("Item Info")]
     public Image itemImg;

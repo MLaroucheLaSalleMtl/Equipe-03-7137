@@ -13,16 +13,22 @@ public class Entrance : MonoBehaviour
         if (collision.gameObject.tag == "Player" && gameObject.tag == "CavernEntry")
         {
             print("colliding with cavern");
+            FindObjectOfType<AudioManager>().switcharoo("OnCavern");
+
             EntryManager.CavernEntry(ref collision, levelNum);
         }
         else if (collision.gameObject.tag == "Player" && gameObject.tag == "CabinEntry")
         {
             print("colliding with cabin");
+
+            FindObjectOfType<AudioManager>().switcharoo("OnHouse");
+
             EntryManager.CabinEntry(ref collision);
         }
         else if (collision.gameObject.tag == "Player" && gameObject.tag == "CavernExit")
         {
             print("colliding with cavern exit");
+            FindObjectOfType<AudioManager>().switcharoo("OnGrass");
             EntryManager.CavernExit(ref collision, levelNum);
         }
     }

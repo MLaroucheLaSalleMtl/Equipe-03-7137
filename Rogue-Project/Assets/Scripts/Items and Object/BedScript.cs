@@ -30,6 +30,8 @@ public class BedScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && gameObject.tag == "DoorCollider")
         {
+            FindObjectOfType<AudioManager>().switcharoo("OnGrass");
+
             EntryManager.CabinExit(ref collision);
         }
     }
