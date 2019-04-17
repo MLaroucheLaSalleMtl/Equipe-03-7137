@@ -202,8 +202,10 @@ public class GameManager : MonoBehaviour
     public void BossFight()
     {
         if (!inAFight)
-        {
-            battleManager.StartBossBattle();
+        { 
+            //Add boss to parameters to start battle with it
+
+           // battleManager.StartBossBattle();
             print("Boss Battle Started !");
         }
         inAFight = true;

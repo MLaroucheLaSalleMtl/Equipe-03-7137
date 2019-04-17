@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 [System.Serializable]
 public class EnemyBaseClass
-{   
+{
+  
     //To make different types of enemy based on their grade.//
     public enum EnemyGrade
     {
@@ -37,6 +39,9 @@ public class EnemyBaseClass
     //EXP
     public float expGiven;
 
+    //Sprites
+    public string spritePath;
+
     //Script access.//
     public GoblinAI GobAi;
     public OrcAI OrcAi;
@@ -59,7 +64,8 @@ public class EnemyBaseClass
             currentDefense = 10,
             baseMP = 10,
             currentMP = 10,
-            expGiven = 10
+            expGiven = 10,
+            spritePath = "Sprites and TileMaps/Enemies and Characters/Enemies Sprites/Goblin"
 
         };
 
@@ -81,7 +87,8 @@ public class EnemyBaseClass
             currentDefense = 5,
             baseMP = 10,
             currentMP = 10,
-            expGiven = 20
+            expGiven = 20,
+            spritePath = "Sprites and TileMaps/Enemies and Characters/Enemies Sprites/Orc"
 
         };
     }public static EnemyBaseClass Elf() {
@@ -99,7 +106,10 @@ public class EnemyBaseClass
             currentDefense = 20,
             baseMP = 10,
             currentMP = 10,
-            expGiven = 25
+            expGiven = 25,
+            spritePath = "Sprites and TileMaps/Enemies and Characters/Enemies Sprites/Elf"
+
+
         };
     }
 }

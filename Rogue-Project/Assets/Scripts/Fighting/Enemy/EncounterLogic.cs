@@ -20,6 +20,7 @@ public class EncounterLogic : MonoBehaviour
         chanceTime = 0f;
     }
     void Update() {
+        
         if (isIn)
         {
             chanceTime += Time.deltaTime;
