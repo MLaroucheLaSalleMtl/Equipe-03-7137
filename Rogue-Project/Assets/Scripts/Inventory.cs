@@ -13,6 +13,16 @@ public class Inventory : MonoBehaviour
     public List<GameObject> inventoryItem;
     public List<GameObject> loadedItems;
 
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+
     public void loadInventory()
     {
         clearLoadedItems();

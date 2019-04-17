@@ -13,9 +13,9 @@ public class InventorySlot : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        objectSlot = gameObject;
         gameManager = FindObjectOfType(typeof(GameManager)) as GameManager;
         pItemInfo = FindObjectOfType(typeof(PItemInfo)) as PItemInfo;
+        objectSlot = gameObject;
     }
 
     // Update is called once per frame
