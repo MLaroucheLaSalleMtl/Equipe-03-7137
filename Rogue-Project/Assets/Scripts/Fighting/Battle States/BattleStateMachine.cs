@@ -436,6 +436,7 @@ public class BattleStateMachine : MonoBehaviour
     #region Game Over, End, Escape and Start Battle
     public void EndBattle()
     {
+        FindObjectOfType<AudioManager>().switcharoo("OnGrass");
         EncounterLogic.ResetChance();
         Debug.Log("on va essayer de looter un objet");
         ObjectControllerFactory.LootObjects();
@@ -443,12 +444,13 @@ public class BattleStateMachine : MonoBehaviour
     }
     public void EscapeBattle()
     {
+        FindObjectOfType<AudioManager>().switcharoo("OnGrass");
         EncounterLogic.ResetChance();
         BattleCanvas.SetActive(false);
     }
     public void StartBattle()
     {
-        
+        FindObjectOfType<AudioManager>().switcharoo("OnBattle");
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
         
