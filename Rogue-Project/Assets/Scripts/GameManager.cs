@@ -111,6 +111,33 @@ public class GameManager : MonoBehaviour
         ItemInfoPannel.SetActive(false);
     }
 
+    void FixedUpdate()
+    {
+        bool iDown = Input.GetKey(KeyCode.I);
+        if (iDown)
+        {
+            ActivateInventory();
+        }
+    }
+
+    void ActivateInventory()
+    {
+        bool itemState = ItemsPannel.activeSelf;
+        itemState = !itemState;
+        ItemsPannel.SetActive(!ItemsPannel.activeSelf);
+
+        switch (itemState)
+        {
+            case true:
+                Time.timeScale = 0;
+                changeState(GameState.ITEMS);
+                break;
+            case false:
+                Time.timeScale = 1;
+                changeState(GameState.GAMEPLAY);
+                break;
+        }
+    }
 
     void Update()
     {
@@ -144,6 +171,7 @@ public class GameManager : MonoBehaviour
             btnItems();
             inventory.loadInventory();
             changeState(GameState.ITEMS);
+            Idown = !Idown;
         }
     }
 
@@ -233,12 +261,14 @@ public class GameManager : MonoBehaviour
     {
         ItemsPannel.SetActive(true);
         changeState(GameState.ITEMS);
+        Time.timeScale = 0;
     }
 
     public void CloseItemsPannel()
     {
         ItemsPannel.SetActive(false);
         changeState(GameState.GAMEPLAY);
+        Time.timeScale = 1;
         inventory.clearLoadedItems();
     }
 
