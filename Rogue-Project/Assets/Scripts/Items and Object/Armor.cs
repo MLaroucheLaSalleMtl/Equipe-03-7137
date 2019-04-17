@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Armor : ObjectControllerFactory
+public class Armor : ObjectControllerFactory 
 {
-    ArmorType armorType;
-    ArmorClass armorClass;
+    public ArmorType armorType;
+    public ArmorClass armorClass;
 
     public Armor(string name, Statistics stats, string image, ArmorType armorType, ArmorClass armorClass, bool equipped, int id) : base(name, stats, image, equipped, id)
     {

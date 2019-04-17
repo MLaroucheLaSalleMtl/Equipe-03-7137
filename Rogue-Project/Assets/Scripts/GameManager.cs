@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
     {
         inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
         ItemsPannel.SetActive(false);
+        inAFight = false;
         ItemInfoPannel.SetActive(false);
     }
 

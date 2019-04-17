@@ -1,4 +1,3 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <catalog>
-  <item Name="Hammer" Attack="5" Defense="3" Support="3" image="Hammer" objectType="Melee" objectClass="Sword" equipped="false" id="1" />
 </catalog>
