@@ -132,7 +132,7 @@ public class BattleStateMachine : MonoBehaviour
             {
                 sliderHp.value = (int)(playersAlive[0].PBS.currentHP / playersAlive[0].PBS.baseMP * 100);
                 sliderMp.value = (int)(playersAlive[0].PBS.currentMP / playersAlive[0].PBS.baseMP * 100);
-                print($"current hp {playersAlive[0].PBS.currentHP} and {playersAlive[0].PBS.baseMP}");
+                //print($"current hp {playersAlive[0].PBS.currentHP} and {playersAlive[0].PBS.baseMP}");
             }
 
             switch (Current_Battle_State)
@@ -457,7 +457,8 @@ public class BattleStateMachine : MonoBehaviour
     #region Game Over, End, Escape and Start Battle
     public void EndBattle()
     {
-        FindObjectOfType<AudioManager>().switcharoo("OnGrass");
+        AudioManager.CheckSound();
+
         EncounterLogic.ResetChance();
         Debug.Log("on va essayer de looter un objet");
         ObjectControllerFactory.LootObjects();
@@ -465,13 +466,15 @@ public class BattleStateMachine : MonoBehaviour
     }
     public void EscapeBattle()
     {
-        FindObjectOfType<AudioManager>().switcharoo("OnGrass");
+        AudioManager.CheckSound();
+
         EncounterLogic.ResetChance();
         BattleCanvas.SetActive(false);
     }
     public void StartBattle()
     {
-        FindObjectOfType<AudioManager>().switcharoo("OnBattle");
+        FindObjectOfType<AudioManager>().StopPlay("OnBattle");
+
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
         potentialEnemies.Clear();
@@ -493,7 +496,8 @@ public class BattleStateMachine : MonoBehaviour
     }
     public void StartBossBattle(List<EnemyBaseClass> bosses)
     {
-        FindObjectOfType<AudioManager>().switcharoo("OnBattle");
+        FindObjectOfType<AudioManager>().StopPlay("OnBattle");
+
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
         potentialEnemies.Clear();
@@ -515,6 +519,8 @@ public class BattleStateMachine : MonoBehaviour
     {
         SceneManager.LoadScene("gameplay");
     }
+
+
 
     #endregion
 }
