@@ -137,14 +137,16 @@ public class EnemyStateMachine : MonoBehaviour,StateMachine
             EBS.OrcAi.Attack(EBS, PBS);
         }
 
-
         if (EBS.enemyName == "Elf")
         {
             Debug.Log("Elf turn");
             EBS.ElfAi.Attack(EBS, PBS);
         }
 
-
+        if (EBS.enemyName == "Demon King")
+        {
+            EBS.DKAi.Attack(EBS, PBS);
+        }
     }
 
     //void chooseAction()

@@ -9,6 +9,7 @@ public class Item2 : MonoBehaviour
 
     public int ItemId;
     public List<Item> ListTiems = new List<Item>();
+    public Item[] EquipedItem = new Item[3];
 
     // Start is called before the first frame update
     void Start()

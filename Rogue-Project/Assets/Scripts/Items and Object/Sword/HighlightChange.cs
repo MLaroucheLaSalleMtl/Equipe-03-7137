@@ -44,13 +44,13 @@
 //            currentButton = (currentButton + 3) % numberOfAwakeButtons;
 //        }
 
-//        buttons[currentButton].CatchSword();
+
 //        if (Input.GetButtonDown("Jump"))
 //        {
 //            var eventSystem = EventSystem.current;
 //            buttons[currentButton].gameObject.GetComponent<Button>().onClick.Invoke();
 //            ExecuteEvents.Execute(buttons[currentButton].gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
 
-//        }
+////        }
 //    }
 //}

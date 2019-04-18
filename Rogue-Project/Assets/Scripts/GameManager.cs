@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public Camera camera;
     public static GameManager gameManager;
     public GameObject MainCharacter;
-    private Inventory inventory;
+    public Inventory inventory;
 
     [SerializeField] private BattleStateMachine battleManager;
 
@@ -206,10 +206,10 @@ public class GameManager : MonoBehaviour
     public void BossFight()
     {
         if (!inAFight)
-        { 
+        {
             //Add boss to parameters to start battle with it
 
-           // battleManager.StartBossBattle();
+            battleManager.StartBossBattle(new List<EnemyBaseClass>() { EnemyBaseClass.Boss()});
             print("Boss Battle Started !");
         }
         inAFight = true;
