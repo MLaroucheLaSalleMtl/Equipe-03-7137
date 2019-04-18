@@ -25,12 +25,12 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
+
     }
     //an idea : instantiate all items in the loadallitems, and then delete them when out of the inventory
     void Update()
     {
-        
+        //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
     }
 
     public void loadInventory()
@@ -46,7 +46,16 @@ public class Inventory : MonoBehaviour
         {
             i.sprite = null;
         }
-        ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
+
+        //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
+        armor = ItemXML.LoadArmors();
+        foreach (var a in armor)
+        {
+            Debug.Log(a);
+            Instantiate(a);
+
+        }
+
         int slotId = AMOUNT_OF_EQUIPPED_ARMOURS;
         foreach(GameObject item in inventoryItem)
         {
