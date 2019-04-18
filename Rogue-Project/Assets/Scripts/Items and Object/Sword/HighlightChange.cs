@@ -44,7 +44,7 @@ public class HighlightChange : MonoBehaviour
             currentButton = (currentButton + 3) % numberOfAwakeButtons;
         }
 
-        buttons[currentButton].CatchSword();
+
         if (Input.GetButtonDown("Jump"))
         {
             var eventSystem = EventSystem.current;

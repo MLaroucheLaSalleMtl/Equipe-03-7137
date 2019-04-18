@@ -514,7 +514,7 @@ public class BattleStateMachine : MonoBehaviour
         {
             e.EBS = null;
         }
-        for (int i = 0; i < Random.Range(1, 4); i++)
+        for (int i = 0; i < Random.Range(1, 2); i++)
         {
             Enemies[i].EBS = potentialEnemies[i];
             totalEXP += 30;

@@ -46,6 +46,7 @@ public class EnemyBaseClass
     public GoblinAI GobAi;
     public OrcAI OrcAi;
     public ElfAI ElfAi;
+    public DemonKingAI DKAi;
 
     public static EnemyBaseClass Goblin()
     {
@@ -117,7 +118,7 @@ public class EnemyBaseClass
     {
         return new EnemyBaseClass()
         {
-            ElfAi = new ElfAI(),
+            DKAi = new DemonKingAI(),
 
             enemyName = "Demon King",
             level = 50,
@@ -130,7 +131,7 @@ public class EnemyBaseClass
             baseMP = 0,
             currentMP = 0,
             expGiven = 500,
-            spritePath = "Sprites and TileMaps/Enemies and Characters/Enemies Sprites/Elf"
+            spritePath = "Sprites and TileMaps/Enemies and Characters/Enemies Sprites/DemonKing1"
         };
     }
 }

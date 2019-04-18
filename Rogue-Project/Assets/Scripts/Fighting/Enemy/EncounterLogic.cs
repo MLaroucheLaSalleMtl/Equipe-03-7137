@@ -29,9 +29,18 @@ public class EncounterLogic : MonoBehaviour
             {
                 if (Random.Range(1, 100) <200)
                 {
-                    //print(chanceTime);
-                    game.StartFight();
+                    if (gameObject.transform.parent.name == "Level4")
+                    {
+                        game.BossFight();
+                    }
+                    else
+                    {
+                        //print(chanceTime);
+                        game.StartFight();
+                    }
+                   
                 }
+
                 chanceTime = 0;
             }
             //print(chanceTime);
@@ -42,10 +51,7 @@ public class EncounterLogic : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             isIn = true;
-            if (gameObject.transform.parent.name == "Level4")
-            {
-                game.BossFight();
-            }
+
         }
     }
     void OnTriggerExit2D(Collider2D col)

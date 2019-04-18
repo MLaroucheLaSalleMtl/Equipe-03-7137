@@ -14,7 +14,7 @@ public class DemonKingAI
     private const int OTHER_PERCENTAGE_MAX = 1;
 
     //Smite related.//
-    private const int SMITE_NECESSARY_HP = 50;
+    private const int SMITE_NECESSARY_HP = 25;
 
     //Obliterate related.//
     private const int OBLITERATE_WAIT = 1000;
