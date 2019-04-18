@@ -122,8 +122,8 @@ public class EnemyBaseClass
 
             enemyName = "Demon King",
             level = 50,
-            baseHP = 500,
-            currentHP = 500,
+            baseHP = 300,
+            currentHP = 300,
             baseAttack = 25,
             currentAttack = 25,
             baseDefense = 4,

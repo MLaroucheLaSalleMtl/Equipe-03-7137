@@ -10,14 +10,14 @@ public class DemonKingAI
 
     //Consts.//
     //Chance of each attacks.//
-    private const int NORMAL_PERCENTAGE_MAX = 0;
-    private const int OTHER_PERCENTAGE_MAX = 1;
+    private const int NORMAL_PERCENTAGE_MAX = 70;
+    private const int OTHER_PERCENTAGE_MAX = 71;
 
     //Smite related.//
     private const int SMITE_NECESSARY_HP = 25;
 
     //Obliterate related.//
-    private const int OBLITERATE_WAIT = 1000;
+    private const int OBLITERATE_WAIT = 100;
     private const int OBLITERATE_SUCCESSIVE = 3;
     private const float OBLITERATE_MULTI_INCREMENT = 0.75F;
    
@@ -79,7 +79,7 @@ public class DemonKingAI
     }
     private void ObliterateAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        float multiplier = 1;
+        float multiplier = 0.5F;
 
         for(int i = 0; i < OBLITERATE_SUCCESSIVE;i++ )
         { 
