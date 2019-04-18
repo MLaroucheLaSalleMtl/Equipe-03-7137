@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 
-    public const int AMOUNT_OF_EQUIPPED_ARMOURS = 3;
+    public const int AMOUNT_OF_EQUIPPED_ARMOURS = 0;
 
     GameManager gameManager;
 
