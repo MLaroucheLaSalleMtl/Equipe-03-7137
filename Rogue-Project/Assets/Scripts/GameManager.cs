@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public Camera camera;
     public static GameManager gameManager;
     public GameObject MainCharacter;
-    private Inventory inventory;
+    public Inventory inventory;
 
     [SerializeField] private BattleStateMachine battleManager;
 
