@@ -207,6 +207,7 @@ public class BattleStateMachine : MonoBehaviour
                                
                                 
                                 inspLog.esm = enemiesAlive[selectedTarget];
+                                inspLog.gameObject.SetActive(true);
                                 break;
                         }
                     }
