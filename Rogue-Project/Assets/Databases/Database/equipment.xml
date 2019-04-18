@@ -7,4 +7,5 @@
   <distanceWeapon0 name="Dagger" attack="3" defense="2" support="1" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="2" />
   <distanceWeapon1 name="Dagger" attack="3" defense="1" support="1" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="3" />
   <potion0 name="Attack" attack="2" defense="3" support="1" image="Attack" objectType="Attack" equipped="False" id="4" />
+  <armor0 name="Iron Head" attack="2" defense="2" support="2" image="Iron" objectType="Head" objectClass="Iron" equipped="False" id="3" />
 </catalog>

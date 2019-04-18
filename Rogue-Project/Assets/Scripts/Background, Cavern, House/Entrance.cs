@@ -9,28 +9,26 @@ public class Entrance : MonoBehaviour
     [SerializeField] private int levelNum = 1;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         print("colliding with _______");
         if (collision.gameObject.tag == "Player" && gameObject.tag == "CavernEntry")
         {
             print("colliding with cavern");
-            FindObjectOfType<AudioManager>().switcharoo("OnCavern");
-
             EntryManager.CavernEntry(ref collision, levelNum);
         }
         else if (collision.gameObject.tag == "Player" && gameObject.tag == "CabinEntry")
         {
             print("colliding with cabin");
-
-            FindObjectOfType<AudioManager>().switcharoo("OnHouse");
-
+            FindObjectOfType<AudioManager>().StopPlay("OnHouse");
             EntryManager.CabinEntry(ref collision);
         }
         else if (collision.gameObject.tag == "Player" && gameObject.tag == "CavernExit")
         {
             print("colliding with cavern exit");
-            FindObjectOfType<AudioManager>().switcharoo("OnGrass");
+            AudioManager.CheckSound();
             EntryManager.CavernExit(ref collision, levelNum);
         }
+
     }
 
     // Start is called before the first frame update

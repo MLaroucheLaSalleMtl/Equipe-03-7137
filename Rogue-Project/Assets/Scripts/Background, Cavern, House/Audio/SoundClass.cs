@@ -17,5 +17,4 @@ public class SoundClass
 
     public bool loop;
 
-    
 }

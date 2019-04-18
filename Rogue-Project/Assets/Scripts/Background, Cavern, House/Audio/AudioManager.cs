@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-      Play("OnGrass");
+        Play("OnGrass");
     }
     #endregion
 
@@ -39,8 +39,8 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " Not found!");
             return;
         }
-        sounds.source.Play();
-        
+
+            sounds.source.Play();
     }
     public void Stop()
     {
@@ -49,11 +49,27 @@ public class AudioManager : MonoBehaviour
             sounds.source.Stop();
         }
     }
-
-    public void switcharoo(string name)
+   
+    public void StopPlay(string name)
     {
         FindObjectOfType<AudioManager>().Stop();
         FindObjectOfType<AudioManager>().Play(name);
+    }
+
+    public static void CheckSound()
+    {
+        if (GameManager.currentLevel == 1)
+        {
+            FindObjectOfType<AudioManager>().StopPlay("OnGrass");
+        }
+        if (GameManager.currentLevel == 2)
+        {
+            FindObjectOfType<AudioManager>().StopPlay("OnCavern");
+        }
+        if (GameManager.currentLevel == 3)
+        {
+            FindObjectOfType<AudioManager>().StopPlay("OnSand");
+        }
     }
     #endregion
 }
