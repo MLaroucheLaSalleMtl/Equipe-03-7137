@@ -7,7 +7,4 @@
   <distanceWeapon0 name="Dagger" attack="3" defense="2" support="1" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="2" />
   <distanceWeapon1 name="Dagger" attack="3" defense="1" support="1" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="3" />
   <potion0 name="Attack" attack="2" defense="3" support="1" image="Attack" objectType="Attack" equipped="False" id="4" />
-  <meleeWeapon0 name="Spear" attack="1" defense="1" support="1" image="Spear" objectType="Melee" objectClass="Spear" equipped="False" id="2" />
-  <armor0 name="Steel Head" attack="1" defense="2" support="1" image="Steel" objectType="Head" objectClass="Steel" equipped="False" id="3" />
-  <potion0 name="Attack" attack="3" defense="2" support="3" image="Attack" objectType="Attack" equipped="False" id="4" />
 </catalog>

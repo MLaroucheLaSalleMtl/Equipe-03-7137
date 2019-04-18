@@ -8,7 +8,7 @@ using UnityEngine;
 public class Potion : ObjectControllerFactory
 {
     public PotionType potionType;
-    public Potion(string name, Statistics stats, Sprite image, PotionType potionType, bool equipped, int id) : base(name, stats, image, equipped, id)
+    public Potion(string name, Statistics stats, string image, PotionType potionType, bool equipped, int id) : base(name, stats, image, equipped, id)
     {
         this.name = name;
         baseStats = stats;
@@ -16,21 +16,5 @@ public class Potion : ObjectControllerFactory
         this.potionType = potionType;
         this.equipped = equipped;
         this.id = id;
-    }
-
-    public static Sprite SpritePotion(string image)
-    {
-        if (image == "Health")
-        {
-            return Inventory.inventory.allImages[9];
-        }
-        if (image == "Attack")
-        {
-            return Inventory.inventory.allImages[9];
-        }
-        else
-        {
-            return Inventory.inventory.allImages[9];
-        }
     }
 }
