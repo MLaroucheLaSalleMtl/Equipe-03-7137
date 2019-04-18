@@ -5,6 +5,10 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     #region Variables
+    private const int GRASSLEVEL = 1;
+    private const int CAVERNLEVEL = 2;
+    private const int SANDLEVEL = 3;
+
     public SoundClass[] sound;
     public static AudioManager instance;
     #endregion
@@ -50,7 +54,7 @@ public class AudioManager : MonoBehaviour
         }
     }
    
-    public void StopPlay(string name)
+    public void VariantPlay(string name)
     {
         FindObjectOfType<AudioManager>().Stop();
         FindObjectOfType<AudioManager>().Play(name);
@@ -60,15 +64,15 @@ public class AudioManager : MonoBehaviour
     {
         if (GameManager.currentLevel == 1)
         {
-            FindObjectOfType<AudioManager>().StopPlay("OnGrass");
+            FindObjectOfType<AudioManager>().VariantPlay("OnGrass");
         }
         if (GameManager.currentLevel == 2)
         {
-            FindObjectOfType<AudioManager>().StopPlay("OnCavern");
+            FindObjectOfType<AudioManager>().VariantPlay("OnCavern");
         }
         if (GameManager.currentLevel == 3)
         {
-            FindObjectOfType<AudioManager>().StopPlay("OnSand");
+            FindObjectOfType<AudioManager>().VariantPlay("OnSand");
         }
     }
     #endregion
