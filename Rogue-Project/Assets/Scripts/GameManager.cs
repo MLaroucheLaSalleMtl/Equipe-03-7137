@@ -1,6 +1,7 @@
 ﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 public enum GameState { PAUSE, GAMEPLAY, OPTIONS, FIGHTING, ITEMS }
 
@@ -94,6 +95,7 @@ public class GameManager : MonoBehaviour
         {
             levels[1].SetActive(true);
         }
+        MainCharacter = GameObject.Find("MainCharacter");
 
         if (!GameObject.Find("MainCharacter"))
         {
@@ -144,6 +146,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+ 
         //bool Idown = Input.GetKey(KeyCode.I);
         if (Input.GetButtonDown("Cancel"))
         {
@@ -151,8 +154,9 @@ public class GameManager : MonoBehaviour
         }
         switch (currentState)
         {
+            
             case (GameState.GAMEPLAY):
-
+                OptionsPannel.SetActive(false); 
                 if (isWalking)
                 {
                     vicinityEnemy();
@@ -295,4 +299,5 @@ public class GameManager : MonoBehaviour
     {
         ItemInfoPannel.SetActive(false);
     }
+
 }

@@ -17,4 +17,12 @@ public class Potion : ObjectControllerFactory
         this.equipped = equipped;
         this.id = id;
     }
+<<<<<<< HEAD
+=======
+
+    public static Sprite SpritePotion(string image)
+    {
+        return Resources.Load(@"Assets/Resources/Sprites and TileMaps/Weapons/itemsList.png/" + image, typeof(Sprite)) as Sprite;
+    }
+>>>>>>> master
 }

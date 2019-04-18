@@ -20,4 +20,12 @@ public class Armor : ObjectControllerFactory
         this.equipped = equipped;
         this.id = id;
     }
+<<<<<<< HEAD
+=======
+
+    public static Sprite SpriteArmor(string image)
+    {
+        return Resources.Load($"{image}", typeof(Sprite)) as Sprite;
+    }
+>>>>>>> master
 }

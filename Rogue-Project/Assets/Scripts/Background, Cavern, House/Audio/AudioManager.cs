@@ -5,6 +5,10 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     #region Variables
+    private const int GRASSLEVEL = 1;
+    private const int CAVERNLEVEL = 2;
+    private const int SANDLEVEL = 3;
+
     public SoundClass[] sound;
     public static AudioManager instance;
     #endregion
@@ -25,7 +29,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-      Play("OnGrass");
+        Play("OnGrass");
     }
     #endregion
 
@@ -39,8 +43,8 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " Not found!");
             return;
         }
-        sounds.source.Play();
-        
+
+            sounds.source.Play();
     }
     public void Stop()
     {
@@ -49,11 +53,27 @@ public class AudioManager : MonoBehaviour
             sounds.source.Stop();
         }
     }
-
-    public void switcharoo(string name)
+   
+    public void VariantPlay(string name)
     {
         FindObjectOfType<AudioManager>().Stop();
         FindObjectOfType<AudioManager>().Play(name);
+    }
+
+    public static void CheckSound()
+    {
+        if (GameManager.currentLevel == 1)
+        {
+            FindObjectOfType<AudioManager>().VariantPlay("OnGrass");
+        }
+        if (GameManager.currentLevel == 2)
+        {
+            FindObjectOfType<AudioManager>().VariantPlay("OnCavern");
+        }
+        if (GameManager.currentLevel == 3)
+        {
+            FindObjectOfType<AudioManager>().VariantPlay("OnSand");
+        }
     }
     #endregion
 }

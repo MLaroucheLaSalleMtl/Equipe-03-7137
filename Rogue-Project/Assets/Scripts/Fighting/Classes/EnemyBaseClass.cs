@@ -91,7 +91,9 @@ public class EnemyBaseClass
             spritePath = "Sprites and TileMaps/Enemies and Characters/Enemies Sprites/Orc"
 
         };
-    }public static EnemyBaseClass Elf() {
+    }
+    public static EnemyBaseClass Elf()
+    {
         return new EnemyBaseClass()
         {
             ElfAi = new ElfAI(),
@@ -108,8 +110,27 @@ public class EnemyBaseClass
             currentMP = 10,
             expGiven = 25,
             spritePath = "Sprites and TileMaps/Enemies and Characters/Enemies Sprites/Elf"
+        };
+    }
 
+    public static EnemyBaseClass Boss()
+    {
+        return new EnemyBaseClass()
+        {
+            ElfAi = new ElfAI(),
 
+            enemyName = "Demon King",
+            level = 50,
+            baseHP = 500,
+            currentHP = 500,
+            baseAttack = 25,
+            currentAttack = 25,
+            baseDefense = 50,
+            currentDefense = 50,
+            baseMP = 0,
+            currentMP = 0,
+            expGiven = 500,
+            spritePath = "Sprites and TileMaps/Enemies and Characters/Enemies Sprites/Elf"
         };
     }
 }

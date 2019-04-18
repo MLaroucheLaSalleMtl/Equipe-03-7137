@@ -34,10 +34,12 @@ public class EntryManager : MonoBehaviour
         GameManager.currentLevel = levelNum;
         if (levelNum == 2)
         {
+            AudioManager.CheckSound();
             GameManager.gameManager.camera.backgroundColor = new Color32(21, 18, 4, 255);
         }
         else if (levelNum == 3)
         {
+            AudioManager.CheckSound();
             GameManager.gameManager.camera.backgroundColor = new Color32(119, 103, 44, 255);
         }
 
@@ -56,6 +58,7 @@ public class EntryManager : MonoBehaviour
         GameManager.currentLevel = levelNum;
         GameManager.gameManager.MainCharacter.transform.localPosition = new Vector3(GameManager.gameManager.MainCharacter.transform.localPosition.x + 0.7f, GameManager.gameManager.MainCharacter.transform.localPosition.y, GameManager.gameManager.MainCharacter.transform.localPosition.z);
 
+        AudioManager.CheckSound();
     }
 
     public static void CabinExit(ref Collider2D collision, int levelNum)
@@ -70,6 +73,22 @@ public class EntryManager : MonoBehaviour
         GameManager.gameManager.levels[--levelNum].SetActive(true);
         GameManager.currentLevel = levelNum;
         GameManager.gameManager.MainCharacter.transform.localPosition = new Vector3(GameManager.gameManager.MainCharacter.transform.localPosition.x + 0.7f, GameManager.gameManager.MainCharacter.transform.localPosition.y, GameManager.gameManager.MainCharacter.transform.localPosition.z);
-
+        AudioManager.CheckSound();
     }
+
+    //private static void CheckSound()
+    //{
+    //    if (GameManager.currentLevel == 1)
+    //    {
+    //        FindObjectOfType<AudioManager>().StopPlay("OnGrass");
+    //    }
+    //    if (GameManager.currentLevel == 2)
+    //    {
+    //        FindObjectOfType<AudioManager>().StopPlay("OnCavern");
+    //    }
+    //    if (GameManager.currentLevel == 3)
+    //    {
+    //        FindObjectOfType<AudioManager>().StopPlay("OnSand");
+    //    }
+    //}
 }

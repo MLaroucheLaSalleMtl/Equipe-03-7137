@@ -28,6 +28,11 @@ public enum BattleState
 }
 public class BattleStateMachine : MonoBehaviour
 {
+    public const int TIME_NORMAL = 1;
+    public const int PLAYER_REMAINING = 0;
+    public const int HEALTH_REMAINING = 0;
+    public const float LAST_TIMER = 100.0F;
+
     public EXPUi ui;
     public List<EnemyStateMachine> Enemies = new List<EnemyStateMachine>();
     public List<PlayerStateMachine> Players = new List<PlayerStateMachine>();
@@ -35,7 +40,10 @@ public class BattleStateMachine : MonoBehaviour
     private List<EnemyStateMachine> enemiesAlive = new List<EnemyStateMachine>();
     private List<EnemyBaseClass> potentialEnemies = new List<EnemyBaseClass>()
     {
-        EnemyBaseClass.Goblin() , EnemyBaseClass.Orc(),EnemyBaseClass.Elf()
+        EnemyBaseClass.Goblin(),
+        EnemyBaseClass.Orc(),
+        EnemyBaseClass.Elf(),
+        EnemyBaseClass.Boss()
     };
 
     //Script Access.//
@@ -101,7 +109,7 @@ public class BattleStateMachine : MonoBehaviour
     void Start()
     {
         EndScreen.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = TIME_NORMAL;
         ui.Disable();
 
         battleImage = battleSlots.GetComponentsInChildren<Image>();
@@ -118,7 +126,7 @@ public class BattleStateMachine : MonoBehaviour
         foreach (EnemyStateMachine e in enemiesAlive)
         {
             
-            if (e.EBS != null && e.EBS.currentHP > 0)
+            if (e.EBS != null && e.EBS.currentHP > HEALTH_REMAINING)
             {
                 battleEnded = false;
                 break;
@@ -128,11 +136,11 @@ public class BattleStateMachine : MonoBehaviour
         // print(Current_Battle_State);
         if (BattleCanvas.activeSelf)
         {
-            if (playersAlive.Count > 0)
+            if (playersAlive.Count > PLAYER_REMAINING)
             {
                 sliderHp.value = (int)(playersAlive[0].PBS.currentHP / playersAlive[0].PBS.baseMP * 100);
                 sliderMp.value = (int)(playersAlive[0].PBS.currentMP / playersAlive[0].PBS.baseMP * 100);
-                print($"current hp {playersAlive[0].PBS.currentHP} and {playersAlive[0].PBS.baseMP}");
+                //print($"current hp {playersAlive[0].PBS.currentHP} and {playersAlive[0].PBS.baseMP}");
             }
 
             switch (Current_Battle_State)
@@ -140,12 +148,12 @@ public class BattleStateMachine : MonoBehaviour
                 case BattleState.STARTBATTLE:
                     
                     ui.Disable();
-
                    
                     MakeListOfOrders();
 
                     Current_Battle_State = BattleState.ORDERING;
                     break;
+
                 case BattleState.ORDERING:
                     Input.ResetInputAxes();
                     selectedTarget = -1;
@@ -153,9 +161,8 @@ public class BattleStateMachine : MonoBehaviour
                     commandsPanel.SetActive(true);
                     Current_Battle_State = BattleState.WAITINGFORINPUT;
                     break;
+
                 case BattleState.WAITINGFORINPUT:
-                    // print(playersAlive[0].input);
-                    //  selectPlayerSword.SetActive(true);
                     if (playersAlive[0].input != PlayerInput.NULL)
                     {
                         Current_Battle_State = BattleState.PERFORMACTION;
@@ -259,7 +266,7 @@ public class BattleStateMachine : MonoBehaviour
                         }
                     }
                     timer += Time.deltaTime;
-                    if (timer > 2f)
+                    if (timer > 2.0f)
                     {
                         onlyOnce = false;
                         enemyTurn++;
@@ -328,7 +335,7 @@ public class BattleStateMachine : MonoBehaviour
                             OverWorldPlayer.enabled = true;
                             GameManager.inAFight = false;
 
-                            lastTimer = 100f;
+                            lastTimer = LAST_TIMER;
                         }
                         else
                         {
@@ -351,7 +358,7 @@ public class BattleStateMachine : MonoBehaviour
                         OverWorldPlayer.enabled = true;
                         GameManager.inAFight = false;
                         Exit = false;
-                        lastTimer = 100f;
+                        lastTimer = LAST_TIMER;
                     }
 
 
@@ -361,7 +368,7 @@ public class BattleStateMachine : MonoBehaviour
            
             for (int i = 0; i < enemiesAlive.Count; i++)
             {
-                if (enemiesAlive[i].EBS != null && enemiesAlive[i].EBS.currentHP>0)
+                if (enemiesAlive[i].EBS != null && enemiesAlive[i].EBS.currentHP> HEALTH_REMAINING)
                 {
                     Enemies[i].gameObject.SetActive(true);
                     buttonsTargets[i].SetActive(true);
@@ -377,7 +384,7 @@ public class BattleStateMachine : MonoBehaviour
                    
                 }
             }
-            if (playersAlive[0].PBS.currentHP <=0) {
+            if (playersAlive[0].PBS.currentHP <= HEALTH_REMAINING) {
                 Time.timeScale = 0;
                 EndScreen.SetActive(true);
 
@@ -457,7 +464,8 @@ public class BattleStateMachine : MonoBehaviour
     #region Game Over, End, Escape and Start Battle
     public void EndBattle()
     {
-        FindObjectOfType<AudioManager>().switcharoo("OnGrass");
+        AudioManager.CheckSound();
+
         EncounterLogic.ResetChance();
         Debug.Log("on va essayer de looter un objet");
         ObjectControllerFactory.LootObjects();
@@ -465,13 +473,15 @@ public class BattleStateMachine : MonoBehaviour
     }
     public void EscapeBattle()
     {
-        FindObjectOfType<AudioManager>().switcharoo("OnGrass");
+        AudioManager.CheckSound();
+
         EncounterLogic.ResetChance();
         BattleCanvas.SetActive(false);
     }
     public void StartBattle()
     {
-        FindObjectOfType<AudioManager>().switcharoo("OnBattle");
+        FindObjectOfType<AudioManager>().VariantPlay("OnBattle");
+
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
         potentialEnemies.Clear();
@@ -493,7 +503,8 @@ public class BattleStateMachine : MonoBehaviour
     }
     public void StartBossBattle(List<EnemyBaseClass> bosses)
     {
-        FindObjectOfType<AudioManager>().switcharoo("OnBattle");
+        FindObjectOfType<AudioManager>().VariantPlay("OnBattle");
+
         OverWorldPlayer.enabled = false;
         totalEXP = 0;
         potentialEnemies.Clear();
@@ -515,6 +526,8 @@ public class BattleStateMachine : MonoBehaviour
     {
         SceneManager.LoadScene("gameplay");
     }
+
+
 
     #endregion
 }
