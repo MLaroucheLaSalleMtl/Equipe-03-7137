@@ -221,7 +221,7 @@ public class ObjectControllerFactory : ObjectFactory
     static Dictionary<string, Sprite> sprites;
     void LoadDictionary()
     {
-        Sprite[] SpritesData = Resources.LoadAll<Sprite>(@"Assets/Resources/Sprites and TileMaps/Weapons/itemsList");
+        Sprite[] SpritesData = Resources.LoadAll<Sprite>("Sprites and TileMaps/Weapons");
         sprites = new Dictionary<string, Sprite>();
 
         for (int i = 0; i < SpritesData.Length; i++)

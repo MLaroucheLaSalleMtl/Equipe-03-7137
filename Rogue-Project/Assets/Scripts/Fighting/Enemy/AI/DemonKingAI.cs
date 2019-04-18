@@ -86,12 +86,12 @@ public class DemonKingAI
     }
     private void ObliterateAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        
-        Time.deltaTime 
-        for(int i = 0; i < )
-        {
 
-        }
+        //Time.deltaTime
+        //for(int i = 0; i < )
+        //{
+
+        //}
         PBS.currentHP -= EBC.currentAttack * HIGHER_CRITICAL;
     }
     private void DeadlyAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
