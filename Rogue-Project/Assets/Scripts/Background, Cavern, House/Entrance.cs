@@ -19,7 +19,7 @@ public class Entrance : MonoBehaviour
         else if (collision.gameObject.tag == "Player" && gameObject.tag == "CabinEntry")
         {
             print("colliding with cabin");
-            FindObjectOfType<AudioManager>().StopPlay("OnHouse");
+            FindObjectOfType<AudioManager>().VariantPlay("OnHouse");
             EntryManager.CabinEntry(ref collision);
         }
         else if (collision.gameObject.tag == "Player" && gameObject.tag == "CavernExit")

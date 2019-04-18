@@ -153,8 +153,9 @@ public class GameManager : MonoBehaviour
         }
         switch (currentState)
         {
+            
             case (GameState.GAMEPLAY):
-
+                OptionsPannel.SetActive(false); 
                 if (isWalking)
                 {
                     vicinityEnemy();
