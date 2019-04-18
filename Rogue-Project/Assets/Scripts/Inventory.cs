@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public const int AMOUNT_OF_EQUIPPED_ARMOURS = 0;
 
     GameManager gameManager;
-    public static Inventory inventory;
+    public static Inventory inventory = new Inventory();
     public Button[] slot;
     public Image[] iconItem;
 
@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
     {
 
     }
-    //an idea : instantiate all items in the loadallitems, and then delete them when out of the inventory
+    //an idea : instantiate all items in the loadallitems, and then delete them when out of the inventory attention TODO put the action taskbar in every slot
     void Update()
     {
         //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
