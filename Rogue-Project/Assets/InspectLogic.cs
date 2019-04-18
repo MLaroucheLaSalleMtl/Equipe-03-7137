@@ -7,7 +7,7 @@ public class InspectLogic : MonoBehaviour
 {
     public Text text;
     public EnemyStateMachine esm;
-   
+    public Button returno;
 
     // Update is called once per frame
     void Update()
