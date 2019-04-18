@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PItemInfo : MonoBehaviour
 {
     GameManager gameManager;
+    Inventory inventory;
 
     public int slotID;
     public GameObject objectSlot;
@@ -25,7 +26,8 @@ public class PItemInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = FindObjectOfType(typeof(GameManager)) as GameManager;    
+        gameManager = FindObjectOfType(typeof(GameManager)) as GameManager;
+        inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
     }
 
     // Update is called once per frame
@@ -34,13 +36,13 @@ public class PItemInfo : MonoBehaviour
         
     }
 
-    //public void loadItemInfo()
-    //{
-    //    Item itemInfo = objectSlot.GetComponent<Item>();
-    //    int itemId = itemInfo.id;
-
-    //    itemName.text = gameManager.name[itemId];
-    //    itemImg.sprite = weapon.image[itemId];
-    //    itemType.text = WeaponType[itemId];
-    //}
+    public void loadItemInfo()
+    {
+        //Item itemInfo = objectSlot.GetComponent<Item>();
+        ////int itemId = weapon.id;
+        //itemImg.sprite = inventory.allImages[slotID];
+        //itemName.text = inventory.inventoryItem[slotID].name;
+        
+        //itemType.text = WeaponType[itemId];
+    }
 }
