@@ -186,7 +186,7 @@ public class ObjectControllerFactory : ObjectFactory
         {
             if (randomPotionType == 0)
             {
-                Potion potionTemp = new Potion($"{potionType.ToString()}", NewStats(levelMC.level), Potion.SpritePotion(potionType.ToString()), (PotionType)randomPotionType, false, id);
+                Potion potionTemp = new Potion($"{potionType.ToString()}", NewStats(levelMC.level), GetSpriteByName(potionType.ToString()), (PotionType)randomPotionType, false, id);
                 items.Add(potionTemp);
                 Debug.Log($"Lootbox {potionTemp.ToString()} {potionTemp.baseStats} {potionTemp.ToString()} {(PotionType)randomPotionType} {id.ToString()}");
                 ItemXML.SaveItem(potionTemp);
@@ -196,14 +196,14 @@ public class ObjectControllerFactory : ObjectFactory
         {
             if (randomWeapType == 0)
             {
-                MeleeWeapon weaponTemp = new MeleeWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), MeleeWeapon.SpriteMeleeWeapon(weaponName.ToString()), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass, false, id);
+                MeleeWeapon weaponTemp = new MeleeWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), GetSpriteByName(weaponName.ToString()), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass, false, id);
                 items.Add(weaponTemp);
                 Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass} {id.ToString()}");
                 ItemXML.SaveItem(weaponTemp);
             }
             else if (randomWeapType == 1)
             {
-                DistanceWeapon weaponTemp = new DistanceWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), DistanceWeapon.SpriteDistanceWeapon(weaponName.ToString()), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass, false, id);
+                DistanceWeapon weaponTemp = new DistanceWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), GetSpriteByName(weaponName.ToString()), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass, false, id);
                 items.Add(weaponTemp);
                 Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(DistanceClass)randomWeapClass} {id.ToString()}");
                 ItemXML.SaveItem(weaponTemp);
@@ -211,12 +211,32 @@ public class ObjectControllerFactory : ObjectFactory
         }
         void MakeFullArmor(int id)
         {
-            Armor armorTemp = new Armor($"{armorName.ToString()} {armorTypeName.ToString()}", NewStats(levelMC.level), Armor.SpriteArmor(armorName.ToString()), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass, false, id);
+            Armor armorTemp = new Armor($"{armorName.ToString()} {armorTypeName.ToString()}", NewStats(levelMC.level), GetSpriteByName(armorName.ToString()), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass, false, id);
             items.Add(armorTemp);
             Debug.Log($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass} {id.ToString()}");
             ItemXML.SaveItem(armorTemp);
         }
         return items.ToArray();
+    }
+    static Dictionary<string, Sprite> sprites;
+    void LoadDictionary()
+    {
+        Sprite[] SpritesData = Resources.LoadAll<Sprite>(@"Assets/Resources/Sprites and TileMaps/Weapons/itemsList");
+        sprites = new Dictionary<string, Sprite>();
+
+        for (int i = 0; i < SpritesData.Length; i++)
+        {
+            sprites.Add(SpritesData[i].name, SpritesData[i]);
+        }
+    }
+
+    public static Sprite GetSpriteByName(string name)
+    {
+        if (sprites.ContainsKey(name))
+        {
+            return sprites[name];
+        }
+        return null;
     }
 }
 

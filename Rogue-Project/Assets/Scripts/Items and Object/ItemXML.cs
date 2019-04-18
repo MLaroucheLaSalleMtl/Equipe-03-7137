@@ -157,26 +157,26 @@ public static class ItemXML
     public static void LoadAllItems(ref List<Armor> armors, ref List<MeleeWeapon> melees, ref List<DistanceWeapon> distances, ref List<Potion> potions)
     {
         armors = LoadArmors();
-        melees = LoadMeleeWeapons();
-        distances = LoadDistanceWeapons();
+        melees = LoadMelees();
+        distances = LoadDistances();
         potions = LoadPotions();
         
-        foreach (var armor in armors)
-        {
-            UnityEngine.Object.Instantiate(armor);
-        }
-        foreach (var melee in melees)
-        {
-            GameObject.Instantiate(melee);
-        }
-        foreach (var distance in distances)
-        {
-            GameObject.Instantiate(distance);
-        }
-        foreach (var potion in potions)
-        {
-            GameObject.Instantiate(potion);
-        }
+        //foreach (var armor in armors)
+        //{
+        //    UnityEngine.Object.Instantiate(armor);
+        //}
+        //foreach (var melee in melees)
+        //{
+        //    UnityEngine.Object.Instantiate(melee);
+        //}
+        //foreach (var distance in distances)
+        //{
+        //    UnityEngine.Object.Instantiate(distance);
+        //}
+        //foreach (var potion in potions)
+        //{
+        //    UnityEngine.Object.Instantiate(potion);
+        //}
     }
     public static List<Armor> LoadArmors()
     {
@@ -214,47 +214,75 @@ public static class ItemXML
         }
         return items;
     }
-    public static List<MeleeWeapon> LoadMeleeWeapons()
+    public static List<MeleeWeapon> LoadMelees()
     {
         //get all items
         XDocument itemsDoc = XDocument.Load(@"Assets/Databases/Database/equipment.xml");
-        var count = itemsDoc.Descendants("meleeWeapon").Count();
+        int count = 0;
+        for (int i = 0; i < 12; i++)
+        {
+            count += itemsDoc.Descendants($"meleeWeapon{i}").Count();
+        }
 
         List<MeleeWeapon> items = new List<MeleeWeapon>();
 
         for (int i = 0; i < count; i++)
         {
-            items[i].name =                 itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("name").Value).ToString();
-            items[i].baseStats.Attack =     int.Parse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("attack").Value).ToString());
-            items[i].baseStats.Defense =    int.Parse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("defense").Value).ToString());
-            items[i].baseStats.Support =    int.Parse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("support").Value).ToString());
-            items[i].image =                MeleeWeapon.SpriteMeleeWeapon(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("image").Value).ToString());
-            items[i].weaponType =           (WeaponType)Enum.Parse(typeof(WeaponType), itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("objectType").Value).ToString());
-            items[i].meleeClass =           (MeleeClass)Enum.Parse(typeof(MeleeClass), itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("objectClass").Value).ToString());
-            items[i].equipped =             bool.Parse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("equipped").Value).ToString());
-            items[i].id =                   int.Parse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("id").Value).ToString());
+            int.TryParse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("attack").Value).ToString(), out int attack);
+            int.TryParse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("defense").Value).ToString(), out int defense);
+            int.TryParse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("support").Value).ToString(), out int support);
+            Enum.TryParse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("objectType").Value).ToString(), out WeaponType weaponType);
+            Enum.TryParse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("objectClass").Value).ToString(), out MeleeClass meleeClass);
+            bool.TryParse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("equipped").Value).ToString(), out bool equipped);
+            int.TryParse(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("id").Value).ToString(), out int id);
+
+            Debug.Log(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("image").Value).ToString());
+            items.Add(new MeleeWeapon(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("name").Value).ToString(),
+                                stats: new Statistics()
+                                {
+                                    Attack = attack,
+                                    Defense = defense,
+                                    Support = support
+                                },
+                                MeleeWeapon.SpriteMeleeWeapon(itemsDoc.Descendants($"meleeWeapon{i}").Select(element => element.Attribute("image").Value).ToString()),
+                                weaponType, meleeClass, equipped, id));
+            Debug.Log(items[i]);
         }
         return items;
     }
-    public static List<DistanceWeapon> LoadDistanceWeapons()
+    public static List<DistanceWeapon> LoadDistances()
     {
         //get all items
         XDocument itemsDoc = XDocument.Load(@"Assets/Databases/Database/equipment.xml");
-        var count = itemsDoc.Descendants("distanceWeapon").Count();
+        int count = 0;
+        for (int i = 0; i < 12; i++)
+        {
+            count += itemsDoc.Descendants($"distanceWeapon{i}").Count();
+        }
 
         List<DistanceWeapon> items = new List<DistanceWeapon>();
 
         for (int i = 0; i < count; i++)
         {
-            items[i].name =                 itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("name").Value).ToString();
-            items[i].baseStats.Attack =     int.Parse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("attack").Value).ToString());
-            items[i].baseStats.Defense =    int.Parse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("defense").Value).ToString());
-            items[i].baseStats.Support =    int.Parse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("support").Value).ToString());
-            items[i].image =                MeleeWeapon.SpriteMeleeWeapon(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("image").Value).ToString());
-            items[i].weaponType =           (WeaponType)Enum.Parse(typeof(WeaponType), itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("objectType").Value).ToString());
-            items[i].distanceClass =        (DistanceClass)Enum.Parse(typeof(MeleeClass), itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("objectClass").Value).ToString());
-            items[i].equipped =             bool.Parse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("equipped").Value).ToString());
-            items[i].id =                   int.Parse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("id").Value).ToString());
+            int.TryParse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("attack").Value).ToString(), out int attack);
+            int.TryParse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("defense").Value).ToString(), out int defense);
+            int.TryParse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("support").Value).ToString(), out int support);
+            Enum.TryParse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("objectType").Value).ToString(), out WeaponType weaponType);
+            Enum.TryParse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("objectClass").Value).ToString(), out DistanceClass distanceClass);
+            bool.TryParse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("equipped").Value).ToString(), out bool equipped);
+            int.TryParse(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("id").Value).ToString(), out int id);
+
+            Debug.Log(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("image").Value).ToString());
+            items.Add(new DistanceWeapon(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("name").Value).ToString(),
+                                stats: new Statistics()
+                                {
+                                    Attack = attack,
+                                    Defense = defense,
+                                    Support = support
+                                },
+                                DistanceWeapon.SpriteDistanceWeapon(itemsDoc.Descendants($"distanceWeapon{i}").Select(element => element.Attribute("image").Value).ToString()),
+                                weaponType, distanceClass, equipped, id));
+            Debug.Log(items[i]);
         }
         return items;
     }
@@ -262,20 +290,34 @@ public static class ItemXML
     {
         //get all items
         XDocument itemsDoc = XDocument.Load(@"Assets/Databases/Database/equipment.xml");
-        var count = itemsDoc.Descendants("potion").Count();
+        int count = 0;
+        for (int i = 0; i < 12; i++)
+        {
+            count += itemsDoc.Descendants($"potion{i}").Count();
+        }
 
         List<Potion> items = new List<Potion>();
 
         for (int i = 0; i < count; i++)
         {
-            items[i].name =                 itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("name").Value).ToString();
-            items[i].baseStats.Attack =     int.Parse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("attack").Value).ToString());
-            items[i].baseStats.Defense =    int.Parse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("defense").Value).ToString());
-            items[i].baseStats.Support =    int.Parse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("support").Value).ToString());
-            items[i].image =                MeleeWeapon.SpriteMeleeWeapon(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("image").Value).ToString());
-            items[i].potionType =           (PotionType)Enum.Parse(typeof(WeaponType), itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("objectType").Value).ToString());
-            items[i].equipped =             bool.Parse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("equipped").Value).ToString());
-            items[i].id =                   int.Parse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("id").Value).ToString());
+            int.TryParse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("attack").Value).ToString(), out int attack);
+            int.TryParse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("defense").Value).ToString(), out int defense);
+            int.TryParse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("support").Value).ToString(), out int support);
+            Enum.TryParse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("objectType").Value).ToString(), out PotionType potionType);
+            bool.TryParse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("equipped").Value).ToString(), out bool equipped);
+            int.TryParse(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("id").Value).ToString(), out int id);
+
+            Debug.Log(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("image").Value).ToString());
+            items.Add(new Potion(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("name").Value).ToString(),
+                                stats: new Statistics()
+                                {
+                                    Attack = attack,
+                                    Defense = defense,
+                                    Support = support
+                                },
+                                Potion.SpritePotion(itemsDoc.Descendants($"potion{i}").Select(element => element.Attribute("image").Value).ToString()),
+                                potionType, equipped, id));
+            Debug.Log(items[i]);
         }
         return items;
     }

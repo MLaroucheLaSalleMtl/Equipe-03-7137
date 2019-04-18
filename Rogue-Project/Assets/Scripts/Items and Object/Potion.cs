@@ -20,6 +20,6 @@ public class Potion : ObjectControllerFactory
 
     public static Sprite SpritePotion(string image)
     {
-        return Resources.Load($"{image}", typeof(Sprite)) as Sprite;
+        return Resources.Load(@"Assets/Resources/Sprites and TileMaps/Weapons/itemsList.png/" + image, typeof(Sprite)) as Sprite;
     }
 }

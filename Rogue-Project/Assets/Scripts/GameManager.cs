@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         {
             levels[1].SetActive(true);
         }
+        MainCharacter = GameObject.Find("MainCharacter");
 
         if (!GameObject.Find("MainCharacter"))
         {

@@ -49,12 +49,6 @@ public class Inventory : MonoBehaviour
         inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
         //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
         armor = ItemXML.LoadArmors();
-        foreach (var a in armor)
-        {
-            Debug.Log(a);
-            Instantiate(a);
-
-        }
 
         int slotId = AMOUNT_OF_EQUIPPED_ARMOURS;
         foreach(GameObject item in inventoryItem)
