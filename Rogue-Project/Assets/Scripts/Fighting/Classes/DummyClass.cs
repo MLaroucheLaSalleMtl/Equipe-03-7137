@@ -40,9 +40,9 @@ public abstract class DummyBaseClass : MonoBehaviour
     public Statistics baseStats = new Statistics();
 
     //Image for items
-    public string image;
+    public Sprite image;
 
-    public DummyBaseClass(string name, Statistics baseStats, string image)
+    public DummyBaseClass(string name, Statistics baseStats, Sprite image)
     {
         this.name = name;
         this.baseStats = baseStats;

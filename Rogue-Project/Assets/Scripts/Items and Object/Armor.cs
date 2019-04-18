@@ -10,7 +10,7 @@ public class Armor : ObjectControllerFactory
     public ArmorType armorType;
     public ArmorClass armorClass;
 
-    public Armor(string name, Statistics stats, string image, ArmorType armorType, ArmorClass armorClass, bool equipped, int id) : base(name, stats, image, equipped, id)
+    public Armor(string name, Statistics stats, Sprite image, ArmorType armorType, ArmorClass armorClass, bool equipped, int id) : base(name, stats, image, equipped, id)
     {
         this.name = name;
         baseStats = stats;
@@ -19,5 +19,17 @@ public class Armor : ObjectControllerFactory
         this.armorClass = armorClass;
         this.equipped = equipped;
         this.id = id;
+    }
+
+    public static Sprite SpriteArmor(string image)
+    {
+        if (image == "Head")
+        {
+            return Inventory.inventory.allImages[7];
+        }
+        else
+        {
+            return Inventory.inventory.allImages[0];
+        }
     }
 }

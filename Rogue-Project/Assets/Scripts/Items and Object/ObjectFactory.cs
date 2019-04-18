@@ -9,7 +9,7 @@ public class Item : DummyBaseClass
 {
     public int iconId;
 
-    public Item(string name, int iconId, Statistics stats, string image) : base(name, stats, image)
+    public Item(string name, Statistics stats, Sprite image, int iconId) : base(name, stats, image)
     {
         this.name = name;
         baseStats = stats;
@@ -56,7 +56,7 @@ public abstract class ObjectFactory : Item
 {
     public bool equipped;
     public int id;
-    public ObjectFactory(string name, Statistics stats, string image, bool equipped, int id) : base (name, id, stats, image)
+    public ObjectFactory(string name, Statistics stats, Sprite image, bool equipped, int id) : base (name, stats, image, id)
     {
         this.name = name;
         baseStats = stats;
@@ -78,7 +78,7 @@ public class ObjectControllerFactory : ObjectFactory
     ArmorClass armorClass;
     static int id = ItemXML.ident;
 
-    public ObjectControllerFactory(string name, Statistics stats, string image, bool equipped, int id) : base(name, stats, image, equipped, id)
+    public ObjectControllerFactory(string name, Statistics stats, Sprite image, bool equipped, int id) : base(name, stats, image, equipped, id)
     {
         base.name = name;
         baseStats = stats;
@@ -183,7 +183,7 @@ public class ObjectControllerFactory : ObjectFactory
         {
             if (randomPotionType == 0)
             {
-                Potion potionTemp = new Potion($"{potionType.ToString()}", NewStats(levelMC.level), potionType.ToString(), (PotionType)randomPotionType, false, id);
+                Potion potionTemp = new Potion($"{potionType.ToString()}", NewStats(levelMC.level), Potion.SpritePotion(potionType.ToString()), (PotionType)randomPotionType, false, id);
                 items.Add(potionTemp);
                 Debug.Log($"Lootbox {potionTemp.ToString()} {potionTemp.baseStats} {potionTemp.ToString()} {(PotionType)randomPotionType} {id.ToString()}");
                 ItemXML.SaveItem(potionTemp);
@@ -193,14 +193,14 @@ public class ObjectControllerFactory : ObjectFactory
         {
             if (randomWeapType == 0)
             {
-                MeleeWeapon weaponTemp = new MeleeWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass, false, id);
+                MeleeWeapon weaponTemp = new MeleeWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), MeleeWeapon.SpriteMeleeWeapon(weaponName.ToString()), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass, false, id);
                 items.Add(weaponTemp);
                 Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass} {id.ToString()}");
                 ItemXML.SaveItem(weaponTemp);
             }
             else if (randomWeapType == 1)
             {
-                DistanceWeapon weaponTemp = new DistanceWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), weaponName.ToString(), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass, false, id);
+                DistanceWeapon weaponTemp = new DistanceWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), DistanceWeapon.SpriteDistanceWeapon(weaponName.ToString()), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass, false, id);
                 items.Add(weaponTemp);
                 Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(DistanceClass)randomWeapClass} {id.ToString()}");
                 ItemXML.SaveItem(weaponTemp);
@@ -208,7 +208,7 @@ public class ObjectControllerFactory : ObjectFactory
         }
         void MakeFullArmor(int id)
         {
-            Armor armorTemp = new Armor($"{armorName.ToString()} {armorTypeName.ToString()}", NewStats(levelMC.level), armorName.ToString(), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass, false, id);
+            Armor armorTemp = new Armor($"{armorName.ToString()} {armorTypeName.ToString()}", NewStats(levelMC.level), Armor.SpriteArmor(armorName.ToString()), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass, false, id);
             items.Add(armorTemp);
             Debug.Log($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass} {id.ToString()}");
             ItemXML.SaveItem(armorTemp);
