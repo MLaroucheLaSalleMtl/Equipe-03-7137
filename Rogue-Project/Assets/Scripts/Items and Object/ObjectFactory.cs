@@ -155,17 +155,17 @@ public class ObjectControllerFactory : ObjectFactory
                 if (randomItem == 1)
                 {
                     Debug.Log("armor");
-                    MakeFullArmor(id);
+                    //MakeFullArmor(id);
                 }
                 else if (randomItem == 0)
                 {
                     Debug.Log("weapon");
-                    MakeFullWeapon(id);
+                    //MakeFullWeapon(id);
                 }
                 else if (randomItem == 2)
                 {
                     Debug.Log("potion");
-                    MakePotion(id);
+                    //MakePotion(id);
                 }
             }
             else
@@ -182,40 +182,40 @@ public class ObjectControllerFactory : ObjectFactory
             statistics.Support += random.Next(1, level + 1);
             return statistics;
         }
-        void MakePotion(int id)
-        {
-            if (randomPotionType == 0)
-            {
-                Potion potionTemp = new Potion($"{potionType.ToString()}", NewStats(levelMC.level), GetSpriteByName(potionType.ToString()), (PotionType)randomPotionType, false, id);
-                items.Add(potionTemp);
-                Debug.Log($"Lootbox {potionTemp.ToString()} {potionTemp.baseStats} {potionTemp.ToString()} {(PotionType)randomPotionType} {id.ToString()}");
-                ItemXML.SaveItem(potionTemp);
-            }
-        }
-        void MakeFullWeapon(int id)
-        {
-            if (randomWeapType == 0)
-            {
-                MeleeWeapon weaponTemp = new MeleeWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), GetSpriteByName(weaponName.ToString()), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass, false, id);
-                items.Add(weaponTemp);
-                Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass} {id.ToString()}");
-                ItemXML.SaveItem(weaponTemp);
-            }
-            else if (randomWeapType == 1)
-            {
-                DistanceWeapon weaponTemp = new DistanceWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), GetSpriteByName(weaponName.ToString()), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass, false, id);
-                items.Add(weaponTemp);
-                Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(DistanceClass)randomWeapClass} {id.ToString()}");
-                ItemXML.SaveItem(weaponTemp);
-            }
-        }
-        void MakeFullArmor(int id)
-        {
-            Armor armorTemp = new Armor($"{armorName.ToString()} {armorTypeName.ToString()}", NewStats(levelMC.level), GetSpriteByName(armorName.ToString()), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass, false, id);
-            items.Add(armorTemp);
-            Debug.Log($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass} {id.ToString()}");
-            ItemXML.SaveItem(armorTemp);
-        }
+        //void MakePotion(int id)
+        //{
+        //    if (randomPotionType == 0)
+        //    {
+        //        Potion potionTemp = new Potion($"{potionType.ToString()}", NewStats(levelMC.level), GetSpriteByName(potionType.ToString()), (PotionType)randomPotionType, false, id);
+        //        items.Add(potionTemp);
+        //        Debug.Log($"Lootbox {potionTemp.ToString()} {potionTemp.baseStats} {potionTemp.ToString()} {(PotionType)randomPotionType} {id.ToString()}");
+        //        ItemXML.SaveItem(potionTemp);
+        //    }
+        //}
+        //void MakeFullWeapon(int id)
+        //{
+        //    if (randomWeapType == 0)
+        //    {
+        //        MeleeWeapon weaponTemp = new MeleeWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), GetSpriteByName(weaponName.ToString()), (WeaponType)randomWeapType, (MeleeClass)randomWeapClass, false, id);
+        //        items.Add(weaponTemp);
+        //        Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(MeleeClass)randomWeapClass} {id.ToString()}");
+        //        ItemXML.SaveItem(weaponTemp);
+        //    }
+        //    else if (randomWeapType == 1)
+        //    {
+        //        DistanceWeapon weaponTemp = new DistanceWeapon($"{weaponName.ToString()}", NewStats(levelMC.level), GetSpriteByName(weaponName.ToString()), (WeaponType)randomWeapType, (DistanceClass)randomWeapClass, false, id);
+        //        items.Add(weaponTemp);
+        //        Debug.Log($"Lootbox {weaponName.ToString()} {NewStats(levelMC.level)} {weaponName.ToString()} {(WeaponType)randomWeapType} {(DistanceClass)randomWeapClass} {id.ToString()}");
+        //        ItemXML.SaveItem(weaponTemp);
+        //    }
+        //}
+        //void MakeFullArmor(int id)
+        //{
+        //    Armor armorTemp = new Armor($"{armorName.ToString()} {armorTypeName.ToString()}", NewStats(levelMC.level), GetSpriteByName(armorName.ToString()), (ArmorType)randomArmorType, (ArmorClass)randomArmorClass, false, id);
+        //    items.Add(armorTemp);
+        //    Debug.Log($"Lootbox {armorName.ToString()} {NewStats(levelMC.level)} {armorName.ToString()} {(ArmorType)randomArmorType} {(ArmorClass)randomArmorClass} {id.ToString()}");
+        //    ItemXML.SaveItem(armorTemp);
+        //}
         return items.ToArray();
     }
     static Dictionary<string, Sprite> sprites;
@@ -230,14 +230,14 @@ public class ObjectControllerFactory : ObjectFactory
         }
     }
 
-    public static Sprite GetSpriteByName(string name)
-    {
-        if (sprites.ContainsKey(name))
-        {
-            return sprites[name];
-        }
-        return null;
-    }
+    //public static Sprite GetSpriteByName(string name)
+    //{
+    //    if (sprites.ContainsKey(name))
+    //    {
+    //        return sprites[name];
+    //    }
+    //    return null;
+    //}
 }
 
 /*

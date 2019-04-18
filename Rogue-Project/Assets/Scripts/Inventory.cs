@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
+        //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
     }
     //an idea : instantiate all items in the loadallitems, and then delete them when out of the inventory attention TODO put the action taskbar in every slot
     void Update()
@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
         }
         inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
         //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
-        armor = ItemXML.LoadArmors();
+        //armor = ItemXML.LoadArmors();
 
         int slotId = AMOUNT_OF_EQUIPPED_ARMOURS;
         foreach(GameObject item in inventoryItem)
