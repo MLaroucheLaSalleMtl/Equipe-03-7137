@@ -154,14 +154,17 @@ public class ObjectControllerFactory : ObjectFactory
                 Debug.Log("au moins un objet devrait être looté");
                 if (randomItem == 1)
                 {
+                    Debug.Log("armor");
                     MakeFullArmor(id);
                 }
                 else if (randomItem == 0)
                 {
+                    Debug.Log("weapon");
                     MakeFullWeapon(id);
                 }
                 else if (randomItem == 2)
                 {
+                    Debug.Log("potion");
                     MakePotion(id);
                 }
             }

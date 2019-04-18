@@ -10,4 +10,8 @@
   <meleeWeapon0 name="Spear" attack="1" defense="1" support="1" image="Spear" objectType="Melee" objectClass="Spear" equipped="False" id="2" />
   <armor0 name="Steel Head" attack="1" defense="2" support="1" image="Steel" objectType="Head" objectClass="Steel" equipped="False" id="3" />
   <potion0 name="Attack" attack="3" defense="2" support="3" image="Attack" objectType="Attack" equipped="False" id="4" />
+  <armor0 name="Iron Armor" attack="2" defense="3" support="2" image="Armor (UnityEngine.Sprite)" objectType="Armor" objectClass="Iron" equipped="False" id="1" />
+  <meleeWeapon0 name="DoubleAxe" attack="2" defense="1" support="3" image="DoubleAxe (UnityEngine.Sprite)" objectType="Melee" objectClass="DoubleAxe" equipped="False" id="2" />
+  <meleeWeapon1 name="Hammer" attack="1" defense="2" support="2" image="Hammer (UnityEngine.Sprite)" objectType="Melee" objectClass="Hammer" equipped="False" id="3" />
+  <potion0 name="Attack" attack="3" defense="1" support="3" image="Potion (UnityEngine.Sprite)" objectType="Attack" equipped="False" id="4" />
 </catalog>

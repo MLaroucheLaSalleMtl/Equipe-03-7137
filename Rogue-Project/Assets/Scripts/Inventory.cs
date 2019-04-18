@@ -25,12 +25,12 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-
+        ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
     }
     //an idea : instantiate all items in the loadallitems, and then delete them when out of the inventory
     void Update()
     {
-        //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
+
     }
 
     public void loadInventory()
@@ -46,7 +46,7 @@ public class Inventory : MonoBehaviour
         {
             i.sprite = null;
         }
-
+        inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
         //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
         armor = ItemXML.LoadArmors();
         foreach (var a in armor)
@@ -62,7 +62,7 @@ public class Inventory : MonoBehaviour
             GameObject temp = Instantiate(item);
             Item itemInfo = temp.GetComponent<Item>();
             loadedItems.Add(itemInfo);
-            iconItem[slotId].sprite = allImages[itemInfo.iconId];
+            //iconItem[slotId].sprite = allImages[itemInfo.iconId];
             slot[slotId].GetComponent<InventorySlot>().objectSlot = temp;
             slot[slotId].interactable = true;
             iconItem[slotId].gameObject.SetActive(true);

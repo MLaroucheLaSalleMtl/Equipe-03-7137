@@ -23,30 +23,7 @@ public class MeleeWeapon : ObjectControllerFactory
     
     public static Sprite SpriteMeleeWeapon(string image)
     {
-        if (image == "Sword")
-        {
-            return Inventory.inventory.allImages[10];
-        }
-        if (image == "Spear")
-        {
-            return Inventory.inventory.allImages[10];
-        }
-        if (image == "Dagger")
-        {
-            return Inventory.inventory.allImages[4];
-        }
-        if (image == "Hammer")
-        {
-            return Inventory.inventory.allImages[6];
-        }
-        if (image == "Axe")
-        {
-            return Inventory.inventory.allImages[1];
-        }
-        else
-        {
-            return Inventory.inventory.allImages[5];
-        }
+        return Resources.Load($"{image}", typeof(Sprite)) as Sprite;
     }
 }
 
@@ -67,17 +44,6 @@ public class DistanceWeapon : ObjectControllerFactory
     }
     public static Sprite SpriteDistanceWeapon(string image)
     {
-        if (image == "Bow")
-        {
-            return Inventory.inventory.allImages[3];
-        }
-        if (image == "CrossBow")
-        {
-            return Inventory.inventory.allImages[3];
-        }
-        else
-        {
-            return Inventory.inventory.allImages[4];
-        }
+        return Resources.Load($"{image}", typeof(Sprite)) as Sprite;
     }
 }

@@ -23,13 +23,6 @@ public class Armor : ObjectControllerFactory
 
     public static Sprite SpriteArmor(string image)
     {
-        if (image == "Head")
-        {
-            return Inventory.inventory.allImages[7];
-        }
-        else
-        {
-            return Inventory.inventory.allImages[0];
-        }
+        return Resources.Load($"{image}", typeof(Sprite)) as Sprite;
     }
 }

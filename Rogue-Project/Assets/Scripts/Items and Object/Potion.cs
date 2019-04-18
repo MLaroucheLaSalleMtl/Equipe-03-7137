@@ -20,17 +20,6 @@ public class Potion : ObjectControllerFactory
 
     public static Sprite SpritePotion(string image)
     {
-        if (image == "Health")
-        {
-            return Inventory.inventory.allImages[9];
-        }
-        if (image == "Attack")
-        {
-            return Inventory.inventory.allImages[9];
-        }
-        else
-        {
-            return Inventory.inventory.allImages[9];
-        }
+        return Resources.Load($"{image}", typeof(Sprite)) as Sprite;
     }
 }
