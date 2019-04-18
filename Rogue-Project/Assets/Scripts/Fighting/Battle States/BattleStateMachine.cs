@@ -43,8 +43,9 @@ public class BattleStateMachine : MonoBehaviour
         EnemyBaseClass.Goblin(),
         EnemyBaseClass.Orc(),
         EnemyBaseClass.Elf(),
-        EnemyBaseClass.Boss()
+        
     };
+    
 
     //Script Access.//
     private TurnHandler playerChoice;
@@ -136,11 +137,11 @@ public class BattleStateMachine : MonoBehaviour
         // print(Current_Battle_State);
         if (BattleCanvas.activeSelf)
         {
-            if (playersAlive.Count > PLAYER_REMAINING)
+            if (playersAlive.Count > 0)
             {
-                sliderHp.value = (int)(playersAlive[0].PBS.currentHP / playersAlive[0].PBS.baseMP * 100);
+                sliderHp.value = (int)(playersAlive[0].PBS.currentHP / playersAlive[0].PBS.baseHP * 100);
                 sliderMp.value = (int)(playersAlive[0].PBS.currentMP / playersAlive[0].PBS.baseMP * 100);
-                //print($"current hp {playersAlive[0].PBS.currentHP} and {playersAlive[0].PBS.baseMP}");
+                print($"current hp {playersAlive[0].PBS.currentHP} and {playersAlive[0].PBS.baseMP}");
             }
 
             switch (Current_Battle_State)

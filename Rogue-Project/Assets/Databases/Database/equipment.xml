@@ -8,4 +8,14 @@
   <distanceWeapon1 name="Dagger" attack="3" defense="1" support="1" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="3" />
   <potion0 name="Attack" attack="2" defense="3" support="1" image="Attack" objectType="Attack" equipped="False" id="4" />
   <armor0 name="Iron Head" attack="2" defense="2" support="2" image="Iron" objectType="Head" objectClass="Iron" equipped="False" id="3" />
+  <armor0 name="Steel Head" attack="2" defense="1" support="1" image="Steel" objectType="Head" objectClass="Steel" equipped="False" id="1" />
+  <potion0 name="Attack" attack="2" defense="2" support="2" image="Attack" objectType="Attack" equipped="False" id="2" />
+  <distanceWeapon0 name="Axe" attack="1" defense="2" support="1" image="Axe" objectType="Distance" objectClass="4" equipped="False" id="3" />
+  <distanceWeapon0 name="DoubleAxe" attack="2" defense="1" support="2" image="DoubleAxe" objectType="Distance" objectClass="5" equipped="False" id="1" />
+  <distanceWeapon1 name="Dagger" attack="2" defense="1" support="1" image="Dagger" objectType="Distance" objectClass="ThrowDaggers" equipped="False" id="3" />
+  <potion0 name="Attack" attack="2" defense="1" support="1" image="Attack" objectType="Attack" equipped="False" id="4" />
+  <meleeWeapon0 name="DoubleAxe" attack="2" defense="2" support="4" image="DoubleAxe" objectType="Melee" objectClass="DoubleAxe" equipped="False" id="5" />
+  <meleeWeapon1 name="Dagger" attack="5" defense="2" support="5" image="Dagger" objectType="Melee" objectClass="Dagger" equipped="False" id="6" />
+  <armor0 name="Cloth Head" attack="5" defense="3" support="2" image="Cloth" objectType="Head" objectClass="Cloth" equipped="False" id="7" />
+  <distanceWeapon2 name="Spear" attack="4" defense="4" support="3" image="Spear" objectType="Distance" objectClass="CrossBow" equipped="False" id="8" />
 </catalog>
