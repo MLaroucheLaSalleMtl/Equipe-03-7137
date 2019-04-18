@@ -64,7 +64,8 @@ public class BattleStateMachine : MonoBehaviour
     public GameObject[] EnemySlots;
     private Image[] battleImage = new Image[3];
     private Text[] battleText = new Text[3];
-    
+    public Slider sliderHp;
+    public Slider sliderMp;
     public InspectLogic inspLog;
     private RectTransform inspPos;
     //Variable.//
@@ -127,7 +128,13 @@ public class BattleStateMachine : MonoBehaviour
         // print(Current_Battle_State);
         if (BattleCanvas.activeSelf)
         {
-            
+            if (playersAlive.Count > 0)
+            {
+                sliderHp.value = (int)(playersAlive[0].PBS.currentHP / playersAlive[0].PBS.baseMP * 100);
+                sliderMp.value = (int)(playersAlive[0].PBS.currentMP / playersAlive[0].PBS.baseMP * 100);
+                print($"current hp {playersAlive[0].PBS.currentHP} and {playersAlive[0].PBS.baseMP}");
+            }
+
             switch (Current_Battle_State)
             {
                 case BattleState.STARTBATTLE:
