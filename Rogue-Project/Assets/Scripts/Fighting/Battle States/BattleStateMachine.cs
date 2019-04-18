@@ -61,10 +61,12 @@ public class BattleStateMachine : MonoBehaviour
     //Text.//
     public Text[] enemynames;
     public GameObject battleSlots;
+    public GameObject[] EnemySlots;
     private Image[] battleImage = new Image[3];
     private Text[] battleText = new Text[3];
-
+    
     public InspectLogic inspLog;
+    private RectTransform inspPos;
     //Variable.//
     public static bool enemyTurnDone = false;
     bool onlyOnce = false;
@@ -92,6 +94,8 @@ public class BattleStateMachine : MonoBehaviour
         Current_Battle_State = BattleState.STARTBATTLE;
         commandsPanel.SetActive(true);
         targetPanel.SetActive(false);
+        inspPos = inspLog.GetComponent<RectTransform>();
+        
     }
     void Start()
     {
@@ -159,6 +163,7 @@ public class BattleStateMachine : MonoBehaviour
 
                     break;
                 case BattleState.PERFORMACTION:
+                    print("Input is:  " + playersAlive[0].input);
                     switch (playersAlive[0].input)
                     {
                         case PlayerInput.ATTACK: Current_Battle_State = BattleState.CHOOSETARGET; break;
@@ -168,7 +173,8 @@ public class BattleStateMachine : MonoBehaviour
                             Current_Battle_State = BattleState.END_TURN;
                             break;
                         case PlayerInput.INSPECT:
-                            inspLog.gameObject.SetActive(true);
+                            inspLog.returno.gameObject.SetActive(true);
+                            
                            Current_Battle_State = BattleState.CHOOSETARGET; break;
                         case PlayerInput.USE_ITEM: break;
                         case PlayerInput.USE_SKILLS: break;
@@ -208,6 +214,10 @@ public class BattleStateMachine : MonoBehaviour
                                 
                                 inspLog.esm = enemiesAlive[selectedTarget];
                                 inspLog.gameObject.SetActive(true);
+                                
+                                Vector3 enemyPos = EnemySlots[selectedTarget].transform.position;
+
+                                inspPos.position = new Vector3(enemyPos.x+88,enemyPos.y,enemyPos.z);
                                 break;
                         }
                     }
@@ -281,6 +291,7 @@ public class BattleStateMachine : MonoBehaviour
                     else {
                         Current_Battle_State = BattleState.ORDERING;
                         playersAlive[0].isDefending = false;
+                        selectedTarget = -1;
                     }
                     if (Exit) {
                         Current_Battle_State = BattleState.STARTBATTLE;
@@ -403,6 +414,8 @@ public class BattleStateMachine : MonoBehaviour
     private void Commands()
     {
         commandsPanel.SetActive(true);
+        targetPanel.SetActive(false);
+       
     }
 
     public void SwitchToTargeting()
@@ -415,6 +428,11 @@ public class BattleStateMachine : MonoBehaviour
     {
         commandsPanel.SetActive(true);
         targetPanel.SetActive(false);
+        inspLog.returno.gameObject.SetActive(false);
+        inspLog.gameObject.SetActive(false);
+        selectedTarget = -1;
+        Current_Battle_State = BattleState.PERFORMACTION;
+        playersAlive[0].input = PlayerInput.NULL;
     }
     #endregion
     #region User Input
