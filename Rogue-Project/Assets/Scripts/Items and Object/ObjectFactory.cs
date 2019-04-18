@@ -7,11 +7,14 @@ using UnityEngine;
 
 public class Item : DummyBaseClass
 {
-    public Item(string name, Statistics stats, string image) : base(name, stats, image)
+    public int iconId;
+
+    public Item(string name, int iconId, Statistics stats, string image) : base(name, stats, image)
     {
         this.name = name;
         baseStats = stats;
         this.image = image;
+        this.iconId = iconId;
     }
 
     //this is just to make the rest more readable (inheriting from item, instead of dummybaseclass)
@@ -53,7 +56,7 @@ public abstract class ObjectFactory : Item
 {
     public bool equipped;
     public int id;
-    public ObjectFactory(string name, Statistics stats, string image, bool equipped, int id) : base (name, stats, image)
+    public ObjectFactory(string name, Statistics stats, string image, bool equipped, int id) : base (name, id, stats, image)
     {
         this.name = name;
         baseStats = stats;

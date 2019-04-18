@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+
+    public const int AMOUNT_OF_EQUIPPED_ARMOURS = 3;
+
     GameManager gameManager;
 
     public Button[] slot;
@@ -39,20 +42,15 @@ public class Inventory : MonoBehaviour
             i.sprite = null;
         }
 
-        int slotId = 0;
+        int slotId = AMOUNT_OF_EQUIPPED_ARMOURS;
         foreach(GameObject item in inventoryItem)
         {
             GameObject temp = Instantiate(item);
             Item itemInfo = temp.GetComponent<Item>();
-            Item[] items = ItemXML.LoadArmors().ToArray();
-            foreach (Item i in items)
-            {
-                loadedItems.Add(i);
-            }
+            loadedItems.Add(itemInfo);
+            iconItem[slotId].sprite = allImages[itemInfo.iconId];
             slot[slotId].GetComponent<InventorySlot>().objectSlot = temp;
             slot[slotId].interactable = true;
-
-            //iconItem[slotId].sprite = GameManager.inventoryImage[itemInfo.itemId];  // prend l'image de la liste des items pour charger dans le bouton
             iconItem[slotId].gameObject.SetActive(true);
             slotId++;
         }
