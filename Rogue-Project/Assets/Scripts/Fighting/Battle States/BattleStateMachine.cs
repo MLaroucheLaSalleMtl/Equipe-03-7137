@@ -43,7 +43,7 @@ public class BattleStateMachine : MonoBehaviour
         EnemyBaseClass.Goblin(),
         EnemyBaseClass.Orc(),
         EnemyBaseClass.Elf(),
-        EnemyBaseClass.
+        EnemyBaseClass.Boss()
     };
 
     //Script Access.//

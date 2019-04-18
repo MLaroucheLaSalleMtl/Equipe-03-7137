@@ -9,28 +9,18 @@ public class DemonKingAI
     readonly ColorHue ColorHues;
 
     //Consts.//
-    //Attack Decision Maker.//
-    private const int NORMAL_PERCENTAGE_MAX = 60;
-    private const int OTHER_PERCENTAGE_MAX = 61;
+    //Chance of each attacks.//
+    private const int NORMAL_PERCENTAGE_MAX = 0;
+    private const int OTHER_PERCENTAGE_MAX = 1;
 
-    private const int MIN_PERCENTAGE_CRIT = 51;
-    private const int MAX_PERCENTAGE_CRIT = 90;
+    //Smite related.//
     private const int SMITE_NECESSARY_HP = 50;
 
-    private const float WAIT_TIME = 20.0F;
-    private const float ATTACK_TIME = 5.0F;
-
-
-    //Crits.//
-    private const float REGULAR_CRITICAL = 1.25F;
-    private const float HIGHER_CRITICAL = 1.75F;
-    private const float HIGHEST_CRITICAL = 2.25F;
-
-    //Bool.//
-    private bool isInvisible = false;
-
-    private int timer = 0;
-
+    //Obliterate related.//
+    private const int OBLITERATE_WAIT = 1000;
+    private const int OBLITERATE_SUCCESSIVE = 3;
+    private const float OBLITERATE_MULTI_INCREMENT = 0.75F;
+   
     //GameObjects.//
     public GameObject DemonKing;
     public Image DemonKingImage;
@@ -55,13 +45,6 @@ public class DemonKingAI
     {
         int RandomValue = attackRandomGen();
 
-        if (RandomValue <= NORMAL_PERCENTAGE_MAX)
-        {
-            Debug.Log("Normal Attack.");
-            NormalAttack(EBC, PBS);
-            return;
-        }
-
         if (PBS.currentHP <= SMITE_NECESSARY_HP)
         {
             Debug.Log("Smite.");
@@ -69,12 +52,22 @@ public class DemonKingAI
             return;
         }
 
-        if(RandomValue <= OTHER_PERCENTAGE_MAX)
+        if (RandomValue <= NORMAL_PERCENTAGE_MAX)
         {
+            Debug.Log("Normal Attack.");
+            NormalAttack(EBC, PBS);
+            return;
+        }
 
+        if (RandomValue >= OTHER_PERCENTAGE_MAX)
+        {
+            Debug.Log("Obliterate attack.");
+            ObliterateAttack(EBC, PBS);
+            return;
         }
     }
     #endregion
+
     #region Types of Attacks
     private void NormalAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
@@ -86,19 +79,14 @@ public class DemonKingAI
     }
     private void ObliterateAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
     {
-        
-        Time.deltaTime 
-        for(int i = 0; i < )
-        {
+        float multiplier = 1;
 
+        for(int i = 0; i < OBLITERATE_SUCCESSIVE;i++ )
+        { 
+            PBS.currentHP -= EBC.currentAttack * multiplier;
+            multiplier += OBLITERATE_MULTI_INCREMENT;
+            System.Threading.Thread.Sleep(OBLITERATE_WAIT);
         }
-        PBS.currentHP -= EBC.currentAttack * HIGHER_CRITICAL;
     }
-    private void DeadlyAttack(EnemyBaseClass EBC, PlayerBaseClass PBS)
-    {
-        PBS.currentHP -= EBC.currentAttack * HIGHEST_CRITICAL;
-    }
-
     #endregion
-
 }
