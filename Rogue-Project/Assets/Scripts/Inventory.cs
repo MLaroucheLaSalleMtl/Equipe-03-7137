@@ -9,20 +9,25 @@ public class Inventory : MonoBehaviour
     public const int AMOUNT_OF_EQUIPPED_ARMOURS = 0;
 
     GameManager gameManager;
-
+    public static Inventory inventory;
     public Button[] slot;
     public Image[] iconItem;
 
     public List<GameObject> inventoryItem;
     public List<Item> loadedItems;
+    
     public Sprite[] allImages;
 
+    public List<Armor> armor = new List<Armor>();
+    public List<MeleeWeapon> melee = new List<MeleeWeapon>();
+    public List<DistanceWeapon> distance = new List<DistanceWeapon>();
+    public List<Potion> potion = new List<Potion>();
 
     void Start()
     {
-        
+        ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
     }
-
+    //an idea : instantiate all items in the loadallitems, and then delete them when out of the inventory
     void Update()
     {
         
@@ -41,7 +46,7 @@ public class Inventory : MonoBehaviour
         {
             i.sprite = null;
         }
-
+        ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
         int slotId = AMOUNT_OF_EQUIPPED_ARMOURS;
         foreach(GameObject item in inventoryItem)
         {
