@@ -36,4 +36,9 @@ public class InventorySlot : MonoBehaviour
 
         gameManager.openItemInfoPannel();
     }
+
+    public void RemoveItem()
+    {
+
+    }
 }

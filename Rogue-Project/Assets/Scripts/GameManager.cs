@@ -139,14 +139,14 @@ public class GameManager : MonoBehaviour
                 break;
         }
         btnItems();
-        inventory.loadInventory();
+        //inventory.loadInventory();
         changeState(GameState.ITEMS);
         //print("hello inventory");
     }
 
     void Update()
     {
- 
+
         //bool Idown = Input.GetKey(KeyCode.I);
         if (Input.GetButtonDown("Cancel"))
         {
@@ -287,7 +287,7 @@ public class GameManager : MonoBehaviour
         ItemsPannel.SetActive(false);
         changeState(GameState.GAMEPLAY);
         Time.timeScale = 1;
-        inventory.clearLoadedItems();
+        //inventory.clearLoadedItems();
     }
 
     public void openItemInfoPannel()

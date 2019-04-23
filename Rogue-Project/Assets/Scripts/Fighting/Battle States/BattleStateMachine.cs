@@ -469,7 +469,7 @@ public class BattleStateMachine : MonoBehaviour
 
         EncounterLogic.ResetChance();
         Debug.Log("on va essayer de looter un objet");
-        ObjectControllerFactory.LootObjects();
+        //ObjectControllerFactory.LootObjects();
         BattleCanvas.SetActive(false);
     }
     public void EscapeBattle()

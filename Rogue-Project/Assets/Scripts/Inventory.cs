@@ -6,70 +6,105 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 
-    public const int AMOUNT_OF_EQUIPPED_ARMOURS = 0;
+    public Image[] itemImages = new Image[numItemSlots];
+    public Item[] items = new Item[numItemSlots];
 
-    GameManager gameManager;
-    public static Inventory inventory = new Inventory();
-    public Button[] slot;
-    public Image[] iconItem;
+    public const int numItemSlots = 4;
 
-    public List<GameObject> inventoryItem;
-    public List<Item> loadedItems;
-    
-    public Sprite[] allImages;
-
-    public List<Armor> armor = new List<Armor>();
-    public List<MeleeWeapon> melee = new List<MeleeWeapon>();
-    public List<DistanceWeapon> distance = new List<DistanceWeapon>();
-    public List<Potion> potion = new List<Potion>();
-
-    void Start()
+    public void AddItem(Item itemToAdd)
     {
-        //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
-    }
-    //an idea : instantiate all items in the loadallitems, and then delete them when out of the inventory attention TODO put the action taskbar in every slot
-    void Update()
-    {
-
-    }
-
-    public void loadInventory()
-    {
-        clearLoadedItems();
-        gameManager = FindObjectOfType(typeof(GameManager)) as GameManager;
-        foreach (Button btn in slot)
+        for (int i = 0; i < items.Length; i++)
         {
-            btn.interactable = false;
-        }
-
-        foreach (Image i in iconItem)
-        {
-            i.sprite = null;
-        }
-        inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
-        //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
-        //armor = ItemXML.LoadArmors();
-
-        int slotId = AMOUNT_OF_EQUIPPED_ARMOURS;
-        foreach(GameObject item in inventoryItem)
-        {
-            GameObject temp = Instantiate(item);
-            Item itemInfo = temp.GetComponent<Item>();
-            loadedItems.Add(itemInfo);
-            //iconItem[slotId].sprite = allImages[itemInfo.iconId];
-            slot[slotId].GetComponent<InventorySlot>().objectSlot = temp;
-            slot[slotId].interactable = true;
-            iconItem[slotId].gameObject.SetActive(true);
-            slotId++;
+            if (items[i] == null)
+            {
+                items[i] = itemToAdd;
+                itemImages[i].sprite = itemToAdd.sprite;
+                itemImages[i].enabled = true;
+                return;
+            }
         }
     }
 
-    public void clearLoadedItems()
+    public void RemoveItem(Item itemToRemove)
     {
-        foreach (Item li in loadedItems)
+        for (int i = 0; i < items.Length; i++)
         {
-            Destroy(li);
+            if (items[i] == itemToRemove)
+            {
+                items[i] = null;
+                itemImages[i].sprite = null;
+                itemImages[i].enabled = false;
+                return;
+            }
         }
-        loadedItems.Clear();
     }
+
+
+
+    //public const int AMOUNT_OF_EQUIPPED_ARMOURS = 0;
+
+    //GameManager gameManager;
+    //public static Inventory inventory = new Inventory();
+    //public Button[] slot;
+    //public Image[] iconItem;
+
+    //public List<GameObject> inventoryItem;
+    //public List<Item> loadedItems;
+
+    //public Sprite[] allImages;
+
+    //public List<Armor> armor = new List<Armor>();
+    //public List<MeleeWeapon> melee = new List<MeleeWeapon>();
+    //public List<DistanceWeapon> distance = new List<DistanceWeapon>();
+    //public List<Potion> potion = new List<Potion>();
+
+    //void Start()
+    //{
+    //    //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
+    //}
+    ////an idea : instantiate all items in the loadallitems, and then delete them when out of the inventory attention TODO put the action taskbar in every slot
+    //void Update()
+    //{
+
+    //}
+
+    //public void loadInventory()
+    //{
+    //    clearLoadedItems();
+    //    gameManager = FindObjectOfType(typeof(GameManager)) as GameManager;
+    //    foreach (Button btn in slot)
+    //    {
+    //        btn.interactable = false;
+    //    }
+
+    //    foreach (Image i in iconItem)
+    //    {
+    //        i.sprite = null;
+    //    }
+    //    inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
+    //    //ItemXML.LoadAllItems(ref armor, ref melee, ref distance, ref potion);
+    //    armor = ItemXML.LoadArmors();
+
+    //    int slotId = AMOUNT_OF_EQUIPPED_ARMOURS;
+    //    foreach(GameObject item in inventoryItem)
+    //    {
+    //        GameObject temp = Instantiate(item);
+    //        Item itemInfo = temp.GetComponent<Item>();
+    //        loadedItems.Add(itemInfo);
+    //        iconItem[slotId].sprite = allImages[itemInfo.iconId];
+    //        slot[slotId].GetComponent<InventorySlot>().objectSlot = temp;
+    //        slot[slotId].interactable = true;
+    //        iconItem[slotId].gameObject.SetActive(true);
+    //        slotId++;
+    //    }
+    //}
+
+    //public void clearLoadedItems()
+    //{
+    //    foreach (Item li in loadedItems)
+    //    {
+    //        Destroy(li);
+    //    }
+    //    loadedItems.Clear();
+    //}
 }
