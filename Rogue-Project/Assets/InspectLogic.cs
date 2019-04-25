@@ -14,7 +14,7 @@ public class InspectLogic : MonoBehaviour
     {
         if (esm != null)
         {
-            text.text = $"{esm.EBS.enemyName}\nLvl: {esm.EBS.level}\nHP: {esm.EBS.currentHP}\nAtk: {esm.EBS.currentAttack}\nDef: {esm.EBS.currentDefense}";
+            text.text = $"{esm.EBS.enemyName}\nLvl: {(int)esm.EBS.level}\nHP: {(int)esm.EBS.currentHP}\nAtk: {(int)esm.EBS.currentAttack}\nDef: {(int)esm.EBS.currentDefense}";
         }
     }
 }

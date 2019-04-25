@@ -45,8 +45,10 @@ public class BattleStateMachine : MonoBehaviour
         EnemyBaseClass.Elf(),
         
     };
+    //Level Up System//
+    public PlayerStateMachine psm;
     
-
+    
     //Script Access.//
     private TurnHandler playerChoice;
     //private GameManager GM;
@@ -120,9 +122,11 @@ public class BattleStateMachine : MonoBehaviour
         Current_Battle_State = BattleState.STARTBATTLE;
         Players[0].PBS = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBaseClass>(); //Uses the MC stats in the battle.//
     }
+    bool onceExp = true;
     void Update()
     {
-       // Debug.Log(enemiesAlive[0].EBS.currentHP);
+       
+        // Debug.Log(enemiesAlive[0].EBS.currentHP);
         bool battleEnded = true;
         foreach (EnemyStateMachine e in enemiesAlive)
         {
@@ -193,7 +197,16 @@ public class BattleStateMachine : MonoBehaviour
                            Current_Battle_State = BattleState.CHOOSETARGET; break;
                         case PlayerInput.USE_ITEM: break;
                         case PlayerInput.USE_SKILLS: break;
-                        case PlayerInput.RUN: Current_Battle_State = BattleState.RUN_BATTLE; battleEnded = true; Exit = true; break;
+                        case PlayerInput.RUN:
+                            commandsPanel.SetActive(false);
+                            if (Random.Range(1, 100) > 60)
+                            {
+                                Current_Battle_State = BattleState.RUN_BATTLE; battleEnded = true; Exit = true;
+                            }
+                            else {
+                                Current_Battle_State = BattleState.END_TURN;
+                            }
+                            break;
 
                     }
                     break;
@@ -254,7 +267,7 @@ public class BattleStateMachine : MonoBehaviour
                     Animator anim = enemiesAlive[enemyTurn].GetComponent<Animator>();
                     if (!onlyOnce)
                     {
-                        if (enemiesAlive[enemyTurn].EBS != null && enemiesAlive[enemyTurn].EBS.currentHP > 0)
+                        if (enemiesAlive[enemyTurn].EBS != null && enemiesAlive[enemyTurn].EBS.currentHP >= 1)
                         {
                             enemiesAlive[enemyTurn].DoMove(playersAlive[0].PBS);
 
@@ -297,8 +310,13 @@ public class BattleStateMachine : MonoBehaviour
                             GameManager.inAFight = false;
                             
                             lastTimer = 100f;
+                            onceExp = true;
                         }
                         else {
+                            if (onceExp) {
+                                playersAlive[0].PBS.Exp += totalEXP;
+                                onceExp = false;
+                            }
                             ui.Enable(totalEXP);
 
                         }
@@ -306,6 +324,7 @@ public class BattleStateMachine : MonoBehaviour
                     else {
                         Current_Battle_State = BattleState.ORDERING;
                         playersAlive[0].isDefending = false;
+                        playersAlive[0].input = PlayerInput.NULL;
                         selectedTarget = -1;
                     }
                     if (Exit) {
@@ -323,34 +342,8 @@ public class BattleStateMachine : MonoBehaviour
 
                     break;
                 case BattleState.RUN_BATTLE:
-                    if (battleEnded)
-                    {
-                        lastTimer -= Time.timeScale;
-                        if (lastTimer < 0)
-                        {
-                            Current_Battle_State = BattleState.STARTBATTLE;
-
-                            EscapeBattle();
-
-
-                            OverWorldPlayer.enabled = true;
-                            GameManager.inAFight = false;
-
-                            lastTimer = LAST_TIMER;
-                        }
-                        else
-                        {
-                            ui.Enable(totalEXP);
-
-                        }
-                    }
-                    else
-                    {
-                        Current_Battle_State = BattleState.ORDERING;
-                        playersAlive[0].isDefending = false;
-                    }
-                    if (Exit)
-                    {
+                  
+                   
                         Current_Battle_State = BattleState.STARTBATTLE;
 
                         EscapeBattle();
@@ -360,7 +353,7 @@ public class BattleStateMachine : MonoBehaviour
                         GameManager.inAFight = false;
                         Exit = false;
                         lastTimer = LAST_TIMER;
-                    }
+                    
 
 
                     break;
@@ -369,7 +362,7 @@ public class BattleStateMachine : MonoBehaviour
            
             for (int i = 0; i < enemiesAlive.Count; i++)
             {
-                if (enemiesAlive[i].EBS != null && enemiesAlive[i].EBS.currentHP> HEALTH_REMAINING)
+                if (enemiesAlive[i].EBS != null && enemiesAlive[i].EBS.currentHP>= 1)
                 {
                     Enemies[i].gameObject.SetActive(true);
                     buttonsTargets[i].SetActive(true);
@@ -385,7 +378,7 @@ public class BattleStateMachine : MonoBehaviour
                    
                 }
             }
-            if (playersAlive[0].PBS.currentHP <= HEALTH_REMAINING) {
+            if (playersAlive[0].PBS.currentHP < 1) {
                 Time.timeScale = 0;
                 EndScreen.SetActive(true);
 
@@ -403,6 +396,7 @@ public class BattleStateMachine : MonoBehaviour
         {
             p.StartUp();
             playersAlive.Add(p);
+            psm = p;
             //print(p);
         }
         enemiesAlive.Clear();
@@ -496,7 +490,7 @@ public class BattleStateMachine : MonoBehaviour
         for (int i = 0; i < Random.Range(1, 4); i++)
         {
             Enemies[i].EBS = potentialEnemies[i];
-            totalEXP += 30;
+            totalEXP += potentialEnemies[i].expGiven;
             print("Added: " + potentialEnemies[i].enemyName);
 
         }
@@ -517,7 +511,7 @@ public class BattleStateMachine : MonoBehaviour
         for (int i = 0; i < Random.Range(1, 2); i++)
         {
             Enemies[i].EBS = potentialEnemies[i];
-            totalEXP += 30;
+            totalEXP += potentialEnemies[i].expGiven;
             print("Added: " + potentialEnemies[i].enemyName);
 
         }

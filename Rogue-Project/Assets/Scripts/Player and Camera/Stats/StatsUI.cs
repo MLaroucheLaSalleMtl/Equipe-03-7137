@@ -29,7 +29,7 @@ public class StatsUI : MonoBehaviour
         texts[5].text = "DEF: "+playerStats.Defense.ToString();
         texts[6].text = "INT: " +playerStats.Intelligence.ToString();
         texts[7].text = "LUC: "+playerStats.Luck.ToString();
-        texts[8].text = "EXP: " + playerStats.Exp.ToString();
+        texts[8].text = "EXP: " + playerStats.Exp.ToString() + "/" + playerStats.ExpNeeded;
         texts[9].text = "LVL: " + playerStats.level.ToString();
     }
 }

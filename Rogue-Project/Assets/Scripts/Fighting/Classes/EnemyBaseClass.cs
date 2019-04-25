@@ -37,7 +37,7 @@ public class EnemyBaseClass
     public float currentDefense;
 
     //EXP
-    public float expGiven;
+    public int expGiven;
 
     //Sprites
     public string spritePath;

@@ -23,9 +23,28 @@ public class PlayerBaseClass : MonoBehaviour
     public int Intelligence; //=> could be used for spells and such.//
     public int Luck;         //=> Influences the RUN command during a match and evasive attacks.//
     public int Exp =0;
+    public int ExpNeeded = 30;
+    public int previousExpNeeded = 30;
     public int level = 1;
 
     //Inventory management.//
     public static List<Item> inventory = new List<Item>();
 
+    void Update() {
+        if (Exp >= ExpNeeded) {
+            
+            level += Exp / ExpNeeded;
+            Exp = Exp % ExpNeeded;
+            Strength += Random.Range(1, 4);
+            Constitution += Random.Range(1, 4);
+            Defense += Random.Range(1, 4);
+            Intelligence += Random.Range(1, 4);
+            Luck += Random.Range(1, 4);
+
+            int temp = previousExpNeeded;
+            previousExpNeeded = ExpNeeded;
+            ExpNeeded += temp;
+        } 
+
+    }
 }
